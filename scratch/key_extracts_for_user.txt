@@ -1,0 +1,850 @@
+
+################### MỤC 4 (Trang 20) [Từ khóa: phân loại, quy chế] ###################
+4 ====================
+--- Trang 20 [Từ khóa: quy chế] ---
+02 · CẤU TRÚC
+KHUNG GỒM NHỮNG GÌ
+Khung gồm những gì
+• Quy chế: 7 chương, 30 điều — nguyên tắc, phân loại, miền
+dữ liệu, vai trò, trách nhiệm
+• 13 phụ lục, tổ chức theo 5 nhóm đối ứng hệ thống văn bản
+Petrovietnam
+• Mỗi phụ lục có bảng đối chiếu sang biểu mẫu tương ứng của
+Petrovietnam để thuận tiện kiểm tra tuân thủ
+Nhóm A Danh mục, siêu dữ liệu và lưu trữ 5 phụ lục
+Nhóm B Chất lượng và làm sạch 2 phụ lục
+Nhóm C Chia sẻ, kết nối và chuyển giao 3 phụ lục
+Nhóm D Kiểm soát truy cập và đánh giá nội bộ 2 phụ lục
+Nhóm E Mở rộng riêng của PTSC 1 phụ lục
+CƠ CẤU 13 PHỤ LỤC GỒM:
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 16
+
+################### MỤC 5 (Trang 21) [Từ khóa: phân loại, quy chế, chủ quản] ###################
+5 ====================
+--- Trang 21 [Từ khóa: vận hành, quy chế, quản trị dữ liệu, phân quyền] ---
+02 · CẤU TRÚC
+MÔ HÌNH QUẢN TRỊ 5 CẤP
+Mô hình quản trị dữ liệu 5 cấp
+Cấp Chủ thể Vai trò chính
+Cấp 1 Hội đồng Quản trị Dữ liệu (và Văn phòng Quản trị
+Dữ liệu) Định hướng chiến lược; phê duyệt chính sách, tiêu chuẩn; xử lý xung đột liên miền
+Cấp 2 Hội đồng Dữ liệu khối / chuyên ngành Điều phối liên Ban; đồng bộ tiêu chuẩn giữa các miền dữ liệu
+Cấp 3 Chủ quản dữ liệu (Trưởng Ban) Quản lý nghiệp vụ dữ liệu của miền; phê duyệt phân loại, chất lượng, truy cập, chia sẻ. Trách nhiệm giải trình đặt ở
+cấp này
+Cấp 4 Quản trị miền dữ liệu Siêu dữ liệu, từ điển, quy tắc chất lượng; chuẩn hóa, ánh xạ; xử lý vấn đề dữ liệu
+Cấp 5 Đơn vị vận hành hệ thống dữ liệu (Ban NCPT&CDS) Vận hành nền tảng, phân quyền, giám sát, sao lưu. Không sở hữu dữ liệu nghiệp vụ
+Tên gọi các vai trò thống nhất với Quy chế Quản trị dữ liệu của Petrovietnam. Chủ sở hữu dữ liệu theo định nghĩa của Tập đoànlà tổ chức — tức PTSC.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 17
+
+################### MỤC 6 (Trang 32) [Từ khóa: chi phí, lộ trình, phương án] ###################
+6 ====================
+--- Trang 32 [Từ khóa: chi phí] ---
+A. TẦM QUAN TRỌNG CỦA VIỆC TRIỂN KHAI
+DATA PLATFORM
+B. MÔ HÌNH VÀ PHƯƠNG ÁN TRIỂN KHAI MỞ
+RỘNG DATA PLATFORM
+C. LỘ TRÌNH MỞ RỘNG DATA PLATFORM (Dự
+kiến)
+D. CẤU TRÚC CHI PHÍ DỰ KIẾN VÀ KIẾN NGHỊ
+— MỤC LỤC
+Nội dung trình bày
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 27
+
+################### MỤC 9 (Trang 37) [Từ khóa: phân loại, quy chế, phương án] ###################
+9 ====================
+--- Trang 37 [Từ khóa: vận hành, quy chế, quyết định, đơn vị thành viên] ---
+2.1 KHUNG TUÂN THỦ: BVDLCN – AN NINH MẠNG – DỮ LIỆU –
+CHUYỂN ĐỔI SỐ
+Luật Nghĩa vụ chính đối với PTSC Triển khai tại đơn vị thành viên
+BVDLCN
+91/2025/QH15
+(01/01/2026)
+Quy chế xử lý DLCN; hồ sơ DPIA; hồ sơ chuyển
+DLCN ra nước ngoài; quyền chủ thể dữ liệu; thông
+báo vi phạm 72 giờ
+Bộ hồ sơ mẫu từ TCT — đơn vị lập theo mẫu; nhãn DLCN
+trong catalog + che dữ liệu; quyền chủ thể qua MDM (soft-
+delete có kiểm soát); DPO 2 cấp; kịch bản + diễn tập 72
+giờ
+An ninh mạng
+2025
+Phân loại hệ thống theo cấp độ an toàn; phương án
+bảo đảm thẩm định trước vận hành; giám sát, ứng
+cứu sự cố
+TCT xác định cấp độ một lần, đơn vị thừa hưởng khung
+phương án; thẩm định trước go-live từng đơn vị; audit log
+mọi đơn vị đổ về SIEM hub; diễn tập ứng cứu định kỳ
+Dữ liệu
+60/2024/QH15
+(01/7/2025)
+Phân loại dữ liệu cốt lõi / quan trọng (danh mục
+TTg); điều kiện chuyển xuyên biên giới; quản trị dữ
+liệu – quản lý rủi ro; cung cấp dữ liệu cho CQNN khi
+luật định
+Nhãn phân loại thứ ba trong catalog, rà theo danh mục
+TTg; dữ liệu quan trọng ở lại on-prem — cloud chỉ nhận
+tổng hợp; đánh giá trước khi chia sẻ cho đối tác nước
+ngoài; đầu mối TCT tiếp nhận yêu cầu CQNN
+Chuyển đổi số
+(12/2025)
+Khung nền tảng số dùng chung quốc gia (QĐ
+
+################### MỤC 10 (Trang 41) [Từ khóa: hub-spoke, chi phí, lộ trình] ###################
+10 ====================
+--- Trang 41 [Từ khóa: spoke, level, chi phí, vận hành, hybrid, đơn vị thành viên] ---
+01 TÓM TẮT ĐIỀU HÀNH
+Mở rộng Data Platform đến các đơn vị thành viên theo mô hình Hub-
+Spoke
+01
+Nền tảng Giai đoạn 1 đã vận hành
+Nền tảng hybrid IMIP Data Platform, 8 phần
+mềm nguồn, 35 quy trình liên phòng ban, 50
+API chuẩn — phạm vi Văn phòng Tổng công ty.
+02
+Phần lớn dữ liệu nằm ở đơn vị
+Không mở rộng thì giá trị nền tảng dừng ở Văn
+phòng Tổng công ty; báo cáo hợp nhất vẫn thủ
+công và Master Data vẫn lệch giữa các đơn vị.
+03
+Điều kiện bắt buộc cho AI, IoT, BI
+Chuyển đổi số mức 3 trở lên yêu cầu dữ liệu tự
+động, chính xác đến mức realtime; mức 4 –5
+yêu cầu ứng dụng AI, IoT và kết nối IT –OT.
+04
+Hub-Spoke phù hợp toàn Tổng công ty
+Hub tại Tổng công ty giữ chuẩn dữ liệu; đơn vị
+lớn có spoke riêng, đơn vị nhỏ dùng tenant trên
+hub — tôn trọng chủ quyền dữ liệu của đơn vị.
+05
+Bốn level triển khai theo quy mô
+17 đơn vị và chi nhánh được phân về L1 –L4
+theo pháp nhân, quy mô và mức trưởng thành
+số DBI; chi phí phát sinh khác nhau theo level.
+06
+Tuân thủ pháp luật theo thiết kế
+Luật Bảo vệ dữ liệu cá nhân, An ninh mạng, Dữ
+liệu và Chuyển đổi số được đáp ứng bằng kiểm
+soát nhúng trong nền tảng, không phụ thuộc
+từng đơn vị.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 36
+
+################### MỤC 12 (Trang 43) [Từ khóa: chi phí, lộ trình] ###################
+12 ====================
+--- Trang 43 [Từ khóa: chi phí, vận hành] ---
+02 BỐI CẢNH VÀ SỰ CẦN THIẾT
+Data Platform là điều kiện bắt buộc để đạt mức trưởng thành số cao
+hơn
+Không có Data Platform
+Dữ liệu phân tán trong nhiều phần mềm; chi phí phát triển tính năng và
+vận hành tăng nhanh; phụ thuộc nhà cung cấp phần mềm.
+Khai thác dữ liệu bằng Excel
+Tra cứu, xuất Excel và mapping tay; không có nơi thu thập và xử lý dữ liệu
+lớn cho chuỗi giao dịch 5 –10 năm.
+Quản trị tổng thể liên Phòng/Ban
+Không có nơi quản lý liên kết và đồng bộ dữ liệu giữa các phần mềm
+nghiệp vụ rời rạc, bao gồm Master Data.
+ĐỊNH HƯỚNG CHUYỂN ĐỔI SỐ
+CĐS Mức 3
+Yêu cầu dữ liệu nhanh hơn, chính xác hơn đến mức realtime — không
+thể thực hiện bằng sức người và Excel.
+CĐS Mức 4 – 5
+Bắt buộc ứng dụng AI, IoT và kết nối IT với OT.
+Data Platform là công nghệ bắt buộc phải có.
+Đồng thời bảo đảm tuân thủ luật an ninh mạng, luật dữ liệu, luật trí tuệ nhân tạo, luật bảo vệ dữ liệu cá nhân và yêu cầu kếtnối tự động, realtime tới Tập đoàn PVN, đối tác và khách
+hàng.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 38
+
+################### MỤC 13 (Trang 44) [Từ khóa: hub-spoke, lộ trình] ###################
+13 ====================
+--- Trang 44 [Từ khóa: spoke, vận hành] ---
+03 MỤC TIÊU VÀ NGUYÊN TẮC
+Mục tiêu là hệ thống dữ liệu hợp nhất toàn Tổng công ty
+TỔNG QUÁT
+Hệ thống dữ liệu hợp nhất toàn Tổng công ty theo mô hình Hub-Spoke; dữ liệu là tài sản do Tổng công ty làm chủ, độc lập
+với vòng đời phần mềm nghiệp vụ tại từng đơn vị.
+CỤ THỂ — CHUẨN XÁC SAU KHẢO SÁT
+Chuẩn hóa và đồng bộ Master
+Data dùng chung
+Golden Record thống nhất cho các
+danh mục trọng yếu.
+Tự động hóa báo cáo hợp nhất
+Tài chính – nhân sự – SXKD từ 3 –4
+đơn vị thí điểm về Tổng công ty.
+Kho dữ liệu chuyên ngành tại đơn
+vị lớn
+Đơn vị làm chủ vận hành spoke, tuân
+thủ khung quản trị chung.
+Nền tảng sẵn sàng cho phân tích
+nâng cao
+Và AI liên đơn vị ở giai đoạn tiếp theo.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 39
+
+################### MỤC 16 (Trang 47) [Từ khóa: lộ trình, bảo mật] ###################
+16 ====================
+--- Trang 47 [Từ khóa: level 3, level, vận hành, bảo mật, quyết định] ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Logic phối hợp giữa các cấp và nguyên tắc vận hành dữ liệu
+LOGIC PHỐI HỢP VÀ LUỒNG DỮ LIỆU
+Chiến lược và Chính sách
+Định hướng từ Level 1
+Điều phối và Hướng dẫn
+Điều phối từ Level 2
+Sở hữu và Quyết định
+Ownership ở Level 3
+Triển khai và Kiểm soát
+Thực thi ở Level 4
+Vận hành và Hỗ trợ kỹ thuật
+Thực thi kỹ thuật ở Level 5
+NGUYÊN TẮC VẬN HÀNH
+Data là tài sản của PTSC
+Dữ liệu được quản trị như tài sản chiến lược
+Business Ownership
+Business sở hữu dữ liệu và chịu trách nhiệm
+Chất lượng là trọng tâm
+Dữ liệu đúng — đủ — sạch — kịp thời — an toàn
+Chia sẻ tạo giá trị
+Dữ liệu được chia sẻ có kiểm soát và tạo giá trị
+Bảo mật và Tuân thủ
+Tuân thủ pháp lý, chính sách và bảo mật
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 47
+
+################### MỤC 17 (Trang 49) [Từ khóa: hub-spoke, lộ trình] ###################
+17 ====================
+--- Trang 49 [Từ khóa: spoke, level] ---
+B
+Mô hình kiến trúc Data platform và phân nhóm Đơn vị
+04 · Kiến trúc Hub-Spoke 05 · Phân nhóm và level triển khai
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 41
+
+################### MỤC 18 (Trang 50) [Từ khóa: hub-spoke, lộ trình, phương án] ###################
+18 ====================
+--- Trang 50 [Từ khóa: spoke, vận hành, governance, fabric, hạ tầng] ---
+066. PHƯƠNG ÁN KIẾN TRÚC: MÔ HÌNH HUB-SPOKE
+HUB — Data Platform tại Tổng công ty (GĐ1)
+Lakehouse trung tâm · MDM Golden Record · Governance/SIEM
+tập trung · Fabric/Power BI
+Chi nhánh
+Như một ban TCT (không dựng spoke)
+Đơn vị nhỏ
+Tenant trên hub (không dựng spoke)
+Đồng bộ dữ liệu dùng chung + dữ liệu tổng hợp qua ESB / API chuẩn (near real -time / batch)
+SPOKE
+Đơn vị 1
+SPOKE
+Đơn vị 2
+SPOKE
+Đơn vị 3
+SPOKE
+Đơn vị 4
+Dữ liệu chuyên ngành lưu tại đơn vị lớn — đơn vị nhỏ chạy trên hạ tầng hub theo mô hình multi-tenant (chi tiết slide 7). Spoke tái sử dụng chính nền tảng IMIP Data
+Platform (cấu hình quy mô nhỏ) → đồng nhất công nghệ, kỹ năng vận hành và bộ triển khai mẫu khi nhân rộng.
+Tôn trọng chủ quyền dữ liệu & đặc
+thù nghiệp vụ Giảm băng thông, rủi ro tập trung Đáp ứng bản địa hóa dữ liệu nhạy
+cảm
+Chuẩn quản trị thống nhất qua
+kiến trúc, danh mục, catalog
+chung
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 46
+
+################### MỤC 19 (Trang 51) [Từ khóa: chi phí, lộ trình] ###################
+19 ====================
+--- Trang 51 [Từ khóa: spoke, workspace, chi phí, vận hành, governance, fabric, hạ tầng] ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Hub tại Tổng công ty, spoke tại đơn vị lớn, tenant cho đơn vị nhỏ
+HUB — TỔNG CÔNG TY
+Data Platform
+Lakehouse trung tâm MDM · Golden Record Governance · SIEM Fabric / Power BI
+Đồng bộ dữ liệu dùng chung và dữ liệu tổng hợp qua ESB / API chuẩn — near real-time hoặc batch
+SPOKE — ĐƠN VỊ LỚN
+Đơn vị 1 Đơn vị 2 Đơn vị 3 Đơn vị 4
+Dữ liệu chuyên ngành lưu tại đơn vị. Spoke tái sử dụng chính nền tảng
+IMIP Data Platform ở cấu hình quy mô nhỏ — đồng nhất công nghệ, kỹ
+năng vận hành và bộ triển khai mẫu khi nhân rộng.
+TENANT TRÊN HUB — ĐƠN VỊ NHỎ VÀ CHI NHÁNH
+Chi nhánh Vận hành như một ban của Tổng công ty
+Đơn vị nhỏ Workspace / tenant riêng trên hub
+Không trang bị Data Platform riêng, chỉ cần agent thu thập dữ liệu tại chỗ
+hoặc kéo trực tiếp qua API. Không phát sinh CAPEX hạ tầng và đội vận
+hành riêng — chi phí vận hành chung phân bổ theo mức sử dụng.
+Tôn trọng chủ quyền dữ liệu và đặc thù
+nghiệp vụ
+Giảm băng thông và rủi ro tập
+trung
+Đáp ứng bản địa hóa dữ liệu nhạy
+cảm
+Chuẩn quản trị thống nhất qua kiến trúc và catalog
+chung
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 42
+
+################### MỤC 20 (Trang 52) [Từ khóa: phân loại, lộ trình, bảo mật] ###################
+20 ====================
+--- Trang 52 [Từ khóa: bảo mật, phân quyền, nhạy cảm] ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Bảo mật và chủ quyền dữ liệu được kiểm soát bằng phân quyền, audit log
+và lineage
+Phân quyền theo RBAC / ABAC
+Đơn vị chỉ thấy dữ liệu của mình; phân cấp phân
+quyền an toàn thông tin riêng của từng đơn vị được
+giữ nguyên trên nền tảng chung.
+Audit log tách theo tenant
+Toàn bộ truy cập được ghi nhận, tách biệt theo đơn
+vị và đổ về SIEM tại hub để giám sát tập trung.
+Lineage và metadata
+Truy vết nguồn gốc và đường đi của dữ liệu; quản
+trị siêu dữ liệu thống nhất cho toàn bộ đơn vị.
+Catalog và gắn nhãn dữ liệu
+Nhãn dữ liệu cá nhân và nhãn phân loại dữ liệu cốt
+lõi / quan trọng; che dữ liệu theo nhãn.
+Master Data và Golden Record
+Danh mục chuẩn do Tổng công ty sở hữu; quyền
+chủ thể dữ liệu thực thi qua MDM với soft -delete có
+kiểm soát.
+Kiểm soát vị trí lưu trữ
+Dữ liệu quan trọng và dữ liệu nhạy cảm ở lại on -
+prem; cloud chỉ nhận dữ liệu tổng hợp và chuẩn
+hóa.
+Dữ liệu chuyên ngành lưu tại đơn vị; chỉ dữ liệu tổng hợp và chuẩn hóa đồng bộ về Tổng công ty. Mức độ bảo mật không phụ thuộ c vị trí lưu trữ mà phụ
+thuộc phân cấp phân quyền được thiết kế đồng nhất.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 43
+
+################### MỤC 23 (Trang 55) [Từ khóa: quy chế, lộ trình] ###################
+23 ====================
+--- Trang 55 [Từ khóa: l3, spoke, level, vận hành, quy chế, quản trị dữ liệu] ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Điều kiện xem xét nâng đơn vị lên spoke riêng
+Khối lượng và tốc độ tăng dữ liệu Đẩy dữ liệu thô về hub tốn kém hơn xử lý tại chỗ, tính trên băng thông và lưu trữ
+Nhu cầu phân tích chuyên ngành cường
+độ cao Dữ liệu vận hành thiết bị, sensor, thời gian thực mà độ trễ qua hub không đáp ứng
+Ràng buộc pháp lý hoặc hợp đồng Dữ liệu buộc lưu và xử lý tại đơn vị
+Năng lực vận hành Đội CNTT đơn vị đủ khả năng vận hành nền tảng theo chuẩn Tổng công ty
+Bốn tiêu chí được định lượng trong quy chế quản trị dữ liệu và xét định kỳ hàng năm. Riêng PTSC M&C sẽ có phiên thảo luận riê ng về mô hình kiến trúc dữ
+liệu để xác định áp dụng L3 hoặc L4.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 50
+
+################### MỤC 24 (Trang 59) [Từ khóa: quy chế, chi phí, phương án] ###################
+24 ====================
+--- Trang 59 [Từ khóa: spoke, level, workspace, chi phí, vận hành, quy chế, hạ tầng] ---
+077. MÔ HÌNH PHỤC VỤ ĐƠN VỊ NHỎ: TENANT TRÊN HẠ TẦNG HUB
+1
+Không trang bị data platform riêng:
+Chỉ cần agent thu thập dữ liệu tại chỗ (hoặc
+kéo trực tiếp qua API)
+2
+Workspace/tenant riêng trên hub:
+Vùng lưu trữ, pipeline, dashboard riêng
+của từng đơn vị
+3
+Cách ly bằng RBAC/ABAC:  Đơn vị chỉ
+thấy dữ liệu của mình; audit log và lineage
+tách theo tenant — đáp ứng Luật BVDLCN
+4
+Chi phí:  Không CAPEX hạ tầng, không
+đội vận hành riêng — chỉ phân bổ chi phí
+vận hành chung theo mức sử dụng
+(Phương án 3)
+TIÊU CHÍ “TỐT NGHIỆP” LÊN SPOKE RIÊNG  - Level 4
+(Có thể định lượng trong quy chế, xét định kỳ hàng năm)
+Tiêu chí Ngưỡng xem xét
+Khối lượng / tốc độ tăng dữ liệu Đẩy dữ liệu thô về hub tốn kém hơn xử lý tại chỗ (băng thông, lưu trữ)
+Nhu cầu phân tích chuyên ngành
+cường độ cao
+Dữ liệu vận hành thiết bị / sensor / thời gian thực mà độ trễ qua hub không
+đáp ứng
+Ràng buộc pháp lý / hợp đồng Dữ liệu buộc lưu và xử lý tại đơn vị
+Năng lực vận hành Đội CNTT đơn vị đủ khả năng vận hành nền tảng theo chuẩn Tổng công ty
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 55
+
+################### MỤC 25 (Trang 60) [Từ khóa: chi phí, lộ trình] ###################
+25 ====================
+--- Trang 60 [Từ khóa: chi phí] ---
+D
+Chi phí, cơ chế đầu tư và kiến nghị
+08 · Chi phí và cơ chế đầu tư 09 · Rủi ro 10 · Kiến nghị
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 56
+
+################### MỤC 26 (Trang 61) [Từ khóa: chi phí, phương án] ###################
+26 ====================
+--- Trang 61 [Từ khóa: spoke, level, dung lượng, chi phí, vận hành, hạ tầng] ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Bảy cấu phần chi phí của phương án mở rộng
+01
+Hạ tầng
+Hạ tầng dHCI tại đơn vị áp dụng
+L4; mở rộng dung lượng hub cho
+các level còn lại. Tận dụng máy
+chủ sẵn có của đơn vị nếu đáp
+ứng.
+02
+License phần mềm nền tảng
+Bản quyền 12 tháng cho cloud và
+các phần mềm nền tảng; quy mô
+theo số đơn vị kết nối và phân
+vùng dữ liệu.
+03
+Dịch vụ triển khai Data
+Platform
+Triển khai nền tảng tại spoke hoặc
+phân vùng tenant theo cấu hình
+chuẩn.
+04
+Tích hợp phần mềm dùng
+chung
+Thiết kế và triển khai tích hợp
+HRM, ERP, E-Office và các phần
+mềm dùng chung với Tổng công
+ty.
+05
+Tích hợp phần mềm riêng và
+chuyên ngành
+Thiết kế và triển khai tích hợp cho
+phần mềm riêng, phần mềm mới
+hoặc ngoài hệ sinh thái Tổng công
+ty.
+
+################### MỤC 27 (Trang 62) [Từ khóa: chi phí, lộ trình] ###################
+27 ====================
+--- Trang 62 [Từ khóa: l3, level, chi phí, vận hành, phân quyền, hạ tầng] ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Chi phí phát sinh theo từng level triển khai
+Nhóm Hạng mục chi phí L1 L2 L3 L4
+Hàng hóa
+Hạ tầng dHCI riêng tại đơn vị Không Không Không Có
+License phần mềm nền tảng Không Không Có Có
+Dịch vụ
+Triển khai Data Platform Không Có Có Có
+Phần mềm dùng chung với Tổng công ty — thiết kế và triển khai tích
+hợp Không Có Có Có
+Phần mềm dùng chung — thiết kế và triển khai dữ liệu Không Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai tích hợp Có Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai dữ liệu Có Có Có Có
+Vận hành Chi phí vận hành nền tảng Phân bổ theo
+mức sử dụng
+Phân bổ theo
+mức sử dụng
+Phân bổ theo
+mức sử dụng
+Đơn vị tự vận
+hành
+Bản quyền phần mềm nền tảng tính cho 12 tháng, gồm cloud, ingestion, Lakehouse, ESB, MDM, phân quyền Data Operation, xử lý dữ liệu, Text-to-data, SIEM và quản trị siêu dữ liệu.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 58
+
+################### MỤC 28 (Trang 63) [Từ khóa: chi phí, ngân sách, lộ trình, phương án] ###################
+28 ====================
+--- Trang 63 [Từ khóa: spoke, chi phí, vận hành] ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Kiến nghị cơ chế đầu tư kết hợp giữa Tổng công ty và đơn vị
+PHƯƠNG ÁN 1
+Tổng công ty đầu tư tập trung toàn
+bộ, phân bổ chi phí sử dụng
+ƯU ĐIỂM
+Chuẩn nhất quán tuyệt đối; đàm phán bản
+quyền quy mô lớn; tiến độ đồng bộ.
+HẠN CHẾ
+Gánh nặng ngân sách tập trung; đơn vị
+thiếu gắn kết trách nhiệm.
+PHƯƠNG ÁN 2
+Đơn vị tự đầu tư spoke theo chuẩn
+Tổng công ty
+ƯU ĐIỂM
+Gắn trách nhiệm và chi phí với đơn vị
+hưởng lợi trực tiếp.
+HẠN CHẾ
+Tiến độ không đồng đều; nguy cơ lệch
+chuẩn; mất lợi thế đàm phán tập trung.
+PHƯƠNG ÁN 3 KIẾN NGHỊ
+Kết hợp: Tổng công ty đầu tư hub, nền tảng
+dùng chung, bản quyền khung và bộ tiêu
+chuẩn; đơn vị đầu tư hoặc thuê spoke và tích
+hợp nội bộ theo định mức chuẩn
+Tổng công ty giữ vai trò kiến trúc sư trưởng và chủ
+sở hữu chuẩn dữ liệu; đơn vị thụ hưởng gắn trách
+nhiệm đầu tư và vận hành. Cơ chế phân bổ chi phí
+cụ thể xây dựng trong Giai đoạn 2A.
+Đơn vị chưa có nguồn chi phí sẽ được Tổng công ty
+đầu tư trước và ghi nợ.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 59
+
+
+=======================================================
+FILE: 20260810_Slide_Hoi thao Data Platform_Phien Sang.pdf
+=======================================================
+Tổng số trang: 48
+
+################### MỤC 29 (Trang 6) [Từ khóa: lộ trình, bảo mật] ###################
+29 ====================
+--- Trang 6 [Từ khóa: bảo mật] ---
+6 MỤC TIÊU CỤ THỂ
+Tuân thủ pháp lý về bảo vệ dữ liệu1
+Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung2
+Kiến trúc mô hình dữ liệu hiện đại và linh hoạt3
+Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai4
+Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn)5
+Đáp ứng lộ trình Chuyển đổi số theo Chiến lược CĐS của PTSC6
+Từ định hướng và mục tiêu tổng thể như trên, Dự án "Xây dựng Nền tảng dữ liệu tại Tổng
+công ty PTSC" cần đảm bảo 6 mục tiêu cụ thể như sau:
+
+################### MỤC 33 (Trang 26) [Từ khóa: chi phí, ngân sách] ###################
+33 ====================
+--- Trang 26 [Từ khóa: chi phí] ---
+TRỤC TÍCH HỢP (ESB)
+Một trong những thách thức và hậu quả “lớn nhất” ở góc
+độ Kỹ thuật của các dự án Chuyển đổi số là Tích hợp các
+phần mềm
+● Nhiều hệ thống cũ và mới (Legacy Systems): Đây là
+rào cản lớn nhất. Các hệ thống cũ thường không có API
+(giao diện lập trình ứng dụng) rõ ràng, sử dụng công
+nghệ lạc hậu, và thiếu tài liệu đầy đủ, khiến việc kết nối
+với các công nghệ hiện đại trở nên vô cùng phức tạp và
+tốn kém.
+● Chi phí và Rủi ro: Chi phí cho việc tích hợp hệ thống có
+thể vượt quá ngân sách ban đầu, do những vấn đề phát
+sinh bất ngờ. Ngoài ra, việc kết nối các hệ thống cũ, vốn
+có thể kém an toàn hơn, cũng làm tăng rủi ro về bảo
+mật.
+● Dữ liệu phân mảnh (Data Silos): Khi các bộ phận sử
+dụng hệ thống riêng biệt, dữ liệu sẽ bị phân tán, nảy sinh
+nhiều vấn đề về sự nhất quán và chất lượng dữ liệu. →
+Không thể hình thành big data
+ERP
+HRM
+E-learning
+E-Office
+EPM….+10?
+Database
+Email
+Database
+Đơn vị
+
+################### MỤC 37 (Trang 9) [Từ khóa: phân loại, bảo mật] ###################
+37 ====================
+--- Trang 9 [Từ khóa: vận hành, quản trị dữ liệu, bảo mật, phân quyền, đơn vị thành viên] ---
+ĐỊNH HƯỚNG VỀ NỀN TẢNG DỮ LIỆU
+▪Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số;
+▪Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC;
+▪Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị thành viên. Đảm
+bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ
+liệu;
+▪Ứng dụng các công nghệ mới nhất về quản trị dữ liệu như: CDP (Customer Data Platform); các
+kiến trúc data có cấu trúc và phi cấu trúc, Datalake cho vận hành và khai thác tài nguyên số của
+PTSC;
+▪Hoạch định phân lớp khai thác tài nguyên số  trên cơ sở nhu cầu của người sử dụng dữ liệu.
+
+################### MỤC 38 (Trang 24) [Từ khóa: phân loại, bảo mật] ###################
+38 ====================
+--- Trang 24 [Từ khóa: vận hành, quản trị dữ liệu, bảo mật, phân quyền, đơn vị thành viên] ---
+3. ĐỊNH HƯỚNG XÂY DỰNG CHIẾN LƯỢC CĐS CỦA PTSC
+Định hướng về nền tảng dữ liệu
+▪Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số;
+▪Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC;
+▪Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị thành viên. Đảm
+bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ
+liệu;
+▪Ứng dụng các công nghệ mới nhất về quản trị dữ liệu như: CDP (Customer Data Platform); các
+kiến trúc data có cấu trúc và phi cấu trúc, Data Lake cho vận hành và khai thác tài nguyên số của
+PTSC;
+▪Hoạch định phân lớp khai thác tài nguyên số  trên cơ sở nhu cầu của người sử dụng dữ liệu.
+
+################### MỤC 40 (Trang 26) [Từ khóa: lộ trình, bảo mật] ###################
+40 ====================
+--- Trang 26 [Từ khóa: bảo mật] ---
+2.3. BỘ 6 NGUYÊN TẮC ĐÁNH GIÁ
+Cụ thể mô tả chi tiết từng mục tiêu: xem phụ lục
+Tuân thủ pháp lý về bảo vệ dữ liệu 1
+Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung2
+Kiến trúc mô hình dữ liệu hiện đại và linh hoạt3
+Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai4
+Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn)5
+Đáp ứng lộ trình Chuyển đổi số theo Chiến lược CĐS của PTSC6
+Từ định hướng và mục tiêu tổng thể như trên, Dự án "Xây dựng Nền tảng Cơ sở dữ liệu dùng
+chung tại Tổng công ty PTSC" cần đảm bảo 6 mục tiêu cụ thể như sau:
+
+################### MỤC 46 (Trang 38) [Từ khóa: ngân sách, bảo mật] ###################
+46 ====================
+--- Trang 38 [Từ khóa: vận hành, quản trị dữ liệu, bảo mật, phân quyền, hybrid] ---
+3.3. TỔNG HỢP KẾT QUẢ ĐÁNH GIÁ THEO CÁC TIÊU CHÍ ĐÁNH GIÁ
+Tiêu chí On-Premise Data PlatformCloud Data Platform Hybrid Data Platform
+4. Đảm bảo có thể chuyển
+đổi, tái sử dụng và mở rộng
+quy mô trong tương lai
+Nhược điểm:
+Không đáp ứng yêu cầu về
+kiến trúc hiện đại - linh hoạt,
+hạn chế khả năng mở rộng.
+Nhược điểm:
+Khó khăn khi chuyển đổi và không thể tái sử
+dụng các mô hình kỹ thuật đã thiết lập.
+Ưu điểm:
+Đảm bảo khả năng chuyển đổi, tái sử dụng và mở rộng
+quy mô trong tương lai.
+Thuận lợi trong triển khai.
+5. An toàn thông tin (Bảo
+mật – Sẵn sàng – Toàn vẹn)
+Ưu điểm:
+Hiệu năng cao và ngân sách
+tối ưu.
+Phân quyền, vận hành phân
+tán.
+Ưu điểm:
+Sao lưu phục hồi, chia sẻ dữ liệu và bảo mật
+toàn diện theo chuẩn quốc tế.
+Nhược điểm:
+Phụ thuộc hoàn toàn vào Internet và đường
+truyền quốc tế.
+Rủi sự cố mất đồng bộ dữ liệu.
+Rủi ro bảo mật.
+Ưu điểm:
+Đảm bảo kiểm soát vận hành ổn định an toàn và bảo mật
+toàn diện.
+Sao lưu phục hồi, chia sẻ dữ liệu.
+
+################### MỤC 48 (Trang 3) [Từ khóa: lộ trình, bảo mật] ###################
+48 ====================
+--- Trang 3 [Từ khóa: bảo mật, hybrid] ---
+Trang 3/83
+MỤC LỤC
+CHƯƠNG 1 ĐỊNH HƯỚNG MỤC TIÊU VÀ NGUYÊN TẮC  ĐÁNH GIÁ LỰA CHỌN
+GIẢI PHÁP ................................................................................................................................ 8
+1.	Tổng quan về Mô hình kiến trúc nền tảng dữ liệu dùng chung tại Tổng công ty
+PTSC ........................................................................................................................................... 8
+2.	Mục tiêu trọng tâm của giải pháp .................................................................................... 8
+3.	Nguyên tắc đánh giá – lựa chọn giải pháp ....................................................................... 9
+4.	Các yêu cầu kỹ thuật tổng thể cho kiến trúc dữ liệu ...................................................... 9
+4.1.	 Tuân thủ các quy định pháp lý hiện hành về dữ liệu ................................................... 9
+4.2.	 Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung ...................................... 9
+4.3.	 Kiến trúc mô hình dữ liệu hiện đại và linh hoạt ........................................................ 10
+4.4.	 Đảm bảo khả năng chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai ...... 10
+4.5.	 Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn) ................................... 10
+4.6.	 Đáp ứ
+
+################### MỤC 50 (Trang 9) [Từ khóa: lộ trình, bảo mật] ###################
+50 ====================
+--- Trang 9 [Từ khóa: quản trị dữ liệu, bảo mật, nhạy cảm] ---
+Trang 9/83
+3. Nguyên tắc đánh giá – lựa chọn giải pháp
+Một số nguyên tắc cần được quán triệt trong quá trình lựa chọn và đánh giá giải pháp cũng
+như thiết kế kiến trúc Mô hình quản trị dữ liệu, cụ thể:
+- Tuân thủ các quy định pháp lý hiện hành về dữ liệu;
+- Đảm bảo quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung;
+- Kiến trúc mô hình dữ liệu hiện đại và linh hoạt;
+- Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai;
+- Đảm bảo các yêu cầu, quy định về an toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn);
+- Đáp ứng lộ trình theo Chiến lược Chuyển đổi số của PTSC
+4. Các yêu cầu kỹ thuật tổng thể cho kiến trúc dữ liệu
+4.1. Tuân thủ các quy định pháp lý hiện hành về dữ liệu
+- Lưu trữ dữ liệu gốc: Đảm bảo toàn bộ dữ liệu gốc (raw data) được lưu trữ và xử lý
+trong lãnh thổ Việt Nam, phù hợp với quy định pháp luật và yêu cầu bảo vệ dữ liệu
+quốc gia;
+- Chia sẻ dữ liệu: Không cho phép chuyển dữ liệu, log hệ thống hoặc bất kỳ thành phần
+liên quan nào ra nước ngoài, trừ khi có văn bản cho phép chính thức từ cơ quan có thẩm
+quyền hoặc lãnh đạo Tổng công ty;
+- Mã hoá dữ liệu: Dữ liệu phải được mã hóa trong suốt quá trình truyền và lưu trữ, tuân
+theo các tiêu chuẩn về an toàn thông tin;
+- Bảo vệ dữ liệu: Tuân thủ đầy đủ các quy định pháp luật liên quan đến bảo vệ dữ liệu
+cá nhân, q
+
+################### MỤC 53 (Trang 12) [Từ khóa: chi phí, bảo mật] ###################
+53 ====================
+--- Trang 12 [Từ khóa: chi phí, vận hành, bảo mật, phân quyền, hạ tầng] ---
+Trang 12/83
+2. Quyền sở
+hữu và kiểm
+soát kỹ thuật
+với CSDL dùng
+chung
+Ưu điểm:
+Tổng công ty có toàn
+quyền sở hữu và
+kiểm soát kỹ thuật
+đối với CSDL dùng
+chung.
+Nhược điểm:
+Không kiểm soát được
+hạ tầng kỹ thuật và rủi
+ro phụ thuộc vào nhà
+cung cấp dịch vụ điện
+toán đám mây.
+Ưu điểm:
+Thiết kế đảm bảo quyền
+sở hữu, kiểm soát kỹ
+thuật với CSDL dùng
+chung và hạn chế tối đa
+phụ thuộc Nhà cung cấp
+3. Kiến trúc mô
+hình dữ liệu
+hiện đại và linh
+hoạt
+Nhược điểm:
+Hạn chế khả năng
+tích hợp, chia sẻ dữ
+liệu và đổi mới sáng
+tạo. Khó khăn trong
+tích hợp các công
+nghệ hiện đại.
+
+################### MỤC 54 (Trang 13) [Từ khóa: chi phí, ngân sách, lộ trình] ###################
+54 ====================
+--- Trang 13 [Từ khóa: dung lượng, chi phí, vận hành, hybrid, hạ tầng] ---
+Trang 13/83
+(2025–2030, định
+hướng 2035).
+lộ trình chuyển đổi số
+dài hạn.
+- Về mặt chi phí đầu tư và vận hành:
+Tiêu chí
+đánh giá
+On-Premise Data
+Platform
+Cloud Data Platform Hybrid Data Platform
+Chi phí
+đầu tư
+ban đầu
+Ưu điểm: Tổng thể chi
+phí đầu tư một lần, dễ dự
+toán vốn.
+Nhược điểm: Yêu cầu
+đầu tư hạ tầng phần
+cứng, phần mềm, nhân
+sự quản trị kỹ thuật ngay
+từ đầu, chi phí ban đầu
+rất cao.
+Ưu điểm: Không yêu cầu
+đầu tư hạ tầng ban đầu,
+mô hình OPEX phù hợp
+ngân sách linh hoạt.
+Nhược điểm: Chi phí
+hàng tháng tăng theo
+dung lượng, lưu lượng và
+thời gian sử dụng. Có thể
+phát sinh chi phí bất ngờ.
+Ưu điểm: Tối ưu chi phí theo
+giai đoạn và chức năng triển
+khai. Có thể sử dụng hạ tầng
+
+################### MỤC 73 (Trang 45) [Từ khóa: phân loại, bảo mật] ###################
+73 ====================
+--- Trang 45 [Từ khóa: bảo mật, phân quyền, fabric, hạ tầng] ---
+Trang 45/83
++ Cung cấp cơ chế phân loại dữ liệu theo chuẩn nghiệp vụ hoặc quy định nội bộ.
+- Phân quyền truy cập và bảo mật metadata
++ Áp dụng mô hình phân quyền chi tiết theo vai trò (RBAC), hỗ trợ cấp quyền
+đọc/sửa/xóa metadata đến từng thực thể (bảng, cột, báo cáo…).
++ Cho phép cấu hình quyền theo người dùng, nhóm, phòng ban hoặc domain.
++ Tích hợp xác thực người dùng từ hệ thống định danh trung tâm như LDAP,
+Azure AD hoặc hệ thống SSO nội bộ.
+- Tìm kiếm và giao diện truy vấn metadata
++ Hỗ trợ tìm kiếm nâng cao theo tên, mô tả, tag, người sở hữu, loại thực thể và
+domain.
++ Giao diện người dùng thân thiện, hiển thị rõ mối liên hệ, nguồn gốc và trạng
+thái dữ liệu.
++ Cung cấp API để truy xuất và cập nhật metadata từ hệ thống ngoài.
+- Theo dõi và kiểm soát hoạt động metadata
++ Ghi nhận toàn bộ thao tác với metadata: tạo, cập nhật, xóa, truy cập…
++ Cung cấp giao diện hoạt động (activity feed) và báo cáo kiểm toán (audit log).
++ Hỗ trợ tích hợp với hệ thống giám sát và cảnh báo tập trung (SIEM).
+- Tích hợp và mở rộng
++ Hỗ trợ kết nối với các hệ thống phân tích dữ liệu, ETL, BI, quản trị báo cáo,
+pipeline và mô hình AI/ML để lấy metadata tự động.
++ Cho phép mở rộng schema metadata hoặc tích hợp thêm connector qua API
+hoặc SDK.
++ Hỗ trợ đồng bộ metadata hai chiều với các hệ thống lưu trữ dữ liệu
+
+################### MỤC 77 (Trang 50) [Từ khóa: chi phí, bảo mật] ###################
+77 ====================
+--- Trang 50 [Từ khóa: chi phí, vận hành, bảo mật, phân quyền, fabric, hạ tầng] ---
+Trang 50/83
+Tiêu chí đánh
+giá Microsoft Fabric AWS (Redshift,
+Glue, Athena)
+GCP (BigQuery,
+Looker)
+IBM Cloud Pak /
+DataStage /
+Watsonx
+SAP Datasphere /
+HANA Cloud
+4. Khả năng
+mở rộng – tái
+sử dụng – đa
+nền tảng
+Đạt
+Khả năng mở rộng
+cao, tận dụng stack
+Azure, Power BI dễ
+dùng lại.
+Đạt
+Scale tốt cả
+compute & storage.
+Glue & Lambda hỗ
+trợ linh hoạt
+pipeline reuse.
+Đạt
+BigQuery auto -
+scaling, dễ dùng lại
+query/pipeline.
+Không đạt
+Chỉ hỗ trợ tốt nếu
+triển khai trọn bộ
+Cloud Pak; khả năng
+tái sử dụng phụ thuộc
+
+################### MỤC 88 (Trang 70) [Từ khóa: chi phí, bảo mật] ###################
+88 ====================
+--- Trang 70 [Từ khóa: chi phí, vận hành, quản trị dữ liệu, bảo mật, quyết định, fabric, hạ tầng] ---
+Trang 70/83
++ Xác định rõ vai trò từng nhân sự, quyền được xem, quyền được sửa dữ liệu nào và
+ghi lại toàn bộ lịch sử truy cập, chỉnh sửa để truy vết khi cần.
+- Phối hợp giữa các bộ phận
++ Là cầu nối giữa đội công nghệ thông tin, đội phân tích số liệu, đội vận hành, đội
+tài chính. Hỗ trợ các bên sử dụng đúng nguồn dữ liệu và hiểu đúng ý nghĩa.
+- Xử lý sự cố liên quan đến dữ liệu
++ Khi có vấn đề như dữ liệu không cập nhật, báo cáo lỗi, hệ thống treo, trung tâm sẽ
+tiếp nhận, phối hợp xử lý hoặc chuyển đến đúng bộ phận kỹ thuật.
+- Quản lý việc lưu trữ và dọn dẹp dữ liệu
++ Lập kế hoạch lưu trữ dữ liệu dài hạn, đảm bảo không mất dữ liệu và dọn dẹp dữ
+liệu cũ, không còn giá trị sử dụng để tiết kiệm tài nguyên.
+- Giám sát việc tuân thủ quy định
++ Kiểm soát dữ liệu nhằm tuân thủ quy định nhà nước, quy định nội bộ về bảo mật,
+lưu trữ, chia sẻ thông tin. Phối hợp với các bộ phận pháp lý và an toàn thông tin
+khi cần thiết.
+- Thiết kế dữ liệu
++ Cùng với các bộ phận liên quan xây dựng cấu trúc dữ liệu rõ ràng, dễ hiểu, dễ dùng
+cho báo cáo và phân tích. Giúp các đơn vị trong tổng công ty hiểu và dùng đúng
+tên gọi, mã số, bảng biểu trong hệ thống.
+- Sản xuất sản phẩm dữ liệu
++ Lập kế hoạch, triển khai các bước để biến dữ liệu thô thành sản phẩm dữ liệu, có
+thể sử dụng 
+
+################### MỤC 97 (Trang 21) [Từ khóa: chi phí, ngân sách] ###################
+97 ====================
+--- Trang 21 [Từ khóa: chi phí, quyết định] ---
+QUY TRÌNH PHỐI HỢP
+Cấp Vai trò PTSC Vai trò HIPT-AITS Phạm vi xử lý & điều kiện chuyển
+cấp
+Cấp 1 – Ban Chỉ
+đạo Dự án
+Định hướng mục tiêu và
+ưu tiên chiến lược
+Cam kết nguồn lực & đảm
+bảo năng lực triển khai
+Quyết định các thay đổi ảnh hưởng mục tiêu
+tổng thể, ngân sách hoặc định hướng dự án
+Cấp 2 – Ban Quản
+trị Dự án
+Điều hành nghiệp vụ,
+kiểm soát phạm vi & tiến
+độ
+Điều phối kế hoạch kỹ thuật
+& quản lý triển khai
+Xử lý vấn đề ảnh hưởng tiến độ hoặc phạm vi
+trong dự án. Chuyển cấp khi ảnh hưởng mục
+tiêu tổng thể hoặc phát sinh ngân sách
+Cấp 3 – Đội Triển
+khai Dự án
+Làm rõ nghiệp vụ, xác
+nhận dữ liệu & kiểm thử
+Thiết kế, phát triển, tích hợp
+& xử lý kỹ thuật
+Xử lý vấn đề trong phạm vi đã thống nhất.
+Chuyển cấp khi: ảnh hưởng mốc tiến độ cam
+kết, phát sinh chi phí ngoài phạm vi, hoặc thay
+đổi yêu cầu đã được thống nhất
