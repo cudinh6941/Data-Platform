@@ -1,0 +1,144 @@
+=== Trang 5 ===
+  • Thời gian thực: AI
+  KẾT QUẢ
+  Kết quả cốt lõi
+
+=== Trang 9 ===
+  KẾ HOẠCH HÀNH ĐỘNG
+  Lộ trình CĐS cụ thể cho các hoạt động SXKD chuyên ngành (IT và OT).
+
+=== Trang 10 ===
+  LỘ TRÌNH & DÒNG DỮ LIỆU
+  Lộ trình chuyển đổi & vòng đời dữ liệu PTSC
+  kết quả
+
+=== Trang 13 ===
+  Kết quả tổng hợp — Trung tâm giám sát vận hành
+  Theo dõi – Đánh giá – Giám sát vận hành theo thời gian thực
+  * Số liệu minh hoạ nhằm mô phỏng màn hình trung tâm giám sát vận hành (6 –10 chỉ số chính); triển khai t hực tế sẽ kết nối dữ liệu thời gian thực từ nền tảng PPDM + Cloud.
+
+=== Trang 14 ===
+  Gợi ý ứng dụng cho PTSC:  các chỉ số về thời gian quay vòng tàu, thời gian chờ cầu cảng và phân bổ thời gian cập cảng là ví dụ tham khảo tốt khi xây dựng bộ KPI giám sát cho dịch
+
+=== Trang 22 ===
+  3 Xác định thời hạn lưu trữ cho mọi nhóm dữ liệu của miền — điều kiện để vận
+  Chất lượng dữ liệu là một tiêu chí đánh giá mức độ hoàn thành nhiệm vụ.
+
+=== Trang 23 ===
+  1. Tính chất chia sẻ Công khai / dùng chung / dùng chung có điều kiện / dùng riêng Cấp 3 phê duyệt
+  2. Mức độ quan trọng Cốt lõi / quan trọng / khác Cấp 1 ban hành tiêu chí
+  4. Dữ liệu cá nhân Cá nhân cơ bản / cá nhân nhạy cảm / không phải dữ liệu cá nhân Cấp 1 ban hành tiêu chí
+
+=== Trang 28 ===
+  8 tiêu chí chất lượng Đầy đủ · chính xác · hợp lệ · toàn vẹn · kịp thời · thống nhất · duy nhất · truy vết được
+  Báo cáo nội bộ theo quý; báo cáo tổng hợp hằng năm gửi Petrovietnam.
+
+=== Trang 30 ===
+  06 · LỘ TRÌNH
+  Lộ trình và việc cần làm ngay
+  A · LỘ TRÌNH TRIỂN KHAI
+
+=== Trang 31 ===
+  3. LỘ TRÌNH TRIỂN KHAI MỞ RỘNG
+
+=== Trang 32 ===
+  C. LỘ TRÌNH MỞ RỘNG DATA PLATFORM (Dự
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 27
+
+=== Trang 33 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 28
+
+=== Trang 35 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 30
+
+=== Trang 36 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 31
+
+=== Trang 37 ===
+  TTg); điều kiện chuyển xuyên biên giới; quản trị dữ
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 32
+
+=== Trang 40 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 35
+
+=== Trang 41 ===
+  Điều kiện bắt buộc cho AI, IoT, BI
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 36
+
+=== Trang 42 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 37
+
+=== Trang 43 ===
+  Data Platform là điều kiện bắt buộc để đạt mức trưởng thành số cao
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 38
+
+=== Trang 44 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 39
+
+=== Trang 45 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 40
+
+=== Trang 46 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 44
+
+=== Trang 47 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 47
+
+=== Trang 48 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 45
+
+=== Trang 49 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 41
+
+=== Trang 50 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 46
+
+=== Trang 51 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 42
+
+=== Trang 52 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 43
+
+=== Trang 53 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 48
+
+=== Trang 54 ===
+  Tiêu chí L1 L2 L3 L4
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 49
+
+=== Trang 55 ===
+  Điều kiện xem xét nâng đơn vị lên spoke riêng
+  độ cao Dữ liệu vận hành thiết bị, sensor, thời gian thực mà độ trễ qua hub không đáp ứng
+  Bốn tiêu chí được định lượng trong quy chế quản trị dữ liệu và xét định kỳ hàng năm. Riêng PTSC M&C sẽ có phiên thảo luận riê ng về mô hình kiến trúc dữ
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 50
+
+=== Trang 56 ===
+  lộ trình đạt chuyển đổi số mức 3–4;
+  lộ trình mở rộng Data Platform theo
+  Danh sách và mức kiến trúc áp dụng cho từng đơn vị được chốt sau khảo sát Giai đoạn 2A.
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 51
+
+=== Trang 59 ===
+  TIÊU CHÍ “TỐT NGHIỆP” LÊN SPOKE RIÊNG  - Level 4
+  Tiêu chí Ngưỡng xem xét
+  Dữ liệu vận hành thiết bị / sensor / thời gian thực mà độ trễ qua hub không
+
+=== Trang 60 ===
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 56
+
+=== Trang 61 ===
+  Bản quyền 12 tháng cho cloud và
+  đoạn 2A
+  Sau khảo sát, sizing và chốt danh
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 57
+
+=== Trang 62 ===
+  Bản quyền phần mềm nền tảng tính cho 12 tháng, gồm cloud, ingestion, Lakehouse, ESB, MDM, phân quyền Data Operation, xử lý dữ liệu, Text-to-data, SIEM và quản trị siêu dữ liệu.
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 58
+
+=== Trang 63 ===
+  quyền quy mô lớn; tiến độ đồng bộ.
+  Tiến độ không đồng đều; nguy cơ lệch
+  cụ thể xây dựng trong Giai đoạn 2A.
+  HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 59
+

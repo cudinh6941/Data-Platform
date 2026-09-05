@@ -1,0 +1,36 @@
+=== Trang 35 ===
+   Microsoft Fabric / OneLake (20TB), Purview, 70 người
+   HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 30
+
+=== Trang 53 ===
+   của TCT L2 — Dùng chung, có phần mềm riêng L3 — Phân vùng dữ liệu riêng trên
+   thiết kế Phải thiết kế thêm một phần Đăng ký thêm phân vùng tenant cho
+   Hạ tầng Tổng công ty đã đầu tư Tổng công ty đầu tư mở rộng theo nhu cầu
+   Tổng công ty đầu tư mở rộng, tính
+   thêm nhu cầu tenant
+   HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 48
+
+=== Trang 54 ===
+   Phát sinh chi phí license và tenant;
+   Như L2, cộng license phần mềm
+   nền tảng theo phân vùng dữ liệu
+   tenant
+   Khi phát sinh nhu cầu phân vùng dữ
+   HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 49
+
+=== Trang 61 ===
+   Bảy cấu phần chi phí của phương án mở rộng
+   L4; mở rộng dung lượng hub cho
+   License phần mềm nền tảng
+   phân vùng tenant theo cấu hình
+   vận hành chung phân bổ theo
+   Sau khảo sát, sizing và chốt danh
+   HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 57
+
+=== Trang 62 ===
+   License phần mềm nền tảng Không Không Có Có
+   Vận hành Chi phí vận hành nền tảng Phân bổ theo
+   Phân bổ theo
+   Phân bổ theo
+   HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 58
+

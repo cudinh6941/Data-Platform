@@ -1,0 +1,255 @@
+=== Trang 33 ===
+ 
+ Trang 33/83 
+2.3. Đề xuất lựa chọn 
+Đề xuất ứng dụng một trong các công cụ sau (có thể kết hợp): Minio, Parquet, Apache và 
+các giải pháp tương đương, bắt buộc đáp ứng các tiêu chí: 
++ Hỗ trợ định dạng phân tích hiện đại: Parquet + table format như Apache Iceberg 
++ Lưu trữ dạng Object Storage, tương thích S3, triển khai được on-prem 
++ Tích hợp tốt hệ sinh thái mở: Spark, Trino, Kafka, Airbyte, OpenMetadata 
+3. Phân hệ Trục tích hợp (Enterprise Service Bus – ESB) 
+3.1. Mô tả yêu cầu nghiệp vụ 
+- Mô tả: Phân hệ Trục tích hợp (Integration Bus/ESB), đóng vai trò như "xương sống 
+giao tiếp" giữa các hệ thống trong tổ chức – từ ứng dụng nghiệp vụ, hệ thống dữ liệu, 
+cho tới dịch vụ bên ngoài. 
+- Mục tiêu: 
++ Dữ liệu được nhập một lần duy nhất và được dùng chung xuyên suốt các phần 
+mềm 
++ Tạo một hạ tầng tích hợp chính xác, ổn định, mở rộng, linh hoạt và giảm thiểu 
+phụ thuộc kết nối 1:1  point-to-point. 
++ Đảm bảo khả năng tích hợp hệ thống hiện tại và tương lai một cách hiệu quả, 
+giúp hệ sinh thái CNTT của tổ chức trở nên linh hoạt, thông minh và kiểm soát 
+được. 
+3.2. Yêu cầu kỹ thuật 
+- Giao thức và định dạng hỗ trợ 
++ Hỗ trợ đa dạng giao thức truyền thông: HTTP/HTTPS, SOAP, REST, GraphQL, 
+gRPC, JMS, MQTT, WebSocket, FTP/SFTP. 
++ Hỗ trợ tích hợp với message broker hoặc event streaming platform như Kafka, 
+NATS, RabbitMQ. 
++ Có khả năng xử lý và chuyển đổi định dạng dữ liệu phổ biến: JSON, XML, 
+CSV, Text, Avro, Parquet. 
+- Luồng xử lý tích hợp 
++ Hỗ trợ xây dựng luồng tích hợp tùy chỉnh (integration flow) với các chức năng: 
+định tuyến (routing), biến đổi dữ liệu (transformation), gọi dịch vụ, xử lý điều 
+kiện. 
++ Cho phép kết hợp các mô hình xử lý đồng bộ (request-response) và bất đồng bộ 
+(event-driven, queue-based). 
++ Hỗ trợ cấu hình flow qua giao diện đồ họa hoặc ngôn ngữ khai báo (DSL). 
+- Hiệu suất và khả năng mở rộng 
++ Cho phép triển khai dạng cụm phân tán (clustered) để mở rộng tải. 
++ Hỗ trợ thực thi song song, tối ưu thông lượng với khả năng scale-out. 
++ Cung cấp cơ chế xử lý lỗi: retry, timeout, circuit breaker, backpressure. 
+- Bảo mật và quản trị truy cập 
++ Hỗ trợ xác thực đa phương thức: OAuth2, JWT, Basic Auth, API Key, SAML. 
+
+=== Trang 34 ===
+ 
+ Trang 34/83 
++ Có thể phân quyền truy cập đến các endpoint, dịch vụ, dữ liệu trong luồng tích 
+hợp. 
++ Hỗ trợ mã hóa dữ liệu trong quá trình truyền tải và xác minh danh tính giữa các 
+dịch vụ. 
+- Giám sát và ghi log 
++ Ghi log chi tiết từng bước trong luồng xử lý: input/output, lỗi, thời gian thực thi. 
++ Hỗ trợ tích hợp với hệ thống giám sát như ELK, Prometheus, Grafana. 
++ Có khả năng cảnh báo khi có lỗi, tắc nghẽn, hoặc bất thường (qua email, 
+webhook, Slack…). 
+- Quản lý vòng đời tích hợp 
++ Hỗ trợ versioning, rollback và kiểm soát thay đổi của các flow và cấu hình tích 
+hợp. 
++ Cho phép tích hợp với hệ thống quản lý mã nguồn (Git) và quy trình CI/CD. 
++ Có cơ chế xác nhận (approve/release) trước khi áp dụng thay đổi lên môi trường 
+vận hành. 
+- Khả năng tích hợp hệ thống hiện hữu 
++ Cho phép kết nối với hệ thống cơ sở dữ liệu, ứng dụng nghiệp vụ (ERP, CRM, 
+DWH), cổng API và các dịch vụ nội bộ. 
++ Hỗ trợ đồng bộ và luồng dữ liệu thời gian thực giữa các hệ thống dị chủng. 
++ Cung cấp API hoặc SDK để các hệ thống ngoài có thể tương tác với nền tảng 
+tích hợp. 
+3.3. Đề xuất lựa chọn 
+- Đề xuất ứng dụng một trong các công cụ sau (có thể kết hợp): Apache Camel, WSO2 
+Enterprise Integrator, IBM App Connect Enterprise 
+4. Phân hệ Quản lý dữ liệu chủ (Master Data Management - MDM) 
+Giải pháp cần cung cấp năng lực quản lý dữ liệu chủ một cách tập trung, thống nhất, có 
+kiểm soát và có khả năng mở rộng, nhằm đảm bảo tính toàn vẹn, đồng bộ và tin cậy của dữ liệu 
+dùng chung trong toàn bộ hệ sinh thái dữ liệu. 
+4.1. Mô tả yêu cầu nghiệp vụ 
+Giải pháp cần có khả năng quản lý dữ liệu chủ một cách tập trung, linh hoạt, có kiểm soát, 
+đồng thời đảm bảo khả năng đồng bộ giữa các hệ thống và kiểm soát luồng phê duyệt cập nhật 
+dữ liệu. 
+- Hỗ trợ quản lý dữ liệu chủ đa miền (multi-domain) 
++ Cho phép cấu hình và quản lý các loại master data phổ biến: khách hàng, sản 
+phẩm, nhân sự, tổ chức, tài sản, v.v. 
++ Có thể tạo mô hình dữ liệu linh hoạt cho từng miền, bao gồm định nghĩa thuộc 
+tính, khóa chính, khóa thay thế. 
+- Tích hợp và đồng bộ dữ liệu chủ 
+
+=== Trang 35 ===
+ 
+ Trang 35/83 
++ Hỗ trợ đồng bộ dữ liệu chủ từ các hệ thống nguồn khác nhau theo thời gian thực 
+hoặc batch. 
++ Có cơ chế mapping schema, chuẩn hóa dữ liệu, phát hiện trùng lặp 
+(deduplication), hợp nhất bản ghi (merge & survivorship). 
++ Cho phép xử lý xung đột dữ liệu giữa các hệ thống theo rule hoặc workflow phê 
+duyệt. 
+- Luồng quy trình phê duyệt (workflow governance) 
++ Hỗ trợ cấu hình luồng phê duyệt thêm/sửa/xóa bản ghi dữ liệu chủ. 
++ Cho phép phân quyền người kiểm duyệt theo vai trò, phòng ban, loại dữ liệu. 
++ Có thể cấu hình trạng thái bản ghi: pending, approved, rejected, archived. 
+- Theo dõi thay đổi & kiểm toán (audit trail) 
++ Ghi nhận toàn bộ lịch sử thay đổi: người thao tác, thời gian, nội dung thay đổi. 
++ Hỗ trợ khôi phục bản ghi về trạng thái trước đó (rollback version). 
+- Quản trị metadata cho master data 
++ Cho phép gắn metadata mở rộng cho bản ghi: mô tả, tag, tài liệu liên quan. 
++ Hỗ trợ liên kết giữa master data và các bảng dữ liệu vận hành. 
++ Có khả năng tra cứu lineage và tác động thay đổi (impact analysis). 
+- Phân quyền và kiểm soát truy cập 
++ Phân quyền chi tiết theo từng domain, bản ghi, trường dữ liệu hoặc hành động 
+(xem/sửa/xóa/phê duyệt). 
++ Tích hợp với hệ thống quản lý định danh của tổ chức (IAM) để đồng bộ người 
+dùng và vai trò. 
+- Khả năng mở rộng và tích hợp 
++ Hỗ trợ mở rộng thêm domain, workflow, quy tắc kiểm tra dữ liệu mà không cần 
+lập trình lại toàn hệ thống. 
++ Có API để các hệ thống khác truy xuất hoặc cập nhật dữ liệu chủ theo thời gian 
+thực. 
++ Hỗ trợ tương thích với các hệ thống BI, phân tích, CRM/ERP để sử dụng master 
+data thống nhất. 
+4.2. Yêu cầu kỹ thuật 
+4.2.1. Mô hình hóa dữ liệu (Data Modeling) 
+- Hỗ trợ định nghĩa linh hoạt các mô hình dữ liệu master đa miền như khách hàng, sản 
+phẩm, tổ chức, nhân sự, tài sản… 
+- Cho phép khai báo thuộc tính, kiểu dữ liệu, khóa chính (primary key), khóa thay thế 
+(surrogate key) 
+4.2.2. Tích hợp dữ liệu (Data Integration) 
+- Hỗ trợ thu nhận dữ liệu chủ từ nhiều hệ thống nguồn qua API, file, cơ sở dữ liệu hoặc 
+stream. 
+- Cho phép cấu hình mapping schema giữa dữ liệu nguồn và dữ liệu chủ trung tâm. 
+
+=== Trang 36 ===
+ 
+ Trang 36/83 
+- Hỗ trợ cập nhật dữ liệu theo thời gian thực (CDC) hoặc theo lô (batch). 
+4.2.3. Làm sạch và chuẩn hóa (Cleansing & Standardization) 
+- Cung cấp công cụ xác thực và chuẩn hóa định dạng đầu vào: mã hóa, địa chỉ, số điện 
+thoại, ngày giờ, mã vùng… 
+- Hỗ trợ từ điển chuẩn hóa (reference data) và quy tắc tự động chuyển đổi dữ liệu 
+(transformation rule). 
+- Cho phép cấu hình validation rule để ngăn dữ liệu sai lệch trước khi ghi vào hệ thống. 
+4.2.4. So khớp và gộp dữ liệu (Matching & Merging) 
+- Hỗ trợ phát hiện trùng lặp (duplicate detection). 
+- Có khả năng gộp bản ghi tự động và thông báo đề xuất người quản lý phê duyệt đồng 
+bộ thủ công 
+4.2.5. Quản trị và giám sát dữ liệu (Governance & Stewardship) 
+- Phân quyền người chịu trách nhiệm từng domain dữ liệu (data steward). 
+- Cho phép theo dõi chất lượng dữ liệu, hiển thị dashboard cảnh báo dữ liệu sai hoặc 
+thiếu. 
+- Ghi nhận hành động của người vận hành (CRUD), trạng thái xử lý và lịch sử phê duyệt. 
+4.2.6. Quản lý phiên bản và lịch sử (Versioning & History) 
+- Ghi nhận đầy đủ lịch sử thay đổi từng bản ghi dữ liệu: giá trị cũ, giá trị mới, thời gian, 
+người thay đổi. 
+- Hỗ trợ chức năng rollback về phiên bản trước. 
+- Cho phép so sánh giữa các phiên bản của cùng một bản ghi. 
+4.2.7. Quy tắc nghiệp vụ và luồng phê duyệt (Business Rules & Workflow) 
+- Cho phép thiết kế luồng phê duyệt: thêm/sửa/xóa bản ghi theo trạng thái (pending, 
+approved, matching,  rejected…). 
+- Phân quyền kiểm duyệt theo nhóm, phòng ban, người dùng. 
+4.2.8. Công bố và làm giàu dữ liệu chủ (Publishing & Syndication) 
+- Hỗ trợ cung cấp master data cho các hệ thống khác qua API, export định kỳ, hoặc đồng 
+bộ 2 chiều. 
+- Có thể tạo dữ liệu công bố phù hợp với từng ứng dụng đích. 
+- Cho phép tích hợp với nguồn khác để tự động bổ sung thông tin (ví dụ: dữ liệu bên thứ 
+ba, dữ liệu ngữ nghĩa). 
+4.2.9. Quản lý truy cập và bảo mật (RBAC & Security) 
+- Hỗ trợ phân quyền chi tiết theo domain, bản ghi, thuộc tính và hành động 
+(xem/sửa/xóa/phê duyệt).’Tích hợp với hệ thống IAM ngoài để hỗ trợ SSO  
+- Ghi nhận toàn bộ lịch sử thay đổi: người thao tác, thời gian, loại thay đổi 
+(thêm/sửa/xoá). 
+
+=== Trang 37 ===
+ 
+ Trang 37/83 
+4.3. Đề xuất lựa chọn 
+Một số giải pháp tiêu biểu: IBM InfoSphere MDM, SAP Master Data Governance 
+(MDG)..vv. Hoặc nhà cung cấp đề xuất tự phát triển giải pháp đáp ứng các yêu cầu chức năng 
+trên – cần làm rõ công nghệ và đảm bảo tiêu chuẩn tích hợp mở, bảo trì lâu dài. 
+5. Quản lý và phân quyền cho các vai trò nhân sự Quản trị dữ liệu (Data 
+Operation) 
+Giải pháp cần cung cấp cơ chế phân quyền linh hoạt và bảo mật, cho phép xác định rõ vai 
+trò và phạm vi truy cập của từng nhóm người dùng trong toàn bộ chu trình vận hành dữ liệu 
+(DataOps), từ thu thập, xử lý, phân tích đến giám sát và kiểm soát dữ liệu. 
+5.1. Mô tả yêu cầu nghiệp vụ 
+- Mô tả: Đây là phân hệ dùng để xác định rõ vai trò và quyền hạn của từng nhóm người 
+dùng trong toàn bộ chu trình xử lý dữ liệu (DataOps), từ bước thu thập đến xử lý, 
+phân tích, và giám sát dữ liệu. 
+- Mục tiêu: 
++ Đảm bảo mỗi người chỉ được truy cập đúng phần dữ liệu, đúng chức năng họ 
+được giao. 
++ Tăng cường bảo mật, tránh rò rỉ dữ liệu hoặc thay đổi ngoài quyền hạn. 
++ Hỗ trợ phân quyền linh hoạt, phù hợp với cơ cấu tổ chức và nghiệp vụ quản trị 
+dữ liệu của doanh nghiệp. 
+5.2. Yêu cầu kỹ thuật 
+- Mô hình phân quyền theo vai trò (Role-Based Access Control – RBAC) 
++ Hỗ trợ định nghĩa nhiều vai trò người dùng phù hợp với từng giai đoạn trong 
+DataOps: ingest, transform, quality check, publish, monitor… 
++ Mỗi vai trò có thể gắn với một hoặc nhiều hành động cụ thể: xem, thêm mới, 
+cập nhật, xóa, phê duyệt, cấu hình. 
+- Phạm vi phân quyền chi tiết 
++ Cho phép phân quyền đến mức độ tài nguyên cụ thể: bảng dữ liệu, cột dữ liệu, 
+pipeline xử lý, API endpoint, báo cáo/dashboard. 
++ Có khả năng giới hạn quyền theo miền dữ liệu (data domain) hoặc nhóm dữ liệu 
+(data asset group). 
+- Tích hợp hệ thống định danh tập trung 
++ Hỗ trợ kết nối với hệ thống quản lý định danh như LDAP, Active Directory hoặc 
+hệ thống SSO của tổ chức. 
+- Quản lý và kiểm soát vai trò 
++ Cho phép tạo mới, sửa, gán, thu hồi vai trò một cách linh hoạt qua giao diện 
+quản trị hoặc API. 
++ Hỗ trợ gán vai trò theo người dùng cá nhân hoặc theo nhóm (user group, 
+department). 
+- Theo dõi và ghi nhận hoạt động truy cập 
+
+=== Trang 38 ===
+ 
+ Trang 38/83 
++ Ghi nhận toàn bộ hành động của người dùng: truy cập, thay đổi dữ liệu, thực thi 
+pipeline, xuất báo cáo… 
++ Hỗ trợ xuất log phục vụ mục đích kiểm toán (audit trail) và phát hiện truy cập 
+bất thường. 
++ Có thể tích hợp với hệ thống SIEM để phân tích hành vi và nâng cao cảnh báo 
+bảo mật. 
+- Khả năng mở rộng và phân lớp bảo mật 
++ Hỗ trợ phân lớp truy cập theo nhiều chiều: vai trò (role), vị trí tổ chức (org unit), 
+mức độ nhạy cảm của dữ liệu. 
++ Có thể mở rộng thêm loại quyền và chính sách (policy-based control) mà không 
+làm gián đoạn hệ thống hiện tại. 
+5.3. Đề xuất lựa chọn 
+Đề xuất ứng dụng một trong các công cụ sau (có thể kết hợp): RBAC (role-based access 
+control), giải pháp SSO (single sign on), giải pháp quản lý định danh và quản lý truy cập 
+(IAM), công cụ hỗ trợ tự động hoá quy trình. 
+6. Phân hệ Quản lý định danh tập trung và SSO 
+Giải pháp cần cung cấp năng lực quản lý định danh người dùng tập trung, đồng thời hỗ 
+trợ đăng nhập một lần (SSO) để đảm bảo truy cập thống nhất, bảo mật cao và trải nghiệm liền 
+mạch cho người dùng trong toàn bộ hệ sinh thái nền tảng dữ liệu. Hệ thống phải tích hợp trực 
+tiếp với Azure Active Directory (Azure AD) – hệ thống định danh trung tâm của tổ chức. 
+6.1. Mô tả yêu cầu nghiệp vụ 
+- Mô tả: Đây là phân hệ chịu trách nhiệm quản lý danh tính người dùng trong toàn hệ 
+thống và cung cấp cơ chế đăng nhập một lần (SSO) để người dùng có thể truy cập các 
+phân hệ khác nhau với cùng 1 định danh đã được cung cấp bởi tổ chức. 
+- Mục tiêu: 
++ Đảm bảo trải nghiệm liền mạch, thống nhất và an toàn cho người dùng trên 
+toàn bộ nền tảng dữ liệu. 
++ Quản trị tập trung toàn bộ người dùng, vai trò và quyền truy cập. 
++ Giảm rủi ro bảo mật nhờ kiểm soát xác thực chặt chẽ, ghi log truy cập rõ ràng. 
+6.2. Yêu cầu kỹ thuật 
+- Hỗ trợ Single Sign-On (SSO) 
++ Cho phép người dùng đăng nhập một lần (SSO) để truy cập nhiều phân hệ trên 
+nền tảng dữ liệu mà không cần nhập lại thông tin xác thực. 
++ Hỗ trợ tích hợp SSO với các hệ thống khác trong tổ chức như ứng dụng BI, cổng 
+API, công cụ xử lý dữ liệu, dashboard… 
+- Bảo mật và kiểm soát truy cập 
++ Hỗ trợ xác thực đa yếu tố (MFA)  
++ Ghi nhận đầy đủ log đăng nhập, trạng thái phiên (session), thời gian, IP, thiết bị 
+sử dụng. 
+

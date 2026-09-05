@@ -1,0 +1,27 @@
+06 · LỘ TRÌNH
+VIỆC CẦN LÀM NGAY
+Lộ trình và việc cần làm ngay
+A · LỘ TRÌNH TRIỂN KHAI
+HIỆN TRẠNG
+Hệ thống phân tán theo phòng ban, dữ liệu chưa 
+liên thông
+GIAI ĐOẠN 1
+Xây dựng Nền tảng dữ liệu và MDM Hub dùng 
+chung, trục tích hợp, chuẩn hóa dữ liệu, báo cáo 
+điều hành và dịch vụ dữ liệu chia sẻ về 
+Petrovietnam
+GIAI ĐOẠN 2
+Mở rộng hợp nhất dữ liệu IT và OT, lớp ngữ nghĩa 
+doanh nghiệp, nền tảng phân tích và AI
+B · VIỆC CẦN LÀM NGAY CỦA CÁC BAN VÀ ĐƠN VỊ
+• Xác nhận miền dữ liệu do Ban phụ trách và cử nhân sự Quản trị miền dữ liệu (Cấp 4)
+• Rà soát, lập danh mục dữ liệu dùng chung của Ban và hệ thống nguồn tương ứng
+• Nhận diện dữ liệu cốt lõi, dữ liệu quan trọng và dữ liệu cá nhân trong phạm vi quản lý
+• Xác định thời hạn lưu trữ cho các nhóm dữ liệu của miền
+• Công bố ngưỡng chất lượng cho các tập dữ liệu trọng yếu
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 25
+
+--- Page 31 ---
+
+3. LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 
+DATA PLATFORM TẠI ĐƠN VỊ

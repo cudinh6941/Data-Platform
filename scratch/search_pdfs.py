@@ -1,45 +1,36 @@
-import os
+import pypdf
+import glob
 import sys
-from pypdf import PdfReader
 
-tct_dir = r"d:\My Profiles\DataPlatform\TCT"
-out_file = r"d:\My Profiles\DataPlatform\scratch\pdf_analysis.txt"
+sys.stdout.reconfigure(encoding='utf-8')
 
-files = [f for f in os.listdir(tct_dir) if f.endswith(".pdf")]
+def search_terms_in_file(filepath, terms):
+    reader = pypdf.PdfReader(filepath)
+    results = []
+    for i, page in enumerate(reader.pages):
+        text = page.extract_text() or ""
+        matched = [t for t in terms if t.lower() in text.lower()]
+        if matched:
+            results.append((i + 1, matched, text))
+    return results
 
-keywords = [
-    "quảng ngãi", "l3", "spoke", "level 3", "level", "workspace", "dung lượng", "quota", 
-    "chi phí", "phí duy trì", "vận hành", "quy chế", "quản trị dữ liệu", "governance",
-    "bảo mật", "zone", "phân quyền", "quyết định", "nhạy cảm", "masking",
-    "minio", "fabric", "onelake", "hybrid", "đơn vị thành viên", "dự toán", "hạ tầng"
-]
+files = glob.glob('TCT/*.pdf')
 
-with open(out_file, "w", encoding="utf-8") as out:
-    out.write("=== PHÂN TÍCH TOÀN DIỆN CÁC FILE PDF TỔNG CÔNG TY ===\n\n")
-    
-    for f in files:
-        path = os.path.join(tct_dir, f)
-        out.write(f"\n=======================================================\n")
-        out.write(f"FILE: {f}\n")
-        out.write(f"=======================================================\n")
-        try:
-            reader = PdfReader(path)
-            out.write(f"Tổng số trang: {len(reader.pages)}\n\n")
-            
-            for idx, page in enumerate(reader.pages):
-                page_num = idx + 1
-                text = page.extract_text() or ""
-                text_lower = text.lower()
-                
-                # Check match
-                matched_kws = [kw for kw in keywords if kw in text_lower]
-                if matched_kws:
-                    out.write(f"--- Trang {page_num} [Từ khóa: {', '.join(matched_kws)}] ---\n")
-                    # Clean up text lines
-                    lines = [line.strip() for line in text.splitlines() if line.strip()]
-                    out.write("\n".join(lines[:35])) # First 35 lines of matching page
-                    out.write("\n\n")
-        except Exception as e:
-            out.write(f"Lỗi khi đọc file {f}: {e}\n")
+print("--- 1. TÌM KIẾM 'KICK OFF' ---")
+kickoff_res = search_terms_in_file('TCT/TCT-DP_Slide_Kick off_Final.pdf', ['phân công', 'vai trò', 'trách nhiệm', 'đơn vị', 'tiến độ', 'kế hoạch', 'master data', 'danh mục', 'l3', 'level'])
+for p, terms, text in kickoff_res:
+    print(f"\n[Kick off - Page {p}] Matched: {terms}")
+    print(text[:800])
 
-print("Done! Check scratch/pdf_analysis.txt")
+print("\n--- 2. TÌM KIẾM 'MASTER DATA' & '29' TRONG TẤT CẢ FILE ---")
+for f in files:
+    res = search_terms_in_file(f, ['29 danh mục', 'danh mục dữ liệu', 'master data management', 'mdm', 'danh mục'])
+    if res:
+        print(f"\nFile: {f} ({len(res)} pages matched)")
+        for p, terms, text in res:
+            # check if 29 is in text
+            if '29' in text or 'danh mục' in text.lower():
+                print(f"  Page {p} (Terms: {terms}):")
+                lines = [l.strip() for l in text.split('\n') if l.strip()]
+                for l in lines[:10]:
+                    print("    ", l[:120])

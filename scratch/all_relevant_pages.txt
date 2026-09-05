@@ -1,0 +1,108 @@
+[Phien_Chieu] Trang 7 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: HIỆN TRẠNG PTSC Hiện trạng hệ thống CSDL của PTSC Vấn đề trọng tâm:  Hiện đang chưa liên kết được mô hình quản trị định lượng tổng thể CL Chiến Lược Tầm Nhìn Và Chiến Lược Mô Hình Hoạt Động Thiết Lập Và Giám Sát Mục Tiêu CT Cấu trúc tổ chức Cơ Cấu Tổ Chức (Chức Năng) Quản Trị Tập Đoàn (Cấp Độ Tập Đo
+
+[Phien_Chieu] Trang 19 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: 01 · BỐI CẢNH VÌ SAO CẦN KHUNG QUẢN TRỊ DỮ LIỆU Vì sao PTSC cần Khung quản trị dữ liệu ● Hiện trạng: dữ liệu nằm phân tán trong từng hệ thống nghiệp vụ, thiếu  chuẩn chung giữa các đơn vị, báo cáo còn phụ thuộc tổng hợp thủ công ● Petrovietnam vừa ban hành hệ thống văn bản mới: Quy chế Quản trị  dữ 
+
+[Phien_Chieu] Trang 21 | Từ khóa: ['đơn vị', 'trách nhiệm', 'quản trị dữ liệu']
+Snippet: 02 · CẤU TRÚC MÔ HÌNH QUẢN TRỊ 5 CẤP Mô hình quản trị dữ liệu 5 cấp Cấp Chủ thể Vai trò chính Cấp 1 Hội đồng Quản trị Dữ liệu (và Văn phòng Quản trị  Dữ liệu) Định hướng chiến lược; phê duyệt chính sách, tiêu chuẩn; xử lý xung đột liên miền Cấp 2 Hội đồng Dữ liệu khối / chuyên ngành Điều phối liên B
+
+[Phien_Chieu] Trang 30 | Từ khóa: ['đơn vị', 'Giai đoạn 2']
+Snippet: 06 · LỘ TRÌNH VIỆC CẦN LÀM NGAY Lộ trình và việc cần làm ngay A · LỘ TRÌNH TRIỂN KHAI HIỆN TRẠNG Hệ thống phân tán theo phòng ban, dữ liệu chưa  liên thông GIAI ĐOẠN 1 Xây dựng Nền tảng dữ liệu và MDM Hub dùng  chung, trục tích hợp, chuẩn hóa dữ liệu, báo cáo  điều hành và dịch vụ dữ liệu chia sẻ về
+
+[Phien_Chieu] Trang 38 | Từ khóa: ['trách nhiệm', 'RACI', 'quản trị dữ liệu']
+Snippet: MÔ HÌNH PHÂN CẤP VAI TRÒ QUẢN TRỊ DỮ LIỆU PTSC (5 LEVELS) 4 LEVEL ĐIỀU HÀNH – 1 LEVEL TRIỂN KHAI – 1 LEVEL KỸ THUẬT LEVEL 1 ENTERPRISE DATA GOVERNANCE Hội đồng Quản trị Dữ liệu (Data Governance Council) THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM • HĐQT & Ban TGĐ • Lãnh đạo cấp cao PTSC • Đại diện các khối t
+
+[Phien_Chieu] Trang 45 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: 03 MỤC TIÊU VÀ NGUYÊN TẮC Bốn nguyên tắc triển khai áp dụng chung toàn Tổng công ty 01 Dữ liệu là tài sản của Tổng công ty Được quản trị như tài sản chiến lược, độc lập với vòng đời phần  mềm nghiệp vụ. 02 Dùng chung các hệ thống nền tảng ERP, HRM, E-Office, Data Platform, E -Learning, QTRR triển kh
+
+[Phien_Chieu] Trang 46 | Từ khóa: ['đơn vị', 'trách nhiệm', 'quản trị dữ liệu']
+Snippet: 04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT Vai trò quản trị dữ liệu được phân cấp năm mức 1 Enterprise Data Governance Hội đồng Quản trị Dữ liệu · Ban Tổng Giám  đốc Định hướng chiến lược dữ liệu, phê duyệt chính sách và tiêu chuẩn, quyết định dữ liệu dùng chung, giám  sát Governance / BI / AI 2 Executive Data Co
+
+[Phien_Chieu] Trang 47 | Từ khóa: ['Level 3', 'trách nhiệm']
+Snippet: 04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT Logic phối hợp giữa các cấp và nguyên tắc vận hành dữ liệu LOGIC PHỐI HỢP VÀ LUỒNG DỮ LIỆU Chiến lược và Chính sách Định hướng từ Level 1 Điều phối và Hướng dẫn Điều phối từ Level 2 Sở hữu và Quyết định Ownership ở Level 3 Triển khai và Kiểm soát Thực thi ở Level 4 Vận h
+
+[Phien_Chieu] Trang 48 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: Mô hình phân cấp vai trò quản trị dữ liệu PTSC — 5 levels 4 level điều hành · 1 level triển khai · 1 level kỹ thuật LEVEL 1 ENTERPRISE DATA  GOVERNANCE Hội đồng Quản trị Dữ liệu THÀNH PHẦN • Ban TGĐ • Lãnh đạo cấp cao PTSC • Đại diện các khối trọng yếu VAI TRÒ CHÍNH Định hướng chiến lược dữ liệu Phê
+
+[Phien_Chieu] Trang 53 | Từ khóa: ['đơn vị', 'L3']
+Snippet: 05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI Đơn vị được phân nhóm theo pháp nhân, quy mô và mức trưởng thành  số Nội dung L1 — Dùng chung như một Ban  của TCT L2 — Dùng chung, có phần mềm riêng L3 — Phân vùng dữ liệu riêng trên  hub L4 — Hybrid Data Platform  riêng Pháp nhân Chi nhánh trực thuộc Chi nhá
+
+[Phien_Chieu] Trang 54 | Từ khóa: ['đơn vị', 'L3']
+Snippet: 05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI Mỗi level có ưu điểm, hạn chế và chi phí khác nhau Tiêu chí L1 L2 L3 L4 Ưu điểm Tiết kiệm chi phí và nguồn lực  nhất; kiến trúc dữ liệu và tích  hợp đồng bộ ngay Giữ được phần mềm đã đầu tư, vẫn  tích hợp được về nền tảng chung Có vùng dữ liệu chuyên ngành  ri
+
+[Phien_Chieu] Trang 55 | Từ khóa: ['đơn vị', 'L3', 'quản trị dữ liệu']
+Snippet: 05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI Điều kiện xem xét nâng đơn vị lên spoke riêng Khối lượng và tốc độ tăng dữ liệu Đẩy dữ liệu thô về hub tốn kém hơn xử lý tại chỗ, tính trên băng thông và lưu trữ Nhu cầu phân tích chuyên ngành cường  độ cao Dữ liệu vận hành thiết bị, sensor, thời gian thực mà 
+
+[Phien_Chieu] Trang 56 | Từ khóa: ['đơn vị', 'L3', 'nhóm 4', 'Nhóm 4', 'Giai đoạn 2', '2A']
+Snippet: 05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI Mười bảy đơn vị và chi nhánh được phân về bốn nhóm triển khai 17 Đơn vị và chi nhánh 4 Nhóm triển khai Phân bổ theo mức kiến trúc L1 · 5 đơn vị L2 · 2 đơn vị L3 · 13 đơn vị L4 · 1 đơn vị Nhóm 1 Chi nhánh nhỏ · L1 Văn phòng Hà Nội Miền Trung Petro Hotel Long Ph
+
+[Phien_Chieu] Trang 61 | Từ khóa: ['đơn vị', '2A']
+Snippet: 08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ Bảy cấu phần chi phí của phương án mở rộng 01 Hạ tầng Hạ tầng dHCI tại đơn vị áp dụng  L4; mở rộng dung lượng hub cho  các level còn lại. Tận dụng máy  chủ sẵn có của đơn vị nếu đáp  ứng. 02 License phần mềm nền tảng Bản quyền 12 tháng cho cloud và  các phần mềm nền tảng;
+
+[Phien_Chieu] Trang 62 | Từ khóa: ['đơn vị', 'L3']
+Snippet: 08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ Chi phí phát sinh theo từng level triển khai Nhóm Hạng mục chi phí L1 L2 L3 L4 Hàng hóa Hạ tầng dHCI riêng tại đơn vị Không Không Không Có License phần mềm nền tảng Không Không Có Có Dịch vụ Triển khai Data Platform Không Có Có Có Phần mềm dùng chung với Tổng công ty — th
+
+[Phien_Chieu] Trang 63 | Từ khóa: ['đơn vị', 'Giai đoạn 2', '2A', 'trách nhiệm', 'kiến nghị']
+Snippet: 08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ Kiến nghị cơ chế đầu tư kết hợp giữa Tổng công ty và đơn vị PHƯƠNG ÁN 1 Tổng công ty đầu tư tập trung toàn  bộ, phân bổ chi phí sử dụng ƯU ĐIỂM Chuẩn nhất quán tuyệt đối; đàm phán bản  quyền quy mô lớn; tiến độ đồng bộ. HẠN CHẾ Gánh nặng ngân sách tập trung; đơn vị  thiếu
+
+[Phien_Sang] Trang 4 | Từ khóa: ['đơn vị', 'Giai đoạn 2']
+Snippet: CĂN CỨ XÁC ĐỊNH MỤC TIÊU Giải pháp thực hiện cho trụ cột  “Cơ sở dữ liệu” của chiến lược CĐS PTSC MỤC TIÊU 2024-2025 MỤC TIÊU  2026-2027 MỤC TIÊU  2028-2030 [1] Xây dựng CSDL dùng chung giai đoạn 1 (tại Cơ quan Tổng công ty); [2] Xây dựng mô hình quản trị dữ liệu; [3] Xây dựng báo cáo thông minh gia
+
+[Phien_Sang] Trang 8 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: LỰA CHỌN KIẾN TRÚC MÔ HÌNH HYBRID DATA PLATFORM  Mô hình Hybrid Data Platform  kiến trúc Multi-site  Multi-cloud - Multi-site (Nhiều địa điểm) hạ tầng lưu trữ tại chỗ liên kết  nhiều vị trí địa lý khác nhau (Từ CQTCT đến các Đơn vị) - Multi-cloud (Nhiều hãng điện toán đám mây) cho phép  mở rộng sử d
+
+[Phien_Sang] Trang 23 | Từ khóa: ['đơn vị', 'trách nhiệm', 'phân công']
+Snippet: MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY Nội dung trọng tâm Vai trò của đơn vị Vai trò của Tổng công ty Cơ chế / Công cụ kỹ thuật 1. Tiếp nhận dữ liệu Có Landing Zone riêng để kiểm  duyệt trước khi gửi về TCT Chịu trách nhiệm quản trị nền  tảng, làm sạch dữ liệu Hybrid data platform – Landing  Zone 
+
+[Bao_Cao_De_Xuat] Trang 8 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet:    Trang 8/83  CHƯƠNG 1  ĐỊNH HƯỚNG MỤC TIÊU VÀ NGUYÊN TẮC   ĐÁNH GIÁ LỰA CHỌN GIẢI PHÁP  Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025  1. Tổng quan về Mô hình kiến trúc nền tảng dữ liệu dùng chung tại Tổng  công ty PTSC  Mô hình kiến trúc nền tảng dữ liệu của Tổng côn
+
+[Bao_Cao_De_Xuat] Trang 21 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet:    Trang 21/83  CHƯƠNG 3  ĐỀ XUẤT THIẾT KẾ KIẾN TRÚC DỮ LIỆU  NỀN TẢNG DỮ LIỆU DÙNG CHUNG  Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025  A. Giới thiệu chung  1. Mục tiêu công việc  - Chuẩn hóa và tích hợp hệ thống phần mềm, dữ liệu hiện tại (và tương lai) của khách  hà
+
+[Bao_Cao_De_Xuat] Trang 23 | Từ khóa: ['đơn vị', 'trách nhiệm', 'quản trị dữ liệu']
+Snippet:    Trang 23/83  1.3. Kết quả cần đạt  - Báo cáo Tổng quan Hệ thống và Dữ liệu: trình bày rõ ràng cách các hệ thống thông tin  và phần mềm hiện hữu đang hoạt động, cách dữ liệu chảy từ bộ phận này sang bộ phận  khác (ví dụ: từ vận hành nhà máy đến quản lý khách hàng), và những vấn đề cần cải  thiện (
+
+[Bao_Cao_De_Xuat] Trang 26 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet:    Trang 26/83  2.3.2. Chuẩn hóa Master Data:  - Xác định và quản lý các bộ Master Data cốt lõi (khách hàng, sản phẩm, nhân viên, tài  sản, nhà cung cấp, dự án, cơ cấu tổ chức và các danh mục dùng chung). Sử dụng Data  Profiling và Data Quality Assessment để phát hiện và khắc phục các vấn đề về chất
+
+[Bao_Cao_De_Xuat] Trang 44 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet:    Trang 44/83  + Cung cấp API hoặc giao diện cấu hình để mở rộng rule, parser, dashboard mà  không cần thay đổi mã nguồn hệ thống.  + Hỗ trợ ghi log audit toàn hệ thống để theo dõi hoạt động người dùng, đảm bảo  truy vết đầy đủ phục vụ kiểm toán.  11.3. Đề xuất giải pháp:   Nhà cung cấp đề xuất giả
+
+[Bao_Cao_De_Xuat] Trang 70 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet:    Trang 70/83  + Xác định rõ vai trò từng nhân sự, quyền được xem, quyền được sửa dữ liệu nào và  ghi lại toàn bộ lịch sử truy cập, chỉnh sửa để truy vết khi cần.  - Phối hợp giữa các bộ phận  + Là cầu nối giữa đội công nghệ thông tin, đội phân tích số liệu, đội vận hành, đội  tài chính. Hỗ trợ các
+
+[Bao_Cao_De_Xuat] Trang 77 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet:  Trang 77/83  PHỤ LỤC 2  PHẠM VI CUNG CẤP HÀNG HÓA VÀ DỊCH VỤ  Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025  STT Danh mục hàng hóa/ dịch vụ Đơn vị  tính  Khối  lượng  yêu cầu  Tiến  độ  cung  cấp  Địa  điểm  cung  cấp  I DỊCH VỤ THIẾT KẾ GIẢI PHÁP TÍCH HỢP ỨNG DỤNG VÀ 
+
+[Bao_Cao_De_Xuat] Trang 78 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet:    Trang 78/83  STT Danh mục hàng hóa/ dịch vụ Đơn vị  tính  Khối  lượng  yêu cầu  Tiến  độ  cung  cấp  Địa  điểm  cung  cấp   Microsoft Purview - Data Governance: 500 Assets bản quyền sử dụng trong 12  tháng Bộ 1      II.2 On-prem data platform        II.2.1 Bản quyền phần mềm Bộ 1      1 Phần mềm 
+
+[Tom_Tat_Giai_Phap] Trang 9 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: ĐỊNH HƯỚNG VỀ NỀN TẢNG DỮ LIỆU ▪Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số; ▪Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC; ▪Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị thành viên. Đảm  bảo cập nhật, khai thác trong t
+
+[Tom_Tat_Giai_Phap] Trang 10 | Từ khóa: ['đơn vị', 'Giai đoạn 2']
+Snippet: Giải pháp thực hiện cho trụ cột  “Cơ sở dữ liệu “     MỤC TIÊU 2024-2025 (1)Xây dựng CSDL dùng chung  giai đoạn 1 (tại Cơ quan Tổng  công ty); (2)Xây dựng mô hình quản trị dữ  liệu; (3) Xây dựng báo cáo thông  minh giai đoạn 1: (gồm các Phân  hệ TCKT, Quản trị rủi ro, Quản lý  nguồn nhân lực, Quản l
+
+[Tom_Tat_Giai_Phap] Trang 19 | Từ khóa: ['Giai đoạn 2', 'quản trị dữ liệu']
+Snippet: DATA  GOVERNANCE FRAMEWORK  RESEARCH Có 4 mô hình Quản trị dữ liệu phổ biến theo tiêu chuẩn quốc tế: 1. Deloitte’s Information Value Chain 2. McKinsey’s Data-to-Value 3. Forrester’s Insights-Driven 4. Gartner’s Data-First Mô hình Quản trị dữ liệu phù hợp cho PTSC theo từng giai đoạn: - Giai đoạn 1 (
+
+[Tom_Tat_Giai_Phap] Trang 23 | Từ khóa: ['đơn vị', 'Giai đoạn 2']
+Snippet: 2.1. CHIẾN LƯỢC CHUYỂN ĐỔI SỐ Giải pháp thực hiện cho trụ cột  “Cơ sở dữ liệu” MỤC TIÊU 2024-2025 MỤC TIÊU  2026-2027 MỤC TIÊU  2028-2030 [1]  Xây dựng CSDL dùng chung giai  đoạn 1 (tại Cơ quan Tổng công ty); [2]  Xây dựng mô hình quản trị dữ  liệu; [3]  Xây dựng báo cáo thông minh  giai đoạn 1: (gồ
+
+[Tom_Tat_Giai_Phap] Trang 24 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: 3. ĐỊNH HƯỚNG XÂY DỰNG CHIẾN LƯỢC CĐS CỦA PTSC Định hướng về nền tảng dữ liệu ▪Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số; ▪Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC; ▪Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị t
+
+[Tom_Tat_Giai_Phap] Trang 25 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: 2.2. TẦM NHÌN GIẢI PHÁP Phân lớp dữ liệu để hình thành các dữ liệu dùng chung trong toàn Tổng công ty PTSC và dùng riêng tại các đơn vị thành viên  nhưng vẫn đảm bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ liệu (Phối hợp  với định hướng nền tảng côn
+
+[Kick_Off] Trang 16 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: KIẾN TRÚC MÔ HÌNH HYBRID DATA PLATFORM  Mô hình Hybrid Data Platform  kiến trúc Multi-site  Multi-cloud - Multi-site (Nhiều địa điểm) hạ tầng lưu trữ tại chỗ liên kết  nhiều vị trí địa lý khác nhau (Từ CQTCT đến các Đơn vị) - Multi-cloud (Nhiều hãng điện toán đám mây) cho phép  mở rộng sử dụng nhiều
+
+[Kick_Off] Trang 19 | Từ khóa: ['đơn vị', 'Giai đoạn 2']
+Snippet: MÔ PHỎNG KIẾN TRÚC HỆ SINH THÁI CNTT (giai đoạn 2) VĂN PHÒNG CĐS / BAN DỰ ÁN CĐS (TCT) Kết nối - Đồng bộ - Chia sẻ dữ liệu BAN CHỈ ĐẠO CĐS (TCT) Trưởng ban: PTGĐ Phạm Văn Hùng Số hoá quy trình R&D & Đổi mớiChiến  lược & lộ  trình Chuẩn dữ liệu Tích hợp &  API  ĐỒNG BỘ - CHUẨN HOÁ - TẬP TRUNG ĐIỀU HÀ
+
+[Kick_Off] Trang 22 | Từ khóa: ['đơn vị', 'quản trị dữ liệu']
+Snippet: CƠ CẤU TỔ CHỨC BAN QUẢN LÝ DỰ ÁN Trưởng Ban chỉ đạo dự án PHẠM VĂN HÙNG Trưởng ban Quản trị dự  án - Giám đốc dự án NGUYỄN KIM CƯƠNGPhó giám đốc dự án PHAN THỊ NGỌC VÂN Trưởng ban Quản trị dự án - Giám đốc dự án NGUYỄN ĐỨC THIỆN TB chỉ đạo dự án HOÀNG VĂN NINH Nhóm Số hoá - Tích hợp NGUYỄN XUÂN THỊN
+

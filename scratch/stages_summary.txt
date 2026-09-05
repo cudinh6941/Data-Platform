@@ -1,0 +1,67 @@
+=== TCT/20260810_Slide_Hoi thao Data Platform_Phien Sang.pdf ===
+P4: 2024-2025
+P4: 2026-2027
+P4: 2028-2030
+P4: giai đoạn 1 (tại Cơ quan Tổng công
+P4: giai đoạn 1: (gồm các Phân hệ
+P4: giai đoạn 2 (tại các Đơn vị);
+P4: giai đoạn 2;
+P47: LỘ TRÌNH TRIỂN KHAI TÍCH HỢP
+=== TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf ===
+P27: 05 · HỆ SINH THÁI PHẦN MỀM – DỮ LIỆ U 5.3 · GIAI ĐOẠN 2 — 2028+
+P30: A · LỘ TRÌNH TRIỂN KHAI
+P30: GIAI ĐOẠN 1
+P30: GIAI ĐOẠN 2
+P31: 3. LỘ TRÌNH TRIỂN KHAI MỞ RỘNG
+P32: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 27
+P33: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 28
+P35: 011. NỀN TẢNG ĐÃ CÓ TỪ GIAI ĐOẠN 1
+P35: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 30
+P36: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 31
+P37: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 32
+P40: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 35
+P41: Nền tảng Giai đoạn 1 đã vận hành
+P41: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 36
+P42: 5 Thời điểm tối ưu Mở rộng ngay sau Giai đoạn 1 kế thừa trọn bộ tiêu chuẩn, hạ tầng và kinh nghiệm — rẻ và nhanh hơn nhiều so
+P42: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 37
+P43: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 38
+P44: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 39
+P45: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 40
+P46: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 44
+P47: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 47
+P48: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 45
+P49: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 41
+P50: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 46
+P51: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 42
+P52: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 43
+P53: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 48
+P54: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 49
+P55: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 50
+P56: Danh sách và mức kiến trúc áp dụng cho từng đơn vị được chốt sau khảo sát Giai đoạn 2A.
+P56: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 51
+P60: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 56
+P61: tương đương Giai đoạn 1; chi phí
+P61: đoạn 2A
+P61: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 57
+P62: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 58
+P63: cụ thể xây dựng trong Giai đoạn 2A.
+P63: HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 59
+=== TCT/Slide Tóm tắt lựa chọn giải pháp Hybrid Data Platform PTSC.pdf ===
+P10: 2024-2025
+P10: giai đoạn 1 (tại Cơ quan Tổng
+P10: minh giai đoạn 1: (gồm các Phân
+P10: 2026-2027
+P10: chung giai đoạn 2 (tại
+P10: thông minh giai đoạn 2;
+P10: 2028-2030
+P11: MỤC TIÊU 2024-2025
+P11: MỤC TIÊU 2026-2027
+P11: thống DR (giai đoạn 1: thuê
+P11: 2028-2030
+P19: - Giai đoạn 1 (2025 - 2027): Áp dụng mô hình Deloitte’s Information Value Chain để xây
+P19: - Giai đoạn 2 (2027 - 2030, định hướng 2035): Áp dụng kết hợp 2 mô hình Gartner’s
+P23: 2024-2025
+P23: 2026-2027
+P23: 2028-2030
+P23: giai đoạn 1: (gồm các Phân hệ
+P23: giai đoạn 2;

@@ -1,0 +1,50 @@
+TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Page 56
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Mười bảy đơn vị và chi nhánh được phân về bốn nhóm triển khai
+17
+Đơn vị và chi nhánh
+4
+Nhóm triển khai
+Phân bổ theo mức kiến trúc
+L1 · 5 đơn vị L2 · 2 đơn vị L3 · 13 đơn vị L4 · 1 đơn vị
+Nhóm 1
+Chi nhánh nhỏ · L1
+Văn phòng Hà Nội
+Miền Trung
+Petro Hotel
+Long Phú
+Chuẩn bị nguồn lực nhân sự; phối hợp 
+triển khai cùng Ban Chuyển đổi số.
+Nhóm 2
+Chi nhánh lớn · L1–L2 + L3
+G&S
+Supply Base
+Marine
+Chuyển phần mềm Base về hệ sinh 
+thái E-Office của Tổng công ty; khảo 
+sát nhu cầu thuê thêm tenant cho dữ 
+liệu thăm dò, cảng, quản lý tàu dịch 
+vụ.
+Nhóm 3
+Đơn vị nhỏ · L3
+Phú Mỹ
+Đình Vũ
+Sao Mai Bến Đình
+PVS An ninh dầu khí
+Shipyard
+Khảo sát thiết kế kiến trúc dữ liệu và 
+lộ trình đạt chuyển đổi số mức 3–4; 
+tận dụng thiết kế của Tổng công ty.
+Nhóm 4
+Đơn vị lớn · L3–L4
+M&C
+PPS
+POS
+Quảng Ngãi
+Thanh Hóa
+Khảo sát thiết kế kiến trúc tổng thể và 
+lộ trình mở rộng Data Platform theo 
+kiến trúc chuẩn.
+Danh sách và mức kiến trúc áp dụng cho từng đơn vị được chốt sau khảo sát Giai đoạn 2A.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 51
+==================================================

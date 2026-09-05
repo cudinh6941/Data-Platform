@@ -1,0 +1,199 @@
+=== Page 1 ===
+Mã dự án HDP26 - Hybrid Data Platform 2026
+TP. Hồ Chí Minh, ngày 04 tháng 03 năm 2026
+LỄ KHỞI ĐỘNG
+DỰ ÁN GIẢI PHÁP NỀN TẢNG DỮ LIỆU (DATA PLATFORM) - GIAI ĐOẠN 1
+HDP26
+GIỮA TỔNG CÔNG TY CP DỊCH VỤ KỸ THUẬT DẦU KHÍ VIỆT NAM (PTSC) 
+VÀ LIÊN DANH HIPT-AITS
+
+=== Page 2 ===
+NỘI DUNG TỔNG QUÁT
+THỜI GIAN NỘI DUNG CHƯƠNG TRÌNH
+13h00 - 13h15 | 15p ➤ Phát biểu khai mạc & định hướng hợp tác
+13h15 - 13h45 | 30p ➤ Kế hoạch Dự án giải pháp nền tảng dữ liệu GĐ 1
+A. Tổng quan dự án
+B. Giới thiệu về bên B (Liên danh HIPT - AITS)
+C. Mục tiêu & Kết quả
+D. Cơ cấu tổ chức Ban quản lý dự án & cách thức phối hợp
+E. Kế hoạch triển khai
+13h45 - 14h00 | 15p ➤ Hoạt động trao đổi & bế mạc
+- Thảo luận & Trao đổi
+- Nghi thức Lễ khởi động dự án
+- Phát biểu bế mạc
+18h00 - 20h00 ➤ Tiệc tối & giao lưu kết nối 
+VP PTSC – PetroVietnam Tower
+04-03-2026 | 13h00 –14h30  & 18h00 –20h00 Tiệc tối
+Thành phần: PTSC & HIPT -AITS 
+
+
+=== Page 8 ===
+HỢP ĐỒNG TƯƠNG TỰ VỀ DỮ LIỆU ĐÃ TRIỂN KHAI
+● DỊCH VỤ XỬ LÝ DỮ LIỆU CHO TỔNG CÔNG TY HÀNG KHÔNG VIỆT NAM
+THỜI GIAN THỰC HIỆN HỢP ĐỒNG: TỪ 2018 ĐẾN 2023
+QUY MÔ HỢP ĐỒNG: ~ 74 TỶ ĐỒNG.
+● DỊCH VỤ XỬ LÝ DỮ LIỆU CHO TỔNG CÔNG TY HÀNG KHÔNG VIỆT NAM
+THỜI GIAN THỰC HIỆN HỢP ĐỒNG: 12 THÁNG
+QUY MÔ HỢP ĐỒNG: ~ 40 TỶ ĐỒNG/ 1 NĂM.
+> GIAI ĐOẠN 1:
+> GIAI ĐOẠN TIẾP THEO GIA HẠN TỪNG NĂM:
+
+=== Page 10 ===
+PHẠM VI DỰ ÁN
+01/04/2026
+15/06/2026
+01/08/2026
+10/08/2026
+20/08/2026
+27/08/2026
+Dự kiến bàn giao bản quyền phần mềm
+Dự kiến bàn giao hàng hóa phần cứng
+Dự kiến hoàn thành triển khai & nghiệm thu chạy thử
+Thời gian nghiệm thu, đào tạo
+Thời gian bàn giao dự án
+Thời gian đưa hệ thống vào sử dụng
+1. Thời gian thực hiện hợp đồng: 18 tháng; (trong đó : Xây dựng hệ thống: 6 tháng; Vận hành, xử lý kỹ thuật: 12 tháng)
+2. Địa điểm triển khai: PetroVietnam, Số 1 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh.
+3. Hạng mục sản phẩm: 
+Trung tâm vận hành dữ liệu (DOC)
+Nền tảng dữ liệu (hybrid data platform)
+Hệ thống hạ tầng CNTT & ATTT phục vụ dữ liệu
+27/08/2026 -
+27/08/2027 Vận hành, xử lý kỹ thuật
+
+=== Page 12 ===
+TIẾP CẬN VẤN ĐỀ & ĐỊNH HƯỚNG GIẢI PHÁP
+Biến dữ liệu rời rạc thành tri 
+thức hệ thống
+Chuyển đổi số lấy dữ liệu 
+làm trung tâm
+Chuyển đổi số chỉ thực sự 
+thành công khi dữ liệu 
+được chuyển hóa thành 
+thông tin có ích để hỗ trợ 
+ra quyết định và tạo giá trị
+GIẢI PHÁP CHIẾN LƯỢC
+KIẾN 
+TRÚC 
+HẠ TẦNG
+KIẾN TRÚC 
+DỮ LIỆU
+VẤN ĐỀ 
+Xác định hướng đi trong lộ trình chuyển đổi số
+5 trụ cột chính của lộ trình 
+chuyển đổi số PTSC
+Năng lực 
+& cơ cấu 
+tổ chức
+Số hóa & 
+cải tiến 
+quy trình
+Cơ sở dữ 
+liệu
+Nền tảng 
+công 
+nghệ & 
+bảo mật
+Nghiên 
+cứu & 
+phát triển 
+(R&D) Trụ cột 
+chính
+Đề xuất áp dụng chiến 
+lược Data First cho 
+PTSC
+
+
+=== Page 21 ===
+QUY TRÌNH PHỐI HỢP
+Cấp Vai trò PTSC Vai trò HIPT-AITS Phạm vi xử lý & điều kiện chuyển 
+cấp
+Cấp 1 – Ban Chỉ 
+đạo Dự án
+Định hướng mục tiêu và 
+ưu tiên chiến lược
+Cam kết nguồn lực & đảm 
+bảo năng lực triển khai
+Quyết định các thay đổi ảnh hưởng mục tiêu 
+tổng thể, ngân sách hoặc định hướng dự án
+Cấp 2 – Ban Quản 
+trị Dự án
+Điều hành nghiệp vụ, 
+kiểm soát phạm vi & tiến 
+độ
+Điều phối kế hoạch kỹ thuật 
+& quản lý triển khai
+Xử lý vấn đề ảnh hưởng tiến độ hoặc phạm vi 
+trong dự án. Chuyển cấp khi ảnh hưởng mục 
+tiêu tổng thể hoặc phát sinh ngân sách
+Cấp 3 – Đội Triển 
+khai Dự án
+Làm rõ nghiệp vụ, xác 
+nhận dữ liệu & kiểm thử
+Thiết kế, phát triển, tích hợp 
+& xử lý kỹ thuật
+Xử lý vấn đề trong phạm vi đã thống nhất. 
+Chuyển cấp khi: ảnh hưởng mốc tiến độ cam 
+kết, phát sinh chi phí ngoài phạm vi, hoặc thay 
+đổi yêu cầu đã được thống nhất
+
+
+=== Page 23 ===
+E. KẾ HOẠCH TRIỂN KHAI
+
+
+=== Page 24 ===
+KẾ HOẠCH KHẢO SÁT (dự kiến)
+PHÒNG BAN/ HOẠT ĐỘNG
+TUẦN 1 TUẦN 2
+Thứ 2 Thứ 3 Thứ 4 Thứ 5 Thứ 6 Thứ 2 Thứ 3 Thứ 4 Thứ 5 Thứ 6
+2.3 3.3 4.3 5.3 6.3 9.3 10.3 11.3 12.3 13.3
+Kick-Off & Đào Tạo CĐS All | 2h
+BOD Buổi 1 | 2h Buổi 2 | 1h
+Ban Dự Án Chuyển Đổi Số Buổi 1 | 2h Buổi 2 | 1h
+Ban Tài Chính Kế Toán Buổi 1 | 2h Buổi 2 | 1h
+Ban Thương Mại Buổi 1 | 2h Buổi 2 | 1h
+Ban Kỹ Thuật Sản Xuất Buổi 1 | 2h Buổi 2 | 1h
+Ban An Toàn Chất Lượng Buổi 1 | 2h Buổi 2 | 1h
+Ban Công Nghiệp Buổi 1 | 2h Buổi 2 | 1h
+Ban Quản Trị Nguồn Nhân Lực Buổi 1 | 2h Buổi 2 | 1h
+Ban Kế Hoạch Đầu Tư Buổi 1 | 2h Buổi 2 | 1h
+Ban Nghiên Cứu Phát Triển Buổi 1 | 2h Buổi 2 | 1h
+Văn Phòng Buổi 1 | 1h Buổi 2 | 1h
+Ban Pháp Chế Buổi 1 | 1h Buổi 2 | 1h
+Văn Phòng Đảng - Đoàn Thể Buổi 1 | 1h Buổi 2 | 1h
+Ban thư ký Buổi 1 | 1h Buổi 2 | 1h
+
+
+=== Page 25 ===
+NỘI DUNG BUỔI HỌP
+ALL
+BUỔI 1
+BUỔI 2
+Kick-off & đào tạo nhận thức chung về dự án CĐS
+Yêu cầu danh sách PIC của từng ban
+a) Tuyên bố mục tiêu và giới thiệu chung về dự án HDP26.
+b) Giới thiệu nhân sự tham gia buổi họp.
+c) Trao đổi về định hướng quản trị bằng dữ liệu, chuẩn hóa quy trình với lãnh đạo 
+Phòng/Ban.
+d) Phòng/Ban trình bày hiện trạng quy trình tổng hợp số liệu báo cáo, thông tin các phần 
+mềm đang sử dụng và nhu cầu kết nối, đồng bộ, lưu trữ dữ liệu tập trung.
+e) Hỏi đáp giữa Phòng/Ban và nhóm dự án HDP26.
+f) Chốt nội dung buổi họp, các kế hoạch tiếp theo. Ký biên bản ghi nhận thông tin khảo 
+sát.
+a) Tuyên bố mục tiêu & nhân sự tham gia buổi họp.
+b) Hỏi đáp giữa Phòng/Ban và nhóm dự án HDP26 về các điểm cần làm rõ.
+c) Chốt nội dung buổi họp, các kế hoạch tiếp theo. Ký biên bản ghi nhận thông tin khảo sát.
+Toàn công ty/ Đại diện các 
+lãnh đạo, Key user các 
+Phòng/Ban
+• Lãnh đạo Ban chức năng 
+phụ trách CĐS
+• Trưởng/Phó phòng
+• Nhân sự đầu mối tham 
+gia dự án
+• Trưởng/Phó phòng
+• Nhân sự đầu mối tham 
+gia dự án
+
+

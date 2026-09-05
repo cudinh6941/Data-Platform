@@ -1,0 +1,493 @@
+--- Trang 6 [Từ khóa: vận hành, quản trị dữ liệu, phân quyền] ---
+TIÊU CHUẨN QUỐC TẾ
+Nền tảng quản trị dữ liệu theo chuẩn PPDM — Tóm tắt 5 đặc điểm cốt lõi
+1 · Cấu trúc mô hình
+Mô hình linh hoạt theo thực thể Site / Location / Area / Cluster / Hierarchy chuẩn PPDM; hỗ trợ trực quan hoá không gian (spatial); mở
+rộng không giới hạn qua cấu hình khai báo.
+2 · Hợp nhất
+Ghi nhận thuộc tính, quan hệ của site / liên hệ / tài sản trong một mô hình mở rộng; nhập–xuất dữ liệu hàng loạt có kiểm tra hợp lệ;
+phân loại theo vùng thương mại & phân cấp site; tích hợp dữ liệu từ các ứng dụng chuyên sâu trong lĩnh vực dầu khí.
+3 · Làm sạch
+Chuẩn hoá dữ liệu theo tiêu chuẩn ngành/tổ chức; tự sinh mã site; kiểm tra hợp lệ theo quy tắc tự định nghĩa; chống trùng lặp; tuỳ
+biến quy tắc làm sạch riêng cho dữ liệu chuyên sâu lĩnh vực dầu khí.
+4 · Quản trị
+Quản lý vòng đời site tập trung; bản đồ hoá dữ liệu (tích hợp Google Maps); quản lý hợp đồng & tài sản, vận hành tài sản cố định,
+kiểm kê theo site (tích hợp Oracle); lưu vết kiểm toán; phân quyền theo vai trò (RBAC) tới từng thuộc tính.
+5 · Chia sẻ
+Cung cấp "bản ghi vàng" (golden record) cho toàn bộ ứng dụng & hệ thống phân tích; giao diện tra cứu, tìm k
+============================================================
+
+--- Trang 36 [Từ khóa: đơn vị thành viên, hạ tầng] ---
+022. SỰ CẦN THIẾT MỞ RỘNG CỦA TCT VÀ ĐƠN VỊ
+1 Dữ liệu nằm ở đơn vị thành viên:  Phần lớn dữ liệu sản xuất – kinh doanh phát sinh tại các đơn vị; không mở
+rộng thì giá trị nền tảng dừng ở Văn phòng Tổng công ty
+2 Báo cáo hợp nhất thủ công:  Tổng hợp tài chính – nhân sự – SXKD toàn Tổng công ty và báo cáo Tập đoàn
+PVN hiện chậm, không nhất quán danh mục
+3 Master Data không thống nhất:  Khách hàng, nhà cung cấp, vật tư, dự án… lệch nhau giữa các đơn vị → sai
+lệch số liệu hợp nhất, cản trở AI/phân tích liên đơn vị
+4 Yêu cầu pháp lý mới:  Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 (hiệu lực 01/01/2026), Luật An ninh mạng
+2025, luật dữ liệu, luật CDS → cần quản trị, giám sát, truy vết dữ liệu thống nhất
+5 Thời điểm tối ưu:  Mở rộng ngay sau GĐ1 kế thừa trọn bộ tiêu chuẩn, hạ tầng, kinh nghiệm → rẻ và nhanh hơn
+nhiều so với từng đơn vị tự đầu tư riêng lẻ
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 31
+
+
+
+==================== MỤC 9 ====================
+--- Trang 37 [Từ khóa: vận hành, quy chế, quyết định, đơn vị thành viên] ---
+2.1 KHUNG TUÂN THỦ: BVDLCN – AN NINH MẠNG – DỮ LIỆU –
+CHUYỂN ĐỔI SỐ
+Luật Nghĩa vụ chí
+============================================================
+
+--- Trang 41 [Từ khóa: spoke, level, chi phí, vận hành, hybrid, đơn vị thành viên] ---
+01 TÓM TẮT ĐIỀU HÀNH
+Mở rộng Data Platform đến các đơn vị thành viên theo mô hình Hub-
+Spoke
+01
+Nền tảng Giai đoạn 1 đã vận hành
+Nền tảng hybrid IMIP Data Platform, 8 phần
+mềm nguồn, 35 quy trình liên phòng ban, 50
+API chuẩn — phạm vi Văn phòng Tổng công ty.
+02
+Phần lớn dữ liệu nằm ở đơn vị
+Không mở rộng thì giá trị nền tảng dừng ở Văn
+phòng Tổng công ty; báo cáo hợp nhất vẫn thủ
+công và Master Data vẫn lệch giữa các đơn vị.
+03
+Điều kiện bắt buộc cho AI, IoT, BI
+Chuyển đổi số mức 3 trở lên yêu cầu dữ liệu tự
+động, chính xác đến mức realtime; mức 4 –5
+yêu cầu ứng dụng AI, IoT và kết nối IT –OT.
+04
+Hub-Spoke phù hợp toàn Tổng công ty
+Hub tại Tổng công ty giữ chuẩn dữ liệu; đơn vị
+lớn có spoke riêng, đơn vị nhỏ dùng tenant trên
+hub — tôn trọng chủ quyền dữ liệu của đơn vị.
+05
+Bốn level triển khai theo quy mô
+17 đơn vị và chi nhánh được phân về L1 –L4
+theo pháp nhân, quy mô và mức trưởng thành
+số DBI; chi phí phát sinh khác nhau theo level.
+06
+Tuân thủ pháp luật theo thiết kế
+Luật Bảo vệ dữ liệu cá nhân, An ninh mạng, Dữ
+liệu và Chuyển đổi số được đáp ứng bằng kiểm
+soát nhúng trong nền tảng, không ph
+============================================================
+
+--- Trang 42 [Từ khóa: đơn vị thành viên, hạ tầng] ---
+02 BỐI CẢNH VÀ SỰ CẦN THIẾT
+Năm lý do bắt buộc mở rộng nền tảng dữ liệu đến đơn vị thành viên
+1 Dữ liệu nằm ở đơn vị thành viên Phần lớn dữ liệu sản xuất – kinh doanh phát sinh tại các đơn vị.
+2 Báo cáo hợp nhất còn thủ công Tổng hợp tài chính – nhân sự – SXKD toàn Tổng công ty và báo cáo Tập đoàn PVN hiện chậm, không nhất quán
+danh mục.
+3 Master Data không thống nhất Khách hàng, nhà cung cấp, vật tư, dự án lệch nhau giữa các đơn vị, gây sai lệch số liệu hợp nhất và cản trở phân
+tích liên đơn vị.
+4 Yêu cầu pháp lý mới Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 (hiệu lực 01/01/2026), Luật An ninh mạng 2025, Luật Dữ liệu, Luật
+Chuyển đổi số yêu cầu quản trị, giám sát và truy vết dữ liệu thống nhất.
+5 Thời điểm tối ưu Mở rộng ngay sau Giai đoạn 1 kế thừa trọn bộ tiêu chuẩn, hạ tầng và kinh nghiệm — rẻ và nhanh hơn nhiều so
+với từng đơn vị tự đầu tư riêng lẻ.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 37
+
+
+
+==================== MỤC 12 ====================
+--- Trang 43 [Từ khóa: chi phí, vận hành] ---
+02 BỐI CẢNH VÀ SỰ CẦN THIẾT
+Data Platform là điều kiện bắt buộc để đạt mức trưởng thành số cao
+hơn
+Không có
+============================================================
+
+--- Trang 47 [Từ khóa: level 3, level, vận hành, bảo mật, quyết định] ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Logic phối hợp giữa các cấp và nguyên tắc vận hành dữ liệu
+LOGIC PHỐI HỢP VÀ LUỒNG DỮ LIỆU
+Chiến lược và Chính sách
+Định hướng từ Level 1
+Điều phối và Hướng dẫn
+Điều phối từ Level 2
+Sở hữu và Quyết định
+Ownership ở Level 3
+Triển khai và Kiểm soát
+Thực thi ở Level 4
+Vận hành và Hỗ trợ kỹ thuật
+Thực thi kỹ thuật ở Level 5
+NGUYÊN TẮC VẬN HÀNH
+Data là tài sản của PTSC
+Dữ liệu được quản trị như tài sản chiến lược
+Business Ownership
+Business sở hữu dữ liệu và chịu trách nhiệm
+Chất lượng là trọng tâm
+Dữ liệu đúng — đủ — sạch — kịp thời — an toàn
+Chia sẻ tạo giá trị
+Dữ liệu được chia sẻ có kiểm soát và tạo giá trị
+Bảo mật và Tuân thủ
+Tuân thủ pháp lý, chính sách và bảo mật
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 47
+
+
+
+==================== MỤC 17 ====================
+--- Trang 49 [Từ khóa: spoke, level] ---
+B
+Mô hình kiến trúc Data platform và phân nhóm Đơn vị
+04 · Kiến trúc Hub-Spoke 05 · Phân nhóm và level triển khai
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 41
+
+
+
+==================== MỤC 18 ====================
+--- Trang 50 [Từ
+============================================================
+
+--- Trang 51 [Từ khóa: spoke, workspace, chi phí, vận hành, governance, fabric, hạ tầng] ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Hub tại Tổng công ty, spoke tại đơn vị lớn, tenant cho đơn vị nhỏ
+HUB — TỔNG CÔNG TY
+Data Platform
+Lakehouse trung tâm MDM · Golden Record Governance · SIEM Fabric / Power BI
+Đồng bộ dữ liệu dùng chung và dữ liệu tổng hợp qua ESB / API chuẩn — near real-time hoặc batch
+SPOKE — ĐƠN VỊ LỚN
+Đơn vị 1 Đơn vị 2 Đơn vị 3 Đơn vị 4
+Dữ liệu chuyên ngành lưu tại đơn vị. Spoke tái sử dụng chính nền tảng
+IMIP Data Platform ở cấu hình quy mô nhỏ — đồng nhất công nghệ, kỹ
+năng vận hành và bộ triển khai mẫu khi nhân rộng.
+TENANT TRÊN HUB — ĐƠN VỊ NHỎ VÀ CHI NHÁNH
+Chi nhánh Vận hành như một ban của Tổng công ty
+Đơn vị nhỏ Workspace / tenant riêng trên hub
+Không trang bị Data Platform riêng, chỉ cần agent thu thập dữ liệu tại chỗ
+hoặc kéo trực tiếp qua API. Không phát sinh CAPEX hạ tầng và đội vận
+hành riêng — chi phí vận hành chung phân bổ theo mức sử dụng.
+Tôn trọng chủ quyền dữ liệu và đặc thù
+nghiệp vụ
+Giảm băng thông và rủi ro tập
+trung
+Đáp ứng bản địa hóa dữ liệu nhạy
+cảm
+Chuẩn quản trị thống nhất qua kiến trúc và catalog
+chung
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ 
+============================================================
+
+--- Trang 52 [Từ khóa: bảo mật, phân quyền, nhạy cảm] ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Bảo mật và chủ quyền dữ liệu được kiểm soát bằng phân quyền, audit log
+và lineage
+Phân quyền theo RBAC / ABAC
+Đơn vị chỉ thấy dữ liệu của mình; phân cấp phân
+quyền an toàn thông tin riêng của từng đơn vị được
+giữ nguyên trên nền tảng chung.
+Audit log tách theo tenant
+Toàn bộ truy cập được ghi nhận, tách biệt theo đơn
+vị và đổ về SIEM tại hub để giám sát tập trung.
+Lineage và metadata
+Truy vết nguồn gốc và đường đi của dữ liệu; quản
+trị siêu dữ liệu thống nhất cho toàn bộ đơn vị.
+Catalog và gắn nhãn dữ liệu
+Nhãn dữ liệu cá nhân và nhãn phân loại dữ liệu cốt
+lõi / quan trọng; che dữ liệu theo nhãn.
+Master Data và Golden Record
+Danh mục chuẩn do Tổng công ty sở hữu; quyền
+chủ thể dữ liệu thực thi qua MDM với soft -delete có
+kiểm soát.
+Kiểm soát vị trí lưu trữ
+Dữ liệu quan trọng và dữ liệu nhạy cảm ở lại on -
+prem; cloud chỉ nhận dữ liệu tổng hợp và chuẩn
+hóa.
+Dữ liệu chuyên ngành lưu tại đơn vị; chỉ dữ liệu tổng hợp và chuẩn hóa đồng bộ về Tổng công ty. Mức độ bảo mật không phụ thuộ c vị trí lưu trữ mà phụ
+thuộc phân cấp phân quyền được thiết kế đồng nhất.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · 
+============================================================
+
+--- Trang 53 [Từ khóa: l3, level, hybrid, hạ tầng] ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Đơn vị được phân nhóm theo pháp nhân, quy mô và mức trưởng thành
+số
+Nội dung L1 — Dùng chung như một Ban
+của TCT L2 — Dùng chung, có phần mềm riêng L3 — Phân vùng dữ liệu riêng trên
+hub
+L4 — Hybrid Data Platform
+riêng
+Pháp nhân Chi nhánh trực thuộc Chi nhánh trực thuộc Pháp nhân độc lập hoặc chi nhánh
+có nhu cầu dữ liệu lớn Pháp nhân độc lập
+Mức trưởng thành số
+DBI Mức 0 – 2 Mức 0 – 2 Mức 2 đến 3,5 Trên mức 3,5
+Phần mềm nghiệp vụ
+dùng chung
+Dùng chung 100% HRM, ERP,
+EOF, SKCT, QTRR — chỉ khai báo
+thêm người dùng
+Dùng chung trên 70%; một số phần mềm
+không cùng hệ sinh thái, cần khảo sát và
+thiết kế tích hợp mới
+Tận dụng thiết kế của Tổng công ty;
+thiết kế lại nếu dùng phần mềm
+khác hệ sinh thái
+Đơn vị tự đầu tư; khảo sát,
+thiết kế và tính toán lại
+toàn bộ
+Dữ liệu chuyên ngành Theo kiến trúc dữ liệu chung đã
+thiết kế Phải thiết kế thêm một phần Đăng ký thêm phân vùng tenant cho
+dữ liệu chuyên ngành
+Lưu và xử lý tại đơn vị, gồm
+dữ liệu OT quy mô lớn
+Hạ tầng Tổng công ty đã đầu tư Tổng công ty đầu tư mở rộng theo nhu cầu
+chi nhánh
+Tổng công ty đầu tư mở rộng, tính
+thêm nhu cầu tenant
+
+
+
+=====
+============================================================
+
+--- Trang 54 [Từ khóa: l3, level, chi phí, vận hành, phân quyền, hạ tầng] ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Mỗi level có ưu điểm, hạn chế và chi phí khác nhau
+Tiêu chí L1 L2 L3 L4
+Ưu điểm
+Tiết kiệm chi phí và nguồn lực
+nhất; kiến trúc dữ liệu và tích
+hợp đồng bộ ngay
+Giữ được phần mềm đã đầu tư, vẫn
+tích hợp được về nền tảng chung
+Có vùng dữ liệu chuyên ngành
+riêng nhưng vẫn tối ưu chi phí;
+không cần hạ tầng riêng
+Chủ động hoàn toàn với
+dữ liệu realtime, IT –OT
+quy mô lớn
+Hạn chế
+Bắt buộc quản trị điều hành
+tập trung; không có vùng dữ
+liệu riêng
+Chưa tối ưu tổng thể; phát sinh chi
+phí thiết kế tích hợp cho phần mềm
+ngoài hệ sinh thái
+Phát sinh chi phí license và tenant;
+phụ thuộc năng lực hub
+Chi phí đầu tư và vận hành
+cao nhất; cần đội CNTT đủ
+năng lực
+Chi phí phát sinh
+Tích hợp và triển khai dữ liệu
+cho phần mềm mới hoặc khác
+hệ sinh thái
+Triển khai Data Platform, thiết kế và
+triển khai tích hợp, triển khai dữ
+liệu
+Như L2, cộng license phần mềm
+
+
+
+==================== MỤC 23 ====================
+============================================================
+
+--- Trang 55 [Từ khóa: l3, spoke, level, vận hành, quy chế, quản trị dữ liệu] ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Điều kiện xem xét nâng đơn vị lên spoke riêng
+Khối lượng và tốc độ tăng dữ liệu Đẩy dữ liệu thô về hub tốn kém hơn xử lý tại chỗ, tính trên băng thông và lưu trữ
+Nhu cầu phân tích chuyên ngành cường
+độ cao Dữ liệu vận hành thiết bị, sensor, thời gian thực mà độ trễ qua hub không đáp ứng
+Ràng buộc pháp lý hoặc hợp đồng Dữ liệu buộc lưu và xử lý tại đơn vị
+Năng lực vận hành Đội CNTT đơn vị đủ khả năng vận hành nền tảng theo chuẩn Tổng công ty
+Bốn tiêu chí được định lượng trong quy chế quản trị dữ liệu và xét định kỳ hàng năm. Riêng PTSC M&C sẽ có phiên thảo luận riê ng về mô hình kiến trúc dữ
+liệu để xác định áp dụng L3 hoặc L4.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 50
+
+
+
+==================== MỤC 24 ====================
+--- Trang 59 [Từ khóa: spoke, level, workspace, chi phí, vận hành, quy chế, hạ tầng] ---
+077. MÔ HÌNH PHỤC VỤ ĐƠN VỊ NHỎ: TENANT TRÊN HẠ TẦNG HUB
+1
+Không trang bị data platform riêng:
+Chỉ cần agent thu thập dữ liệu tại chỗ (hoặc
+kéo trực tiếp qua API)
+2
+Workspace/tenant riêng trên hub:
+Vùng lưu trữ, pipeline, dashbo
+============================================================
+
+--- Trang 60 [Từ khóa: chi phí] ---
+D
+Chi phí, cơ chế đầu tư và kiến nghị
+08 · Chi phí và cơ chế đầu tư 09 · Rủi ro 10 · Kiến nghị
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 56
+
+
+
+==================== MỤC 26 ====================
+--- Trang 61 [Từ khóa: spoke, level, dung lượng, chi phí, vận hành, hạ tầng] ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Bảy cấu phần chi phí của phương án mở rộng
+01
+Hạ tầng
+Hạ tầng dHCI tại đơn vị áp dụng
+L4; mở rộng dung lượng hub cho
+các level còn lại. Tận dụng máy
+chủ sẵn có của đơn vị nếu đáp
+ứng.
+02
+License phần mềm nền tảng
+Bản quyền 12 tháng cho cloud và
+các phần mềm nền tảng; quy mô
+theo số đơn vị kết nối và phân
+vùng dữ liệu.
+03
+Dịch vụ triển khai Data
+Platform
+Triển khai nền tảng tại spoke hoặc
+phân vùng tenant theo cấu hình
+chuẩn.
+04
+Tích hợp phần mềm dùng
+chung
+Thiết kế và triển khai tích hợp
+HRM, ERP, E-Office và các phần
+mềm dùng chung với Tổng công
+ty.
+05
+Tích hợp phần mềm riêng và
+chuyên ngành
+Thiết kế và triển khai tích hợp cho
+phần mềm riêng, phần mềm mới
+hoặc ngoài hệ sinh thái Tổng công
+ty.
+
+
+
+==================== MỤC 27 ====================
+============================================================
+
+--- Trang 62 [Từ khóa: l3, level, chi phí, vận hành, phân quyền, hạ tầng] ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Chi phí phát sinh theo từng level triển khai
+Nhóm Hạng mục chi phí L1 L2 L3 L4
+Hàng hóa
+Hạ tầng dHCI riêng tại đơn vị Không Không Không Có
+License phần mềm nền tảng Không Không Có Có
+Dịch vụ
+Triển khai Data Platform Không Có Có Có
+Phần mềm dùng chung với Tổng công ty — thiết kế và triển khai tích
+hợp Không Có Có Có
+Phần mềm dùng chung — thiết kế và triển khai dữ liệu Không Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai tích hợp Có Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai dữ liệu Có Có Có Có
+Vận hành Chi phí vận hành nền tảng Phân bổ theo
+mức sử dụng
+Phân bổ theo
+mức sử dụng
+Phân bổ theo
+mức sử dụng
+Đơn vị tự vận
+hành
+Bản quyền phần mềm nền tảng tính cho 12 tháng, gồm cloud, ingestion, Lakehouse, ESB, MDM, phân quyền Data Operation, xử lý dữ liệu, Text-to-data, SIEM và quản trị siêu dữ liệu.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 58
+
+
+
+==================== MỤC 28 ====================
+============================================================
+
+--- Trang 63 [Từ khóa: spoke, chi phí, vận hành] ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Kiến nghị cơ chế đầu tư kết hợp giữa Tổng công ty và đơn vị
+PHƯƠNG ÁN 1
+Tổng công ty đầu tư tập trung toàn
+bộ, phân bổ chi phí sử dụng
+ƯU ĐIỂM
+Chuẩn nhất quán tuyệt đối; đàm phán bản
+quyền quy mô lớn; tiến độ đồng bộ.
+HẠN CHẾ
+Gánh nặng ngân sách tập trung; đơn vị
+thiếu gắn kết trách nhiệm.
+PHƯƠNG ÁN 2
+Đơn vị tự đầu tư spoke theo chuẩn
+Tổng công ty
+ƯU ĐIỂM
+Gắn trách nhiệm và chi phí với đơn vị
+hưởng lợi trực tiếp.
+HẠN CHẾ
+Tiến độ không đồng đều; nguy cơ lệch
+chuẩn; mất lợi thế đàm phán tập trung.
+PHƯƠNG ÁN 3 KIẾN NGHỊ
+Kết hợp: Tổng công ty đầu tư hub, nền tảng
+dùng chung, bản quyền khung và bộ tiêu
+chuẩn; đơn vị đầu tư hoặc thuê spoke và tích
+hợp nội bộ theo định mức chuẩn
+Tổng công ty giữ vai trò kiến trúc sư trưởng và chủ
+sở hữu chuẩn dữ liệu; đơn vị thụ hưởng gắn trách
+nhiệm đầu tư và vận hành. Cơ chế phân bổ chi phí
+cụ thể xây dựng trong Giai đoạn 2A.
+Đơn vị chưa có nguồn chi phí sẽ được Tổng công ty
+đầu tư trước và ghi nợ.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 59
+
+
+=======================================================
+FILE: 20260810_Slide_Hoi thao Data Platform_Ph
+============================================================
+
+--- Trang 8 [Từ khóa: quản trị dữ liệu, hybrid, hạ tầng] ---
+LỰA CHỌN KIẾN TRÚC MÔ HÌNH HYBRID DATA PLATFORM
+Mô hình Hybrid Data Platform
+kiến trúc Multi-site  Multi-cloud
+- Multi-site (Nhiều địa điểm) hạ tầng lưu trữ tại chỗ liên kết
+nhiều vị trí địa lý khác nhau (Từ CQTCT đến các Đơn vị)
+- Multi-cloud (Nhiều hãng điện toán đám mây) cho phép
+mở rộng sử dụng nhiều cloud dựa trên nhu cầu và điểm
+mạnh của từng Hãng cung cấp
+Bao gồm 12 phân hệ chức năng đáp ứng 6 tính năng chính:
+Tích luỹ - Tích hợp - Đồng bộ
+Phân chia - Phân tích - Quản trị dữ liệu lớn
+
+
+
+==================== MỤC 32 ====================
+============================================================
+
+--- Trang 14 [Từ khóa: dung lượng, vận hành, quản trị dữ liệu, governance] ---
+NỀN TẢNG DỮ LIỆU (DATA PLATFORM)
+15++ công cụ
+cho 5 vai trò
+Data governance
+• Trục tích hợp: WSO2; Apache Camel..
+• Ingestion realtime & batch: Airbyte, Debezium,
+Dragster..
+• Lưu trữ Lakehouse: Apache Iceberg, Parquet..
+• Truy vấn & xử lý: Trino, ClickHouse, Flink, Spark
+• Chất lượng dữ liệu: dbt, Great Expectations
+• Công cụ vẽ biểu đồ, báo cáo tự động
+• Công cụ phân tích máy học ML
+• Công cụ giám sát an ninh SIEM
+• Truy vấn tiếng Việt
+• Time-travel dữ liệu / SSO / truy vết người dùng
+Khả năng mở rộng theo cả chiều ngang (thêm dung lượng dữ
+liệu) và chiều dọc (thêm nhiều tính năng khác)
+Data Platform là giải pháp công nghệ đáp
+ứng nhu cầu Tích luỹ - Tích hợp - Đồng bộ
+Phân chia - Phân tích - Quản trị dữ liệu lớn
+nhằm phục vụ các bài toán quản trị, tối ưu
+vận hành, R&D của Toàn PTSC
+Tính năng nổi bật
+Mô phỏng
+Data engineer
+Data analyst
+Data admin
+Data governance
+Dev Ops
+
+
+
+==================== MỤC 33 ====================
+--- Trang 26 [Từ khóa: chi phí] ---
+TRỤC TÍCH HỢP (ESB)
+Một trong những thách thức và hậu quả “lớn nhất” ở góc
+độ Kỹ thuật của các dự án Chuyển đổi số là Tích hợp các
+phần mềm
+● Nhiều h
+============================================================
+

@@ -1,0 +1,100 @@
+=== Trang 5 ===
+   Trang 5/83  2.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 31	 2.2.	 Yêu cầu kỹ thuật ........................................................................................................ 32	 2.3.	 Đề xuất lựa chọn ........................................................................................................ 33	 3.	Phân hệ Trục tích hợp (Enterprise Service Bus – ESB) ............................................... 33	 3.1.	 Mô tả yêu cầu nghiệp vụ ........................................................
+
+
+==================================================
+=== Trang 9 ===
+   Trang 9/83  3. Nguyên tắc đánh giá – lựa chọn giải pháp  Một số nguyên tắc cần được quán triệt trong quá trình lựa chọn và đánh giá giải pháp cũng  như thiết kế kiến trúc Mô hình quản trị dữ liệu, cụ thể:  - Tuân thủ các quy định pháp lý hiện hành về dữ liệu;   - Đảm bảo quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung;  - Kiến trúc mô hình dữ liệu hiện đại và linh hoạt;  - Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai;  - Đảm bảo các yêu cầu, quy định về an toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn);  - Đáp ứng lộ trình theo Chiến lược Chuyển đổi số của
+
+
+==================================================
+=== Trang 10 ===
+   Trang 10/83  4.3. Kiến trúc mô hình dữ liệu hiện đại và linh hoạt  - Tính linh hoạt: Giải pháp cần được thiết kế với kiến trúc linh hoạt, cho phép tổ chức  và triển khai hệ thống dữ liệu theo các mô hình đa dạng như Hybrid, Multi -cloud,  Multi-site để phù hợp với chiến lược dữ liệu và nhu cầu vận hành trong tương lai;  - Tính hiện đại: kiến trúc cần ưu tiên ứng dụng các công nghệ tiên tiến, tận dụng các nền  tảng dữ liệu thương mại hóa uy tín trên thế giới, đồng thời khai thác hiệu quả sức mạnh  tính toán và khả năng mở rộng của hạ tầng điện toán đám mây (cloud) để phục vụ các  nghiệp vụ y
+
+
+==================================================
+=== Trang 13 ===
+   Trang 13/83  (2025–2030, định  hướng 2035).   lộ trình chuyển đổi số  dài hạn.  - Về mặt chi phí đầu tư và vận hành:  Tiêu chí  đánh giá  On-Premise Data  Platform  Cloud Data Platform Hybrid Data Platform  Chi phí  đầu tư  ban đầu  Ưu điểm: Tổng thể chi  phí đầu tư một lần, dễ dự  toán vốn.   Nhược điểm: Yêu cầu  đầu tư hạ tầng phần  cứng, phần mềm, nhân  sự quản trị kỹ thuật ngay  từ đầu, chi phí ban đầu  rất cao.  Ưu điểm: Không yêu cầu  đầu tư hạ tầng ban đầu,  mô hình OPEX phù hợp  ngân sách linh hoạt.  Nhược điểm: Chi phí  hàng tháng tăng theo  dung lượng, lưu lượng và  thời gian sử d
+
+
+==================================================
+=== Trang 16 ===
+   Trang 16/83  3.2. Định hướng các phân hệ chức năng của Hybrid Data Platform  Mô hình Hybrid Data Platform, đáp ứng khả năng mở rộng linh hoạt, kết nối với nhiều  nền tảng điện toán đám mây khác nhau (multi-cloud) và nhiều địa điểm khác nhau (multi-site)  làm kiến trúc nền tảng dữ liệu dùng chung.  Mục  tiêu  Phân hệ   chức năng Mô tả Phân hệ chức năng  On-premis  Data  Platform  Cloud Data  Platform  Tích  luỹ  1 Phân hệ  thu thập  dữ liệu  Thu thập dữ liệu từ nhiều nguồn  khác nhau (file, API, cơ sở dữ  liệu, IoT…), chuẩn hóa đầu vào  để đưa vào hệ thống lưu trữ  trung tâm.  Thu thập  (Ing
+
+
+==================================================
+=== Trang 21 ===
+   Trang 21/83  CHƯƠNG 3  ĐỀ XUẤT THIẾT KẾ KIẾN TRÚC DỮ LIỆU  NỀN TẢNG DỮ LIỆU DÙNG CHUNG  Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025  A. Giới thiệu chung  1. Mục tiêu công việc  - Chuẩn hóa và tích hợp hệ thống phần mềm, dữ liệu hiện tại (và tương lai) của khách  hàng để hỗ trợ chuyển đổi số toàn diện.  - Xây dựng kiến trúc hệ thống đồng bộ, cho phép tích hợp dữ liệu từ nhiều nguồn, phục  vụ phân tích, báo cáo thông minh, và ứng dụng AI.  - Tăng khả năng ra quyết định nhanh chóng thông qua báo cáo thời gian thực và phân  tích dữ liệu nâng cao.  - Đảm bảo bảo m
+
+
+==================================================
+=== Trang 23 ===
+   Trang 23/83  1.3. Kết quả cần đạt  - Báo cáo Tổng quan Hệ thống và Dữ liệu: trình bày rõ ràng cách các hệ thống thông tin  và phần mềm hiện hữu đang hoạt động, cách dữ liệu chảy từ bộ phận này sang bộ phận  khác (ví dụ: từ vận hành nhà máy đến quản lý khách hàng), và những vấn đề cần cải  thiện (như nhập liệu thủ công, dữ liệu không đồng bộ).  - Định nghĩa Các Bộ phận và Dữ liệu Quan trọng: Tài liệu này xác định các bộ phận  chính trong công ty (như vận hành, khách hàng, nhân sự) và những thông tin quan trọng  cần tập trung (ví dụ: dữ liệu thiết bị, thông tin khách hàng, lịch bảo trì), làm 
+
+
+==================================================
+=== Trang 25 ===
+   Trang 25/83  Ví dụ: Nếu có lỗi trong báo cáo doanh thu, đội ngũ quản trị có thể kiểm tra xem dữ liệu  đến từ ERP, HRM hay các phần mềm liên quan để xử lý.  2.2.2. Yêu cầu kỹ thuật thực hiện:  - Xây dựng quy chuẩn về cách lưu trữ và sử dụng dữ liệu  Đặt ra các quy định rõ ràng về cách dữ liệu được lưu trữ và sử dụng trên toàn công ty,  ví dụ: định dạng ngày giờ, cách đặt mã định danh cho khách hàng, thiết bị, hoặc sản  phẩm. Điều này đảm bảo các hệ thống hiểu nhau và dữ liệu được sử dụng một cách  thống nhất.  - Thiết lập cách kết nối dữ liệu giữa các hệ thống  Xác định các phương thức để dữ
+
+
+==================================================
+=== Trang 27 ===
+   Trang 27/83  2.5. Thiết kế kỹ thuật luồng dữ liệu - Data Pipeline (Data Architectures &  Application Integration)  Luồng dữ liệu là trục kỹ thuật quan trọng kết nối dữ liệu từ các hệ thống nguồn về nền  tảng dữ liệu dùng chung, thực hiện xử lý, làm sạch, chuẩn hóa và cung cấp cho các hệ thống  phân tích, báo cáo và AI. Thiết kế pipeline hiệu quả giúp đảm bảo dữ liệu được đồng bộ, chính  xác và sẵn sàng sử dụng.  2.5.1. Phân loại và đặc điểm luồng dữ liệu  - Luồng batch: Dữ liệu được xử lý theo lịch trình định kỳ (hàng giờ, hàng ngày). Áp dụng  với các hệ thống như ERP, HRM, kế toán…  - Luồn
+
+
+==================================================
+=== Trang 28 ===
+   Trang 28/83  CHƯƠNG 4  ĐỀ XUẤT KỸ THUẬT HỆ SINH THÁI ỨNG DỤNG  NỀN TẢNG DỮ LIỆU DÙNG CHUNG  Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025   A. KIẾN TRÚC TỔNG THỂ (Hybrid Data Platform)  Mô hình Hybrid Data Platform bao gồm các phân hệ chức năng và được quy hoạch như  sau:  Mục  tiêu  Phân hệ   chức năng  On-premis Data  Platform  Cloud Data  Platform  Tích  luỹ  1 Phân hệ thu thập dữ liệu Thu thập  (Ingestion)  Thu thập  (Ingestion)  2 Phân hệ Lưu trữ dữ liệu (Data  lakehouse)  Lưu trữ (Storage) Lưu trữ (Storage)  Tích  hợp  3 Phân hệ trục tích hợp Trục tích hợ
+
+
+==================================================
+=== Trang 30 ===
+   Trang 30/83  STT Nguồn dữ liệu Phương pháp thu thập dữ  liệu Ví dụ  1  File Excel, bảng  báo cáo dữ liệu  được nhập, tổng  hợp thủ công  Đặt vị trí cố định để  upload (Folder/ Drive/  SFTP)   → Hệ thống tự động quét  file định kỳ (batch)  Báo cáo tổng hợp thủ công, file  export từ phần mềm cũ  2  Phần mềm  không hỗ trợ  API, không hỗ  trợ xuất file  Thu thập từ Database  (CDC - Change Data  Capture hoặc Query trực  tiếp)  Các phần mềm đời cũ, phần  mềm đóng, không mở API hoặc  vendor không còn hỗ trợ mở  thêm API  3 Phần mềm có  API  Tự động gọi API / Nhận  file đính kèm theo lịch  định kỳ 
+
+
+==================================================
+=== Trang 31 ===
+   Trang 31/83  + Có khả năng Change Data Capture (CDC) từ các hệ thống nguồn để phát hiện  và xử lý cập nhật theo thời gian thực  + Hỗ trợ cấu hình pipeline linh hoạt, có thể thao tác qua giao diện người dùng  hoặc qua dòng lệnh/API  + Cho phép kiểm tra dữ liệu đã lấy, theo dõi tiến trình và log hoạt động  + Hỗ trợ kiểm tra và làm sạch dữ liệu ở bước thu thập, bao gồm: chuẩn hóa định  dạng, lọc dữ liệu, map schema.  - Bảo mật và hiệu suất:  + Hỗ trợ xác thực kết nối đến hệ thống nguồn (qua username/password, OAuth,  key, SSL)  + Có khả năng điều phối quá trình thu thập theo tải của hệ thống đ
+
+
+==================================================
+=== Trang 33 ===
+   Trang 33/83  2.3. Đề xuất lựa chọn  Đề xuất ứng dụng một trong các công cụ sau (có thể kết hợp): Minio, Parquet, Apache và  các giải pháp tương đương, bắt buộc đáp ứng các tiêu chí:  + Hỗ trợ định dạng phân tích hiện đại: Parquet + table format như Apache Iceberg  + Lưu trữ dạng Object Storage, tương thích S3, triển khai được on-prem  + Tích hợp tốt hệ sinh thái mở: Spark, Trino, Kafka, Airbyte, OpenMetadata  3. Phân hệ Trục tích hợp (Enterprise Service Bus – ESB)  3.1. Mô tả yêu cầu nghiệp vụ  - Mô tả: Phân hệ Trục tích hợp (Integration Bus/ESB), đóng vai trò như "xương sống  giao tiếp" gi
+
+
+==================================================
+=== Trang 54 ===
+   Trang 54/83  - Lưu trữ (Storage): Dữ liệu được lưu trữ cục bộ trên các node, được quản lý bởi một hệ  thống lưu trữ định nghĩa bằng phần mềm (Software-Defined Storage - SDS), phân phối  dữ liệu trên nhiều node để đảm bảo độ bền và hiệu suất.  - Mạng (Networking): Các node được kết nối qua mạng nội bộ, thường sử dụng mạng  Ethernet tốc độ cao để giao tiếp và truyền dữ liệu.  - Phần mềm quản lý: Một giao diện quản lý tập trung (thường là web-based) để cấu hình,  giám sát, và mở rộng toàn bộ hệ thống.    Ưu điểm:  - Quản lý đơn giản: HCI cung cấp một giao diện duy nhất để quản lý toàn bộ cơ sở
+
+
+==================================================
+=== Trang 55 ===
+   Trang 55/83  - Không tối ưu cho workload chuyên biệt: Các hệ thống xử lý dữ liệu lớn (ETL, AI/ML,  data lake, cold storage...) đòi hỏi tách compute và storage để tối ưu hiệu năng, điều mà  HCI khó thực hiện.  - Storage thường kém hơn SAN chuyên dụng: Dù có tích hợp SDS (Software Defined  Storage), nhưng hiệu năng và độ ổn định không bằng SAN trong xử lý IOPS cao hoặc  workloads phân tán.  - Bị giới hạn bởi phần mềm quản trị riêng: Mỗi nhà cung cấp HCI (Nutanix, VMware  vSAN, HPE SimpliVity...) có một hệ sinh thái riêng biệt, gây khó khăn khi tích hợp với  các hệ thống mở hoặc hybrid cloud đ
+
+
+==================================================
+=== Trang 58 ===
+   Trang 58/83  Tiêu chí Hạ tầng công nghệ  truyền thống  HCI (Hyper- Converged  Infrastructure)  dHCI (Disaggregated  HCI)  Kết nối &  đồng bộ dữ  liệu lên đa  đám mây  Nhược điểm: Cần tích  hợp thủ công hoặc qua  phần mềm trung gian  Nhược điểm: Chỉ một số  HCI hỗ trợ (VMware,  Nutanix…), phần lớn hạn  chế hoặc cần phần mềm  bổ sung  Ưu điểm: Tích hợp sẵn  khả năng hybrid/multi- cloud  Lưu trữ &  sao lưu dữ  liệu  Nhược điểm: Lưu trữ  SAN truyền thống, sao  lưu qua hệ thống backup  rời rạc  Nhược điểm: Không  chống ransomware  mạnh.  Ưu điểm: Hỗ trợ  snapshot bất biến,  replication, backup  
+
+
+==================================================
+=== Trang 59 ===
+   Trang 59/83      STT Danh mục ĐVT Số lượng  1 Bản quyền phần mềm / chi phí bảo trì / hỗ trợ trên  cloud  Gói 1        Dịch vụ Microsoft Onelake và Fabric cho 70 user,  20TB – 12 tháng         Dịch vụ phần mềm quản trị dữ liệu Microsoft Fabric  Capacity F16  Tháng 12    OneLake Storage cho 20 TB Tháng 12    Microsoft Purview - Data Governance: 500 Assets Tháng 12    2.2. On premis data platform  2.2.1. Quy mô triển khai  - Số lượng người dùng dự kiến: Hệ thống phục vụ khoảng 70 người dùng thường xuyên,  bao gồm cán bộ kỹ thuật, quản trị và phân tích dữ liệu. Có khả năng mở rộng quy mô  người
+
+
+==================================================
+=== Trang 63 ===
+   Trang 63/83  Chức năng chính:  - Hệ thống cho phép truyền dữ liệu nhanh giữa các máy ảo hoặc giữa máy chủ và nơi lưu  trữ dữ liệu trong nội bộ hệ thống  - Phân vùng mạng cho các tải nặng  - Đảm bảo hệ thống hoạt động ổn định, luôn sẵn sàng, có dự phòng và không bị gián đoạn.  - Kết nối tốc độ có thể đạt tới 100GbE/25GbE đảm bảo pipeline xử lý lớn mà không bị  nghẽn.  - Cho phép nâng cấp mở rộng nhanh chóng khi tăng thêm compute hoặc storage node  - Tối ưu cho Hybrid Cloud, hỗ trợ VXLAN, EVPN để chuẩn bị cho cloud-native, Azure  Arc, Multicloud…  4.3. Máy chủ  Máy chủ trong dHCI đảm nhận vai
+
+
+==================================================
+=== Trang 76 ===
+   Trang 76/83  - On-Premise Data Platform (Nền tảng dữ liệu triển khai tại chỗ): Là mô hình triển  khai hệ thống hạ tầng lưu trữ và xử lý dữ liệu trực tiếp tại Trung tâm dữ liệu của  Tổng công ty PTSC. Toàn bộ hệ thống phần cứng, phần mềm và các cơ sở dữ liệu  được vận hành, quản lý nội bộ;  - Cloud Data Platform (Nền tảng dữ liệu điện toán đám mây): Là mô hình lưu trữ và  xử lý dữ liệu thông qua hạ tầng dịch vụ đám mây do các nhà cung cấp uy tín cung  cấp. Dữ liệu được truy cập, quản lý và vận hành trên môi trường điện toán đám  mây với khả năng mở rộng linh hoạt;  - Hybrid Data Platform (Nề
+
+
+==================================================
+=== Trang 78 ===
+   Trang 78/83  STT Danh mục hàng hóa/ dịch vụ Đơn vị  tính  Khối  lượng  yêu cầu  Tiến  độ  cung  cấp  Địa  điểm  cung  cấp   Microsoft Purview - Data Governance: 500 Assets bản quyền sử dụng trong 12  tháng Bộ 1      II.2 On-prem data platform        II.2.1 Bản quyền phần mềm Bộ 1      1 Phần mềm trục tích hợp (ESB) Phân hệ 1      2 Phần mềm Quản lý và phân quyền cho các vai trò nhân sự (RBAC) Phân hệ 1      3 Phần mềm thu thập dữ liệu (Ingestion) Phân hệ 1      4 Phần mềm lưu trữ (data lakehouse) Phân hệ 1      5 Phần mềm biến đổi / xử lý dữ liệu (Transform) Phân hệ 1      6 Phần mềm quản l
+
+
+==================================================

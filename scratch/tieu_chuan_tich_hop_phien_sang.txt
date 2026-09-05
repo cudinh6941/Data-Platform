@@ -1,0 +1,60 @@
+=== Trang 40 ===
+TIÊU CHUẨN TÍCH HỢP ( A THỊNH)
+— MỤC LỤC
+Nội dung trình bày
+PTSC · Báo cáo Khảo sát – Thiết kế Dữ liệu
+3.2
+
+=== Trang 41 ===
+TÍCH HỢP DỮ LIỆU
+
+
+=== Trang 42 ===
+PHƯƠNG ÁN TRIỂN VÀ PHẠM VI TRIỂN KHAI TÍCH HỢP 
+
+
+=== Trang 43 ===
+KHUNG TIÊU CHUẨN TÍCH HỢP
+Bảo mật
+Vận hành
+API/Event
+Dữ liệu Biết tích hợp cái gì, từ đâu, mã nào là chuẩn? Tiêu chuẩn 
+dữ liệu
+Biết tích hợp bằng cách nào, realtime hay theo lịch. Có tiêu 
+chuẩn về mặt kỹ thuật tích hợp
+Biết ai được gọi, gọi bằng quyền gì, dữ liệu có an toàn không? 
+Tiêu chuẩn bảo mật
+Biết lỗi ở đâu, xử lý lại thế nào, báo cáo ra sao? Tiêu chuẩn 
+vận hành
+
+=== Trang 44 ===
+TRỤC TÍCH HỢP ESB
+ESB – Enterprise
+Service Bus là trục
+tích hợp trung tâm
+giúp các hệ thống
+phần mềm trao đổi
+dữ liệu với nhau
+một cách có kiểm
+soát, thay vì để
+từng hệ thống kết
+nối trực tiếp lẫn
+nhau
+
+
+=== Trang 45 ===
+NGUYÊN TẮC NGHIỆP VỤ
+
+
+=== Trang 46 ===
+TRỤC TÍCH HỢP ESB
+
+
+=== Trang 47 ===
+LỘ TRÌNH TRIỂN KHAI TÍCH HỢP
+
+
+=== Trang 48 ===
+PHẦN 4:
+HỎI ĐÁP
+

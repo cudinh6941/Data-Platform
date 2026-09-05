@@ -1,0 +1,823 @@
+
+
+==================== PHIEN SANG - VAI TRO DON VI & TCT ====================
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Sang.pdf | Trang 22 ---
+MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY
+
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Sang.pdf | Trang 23 ---
+MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY
+Nội dung trọng tâm Vai trò của đơn vị Vai trò của Tổng công ty Cơ chế / Công cụ kỹ thuật
+1. Tiếp nhận dữ liệu Có Landing Zone riêng để kiểm 
+duyệt trước khi gửi về TCT
+Chịu trách nhiệm quản trị nền 
+tảng, làm sạch dữ liệu
+Hybrid data platform – Landing 
+Zone
+2. Kiểm duyệt dữ liệu Chịu trách nhiệm kiểm tra dữ liệu 
+nguồn và Approve/Reject thuộc 
+phạm vi đơn vị 
+Chỉ tiếp nhận dữ liệu sau khi 
+được Approve
+Workflow, Purview, Data Quality
+3. Quyền sở hữu dữ liệu Data Owner, chịu trách nhiệm dữ 
+liệu thuộc phạm vi đơn vị
+Platform / Governance Owner Purview, Data Governance
+4. Quyền truy cập & 
+khai thác
+Kiểm soát quyền theo miền dữ liệu 
+và vai trò phân công
+Quản trị định danh và quyền 
+truy cập
+Entra ID/Azure AD, Keycloak, 
+SSO, RBAC, OneLake/Fabric
+5. Bảo mật & riêng tư Kiểm soát dữ liệu nhạy cảm trước 
+khi công bố
+Ban hành chính sách, giám sát 
+tập trung
+Purview, DLP/DSPM, Encryption, 
+PAM/CyberArk
+6. Giám sát & minh bạch Quản lý được dữ liệu của mình được 
+truy cập/khai thác theo quyền
+Giám sát, kiểm toán và truy vết SIEM/SOC, Audit Log, Purview 
+Lineage
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Sang.pdf | Trang 24 ---
+MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY
+Thông điệp gửi đến các đơn vị Vai trò/ Cơ chế của Hybrid data platform
+Dữ liệu không bị lấy tùy ý Mỗi đơn vị có Landing Zone riêng; dữ liệu chỉ được đưa vào vùng dùng chung sau khi đơn vị
+kiểm duyệt và phê duyệt
+Không phải ai ở Tổng công ty 
+cũng xem được dữ liệu
+Các biện pháp kỹ thuật như: IAM + RBAC + SSO + MFA kiểm soát ai được truy cập dữ liệu nào
+Dữ liệu nhạy cảm được bảo vệ Purview + DLP/DSPM + Encryption phân loại và kiểm soát dữ liệu
+Không thể truy cập mà không để 
+lại dấu vết
+Audit Log + SIEM ghi nhận ai – lúc nào – truy cập gì – thực hiện gì
+Đơn vị không phải tự làm toàn bộ 
+công việc dữ liệu
+Đơn vị chỉ kiểm duyệt dữ liệu thô; Tổng công ty sẽ hỗ trợ đơn vị trong việc làm sạch, chuẩn hóa, 
+thực thi quản lý dữ liệu theo cơ chế chính sách và xây dựng sản phẩm dữ liệu
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Sang.pdf | Trang 25 ---
+MÔ HÌNH KẾT NỐI KHAI THÁC DỮ LIỆU TỔNG CÔNG TY - ĐƠN VỊ
+
+
+
+
+==================== PHIEN CHIEU - PHAN NHOM L3/QN & QUY CHE & LO TRINH ====================
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 21 ---
+02 · CẤU TRÚC
+MÔ HÌNH QUẢN TRỊ 5 CẤP
+Mô hình quản trị dữ liệu 5 cấp
+Cấp Chủ thể Vai trò chính
+Cấp 1 Hội đồng Quản trị Dữ liệu (và Văn phòng Quản trị 
+Dữ liệu) Định hướng chiến lược; phê duyệt chính sách, tiêu chuẩn; xử lý xung đột liên miền
+Cấp 2 Hội đồng Dữ liệu khối / chuyên ngành Điều phối liên Ban; đồng bộ tiêu chuẩn giữa các miền dữ liệu
+Cấp 3 Chủ quản dữ liệu (Trưởng Ban) Quản lý nghiệp vụ dữ liệu của miền; phê duyệt phân loại, chất lượng, truy cập, chia sẻ. Trách nhiệm giải trình đặt ở 
+cấp này
+Cấp 4 Quản trị miền dữ liệu Siêu dữ liệu, từ điển, quy tắc chất lượng; chuẩn hóa, ánh xạ; xử lý vấn đề dữ liệu
+Cấp 5 Đơn vị vận hành hệ thống dữ liệu (Ban NCPT&CDS) Vận hành nền tảng, phân quyền, giám sát, sao lưu. Không sở hữu dữ liệu nghiệp vụ
+Tên gọi các vai trò thống nhất với Quy chế Quản trị dữ liệu của Petrovietnam. Chủ sở hữu dữ liệu theo định nghĩa của Tập đoànlà tổ chức — tức PTSC.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 17
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 22 ---
+03 · VAI TRÒ
+CHỦ QUẢN DỮ LIỆU
+Trưởng Ban/ Lãnh đạo Đơn vị - Chủ quản dữ liệu cần làm gì?
+1 Phê duyệt phân loại và gắn nhãn dữ liệu của miền phụ trách (Cấp 4 đề xuất)
+2 Quyết định định nghĩa dữ liệu, quy tắc nghiệp vụ, tiêu chuẩn chất lượng, ngưỡng 
+lỗi, từ điển dữ liệu
+3 Xác định thời hạn lưu trữ cho mọi nhóm dữ liệu của miền — điều kiện để vận 
+hành vòng đời và tiêu hủy
+4 Thẩm định và phê duyệt yêu cầu truy cập, chia sẻ, chuyển giao trong phạm vi 
+phân cấp
+5 Phê duyệt bản ghi chuẩn khi các hệ thống có dữ liệu mâu thuẫn
+6 Xác định dữ liệu cá nhân trong miền để áp dụng biện pháp bảo vệ theo luật
+7 Chỉ định nhân sự Quản trị miền dữ liệu (Cấp 4) và bảo đảm nguồn lực
+8 Có quyền dừng cung cấp, chia sẻ dữ liệu nếu yêu cầu vi phạm quy định hoặc gây 
+mất an toàn
+Chất lượng dữ liệu là một tiêu chí đánh giá mức độ hoàn thành nhiệm vụ.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 18
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 38 ---
+MÔ HÌNH PHÂN CẤP VAI TRÒ QUẢN TRỊ DỮ LIỆU PTSC (5 LEVELS)
+4 LEVEL ĐIỀU HÀNH – 1 LEVEL TRIỂN KHAI – 1 LEVEL KỸ THUẬT
+LEVEL
+1
+ENTERPRISE
+DATA GOVERNANCE
+Hội đồng Quản trị Dữ liệu
+(Data Governance Council)
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• HĐQT & Ban TGĐ
+• Lãnh đạo cấp cao PTSC
+• Đại diện các khối trọng yếu
+ Định hướng
+chiến lược  dữ liệu
+Phê duyệt chính sách,
+tiêu chuẩn dữ liệu
+Quyết định dữ liệu
+dùng chung
+Giám sát Data
+Governanc e/BI/AI
+Cấp  ch iến lược cao 
+nh ất
+Định hướng &  giám 
+sát
+quản trị dữ liệu 
+toàn PTSC
+LEVEL
+2
+EXECUTI VE DATA
+COORDINATION
+Hội đồng dữ liệu khối /
+lĩnh vực / chuyên ngành
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• Lãnh đạo các khối
+• Lĩnh vực / chuyên ngành
+• Đại diện các Ban liên quan
+ Điều phối dữ liệu
+liên Ban
+Đồng bộ tiêu chuẩn
+giữa các domain
+Điều phối c hia sẻ
+dữ liệu
+Đề xuất governance
+lên Level 1
+Cấp  điều  h àn h
+liên phòng ban
+Điều phối &  thống 
+nhất liên domain
+LEVEL
+3
+DATA DOMAIN
+OW NERSHIP
+Data Domain Owners
+(T rưởng Ban /
+lãnh đạo domain dữ liệu)
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• Trưởng Ban
+• Lãnh đạo domain dữ liệu
+(T CKT, QLNL, T M, KTX, ATCL, ...)
+ Sở hữu dữ liệu
+theo domain
+Phê duyệt quy tắc
+nghiệp vụ & tiêu chuẩn
+Chịu trách nhiệm
+chất lượng dữ liệu
+Phê duyệt
+chia sẻ dữ liệu
+Cấp  q uản trị 
+do main
+nghiệp vụ
+Accountability về 
+dữ liệu domain
+LEVEL
+4
+DATA DOMAIN
+WORKING GROUP
+Nhóm phối hợp triển khai
+domain dữ liệu
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• BDA
+• Nhóm chuyên ngành
+• Nhóm phối hợp domain
+ Chuẩn hóa &
+mapping dữ liệu
+Theo dõi & đánh giá
+chất lượng dữ liệu
+Phối hợp
+liên domain
+Kiểm tra dữ liệu &
+đóng góp quy trình triển 
+khai
+Cấp  p hối h ợp triển 
+khai
+nghiệp vụ
+Cầu nối giữa 
+business
+và technic al
+LEVEL
+5
+TECHNICAL & DATA
+OPE RATIONS TEAM
+Ban CNTT  & CĐS /
+Data Platform Team /
+Technical Team
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• Ban CNT T & CĐS
+• Data Platform Team
+• Data Engineering Team
+• Technical Support Team
+ Vận hành Hybrid
+Data Platform
+Quản lý IAM /RB AC,
+bảo mật &  phân quyềnQuản lý integration,
+pipeline,  metadata
+Monitoring, backup,
+DR & hỗ trợ kỹ thuật
+Cấp  vận hành  kỹ 
+thu ật
+Vận hành nền tảng,
+bảo mật, tích hợ p 
+& hỗ trợ hệ thống
+LUỒNG
+GOVERNANCE
+(Định 
+hướng,
+chính sách,
+tiêu chuẩn)
+LUỒNG
+VẬN HÀNH
+(T hực thi, 
+triển khai,
+vận hành dữ 
+liệu)
+NG UYÊN TẮC QUẢN TRỊ DỮ LIỆU
+◉ Data là tài sản của PTSC
+Dữ liệu được quản trị như tài sản 
+chiến lược
+● Business Ownership
+Business sở hữu dữ liệu và chịu 
+trách nhiệm
+✪ Chất lượng là trọng tâm
+Đúng – đủ – sạch – kịp thời – an 
+toàn
+◆ Chia sẻ tạo giá trị
+Dữ liệu được chia s ẻ có kiểm s oát và 
+tạo giá trị
+▣ Bảo mật & Tuân thủ
+Tuân thủ pháp lý, chính sách và bảo 
+mật
+LUỒNG PHẢN 
+HỒI
+& 
+ESCALAT ION
+(Báo cáo, 
+phản hồi,
+đề xuất, cảnh 
+báo)
+GHI CHÚ LUỒNG
+Luồng governance
+(Đị nh hướng, chính sách, tiêu chuẩn)
+Luồng vận hành
+(T hực thi, triển khai, vận hành dữ liệu)
+Luồng phản hồi & escalation
+(Báo cáo, phản hồi, đề xuất, cảnh 
+báo)
+ĐỊNH NGHĨA RACI R Responsible
+(T hực hiện)
+A Accountable
+(Chịu trách nhiệm)
+C Consulted
+(T ham vấn)
+I Informed
+(Đư ợc thông báo)
+CÁCH HOẠT ĐỘNG TỔNG THỂ
+Level 1–3 định hướng & quản trị  |  Level 4 phối hợp triển khai  |  Level 5 vận hành kỹ thuật
+Dữ liệu được quản trị theo vòng lặp: Định hướng → T riển khai → Vận hành → Giám sát → Phản hồi & cải tiến
+ 33
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 46 ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Vai trò quản trị dữ liệu được phân cấp năm mức
+1
+Enterprise Data Governance
+Hội đồng Quản trị Dữ liệu · Ban Tổng Giám 
+đốc
+Định hướng chiến lược dữ liệu, phê duyệt chính sách và tiêu chuẩn, quyết định dữ liệu dùng chung, giám 
+sát Governance / BI / AI
+2
+Executive Data Coordination
+Hội đồng dữ liệu khối · lĩnh vực · chuyên 
+ngành
+Điều phối dữ liệu liên Ban, đồng bộ tiêu chuẩn giữa các domain, điều phối chia sẻ dữ liệu, đề xuất chính 
+sách lên cấp 1
+3
+Data Domain Ownership
+Trưởng Ban · Lãnh đạo Đơn vị
+Sở hữu dữ liệu theo domain, phê duyệt quy tắc nghiệp vụ và tiêu chuẩn, chịu trách nhiệm chất lượng dữ 
+liệu, phê duyệt chia sẻ dữ liệu — accountability nằm ở cấp này
+4
+Data Domain Working Group
+Nhân sự đầu mối Phòng/Bam/ Đơn vị
+Chuẩn hóa và mapping dữ liệu, theo dõi chất lượng dữ liệu, phối hợp liên domain, kiểm tra và đồng bộ 
+phục vụ triển khai
+5
+Technical & Data Operations
+Ban NCPT & CĐS · Data Platform Team
+Vận hành nền tảng hybrid, quản lý IAM/RBAC và phân quyền, quản trị pipeline và metadata kỹ thuật, 
+monitoring, backup, DR — không sở hữu dữ liệu nghiệp vụ
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 44
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 47 ---
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Logic phối hợp giữa các cấp và nguyên tắc vận hành dữ liệu
+LOGIC PHỐI HỢP VÀ LUỒNG DỮ LIỆU
+Chiến lược và Chính sách
+Định hướng từ Level 1
+Điều phối và Hướng dẫn
+Điều phối từ Level 2
+Sở hữu và Quyết định
+Ownership ở Level 3
+Triển khai và Kiểm soát
+Thực thi ở Level 4
+Vận hành và Hỗ trợ kỹ thuật
+Thực thi kỹ thuật ở Level 5
+NGUYÊN TẮC VẬN HÀNH
+Data là tài sản của PTSC
+Dữ liệu được quản trị như tài sản chiến lược
+Business Ownership
+Business sở hữu dữ liệu và chịu trách nhiệm
+Chất lượng là trọng tâm
+Dữ liệu đúng — đủ — sạch — kịp thời — an toàn
+Chia sẻ tạo giá trị
+Dữ liệu được chia sẻ có kiểm soát và tạo giá trị
+Bảo mật và Tuân thủ
+Tuân thủ pháp lý, chính sách và bảo mật
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 47
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 48 ---
+Mô hình phân cấp vai trò quản trị dữ liệu PTSC — 5 levels 4 level điều hành · 1 level triển khai · 1 level kỹ thuật
+LEVEL
+1
+ENTERPRISE DATA 
+GOVERNANCE
+Hội đồng Quản trị Dữ liệu
+THÀNH PHẦN
+• Ban TGĐ
+• Lãnh đạo cấp cao PTSC
+• Đại diện các khối trọng yếu
+VAI TRÒ CHÍNH
+Định hướng
+chiến lược
+dữ liệu
+Phê duyệt
+chính sách, 
+tiêu chuẩn
+dữ liệu
+Quyết định
+dữ liệu dùng
+chung
+Giám sát Data 
+Governance / 
+BI / AI
+ĐẶC ĐIỂM
+Cấp chiến lược cao nhất
+Không vận hành dữ liệu hằng 
+ngày
+LEVEL
+2
+EXECUTIVE DATA 
+COORDINATION
+Hội đồng dữ liệu khối / lĩnh vực / 
+chuyên ngành
+THÀNH PHẦN
+• Lãnh đạo các khối
+• Lĩnh vực / chuyên ngành
+• Đại diện các Ban liên quan
+VAI TRÒ CHÍNH
+Điều phối
+dữ liệu
+liên Ban
+Đồng bộ tiêu
+chuẩn giữa các 
+domain
+Điều phối
+chia sẻ dữ
+liệu
+Đề xuất
+governance 
+lên Level 1
+ĐẶC ĐIỂM
+Cấp điều hành liên phòng ban
+Không vận hành kỹ thuật
+LEVEL
+3
+DATA DOMAIN OWNERSHIP
+Data Domain Owners — Trưởng
+Ban / Lãnh đạo Đơn vị
+THÀNH PHẦN
+• Trưởng Ban
+• Lãnh đạo domain dữ liệu (TCKT, 
+QTNL, TM, KTSX, ATCL, …)
+VAI TRÒ CHÍNH
+Sở hữu dữ
+liệu theo
+domain
+Phê duyệt
+quy tắc
+nghiệp vụ và
+tiêu chuẩn
+Chịu trách
+nhiệm chất
+lượng dữ
+liệu
+Phê duyệt
+chia sẻ dữ
+liệu
+ĐẶC ĐIỂM
+Cấp quản trị domain nghiệp vụ
+Accountability nằm ở đây
+LEVEL
+4
+DATA DOMAIN WORKING 
+GROUP
+Nhóm phối hợp triển khai domain 
+dữ liệu
+THÀNH PHẦN
+• BDA
+• Nhóm chuyên ngành
+• Nhóm phối hợp domain
+VAI TRÒ CHÍNH
+Chuẩn hoá
+và mapping 
+dữ liệu
+Theo dõi, 
+đánh giá
+chất lượng
+dữ liệu
+Phối hợp
+liên domain
+Kiểm tra dữ
+liệu và đồng
+bộ phục vụ
+triển khai
+ĐẶC ĐIỂM
+Cấp phối hợp triển khai nghiệp 
+vụ
+Cầu nối giữa business và 
+technical
+LEVEL
+5
+TECHNICAL & DATA 
+OPERATIONS TEAM
+Ban CNTT & CĐS / Data Platform 
+Team / Technical Team
+THÀNH PHẦN
+• Ban NCPT & CĐS
+• Data Platform Team
+• Data Engineering Team
+• Technical Support Team
+VAI TRÒ CHÍNH
+Vận hành
+Hybrid Data
+Platform
+Quản lý
+IAM/RBAC, 
+bảo mật và
+phân quyền
+Quản lý IT
+integration,
+pipeline,
+metadata
+kỹ thuật
+Monitoring,
+backup, DR và
+hỗ trợ kỹ
+thuật
+ĐẶC ĐIỂM
+Cấp vận hành kỹ thuật
+Không sở hữu business data, chỉ 
+vận hành platform và hệ thống
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 45
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 53 ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Đơn vị được phân nhóm theo pháp nhân, quy mô và mức trưởng thành 
+số
+Nội dung L1 — Dùng chung như một Ban 
+của TCT L2 — Dùng chung, có phần mềm riêng L3 — Phân vùng dữ liệu riêng trên 
+hub
+L4 — Hybrid Data Platform 
+riêng
+Pháp nhân Chi nhánh trực thuộc Chi nhánh trực thuộc Pháp nhân độc lập hoặc chi nhánh 
+có nhu cầu dữ liệu lớn Pháp nhân độc lập
+Mức trưởng thành số 
+DBI Mức 0 – 2 Mức 0 – 2 Mức 2 đến 3,5 Trên mức 3,5
+Phần mềm nghiệp vụ 
+dùng chung
+Dùng chung 100% HRM, ERP, 
+EOF, SKCT, QTRR — chỉ khai báo 
+thêm người dùng
+Dùng chung trên 70%; một số phần mềm 
+không cùng hệ sinh thái, cần khảo sát và 
+thiết kế tích hợp mới
+Tận dụng thiết kế của Tổng công ty; 
+thiết kế lại nếu dùng phần mềm 
+khác hệ sinh thái
+Đơn vị tự đầu tư; khảo sát, 
+thiết kế và tính toán lại 
+toàn bộ
+Dữ liệu chuyên ngành Theo kiến trúc dữ liệu chung đã 
+thiết kế Phải thiết kế thêm một phần Đăng ký thêm phân vùng tenant cho 
+dữ liệu chuyên ngành
+Lưu và xử lý tại đơn vị, gồm 
+dữ liệu OT quy mô lớn
+Hạ tầng Tổng công ty đã đầu tư Tổng công ty đầu tư mở rộng theo nhu cầu 
+chi nhánh
+Tổng công ty đầu tư mở rộng, tính 
+thêm nhu cầu tenant
+Đơn vị tự đầu tư hạ tầng 
+dHCI
+Ví dụ áp dụng
+Chi nhánh không tự triển khai 
+phần mềm: Petro Hotel, Hà Nội, 
+Long Phú
+Đơn vị, chi nhánh muốn dùng chung 
+nhưng đã có một số phần mềm tự triển 
+khai
+Supply Base dùng chung phần mềm 
+nghiệp vụ, cần thêm khu vực dữ liệu 
+cảng
+Đơn vị lớn, nhiều phần 
+mềm và nhu cầu dữ liệu 
+realtime lớn
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 48
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 54 ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Mỗi level có ưu điểm, hạn chế và chi phí khác nhau
+Tiêu chí L1 L2 L3 L4
+Ưu điểm
+Tiết kiệm chi phí và nguồn lực 
+nhất; kiến trúc dữ liệu và tích 
+hợp đồng bộ ngay
+Giữ được phần mềm đã đầu tư, vẫn 
+tích hợp được về nền tảng chung
+Có vùng dữ liệu chuyên ngành 
+riêng nhưng vẫn tối ưu chi phí; 
+không cần hạ tầng riêng
+Chủ động hoàn toàn với 
+dữ liệu realtime, IT –OT 
+quy mô lớn
+Hạn chế
+Bắt buộc quản trị điều hành 
+tập trung; không có vùng dữ 
+liệu riêng
+Chưa tối ưu tổng thể; phát sinh chi 
+phí thiết kế tích hợp cho phần mềm 
+ngoài hệ sinh thái
+Phát sinh chi phí license và tenant; 
+phụ thuộc năng lực hub
+Chi phí đầu tư và vận hành 
+cao nhất; cần đội CNTT đủ 
+năng lực
+Chi phí phát sinh
+Tích hợp và triển khai dữ liệu 
+cho phần mềm mới hoặc khác 
+hệ sinh thái
+Triển khai Data Platform, thiết kế và 
+triển khai tích hợp, triển khai dữ 
+liệu
+Như L2, cộng license phần mềm 
+nền tảng theo phân vùng dữ liệu
+Như L3, cộng hạ tầng dHCI 
+riêng tại đơn vị
+Yêu cầu vận hành
+Không cần nhân lực vận hành 
+nền tảng; chỉ cần đầu mối dữ 
+liệu
+Đầu mối dữ liệu và phối hợp triển 
+khai cùng Ban Chuyển đổi số
+Data Owner và Data Steward tại 
+đơn vị; quản trị phân quyền 
+tenant
+Đội vận hành nền tảng 
+theo chuẩn Tổng công ty
+Khi nào nâng level
+Khi tự triển khai phần mềm 
+ngoài hệ sinh thái Tổng công 
+ty
+Khi phát sinh nhu cầu phân vùng dữ 
+liệu chuyên ngành
+Khi đạt mức trưởng thành số 3,5 –
+4 và có nhu cầu dữ liệu realtime 
+lớn
+Level cao nhất; rà soát 
+định kỳ hiệu quả đầu tư
+Trong giai đoạn chuyển đổi số thứ ba (sau 2028), đơn vị ở L3 đạt mức trưởng thành số 3,5–4 sẽ được xem xét chuyển lên L4.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 49
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 55 ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Điều kiện xem xét nâng đơn vị lên spoke riêng
+Khối lượng và tốc độ tăng dữ liệu Đẩy dữ liệu thô về hub tốn kém hơn xử lý tại chỗ, tính trên băng thông và lưu trữ
+Nhu cầu phân tích chuyên ngành cường 
+độ cao Dữ liệu vận hành thiết bị, sensor, thời gian thực mà độ trễ qua hub không đáp ứng
+Ràng buộc pháp lý hoặc hợp đồng Dữ liệu buộc lưu và xử lý tại đơn vị
+Năng lực vận hành Đội CNTT đơn vị đủ khả năng vận hành nền tảng theo chuẩn Tổng công ty
+Bốn tiêu chí được định lượng trong quy chế quản trị dữ liệu và xét định kỳ hàng năm. Riêng PTSC M&C sẽ có phiên thảo luận riê ng về mô hình kiến trúc dữ 
+liệu để xác định áp dụng L3 hoặc L4.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 50
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 56 ---
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Mười bảy đơn vị và chi nhánh được phân về bốn nhóm triển khai
+17
+Đơn vị và chi nhánh
+4
+Nhóm triển khai
+Phân bổ theo mức kiến trúc
+L1 · 5 đơn vị L2 · 2 đơn vị L3 · 13 đơn vị L4 · 1 đơn vị
+Nhóm 1
+Chi nhánh nhỏ · L1
+Văn phòng Hà Nội
+Miền Trung
+Petro Hotel
+Long Phú
+Chuẩn bị nguồn lực nhân sự; phối hợp 
+triển khai cùng Ban Chuyển đổi số.
+Nhóm 2
+Chi nhánh lớn · L1–L2 + L3
+G&S
+Supply Base
+Marine
+Chuyển phần mềm Base về hệ sinh 
+thái E-Office của Tổng công ty; khảo 
+sát nhu cầu thuê thêm tenant cho dữ 
+liệu thăm dò, cảng, quản lý tàu dịch 
+vụ.
+Nhóm 3
+Đơn vị nhỏ · L3
+Phú Mỹ
+Đình Vũ
+Sao Mai Bến Đình
+PVS An ninh dầu khí
+Shipyard
+Khảo sát thiết kế kiến trúc dữ liệu và 
+lộ trình đạt chuyển đổi số mức 3–4; 
+tận dụng thiết kế của Tổng công ty.
+Nhóm 4
+Đơn vị lớn · L3–L4
+M&C
+PPS
+POS
+Quảng Ngãi
+Thanh Hóa
+Khảo sát thiết kế kiến trúc tổng thể và 
+lộ trình mở rộng Data Platform theo 
+kiến trúc chuẩn.
+Danh sách và mức kiến trúc áp dụng cho từng đơn vị được chốt sau khảo sát Giai đoạn 2A.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 51
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 57 ---
+
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 58 ---
+Đơn vị 
+nhỏ/ lớn
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 59 ---
+077. MÔ HÌNH PHỤC VỤ ĐƠN VỊ NHỎ: TENANT TRÊN HẠ TẦNG HUB
+1
+Không trang bị data platform riêng:  
+Chỉ cần agent thu thập dữ liệu tại chỗ (hoặc 
+kéo trực tiếp qua API)
+2
+Workspace/tenant riêng trên hub:  
+Vùng lưu trữ, pipeline, dashboard riêng 
+của từng đơn vị
+3
+Cách ly bằng RBAC/ABAC:  Đơn vị chỉ 
+thấy dữ liệu của mình; audit log và lineage 
+tách theo tenant — đáp ứng Luật BVDLCN
+4
+Chi phí:  Không CAPEX hạ tầng, không 
+đội vận hành riêng — chỉ phân bổ chi phí 
+vận hành chung theo mức sử dụng 
+(Phương án 3)
+TIÊU CHÍ “TỐT NGHIỆP” LÊN SPOKE RIÊNG  - Level 4
+(Có thể định lượng trong quy chế, xét định kỳ hàng năm)
+Tiêu chí Ngưỡng xem xét
+Khối lượng / tốc độ tăng dữ liệu Đẩy dữ liệu thô về hub tốn kém hơn xử lý tại chỗ (băng thông, lưu trữ)
+Nhu cầu phân tích chuyên ngành 
+cường độ cao
+Dữ liệu vận hành thiết bị / sensor / thời gian thực mà độ trễ qua hub không 
+đáp ứng
+Ràng buộc pháp lý / hợp đồng Dữ liệu buộc lưu và xử lý tại đơn vị
+Năng lực vận hành Đội CNTT đơn vị đủ khả năng vận hành nền tảng theo chuẩn Tổng công ty
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 55
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 60 ---
+D
+Chi phí, cơ chế đầu tư và kiến nghị
+08 · Chi phí và cơ chế đầu tư 09 · Rủi ro 10 · Kiến nghị
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 56
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 61 ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Bảy cấu phần chi phí của phương án mở rộng
+01
+Hạ tầng
+Hạ tầng dHCI tại đơn vị áp dụng 
+L4; mở rộng dung lượng hub cho 
+các level còn lại. Tận dụng máy 
+chủ sẵn có của đơn vị nếu đáp 
+ứng.
+02
+License phần mềm nền tảng
+Bản quyền 12 tháng cho cloud và 
+các phần mềm nền tảng; quy mô 
+theo số đơn vị kết nối và phân 
+vùng dữ liệu.
+03
+Dịch vụ triển khai Data 
+Platform
+Triển khai nền tảng tại spoke hoặc 
+phân vùng tenant theo cấu hình 
+chuẩn.
+04
+Tích hợp phần mềm dùng 
+chung
+Thiết kế và triển khai tích hợp 
+HRM, ERP, E-Office và các phần 
+mềm dùng chung với Tổng công 
+ty.
+05
+Tích hợp phần mềm riêng và 
+chuyên ngành
+Thiết kế và triển khai tích hợp cho 
+phần mềm riêng, phần mềm mới 
+hoặc ngoài hệ sinh thái Tổng công 
+ty.
+06
+Thiết kế và triển khai dữ liệu
+Khảo sát, ánh xạ và làm sạch 
+Master Data theo danh mục 
+chuẩn; đơn giá kế thừa khung Giai 
+đoạn 1, khối lượng theo số hệ 
+thống nguồn.
+07
+Vận hành
+Đào tạo, chuyển giao và hỗ trợ 
+vận hành năm đầu theo SLA 
+tương đương Giai đoạn 1; chi phí 
+vận hành chung phân bổ theo 
+mức sử dụng.
+Khái toán chi tiết trình tại Giai 
+đoạn 2A
+Sau khảo sát, sizing và chốt danh 
+sách đơn vị theo level.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 57
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 62 ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Chi phí phát sinh theo từng level triển khai
+Nhóm Hạng mục chi phí L1 L2 L3 L4
+Hàng hóa
+Hạ tầng dHCI riêng tại đơn vị Không Không Không Có
+License phần mềm nền tảng Không Không Có Có
+Dịch vụ
+Triển khai Data Platform Không Có Có Có
+Phần mềm dùng chung với Tổng công ty — thiết kế và triển khai tích 
+hợp Không Có Có Có
+Phần mềm dùng chung — thiết kế và triển khai dữ liệu Không Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai tích hợp Có Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai dữ liệu Có Có Có Có
+Vận hành Chi phí vận hành nền tảng Phân bổ theo 
+mức sử dụng
+Phân bổ theo 
+mức sử dụng
+Phân bổ theo 
+mức sử dụng
+Đơn vị tự vận 
+hành
+Bản quyền phần mềm nền tảng tính cho 12 tháng, gồm cloud, ingestion, Lakehouse, ESB, MDM, phân quyền Data Operation, xử lý dữ liệu, Text-to-data, SIEM và quản trị siêu dữ liệu.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 58
+
+--- File: TCT/20260810_Slide_Hoi thao Data Platform_Phien Chieu.pdf | Trang 63 ---
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Kiến nghị cơ chế đầu tư kết hợp giữa Tổng công ty và đơn vị
+PHƯƠNG ÁN 1
+Tổng công ty đầu tư tập trung toàn 
+bộ, phân bổ chi phí sử dụng
+ƯU ĐIỂM
+Chuẩn nhất quán tuyệt đối; đàm phán bản 
+quyền quy mô lớn; tiến độ đồng bộ.
+HẠN CHẾ
+Gánh nặng ngân sách tập trung; đơn vị 
+thiếu gắn kết trách nhiệm.
+PHƯƠNG ÁN 2
+Đơn vị tự đầu tư spoke theo chuẩn 
+Tổng công ty
+ƯU ĐIỂM
+Gắn trách nhiệm và chi phí với đơn vị 
+hưởng lợi trực tiếp.
+HẠN CHẾ
+Tiến độ không đồng đều; nguy cơ lệch 
+chuẩn; mất lợi thế đàm phán tập trung.
+PHƯƠNG ÁN 3 KIẾN NGHỊ
+Kết hợp: Tổng công ty đầu tư hub, nền tảng 
+dùng chung, bản quyền khung và bộ tiêu 
+chuẩn; đơn vị đầu tư hoặc thuê spoke và tích 
+hợp nội bộ theo định mức chuẩn
+Tổng công ty giữ vai trò kiến trúc sư trưởng và chủ 
+sở hữu chuẩn dữ liệu; đơn vị thụ hưởng gắn trách 
+nhiệm đầu tư và vận hành. Cơ chế phân bổ chi phí 
+cụ thể xây dựng trong Giai đoạn 2A.
+Đơn vị chưa có nguồn chi phí sẽ được Tổng công ty 
+đầu tư trước và ghi nợ.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 59
+

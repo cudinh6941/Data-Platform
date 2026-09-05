@@ -1,0 +1,270 @@
+*** MATCH *** [Phien_Chieu]
+Phien_Chieu] Trang 45 (Từ khóa: dùng chung) ===
+03 MỤC TIÊU VÀ NGUYÊN TẮC
+Bốn nguyên tắc triển khai áp dụng chung toàn Tổng công ty
+01 Dữ liệu là tài sản của Tổng công ty
+Được quản trị như tài sản chiến lược, độc lập với vòng đời phần 
+mềm nghiệp vụ.
+02 Dùng chung các hệ thống nền tảng
+ERP, HRM, E-Office, Data Platform, E -Learning, QTRR triển khai 
+dùng chung toàn Tổng công ty.
+03 Hệ thống riêng phải tuân thủ chuẩn chung
+Phần mềm riêng và chuyên ngành của đơn vị tuân thủ kiến trúc 
+dữ liệu, tiêu chuẩn tích hợp và quản trị dữ liệu chung.
+04 Tổng công ty giữ vai trò kiến trúc sư trưởng
+Chủ sở hữu chuẩn dữ liệu và hub quản trị; đơn vị làm chủ dữ liệu 
+chuyên ngành trong khung chuẩn đó.
+Trong giai đoạn này, toàn bộ đơn vị sử dụng chung Data Platform và các phần mềm back -office, phần mềm chuyên ngành dùng chung. R iêng 
+phần mềm chuyên ngành đặc thù của đơn vị có thể triển khai Data Platform riêng ở quy mô phù hợp. Mô hình áp dụng cho từng đơn vị được 
+điều chỉnh theo mức trưởng thành số và quy mô trong quá trình triển khai.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 40
+
+
+============================================================
+
+*** MATCH *** [Phien_Chieu]
+Phien_Chieu] Trang 54 (Từ khóa: phần mềm mới) ===
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Mỗi level có ưu điểm, hạn chế và chi phí khác nhau
+Tiêu chí L1 L2 L3 L4
+Ưu điểm
+Tiết kiệm chi phí và nguồn lực 
+nhất; kiến trúc dữ liệu và tích 
+hợp đồng bộ ngay
+Giữ được phần mềm đã đầu tư, vẫn 
+tích hợp được về nền tảng chung
+Có vùng dữ liệu chuyên ngành 
+riêng nhưng vẫn tối ưu chi phí; 
+không cần hạ tầng riêng
+Chủ động hoàn toàn với 
+dữ liệu realtime, IT –OT 
+quy mô lớn
+Hạn chế
+Bắt buộc quản trị điều hành 
+tập trung; không có vùng dữ 
+liệu riêng
+Chưa tối ưu tổng thể; phát sinh chi 
+phí thiết kế tích hợp cho phần mềm 
+ngoài hệ sinh thái
+Phát sinh chi phí license và tenant; 
+phụ thuộc năng lực hub
+Chi phí đầu tư và vận hành 
+cao nhất; cần đội CNTT đủ 
+năng lực
+Chi phí phát sinh
+Tích hợp và triển khai dữ liệu 
+cho phần mềm mới hoặc khác 
+hệ sinh thái
+Triển khai Data Platform, thiết kế và 
+triển khai tích hợp, triển khai dữ 
+liệu
+Như L2, cộng license phần mềm 
+nền tảng theo phân vùng dữ liệu
+Như L3, cộng hạ tầng dHCI 
+riêng tại đơn vị
+Yêu cầu vận hành
+Không cần nhân lực vận hành 
+nền tảng; chỉ cần đầu mối dữ 
+liệu
+Đầu mối dữ liệu và phối hợp triển 
+khai cùng Ban Chuyển đổi số
+Data Owner và Data Steward tại 
+đơn vị; quản trị phân quyền 
+tenant
+Đội vận hành nền tảng 
+theo chuẩn Tổng công ty
+Khi nào nâng level
+Khi tự triển khai phần mềm 
+ngoài hệ sinh thái Tổng công 
+ty
+Khi phát sinh nhu cầu phân vùng dữ 
+liệu chuyên ngành
+Khi đạt mức trưởng thành số 3,5 –
+4 và có nhu cầu dữ liệu realtime 
+lớn
+Level cao nhất; rà soát 
+định kỳ hiệu quả đầu tư
+Trong giai đoạn chuyển đổi số thứ ba (sau 2028), đơn vị ở L3 đạt mức trưởng thành số 3,5–4 sẽ được xem xét chuyển lên L4.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 49
+
+
+============================================================
+
+*** MATCH *** [Phien_Chieu]
+Phien_Chieu] Trang 61 (Từ khóa: phần mềm mới) ===
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Bảy cấu phần chi phí của phương án mở rộng
+01
+Hạ tầng
+Hạ tầng dHCI tại đơn vị áp dụng 
+L4; mở rộng dung lượng hub cho 
+các level còn lại. Tận dụng máy 
+chủ sẵn có của đơn vị nếu đáp 
+ứng.
+02
+License phần mềm nền tảng
+Bản quyền 12 tháng cho cloud và 
+các phần mềm nền tảng; quy mô 
+theo số đơn vị kết nối và phân 
+vùng dữ liệu.
+03
+Dịch vụ triển khai Data 
+Platform
+Triển khai nền tảng tại spoke hoặc 
+phân vùng tenant theo cấu hình 
+chuẩn.
+04
+Tích hợp phần mềm dùng 
+chung
+Thiết kế và triển khai tích hợp 
+HRM, ERP, E-Office và các phần 
+mềm dùng chung với Tổng công 
+ty.
+05
+Tích hợp phần mềm riêng và 
+chuyên ngành
+Thiết kế và triển khai tích hợp cho 
+phần mềm riêng, phần mềm mới 
+hoặc ngoài hệ sinh thái Tổng công 
+ty.
+06
+Thiết kế và triển khai dữ liệu
+Khảo sát, ánh xạ và làm sạch 
+Master Data theo danh mục 
+chuẩn; đơn giá kế thừa khung Giai 
+đoạn 1, khối lượng theo số hệ 
+thống nguồn.
+07
+Vận hành
+Đào tạo, chuyển giao và hỗ trợ 
+vận hành năm đầu theo SLA 
+tương đương Giai đoạn 1; chi phí 
+vận hành chung phân bổ theo 
+mức sử dụng.
+Khái toán chi tiết trình tại Giai 
+đoạn 2A
+Sau khảo sát, sizing và chốt danh 
+sách đơn vị theo level.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 57
+
+
+============================================================
+
+*** MATCH *** [Phien_Sang]
+Phien_Sang] Trang 40 (Từ khóa: tiêu chuẩn tích hợp) ===
+TIÊU CHUẨN TÍCH HỢP ( A THỊNH)
+— MỤC LỤC
+Nội dung trình bày
+PTSC · Báo cáo Khảo sát – Thiết kế Dữ liệu
+3.2
+
+
+============================================================
+
+*** MATCH *** [Phien_Sang]
+Phien_Sang] Trang 43 (Từ khóa: tiêu chuẩn tích hợp) ===
+KHUNG TIÊU CHUẨN TÍCH HỢP
+Bảo mật
+Vận hành
+API/Event
+Dữ liệu Biết tích hợp cái gì, từ đâu, mã nào là chuẩn? Tiêu chuẩn 
+dữ liệu
+Biết tích hợp bằng cách nào, realtime hay theo lịch. Có tiêu 
+chuẩn về mặt kỹ thuật tích hợp
+Biết ai được gọi, gọi bằng quyền gì, dữ liệu có an toàn không? 
+Tiêu chuẩn bảo mật
+Biết lỗi ở đâu, xử lý lại thế nào, báo cáo ra sao? Tiêu chuẩn 
+vận hành
+
+
+============================================================
+
+*** MATCH *** [Bao_Cao_De_Xuat]
+Bao_Cao_De_Xuat] Trang 37 (Từ khóa: tiêu chuẩn tích hợp) ===
+ 
+ Trang 37/83 
+4.3. Đề xuất lựa chọn 
+Một số giải pháp tiêu biểu: IBM InfoSphere MDM, SAP Master Data Governance 
+(MDG)..vv. Hoặc nhà cung cấp đề xuất tự phát triển giải pháp đáp ứng các yêu cầu chức năng 
+trên – cần làm rõ công nghệ và đảm bảo tiêu chuẩn tích hợp mở, bảo trì lâu dài. 
+5. Quản lý và phân quyền cho các vai trò nhân sự Quản trị dữ liệu (Data 
+Operation) 
+Giải pháp cần cung cấp cơ chế phân quyền linh hoạt và bảo mật, cho phép xác định rõ vai 
+trò và phạm vi truy cập của từng nhóm người dùng trong toàn bộ chu trình vận hành dữ liệu 
+(DataOps), từ thu thập, xử lý, phân tích đến giám sát và kiểm soát dữ liệu. 
+5.1. Mô tả yêu cầu nghiệp vụ 
+- Mô tả: Đây là phân hệ dùng để xác định rõ vai trò và quyền hạn của từng nhóm người 
+dùng trong toàn bộ chu trình xử lý dữ liệu (DataOps), từ bước thu thập đến xử lý, 
+phân tích, và giám sát dữ liệu. 
+- Mục tiêu: 
++ Đảm bảo mỗi người chỉ được truy cập đúng phần dữ liệu, đúng chức năng họ 
+được giao. 
++ Tăng cường bảo mật, tránh rò rỉ dữ liệu hoặc thay đổi ngoài quyền hạn. 
++ Hỗ trợ phân quyền linh hoạt, phù hợp với cơ cấu tổ chức và nghiệp vụ quản trị 
+dữ liệu của doanh nghiệp. 
+5.2. Yêu cầu kỹ thuật 
+- Mô hình phân quyền theo vai trò (Role-Based Access Control – RBAC) 
++ Hỗ trợ định nghĩa nhiều vai trò người dùng phù hợp với từng giai đoạn trong 
+DataOps: ingest, transform, quality check, publish, monitor… 
++ Mỗi vai trò có thể gắn với một hoặc nhiều hành động cụ thể: xem, thêm mới, 
+cập nhật, xóa, phê duyệt, cấu hình. 
+- Phạm vi phân quyền chi tiết 
++ Cho phép phân quyền đến mức độ tài nguyên cụ thể: bảng dữ liệu, cột dữ liệu, 
+pipeline xử lý, API endpoint, báo cáo/dashboard. 
++ Có khả năng giới hạn quyền theo miền dữ liệu (data domain) hoặc nhóm dữ liệu 
+(data asset group). 
+- Tích hợp hệ thống định danh tập trung 
++ Hỗ trợ kết nối với hệ thống quản lý định danh như LDAP, Active Directory hoặc 
+hệ thống SSO của tổ chức. 
+- Quản lý và kiểm soát vai trò 
++ Cho phép tạo mới, sửa, gán, thu hồi vai trò một cách linh hoạt qua giao diện 
+quản trị hoặc API. 
++ Hỗ trợ gán vai trò theo người dùng cá nhân hoặc theo nhóm (user group, 
+department). 
+- Theo dõi và ghi nhận hoạt động truy cập 
+
+
+============================================================
+
+*** MATCH *** [Kick_Off]
+Kick_Off] Trang 13 (Từ khóa: dùng chung) ===
+MỤC TIÊU, HÀNH ĐỘNG, KẾT QUẢ CỤ THỂ
+Thiết kế cấu trúc dữ liệu tổng thể, thiết kế giao diện và xây 
+dựng báo cáo BI (Layout): Nâng cấp mở rộng PBI hiện có và 
+Thiết kế PBI với các luồng dữ liệu mới
+Thiết kế và triển khai nền tảng tích hợp dữ liệu (Data 
+platform) - Data Architectures & Application integration 
+(Trục tích hợp, SSO và Kho dữ liệu, Hồ chứa dữ liệu)
+Thiết lập nền tảng kết nối, chuẩn hóa hạ tầng CNTT theo 
+hướng đồng bộ xuyên suốt và xây dựng hệ thống an toàn 
+thông tin theo cấp độ (Nghị định 85/2016/NĐ-CP)
+HÀNH ĐỘNG TRỌNG TÂM
+Thiết kế triển khai trung tâm giám sát điều hành số IOC: 
+trực quan hóa các báo báo BI như HSE, đội tàu, tài chính, 
+vật tư
+Thiết kế kiến trúc dữ 
+liệu tổng thể
+1
+● Thiết kế số hoá quy trình và biểu mẫu liên Phòng-Ban (Tích hợp, API)
+● Tiêu chuẩn tích hợp các phần mềm 
+● Chính sách quản trị dữ liệu 
+● ĐÚNG - ĐỦ - SẠCH - SỐNG - THỐNG NHẤT - DÙNG CHUNG
+● Dữ liệu được tích hợp liên thông giữa các phần mềm
+● Nền tảng ứng dụng báo cáo BI và mô hình AI
+● Mô hình vận hành quản trị dữ liệu tập trung
+● Kết nối mạng ổn định
+● Hạ tầng máy chủ, lưu trữ, sao lưu đồng bộ với các ứng dụng.
+● Dữ liệu lưu trữ tập trung và kiểm soát bảo mật
+● Trung tâm vận hành dữ liệu (DOC) 
+MỤC TIÊU KẾT QUẢ ĐẠT ĐƯỢC
+Triển khai nền tảng tích 
+hợp dữ liệu Data 
+platform
+2
+Chuẩn hoá Hạ tầng 
+CNTT và A TTT3
+
+
+
+============================================================
+

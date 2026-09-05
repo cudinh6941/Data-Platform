@@ -1,0 +1,3306 @@
+=== [Phien_Chieu] Trang 19 (Từ khóa: dùng chung) ===
+01 · BỐI CẢNH
+VÌ SAO CẦN KHUNG QUẢN TRỊ DỮ LIỆU
+Vì sao PTSC cần Khung quản trị dữ liệu
+● Hiện trạng: dữ liệu nằm phân tán trong từng hệ thống nghiệp vụ, thiếu 
+chuẩn chung giữa các đơn vị, báo cáo còn phụ thuộc tổng hợp thủ công
+● Petrovietnam vừa ban hành hệ thống văn bản mới: Quy chế Quản trị 
+dữ liệu và 04 Quy định hướng dẫn (danh mục và siêu dữ liệu; chất 
+lượng và làm sạch; chia sẻ và chuyển giao; kiểm soát truy cập và 
+đánh giá nội bộ)
+● PTSC là đơn vị thành viên, bắt buộc tuân thủ và đồng bộ toàn bộ hệ thống 
+văn bản này
+● Nghĩa vụ pháp lý mới: Luật Dữ liệu, Luật Chuyển đổi số, Luật Bảo vệ dữ 
+liệu cá nhân, Luật An ninh mạng, Khung kiến trúc dữ liệu quốc gia
+MỤC TIÊU
+Quản lý dữ liệu như tài sản chiến lược
+Theo nguyên tắc
+Đúng · Đủ · Sạch · Sống · Thống nhất · 
+Dùng chung
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 15
+
+=== [Phien_Chieu] Trang 23 (Từ khóa: dùng chung) ===
+03 · VAI TRÒ
+PHÂN LOẠI & GẮN NHÃN
+Phân loại và gắn nhãn dữ liệu theo 6 chiều
+Chiều phân loại Nhãn Cấp quyết định
+1. Tính chất chia sẻ Công khai / dùng chung / dùng chung có điều kiện / dùng riêng Cấp 3 phê duyệt
+2. Mức độ quan trọng Cốt lõi / quan trọng / khác Cấp 1 ban hành tiêu chí
+3. Tính chất bí mật Công khai / nội bộ / mật (bí mật nội bộ) Cấp 1 và Văn phòng
+4. Dữ liệu cá nhân Cá nhân cơ bản / cá nhân nhạy cảm / không phải dữ liệu cá nhân Cấp 1 ban hành tiêu chí
+5. Nguồn gốc Gốc / phát sinh / được chia sẻ / tổng hợp, phân tích Cấp 3 phê duyệt
+6. Vòng đời Tạo lập / đang sử dụng / lưu trữ / lưu giữ lâu dài / hết thời hạn / xóa, hủy Cấp 3 phê duyệt
+Mỗi tài sản dữ liệu mang đồng thời 6 nhãn và được gán về đúng một miền dữ liệu. Nhãn quyết định chính sách phân quyền, chia sẻ, lưu trữ và tiêu hủy.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 19
+
+=== [Phien_Chieu] Trang 24 (Từ khóa: dùng chung) ===
+04 · NGUYÊN TẮC
+MỘT NGUỒN DUY NHẤT (SSOT)
+Một nguồn duy nhất và dữ liệu chủ
+• Nguyên tắc một nguồn dữ liệu duy nhất (SSOT): mỗi dữ 
+liệu dùng chung chỉ tồn tại ở một nguồn tin cậy duy nhất
+• Nghiêm cấm thu thập lại, nhập lại dữ liệu đã có; mọi điều chỉnh thực 
+hiện tại hệ thống gốc và đồng bộ tự động
+• Chín domain dữ liệu chủ do MDM Hub quản lý:
+• Dữ liệu chủ và dữ liệu tham chiếu phải có nguồn tin cậy, người quản 
+lý, quy trình phê duyệt thay đổi, phiên bản và ngày hiệu lực
+• Không đưa vào luồng dữ liệu chính thức: mã không có 
+chủ quản, mã tạm chưa phê duyệt, mã trùng, mã không rõ 
+trạng thái hiệu lực
+• Mỗi đơn vị duy trì bảng ánh xạ mã nội bộ sang mã chuẩn PTSC và 
+mã dùng chung của Tập đoàn
+9 DOMAIN DỮ LIỆU CHỦ · MDM HUB
+Đơn vị Dự án Khách hàng
+Nhà cung cấp Hợp đồng Tài sản
+Vật tư / Dịch vụ Nhân sự Bộ mã dùng chung
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 20
+
+=== [Phien_Chieu] Trang 30 (Từ khóa: dùng chung) ===
+06 · LỘ TRÌNH
+VIỆC CẦN LÀM NGAY
+Lộ trình và việc cần làm ngay
+A · LỘ TRÌNH TRIỂN KHAI
+HIỆN TRẠNG
+Hệ thống phân tán theo phòng ban, dữ liệu chưa 
+liên thông
+GIAI ĐOẠN 1
+Xây dựng Nền tảng dữ liệu và MDM Hub dùng 
+chung, trục tích hợp, chuẩn hóa dữ liệu, báo cáo 
+điều hành và dịch vụ dữ liệu chia sẻ về 
+Petrovietnam
+GIAI ĐOẠN 2
+Mở rộng hợp nhất dữ liệu IT và OT, lớp ngữ nghĩa 
+doanh nghiệp, nền tảng phân tích và AI
+B · VIỆC CẦN LÀM NGAY CỦA CÁC BAN VÀ ĐƠN VỊ
+• Xác nhận miền dữ liệu do Ban phụ trách và cử nhân sự Quản trị miền dữ liệu (Cấp 4)
+• Rà soát, lập danh mục dữ liệu dùng chung của Ban và hệ thống nguồn tương ứng
+• Nhận diện dữ liệu cốt lõi, dữ liệu quan trọng và dữ liệu cá nhân trong phạm vi quản lý
+• Xác định thời hạn lưu trữ cho các nhóm dữ liệu của miền
+• Công bố ngưỡng chất lượng cho các tập dữ liệu trọng yếu
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 2 · CHÍNH SÁCH DỮ LIỆU 25
+
+=== [Phien_Chieu] Trang 37 (Từ khóa: dùng chung) ===
+2.1 KHUNG TUÂN THỦ: BVDLCN – AN NINH MẠNG – DỮ LIỆU –
+CHUYỂN ĐỔI SỐ
+Luật Nghĩa vụ chính đối với PTSC Triển khai tại đơn vị thành viên
+BVDLCN 
+91/2025/QH15
+(01/01/2026)
+Quy chế xử lý DLCN; hồ sơ DPIA; hồ sơ chuyển
+DLCN ra nước ngoài; quyền chủ thể dữ liệu; thông
+báo vi phạm 72 giờ
+Bộ hồ sơ mẫu từ TCT — đơn vị lập theo mẫu; nhãn DLCN 
+trong catalog + che dữ liệu; quyền chủ thể qua MDM (soft-
+delete có kiểm soát); DPO 2 cấp; kịch bản + diễn tập 72 
+giờ
+An ninh mạng 
+2025
+Phân loại hệ thống theo cấp độ an toàn; phương án
+bảo đảm thẩm định trước vận hành; giám sát, ứng
+cứu sự cố
+TCT xác định cấp độ một lần, đơn vị thừa hưởng khung 
+phương án; thẩm định trước go-live từng đơn vị; audit log 
+mọi đơn vị đổ về SIEM hub; diễn tập ứng cứu định kỳ
+Dữ liệu
+60/2024/QH15
+(01/7/2025)
+Phân loại dữ liệu cốt lõi / quan trọng (danh mục
+TTg); điều kiện chuyển xuyên biên giới; quản trị dữ
+liệu – quản lý rủi ro; cung cấp dữ liệu cho CQNN khi
+luật định
+Nhãn phân loại thứ ba trong catalog, rà theo danh mục
+TTg; dữ liệu quan trọng ở lại on-prem — cloud chỉ nhận
+tổng hợp; đánh giá trước khi chia sẻ cho đối tác nước
+ngoài; đầu mối TCT tiếp nhận yêu cầu CQNN
+Chuyển đổi số
+(12/2025)
+Khung nền tảng số dùng chung quốc gia (QĐ 
+1132/QĐ-TTg); kết nối – chia sẻ với nền tảng quốc 
+gia; không đầu tư trùng lặp chức năng
+Kiến trúc mở, API chuẩn sẵn sàng kết nối nền tảng quốc
+gia; rà soát danh mục dùng chung trước mỗi quyết định
+đầu tư mới để tránh trùng lặp
+Cơ sở để tự tin:  tuân thủ theo thiết kế — kiểm soát nhúng trong nền tảng, không phụ thuộc ý thức từng đơn vị; bằng chứng (lineage, audit log, báo
+cáo) sinh tự động từ vận hành; kiểm toán + diễn tập định kỳ; KPI tuân thủ theo đơn vị trên dashboard hub. Một khung chuẩn từ hub — luật mới chỉ
+cần cập nhật mẫu và nhãn một lần cho toàn Tổng công ty.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 32
+
+=== [Phien_Chieu] Trang 38 (Từ khóa: dùng chung) ===
+MÔ HÌNH PHÂN CẤP VAI TRÒ QUẢN TRỊ DỮ LIỆU PTSC (5 LEVELS)
+4 LEVEL ĐIỀU HÀNH – 1 LEVEL TRIỂN KHAI – 1 LEVEL KỸ THUẬT
+LEVEL
+1
+ENTERPRISE
+DATA GOVERNANCE
+Hội đồng Quản trị Dữ liệu
+(Data Governance Council)
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• HĐQT & Ban TGĐ
+• Lãnh đạo cấp cao PTSC
+• Đại diện các khối trọng yếu
+ Định hướng
+chiến lược  dữ liệu
+Phê duyệt chính sách,
+tiêu chuẩn dữ liệu
+Quyết định dữ liệu
+dùng chung
+Giám sát Data
+Governanc e/BI/AI
+Cấp  ch iến lược cao 
+nh ất
+Định hướng &  giám 
+sát
+quản trị dữ liệu 
+toàn PTSC
+LEVEL
+2
+EXECUTI VE DATA
+COORDINATION
+Hội đồng dữ liệu khối /
+lĩnh vực / chuyên ngành
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• Lãnh đạo các khối
+• Lĩnh vực / chuyên ngành
+• Đại diện các Ban liên quan
+ Điều phối dữ liệu
+liên Ban
+Đồng bộ tiêu chuẩn
+giữa các domain
+Điều phối c hia sẻ
+dữ liệu
+Đề xuất governance
+lên Level 1
+Cấp  điều  h àn h
+liên phòng ban
+Điều phối &  thống 
+nhất liên domain
+LEVEL
+3
+DATA DOMAIN
+OW NERSHIP
+Data Domain Owners
+(T rưởng Ban /
+lãnh đạo domain dữ liệu)
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• Trưởng Ban
+• Lãnh đạo domain dữ liệu
+(T CKT, QLNL, T M, KTX, ATCL, ...)
+ Sở hữu dữ liệu
+theo domain
+Phê duyệt quy tắc
+nghiệp vụ & tiêu chuẩn
+Chịu trách nhiệm
+chất lượng dữ liệu
+Phê duyệt
+chia sẻ dữ liệu
+Cấp  q uản trị 
+do main
+nghiệp vụ
+Accountability về 
+dữ liệu domain
+LEVEL
+4
+DATA DOMAIN
+WORKING GROUP
+Nhóm phối hợp triển khai
+domain dữ liệu
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• BDA
+• Nhóm chuyên ngành
+• Nhóm phối hợp domain
+ Chuẩn hóa &
+mapping dữ liệu
+Theo dõi & đánh giá
+chất lượng dữ liệu
+Phối hợp
+liên domain
+Kiểm tra dữ liệu &
+đóng góp quy trình triển 
+khai
+Cấp  p hối h ợp triển 
+khai
+nghiệp vụ
+Cầu nối giữa 
+business
+và technic al
+LEVEL
+5
+TECHNICAL & DATA
+OPE RATIONS TEAM
+Ban CNTT  & CĐS /
+Data Platform Team /
+Technical Team
+THÀNH PHẦN VAI TRÒ CHÍNH TRỌNG TÂM
+• Ban CNT T & CĐS
+• Data Platform Team
+• Data Engineering Team
+• Technical Support Team
+ Vận hành Hybrid
+Data Platform
+Quản lý IAM /RB AC,
+bảo mật &  phân quyềnQuản lý integration,
+pipeline,  metadata
+Monitoring, backup,
+DR & hỗ trợ kỹ thuật
+Cấp  vận hành  kỹ 
+thu ật
+Vận hành nền tảng,
+bảo mật, tích hợ p 
+& hỗ trợ hệ thống
+LUỒNG
+GOVERNANCE
+(Định 
+hướng,
+chính sách,
+tiêu chuẩn)
+LUỒNG
+VẬN HÀNH
+(T hực thi, 
+triển khai,
+vận hành dữ 
+liệu)
+NG UYÊN TẮC QUẢN TRỊ DỮ LIỆU
+◉ Data là tài sản của PTSC
+Dữ liệu được quản trị như tài sản 
+chiến lược
+● Business Ownership
+Business sở hữu dữ liệu và chịu 
+trách nhiệm
+✪ Chất lượng là trọng tâm
+Đúng – đủ – sạch – kịp thời – an 
+toàn
+◆ Chia sẻ tạo giá trị
+Dữ liệu được chia s ẻ có kiểm s oát và 
+tạo giá trị
+▣ Bảo mật & Tuân thủ
+Tuân thủ pháp lý, chính sách và bảo 
+mật
+LUỒNG PHẢN 
+HỒI
+& 
+ESCALAT ION
+(Báo cáo, 
+phản hồi,
+đề xuất, cảnh 
+báo)
+GHI CHÚ LUỒNG
+Luồng governance
+(Đị nh hướng, chính sách, tiêu chuẩn)
+Luồng vận hành
+(T hực thi, triển khai, vận hành dữ liệu)
+Luồng phản hồi & escalation
+(Báo cáo, phản hồi, đề xuất, cảnh 
+báo)
+ĐỊNH NGHĨA RACI R Responsible
+(T hực hiện)
+A Accountable
+(Chịu trách nhiệm)
+C Consulted
+(T ham vấn)
+I Informed
+(Đư ợc thông báo)
+CÁCH HOẠT ĐỘNG TỔNG THỂ
+Level 1–3 định hướng & quản trị  |  Level 4 phối hợp triển khai  |  Level 5 vận hành kỹ thuật
+Dữ liệu được quản trị theo vòng lặp: Định hướng → T riển khai → Vận hành → Giám sát → Phản hồi & cải tiến
+ 33
+
+=== [Phien_Chieu] Trang 44 (Từ khóa: dùng chung) ===
+03 MỤC TIÊU VÀ NGUYÊN TẮC
+Mục tiêu là hệ thống dữ liệu hợp nhất toàn Tổng công ty
+TỔNG QUÁT
+Hệ thống dữ liệu hợp nhất toàn Tổng công ty theo mô hình Hub-Spoke; dữ liệu là tài sản do Tổng công ty làm chủ, độc lập 
+với vòng đời phần mềm nghiệp vụ tại từng đơn vị.
+CỤ THỂ — CHUẨN XÁC SAU KHẢO SÁT
+Chuẩn hóa và đồng bộ Master 
+Data dùng chung
+Golden Record thống nhất cho các 
+danh mục trọng yếu.
+Tự động hóa báo cáo hợp nhất
+Tài chính – nhân sự – SXKD từ 3 –4 
+đơn vị thí điểm về Tổng công ty.
+Kho dữ liệu chuyên ngành tại đơn 
+vị lớn
+Đơn vị làm chủ vận hành spoke, tuân 
+thủ khung quản trị chung.
+Nền tảng sẵn sàng cho phân tích 
+nâng cao
+Và AI liên đơn vị ở giai đoạn tiếp theo.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 39
+
+=== [Phien_Chieu] Trang 45 (Từ khóa: dùng chung) ===
+03 MỤC TIÊU VÀ NGUYÊN TẮC
+Bốn nguyên tắc triển khai áp dụng chung toàn Tổng công ty
+01 Dữ liệu là tài sản của Tổng công ty
+Được quản trị như tài sản chiến lược, độc lập với vòng đời phần 
+mềm nghiệp vụ.
+02 Dùng chung các hệ thống nền tảng
+ERP, HRM, E-Office, Data Platform, E -Learning, QTRR triển khai 
+dùng chung toàn Tổng công ty.
+03 Hệ thống riêng phải tuân thủ chuẩn chung
+Phần mềm riêng và chuyên ngành của đơn vị tuân thủ kiến trúc 
+dữ liệu, tiêu chuẩn tích hợp và quản trị dữ liệu chung.
+04 Tổng công ty giữ vai trò kiến trúc sư trưởng
+Chủ sở hữu chuẩn dữ liệu và hub quản trị; đơn vị làm chủ dữ liệu 
+chuyên ngành trong khung chuẩn đó.
+Trong giai đoạn này, toàn bộ đơn vị sử dụng chung Data Platform và các phần mềm back -office, phần mềm chuyên ngành dùng chung. R iêng 
+phần mềm chuyên ngành đặc thù của đơn vị có thể triển khai Data Platform riêng ở quy mô phù hợp. Mô hình áp dụng cho từng đơn vị được 
+điều chỉnh theo mức trưởng thành số và quy mô trong quá trình triển khai.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 40
+
+=== [Phien_Chieu] Trang 46 (Từ khóa: dùng chung) ===
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Vai trò quản trị dữ liệu được phân cấp năm mức
+1
+Enterprise Data Governance
+Hội đồng Quản trị Dữ liệu · Ban Tổng Giám 
+đốc
+Định hướng chiến lược dữ liệu, phê duyệt chính sách và tiêu chuẩn, quyết định dữ liệu dùng chung, giám 
+sát Governance / BI / AI
+2
+Executive Data Coordination
+Hội đồng dữ liệu khối · lĩnh vực · chuyên 
+ngành
+Điều phối dữ liệu liên Ban, đồng bộ tiêu chuẩn giữa các domain, điều phối chia sẻ dữ liệu, đề xuất chính 
+sách lên cấp 1
+3
+Data Domain Ownership
+Trưởng Ban · Lãnh đạo Đơn vị
+Sở hữu dữ liệu theo domain, phê duyệt quy tắc nghiệp vụ và tiêu chuẩn, chịu trách nhiệm chất lượng dữ 
+liệu, phê duyệt chia sẻ dữ liệu — accountability nằm ở cấp này
+4
+Data Domain Working Group
+Nhân sự đầu mối Phòng/Bam/ Đơn vị
+Chuẩn hóa và mapping dữ liệu, theo dõi chất lượng dữ liệu, phối hợp liên domain, kiểm tra và đồng bộ 
+phục vụ triển khai
+5
+Technical & Data Operations
+Ban NCPT & CĐS · Data Platform Team
+Vận hành nền tảng hybrid, quản lý IAM/RBAC và phân quyền, quản trị pipeline và metadata kỹ thuật, 
+monitoring, backup, DR — không sở hữu dữ liệu nghiệp vụ
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 44
+
+=== [Phien_Chieu] Trang 48 (Từ khóa: ERP) ===
+Mô hình phân cấp vai trò quản trị dữ liệu PTSC — 5 levels 4 level điều hành · 1 level triển khai · 1 level kỹ thuật
+LEVEL
+1
+ENTERPRISE DATA 
+GOVERNANCE
+Hội đồng Quản trị Dữ liệu
+THÀNH PHẦN
+• Ban TGĐ
+• Lãnh đạo cấp cao PTSC
+• Đại diện các khối trọng yếu
+VAI TRÒ CHÍNH
+Định hướng
+chiến lược
+dữ liệu
+Phê duyệt
+chính sách, 
+tiêu chuẩn
+dữ liệu
+Quyết định
+dữ liệu dùng
+chung
+Giám sát Data 
+Governance / 
+BI / AI
+ĐẶC ĐIỂM
+Cấp chiến lược cao nhất
+Không vận hành dữ liệu hằng 
+ngày
+LEVEL
+2
+EXECUTIVE DATA 
+COORDINATION
+Hội đồng dữ liệu khối / lĩnh vực / 
+chuyên ngành
+THÀNH PHẦN
+• Lãnh đạo các khối
+• Lĩnh vực / chuyên ngành
+• Đại diện các Ban liên quan
+VAI TRÒ CHÍNH
+Điều phối
+dữ liệu
+liên Ban
+Đồng bộ tiêu
+chuẩn giữa các 
+domain
+Điều phối
+chia sẻ dữ
+liệu
+Đề xuất
+governance 
+lên Level 1
+ĐẶC ĐIỂM
+Cấp điều hành liên phòng ban
+Không vận hành kỹ thuật
+LEVEL
+3
+DATA DOMAIN OWNERSHIP
+Data Domain Owners — Trưởng
+Ban / Lãnh đạo Đơn vị
+THÀNH PHẦN
+• Trưởng Ban
+• Lãnh đạo domain dữ liệu (TCKT, 
+QTNL, TM, KTSX, ATCL, …)
+VAI TRÒ CHÍNH
+Sở hữu dữ
+liệu theo
+domain
+Phê duyệt
+quy tắc
+nghiệp vụ và
+tiêu chuẩn
+Chịu trách
+nhiệm chất
+lượng dữ
+liệu
+Phê duyệt
+chia sẻ dữ
+liệu
+ĐẶC ĐIỂM
+Cấp quản trị domain nghiệp vụ
+Accountability nằm ở đây
+LEVEL
+4
+DATA DOMAIN WORKING 
+GROUP
+Nhóm phối hợp triển khai domain 
+dữ liệu
+THÀNH PHẦN
+• BDA
+• Nhóm chuyên ngành
+• Nhóm phối hợp domain
+VAI TRÒ CHÍNH
+Chuẩn hoá
+và mapping 
+dữ liệu
+Theo dõi, 
+đánh giá
+chất lượng
+dữ liệu
+Phối hợp
+liên domain
+Kiểm tra dữ
+liệu và đồng
+bộ phục vụ
+triển khai
+ĐẶC ĐIỂM
+Cấp phối hợp triển khai nghiệp 
+vụ
+Cầu nối giữa business và 
+technical
+LEVEL
+5
+TECHNICAL & DATA 
+OPERATIONS TEAM
+Ban CNTT & CĐS / Data Platform 
+Team / Technical Team
+THÀNH PHẦN
+• Ban NCPT & CĐS
+• Data Platform Team
+• Data Engineering Team
+• Technical Support Team
+VAI TRÒ CHÍNH
+Vận hành
+Hybrid Data
+Platform
+Quản lý
+IAM/RBAC, 
+bảo mật và
+phân quyền
+Quản lý IT
+integration,
+pipeline,
+metadata
+kỹ thuật
+Monitoring,
+backup, DR và
+hỗ trợ kỹ
+thuật
+ĐẶC ĐIỂM
+Cấp vận hành kỹ thuật
+Không sở hữu business data, chỉ 
+vận hành platform và hệ thống
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 45
+
+=== [Phien_Chieu] Trang 50 (Từ khóa: dùng chung) ===
+066. PHƯƠNG ÁN KIẾN TRÚC: MÔ HÌNH HUB-SPOKE
+HUB — Data Platform tại Tổng công ty (GĐ1)
+Lakehouse trung tâm · MDM Golden Record · Governance/SIEM 
+tập trung · Fabric/Power BI
+Chi nhánh
+Như một ban TCT (không dựng spoke)
+Đơn vị nhỏ
+Tenant trên hub (không dựng spoke)
+Đồng bộ dữ liệu dùng chung + dữ liệu tổng hợp qua ESB / API chuẩn (near real -time / batch)
+SPOKE
+Đơn vị 1
+SPOKE
+Đơn vị 2
+SPOKE
+Đơn vị 3
+SPOKE
+Đơn vị 4
+Dữ liệu chuyên ngành lưu tại đơn vị lớn — đơn vị nhỏ chạy trên hạ tầng hub theo mô hình multi-tenant (chi tiết slide 7). Spoke tái sử dụng chính nền tảng IMIP Data 
+Platform (cấu hình quy mô nhỏ) → đồng nhất công nghệ, kỹ năng vận hành và bộ triển khai mẫu khi nhân rộng.
+Tôn trọng chủ quyền dữ liệu & đặc 
+thù nghiệp vụ Giảm băng thông, rủi ro tập trung Đáp ứng bản địa hóa dữ liệu nhạy 
+cảm
+Chuẩn quản trị thống nhất qua 
+kiến trúc, danh mục, catalog 
+chung
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 46
+
+=== [Phien_Chieu] Trang 51 (Từ khóa: dùng chung) ===
+04 MÔ HÌNH KIẾN TRÚC ĐỀ XUẤT
+Hub tại Tổng công ty, spoke tại đơn vị lớn, tenant cho đơn vị nhỏ
+HUB — TỔNG CÔNG TY
+Data Platform
+Lakehouse trung tâm MDM · Golden Record Governance · SIEM Fabric / Power BI
+Đồng bộ dữ liệu dùng chung và dữ liệu tổng hợp qua ESB / API chuẩn — near real-time hoặc batch
+SPOKE — ĐƠN VỊ LỚN
+Đơn vị 1 Đơn vị 2 Đơn vị 3 Đơn vị 4
+Dữ liệu chuyên ngành lưu tại đơn vị. Spoke tái sử dụng chính nền tảng 
+IMIP Data Platform ở cấu hình quy mô nhỏ — đồng nhất công nghệ, kỹ 
+năng vận hành và bộ triển khai mẫu khi nhân rộng.
+TENANT TRÊN HUB — ĐƠN VỊ NHỎ VÀ CHI NHÁNH
+Chi nhánh Vận hành như một ban của Tổng công ty
+Đơn vị nhỏ Workspace / tenant riêng trên hub
+Không trang bị Data Platform riêng, chỉ cần agent thu thập dữ liệu tại chỗ 
+hoặc kéo trực tiếp qua API. Không phát sinh CAPEX hạ tầng và đội vận 
+hành riêng — chi phí vận hành chung phân bổ theo mức sử dụng.
+Tôn trọng chủ quyền dữ liệu và đặc thù 
+nghiệp vụ
+Giảm băng thông và rủi ro tập 
+trung
+Đáp ứng bản địa hóa dữ liệu nhạy 
+cảm
+Chuẩn quản trị thống nhất qua kiến trúc và catalog 
+chung
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 42
+
+=== [Phien_Chieu] Trang 53 (Từ khóa: dùng chung) ===
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Đơn vị được phân nhóm theo pháp nhân, quy mô và mức trưởng thành 
+số
+Nội dung L1 — Dùng chung như một Ban 
+của TCT L2 — Dùng chung, có phần mềm riêng L3 — Phân vùng dữ liệu riêng trên 
+hub
+L4 — Hybrid Data Platform 
+riêng
+Pháp nhân Chi nhánh trực thuộc Chi nhánh trực thuộc Pháp nhân độc lập hoặc chi nhánh 
+có nhu cầu dữ liệu lớn Pháp nhân độc lập
+Mức trưởng thành số 
+DBI Mức 0 – 2 Mức 0 – 2 Mức 2 đến 3,5 Trên mức 3,5
+Phần mềm nghiệp vụ 
+dùng chung
+Dùng chung 100% HRM, ERP, 
+EOF, SKCT, QTRR — chỉ khai báo 
+thêm người dùng
+Dùng chung trên 70%; một số phần mềm 
+không cùng hệ sinh thái, cần khảo sát và 
+thiết kế tích hợp mới
+Tận dụng thiết kế của Tổng công ty; 
+thiết kế lại nếu dùng phần mềm 
+khác hệ sinh thái
+Đơn vị tự đầu tư; khảo sát, 
+thiết kế và tính toán lại 
+toàn bộ
+Dữ liệu chuyên ngành Theo kiến trúc dữ liệu chung đã 
+thiết kế Phải thiết kế thêm một phần Đăng ký thêm phân vùng tenant cho 
+dữ liệu chuyên ngành
+Lưu và xử lý tại đơn vị, gồm 
+dữ liệu OT quy mô lớn
+Hạ tầng Tổng công ty đã đầu tư Tổng công ty đầu tư mở rộng theo nhu cầu 
+chi nhánh
+Tổng công ty đầu tư mở rộng, tính 
+thêm nhu cầu tenant
+Đơn vị tự đầu tư hạ tầng 
+dHCI
+Ví dụ áp dụng
+Chi nhánh không tự triển khai 
+phần mềm: Petro Hotel, Hà Nội, 
+Long Phú
+Đơn vị, chi nhánh muốn dùng chung 
+nhưng đã có một số phần mềm tự triển 
+khai
+Supply Base dùng chung phần mềm 
+nghiệp vụ, cần thêm khu vực dữ liệu 
+cảng
+Đơn vị lớn, nhiều phần 
+mềm và nhu cầu dữ liệu 
+realtime lớn
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 48
+
+=== [Phien_Chieu] Trang 54 (Từ khóa: phần mềm mới) ===
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Mỗi level có ưu điểm, hạn chế và chi phí khác nhau
+Tiêu chí L1 L2 L3 L4
+Ưu điểm
+Tiết kiệm chi phí và nguồn lực 
+nhất; kiến trúc dữ liệu và tích 
+hợp đồng bộ ngay
+Giữ được phần mềm đã đầu tư, vẫn 
+tích hợp được về nền tảng chung
+Có vùng dữ liệu chuyên ngành 
+riêng nhưng vẫn tối ưu chi phí; 
+không cần hạ tầng riêng
+Chủ động hoàn toàn với 
+dữ liệu realtime, IT –OT 
+quy mô lớn
+Hạn chế
+Bắt buộc quản trị điều hành 
+tập trung; không có vùng dữ 
+liệu riêng
+Chưa tối ưu tổng thể; phát sinh chi 
+phí thiết kế tích hợp cho phần mềm 
+ngoài hệ sinh thái
+Phát sinh chi phí license và tenant; 
+phụ thuộc năng lực hub
+Chi phí đầu tư và vận hành 
+cao nhất; cần đội CNTT đủ 
+năng lực
+Chi phí phát sinh
+Tích hợp và triển khai dữ liệu 
+cho phần mềm mới hoặc khác 
+hệ sinh thái
+Triển khai Data Platform, thiết kế và 
+triển khai tích hợp, triển khai dữ 
+liệu
+Như L2, cộng license phần mềm 
+nền tảng theo phân vùng dữ liệu
+Như L3, cộng hạ tầng dHCI 
+riêng tại đơn vị
+Yêu cầu vận hành
+Không cần nhân lực vận hành 
+nền tảng; chỉ cần đầu mối dữ 
+liệu
+Đầu mối dữ liệu và phối hợp triển 
+khai cùng Ban Chuyển đổi số
+Data Owner và Data Steward tại 
+đơn vị; quản trị phân quyền 
+tenant
+Đội vận hành nền tảng 
+theo chuẩn Tổng công ty
+Khi nào nâng level
+Khi tự triển khai phần mềm 
+ngoài hệ sinh thái Tổng công 
+ty
+Khi phát sinh nhu cầu phân vùng dữ 
+liệu chuyên ngành
+Khi đạt mức trưởng thành số 3,5 –
+4 và có nhu cầu dữ liệu realtime 
+lớn
+Level cao nhất; rà soát 
+định kỳ hiệu quả đầu tư
+Trong giai đoạn chuyển đổi số thứ ba (sau 2028), đơn vị ở L3 đạt mức trưởng thành số 3,5–4 sẽ được xem xét chuyển lên L4.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 49
+
+=== [Phien_Chieu] Trang 56 (Từ khóa: E-Office) ===
+05 PHÂN NHÓM ĐƠN VỊ VÀ LEVEL TRIỂN KHAI
+Mười bảy đơn vị và chi nhánh được phân về bốn nhóm triển khai
+17
+Đơn vị và chi nhánh
+4
+Nhóm triển khai
+Phân bổ theo mức kiến trúc
+L1 · 5 đơn vị L2 · 2 đơn vị L3 · 13 đơn vị L4 · 1 đơn vị
+Nhóm 1
+Chi nhánh nhỏ · L1
+Văn phòng Hà Nội
+Miền Trung
+Petro Hotel
+Long Phú
+Chuẩn bị nguồn lực nhân sự; phối hợp 
+triển khai cùng Ban Chuyển đổi số.
+Nhóm 2
+Chi nhánh lớn · L1–L2 + L3
+G&S
+Supply Base
+Marine
+Chuyển phần mềm Base về hệ sinh 
+thái E-Office của Tổng công ty; khảo 
+sát nhu cầu thuê thêm tenant cho dữ 
+liệu thăm dò, cảng, quản lý tàu dịch 
+vụ.
+Nhóm 3
+Đơn vị nhỏ · L3
+Phú Mỹ
+Đình Vũ
+Sao Mai Bến Đình
+PVS An ninh dầu khí
+Shipyard
+Khảo sát thiết kế kiến trúc dữ liệu và 
+lộ trình đạt chuyển đổi số mức 3–4; 
+tận dụng thiết kế của Tổng công ty.
+Nhóm 4
+Đơn vị lớn · L3–L4
+M&C
+PPS
+POS
+Quảng Ngãi
+Thanh Hóa
+Khảo sát thiết kế kiến trúc tổng thể và 
+lộ trình mở rộng Data Platform theo 
+kiến trúc chuẩn.
+Danh sách và mức kiến trúc áp dụng cho từng đơn vị được chốt sau khảo sát Giai đoạn 2A.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 51
+
+=== [Phien_Chieu] Trang 61 (Từ khóa: phần mềm mới) ===
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Bảy cấu phần chi phí của phương án mở rộng
+01
+Hạ tầng
+Hạ tầng dHCI tại đơn vị áp dụng 
+L4; mở rộng dung lượng hub cho 
+các level còn lại. Tận dụng máy 
+chủ sẵn có của đơn vị nếu đáp 
+ứng.
+02
+License phần mềm nền tảng
+Bản quyền 12 tháng cho cloud và 
+các phần mềm nền tảng; quy mô 
+theo số đơn vị kết nối và phân 
+vùng dữ liệu.
+03
+Dịch vụ triển khai Data 
+Platform
+Triển khai nền tảng tại spoke hoặc 
+phân vùng tenant theo cấu hình 
+chuẩn.
+04
+Tích hợp phần mềm dùng 
+chung
+Thiết kế và triển khai tích hợp 
+HRM, ERP, E-Office và các phần 
+mềm dùng chung với Tổng công 
+ty.
+05
+Tích hợp phần mềm riêng và 
+chuyên ngành
+Thiết kế và triển khai tích hợp cho 
+phần mềm riêng, phần mềm mới 
+hoặc ngoài hệ sinh thái Tổng công 
+ty.
+06
+Thiết kế và triển khai dữ liệu
+Khảo sát, ánh xạ và làm sạch 
+Master Data theo danh mục 
+chuẩn; đơn giá kế thừa khung Giai 
+đoạn 1, khối lượng theo số hệ 
+thống nguồn.
+07
+Vận hành
+Đào tạo, chuyển giao và hỗ trợ 
+vận hành năm đầu theo SLA 
+tương đương Giai đoạn 1; chi phí 
+vận hành chung phân bổ theo 
+mức sử dụng.
+Khái toán chi tiết trình tại Giai 
+đoạn 2A
+Sau khảo sát, sizing và chốt danh 
+sách đơn vị theo level.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 57
+
+=== [Phien_Chieu] Trang 62 (Từ khóa: phần mềm dùng chung) ===
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Chi phí phát sinh theo từng level triển khai
+Nhóm Hạng mục chi phí L1 L2 L3 L4
+Hàng hóa
+Hạ tầng dHCI riêng tại đơn vị Không Không Không Có
+License phần mềm nền tảng Không Không Có Có
+Dịch vụ
+Triển khai Data Platform Không Có Có Có
+Phần mềm dùng chung với Tổng công ty — thiết kế và triển khai tích 
+hợp Không Có Có Có
+Phần mềm dùng chung — thiết kế và triển khai dữ liệu Không Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai tích hợp Có Có Có Có
+Phần mềm riêng hoặc mới — thiết kế và triển khai dữ liệu Có Có Có Có
+Vận hành Chi phí vận hành nền tảng Phân bổ theo 
+mức sử dụng
+Phân bổ theo 
+mức sử dụng
+Phân bổ theo 
+mức sử dụng
+Đơn vị tự vận 
+hành
+Bản quyền phần mềm nền tảng tính cho 12 tháng, gồm cloud, ingestion, Lakehouse, ESB, MDM, phân quyền Data Operation, xử lý dữ liệu, Text-to-data, SIEM và quản trị siêu dữ liệu.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 58
+
+=== [Phien_Chieu] Trang 63 (Từ khóa: dùng chung) ===
+08 CHI PHÍ VÀ CƠ CHẾ ĐẦU TƯ
+Kiến nghị cơ chế đầu tư kết hợp giữa Tổng công ty và đơn vị
+PHƯƠNG ÁN 1
+Tổng công ty đầu tư tập trung toàn 
+bộ, phân bổ chi phí sử dụng
+ƯU ĐIỂM
+Chuẩn nhất quán tuyệt đối; đàm phán bản 
+quyền quy mô lớn; tiến độ đồng bộ.
+HẠN CHẾ
+Gánh nặng ngân sách tập trung; đơn vị 
+thiếu gắn kết trách nhiệm.
+PHƯƠNG ÁN 2
+Đơn vị tự đầu tư spoke theo chuẩn 
+Tổng công ty
+ƯU ĐIỂM
+Gắn trách nhiệm và chi phí với đơn vị 
+hưởng lợi trực tiếp.
+HẠN CHẾ
+Tiến độ không đồng đều; nguy cơ lệch 
+chuẩn; mất lợi thế đàm phán tập trung.
+PHƯƠNG ÁN 3 KIẾN NGHỊ
+Kết hợp: Tổng công ty đầu tư hub, nền tảng 
+dùng chung, bản quyền khung và bộ tiêu 
+chuẩn; đơn vị đầu tư hoặc thuê spoke và tích 
+hợp nội bộ theo định mức chuẩn
+Tổng công ty giữ vai trò kiến trúc sư trưởng và chủ 
+sở hữu chuẩn dữ liệu; đơn vị thụ hưởng gắn trách 
+nhiệm đầu tư và vận hành. Cơ chế phân bổ chi phí 
+cụ thể xây dựng trong Giai đoạn 2A.
+Đơn vị chưa có nguồn chi phí sẽ được Tổng công ty 
+đầu tư trước và ghi nợ.
+HỘI THẢO DATA PLATFORM  ·  PHIÊN CHIỀU 3 · LỘ TRÌNH TRIỂN KHAI MỞ RỘNG 59
+
+=== [Phien_Sang] Trang 4 (Từ khóa: dùng chung) ===
+CĂN CỨ XÁC ĐỊNH MỤC TIÊU
+Giải pháp thực hiện cho trụ cột  “Cơ sở dữ liệu” của chiến lược CĐS PTSC
+MỤC TIÊU
+2024-2025
+MỤC TIÊU 
+2026-2027
+MỤC TIÊU 
+2028-2030
+[1] Xây dựng CSDL dùng chung
+giai đoạn 1 (tại Cơ quan Tổng công
+ty);
+[2] Xây dựng mô hình quản trị dữ
+liệu;
+[3] Xây dựng báo cáo thông minh
+giai đoạn 1: (gồm các Phân hệ
+TCKT, Quản trị rủi ro, Quản lý nguồn
+nhân lực, Quản lý Tài sản).
+[1] Xây dựng CSDL dùng chung
+giai đoạn 2 (tại các Đơn vị);
+[2] Xây dựng báo cáo thông minh
+giai đoạn 2;
+[3] Ứng dụng các phần mềm phân
+tích chuyên sâu trên từng lĩnh vực.
+[1] Hoàn thành CSDL dùng chung
+TCT;
+[2] Áp dụng báo cáo thông minh
+toàn diện.
+
+=== [Phien_Sang] Trang 5 (Từ khóa: dùng chung) ===
+QUÁ TRÌNH KHẢO SÁT PHÂN TÍCH
+Sau quá trình Tổ Dữ liệu - Ban dự án Chuyển đổi số thực hiện nghiên cứu, phân tích, xin ý kiến đóng góp và tổng hợp 
+từ các tài liệu sau:
+Chiến lược Chuyển 
+đổi số đã được
+Tổng công ty PTSC 
+ban hành theo Nghị
+quyết 10/NQ-HĐQT-
+PTSC ngày
+7/01/2025 
+Bộ bộ câu hỏi khảo sát
+giải pháp - từ nhà cung
+cấp đã tổng hợp ý kiến
+của Ban dự án Chuyển
+đổi số Tổng công ty
+PTSC hoàn thiện vào
+ngày 27/5/2025 và gửi
+đến 13 NCC
+(Tổng 114 câu)
+Các Quy định Pháp luật hiện hành
+có liên quan:
+▪ Luật Công nghệ thông tin số
+67/2006/QH11, ngày 29 tháng 6 năm 2006;
+▪ Luật An ninh mạng: 24/2018/QH14
+▪ Nghị định số 53/2022/NĐ-CP của Chính
+phủ: Quy định chi tiết một số điều của Luật
+An ninh mạng
+▪ Nghị định số 13/2023/NĐ-CP của Chính
+phủ: Bảo vệ dữ liệu cá nhân
+▪ Cập nhật liên tục các luật mới ban hành
+1 2 3
+Biên bản họp thống nhất
+Mục tiêu và 6 Nguyên 
+tắc đánh giá của Dự án
+"Xây dựng Nền tảng Cơ
+sở dữ liệu dùng chung tại
+Tổng công ty PTSC" - Đã
+được phê duyệt bởi
+Trưởng Ban dự án
+Chuyển đổi số buổi họp
+ngày 13/06/2025
+4
+
+=== [Phien_Sang] Trang 6 (Từ khóa: dùng chung) ===
+6 MỤC TIÊU CỤ THỂ
+Tuân thủ pháp lý về bảo vệ dữ liệu1
+Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung2
+Kiến trúc mô hình dữ liệu hiện đại và linh hoạt3
+Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai4
+Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn)5
+Đáp ứng lộ trình Chuyển đổi số theo Chiến lược CĐS của PTSC6
+Từ định hướng và mục tiêu tổng thể như trên, Dự án "Xây dựng Nền tảng dữ liệu tại Tổng 
+công ty PTSC" cần đảm bảo 6 mục tiêu cụ thể như sau:
+
+=== [Phien_Sang] Trang 11 (Từ khóa: dùng chung) ===
+TỪ DỮ LIỆU PHÂN MẢNH ĐẾN DỮ LIỆU DÙNG CHUNG
+
+
+=== [Phien_Sang] Trang 13 (Từ khóa: dùng chung) ===
+TỔNG QUAN DỮ LIỆU DÙNG CHUNG TCT PTSC
+
+
+=== [Phien_Sang] Trang 24 (Từ khóa: dùng chung) ===
+MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY
+Thông điệp gửi đến các đơn vị Vai trò/ Cơ chế của Hybrid data platform
+Dữ liệu không bị lấy tùy ý Mỗi đơn vị có Landing Zone riêng; dữ liệu chỉ được đưa vào vùng dùng chung sau khi đơn vị
+kiểm duyệt và phê duyệt
+Không phải ai ở Tổng công ty 
+cũng xem được dữ liệu
+Các biện pháp kỹ thuật như: IAM + RBAC + SSO + MFA kiểm soát ai được truy cập dữ liệu nào
+Dữ liệu nhạy cảm được bảo vệ Purview + DLP/DSPM + Encryption phân loại và kiểm soát dữ liệu
+Không thể truy cập mà không để 
+lại dấu vết
+Audit Log + SIEM ghi nhận ai – lúc nào – truy cập gì – thực hiện gì
+Đơn vị không phải tự làm toàn bộ 
+công việc dữ liệu
+Đơn vị chỉ kiểm duyệt dữ liệu thô; Tổng công ty sẽ hỗ trợ đơn vị trong việc làm sạch, chuẩn hóa, 
+thực thi quản lý dữ liệu theo cơ chế chính sách và xây dựng sản phẩm dữ liệu
+
+=== [Phien_Sang] Trang 26 (Từ khóa: ERP) ===
+TRỤC TÍCH HỢP (ESB)
+Một trong những thách thức và hậu quả “lớn nhất” ở góc 
+độ Kỹ thuật của các dự án Chuyển đổi số là Tích hợp các 
+phần mềm 
+● Nhiều hệ thống cũ và mới (Legacy Systems): Đây là 
+rào cản lớn nhất. Các hệ thống cũ thường không có API 
+(giao diện lập trình ứng dụng) rõ ràng, sử dụng công 
+nghệ lạc hậu, và thiếu tài liệu đầy đủ, khiến việc kết nối 
+với các công nghệ hiện đại trở nên vô cùng phức tạp và 
+tốn kém.
+● Chi phí và Rủi ro: Chi phí cho việc tích hợp hệ thống có
+thể vượt quá ngân sách ban đầu, do những vấn đề phát 
+sinh bất ngờ. Ngoài ra, việc kết nối các hệ thống cũ, vốn 
+có thể kém an toàn hơn, cũng làm tăng rủi ro về bảo 
+mật.
+● Dữ liệu phân mảnh (Data Silos): Khi các bộ phận sử
+dụng hệ thống riêng biệt, dữ liệu sẽ bị phân tán, nảy sinh 
+nhiều vấn đề về sự nhất quán và chất lượng dữ liệu. → 
+Không thể hình thành big data
+ERP
+HRM
+E-learning
+E-Office
+EPM….+10?
+Database
+Email
+Database
+Đơn vị
+
+=== [Phien_Sang] Trang 27 (Từ khóa: ERP) ===
+TRỤC TÍCH HỢP (ESB)
+Trục tích hợp là thành phần quan trọng nhất trong Data Platform của PTSC
+Đảm bảo dữ liệu nhập 1 lần và đồng bộ xuyên suốt hệ sinh thái phần mềm
+ERP
+HRM
+E-learning
+E-Office
+PMS….+10?
+Database
+Email
+Database
+Đơn vị
+ESB (Enterprise Service Bus) là một mẫu kiến trúc phần mềm được sử dụng để thiết kế và triển khai các hệ thống tích 
+hợp phức tạp. Nó hoạt động như một lớp trung gian (middleware) giữa các ứng dụng và dịch vụ khác nhau, cho phép 
+chúng giao tiếp và trao đổi dữ liệu một cách thống nhất, linh hoạt,đồng thời liên tục thu thập dữ liệu tập trung.
+
+=== [Phien_Sang] Trang 28 (Từ khóa: ERP) ===
+PHÂN HỆ: TRỤC TÍCH HỢP (ESB)
+Giúp toàn bộ các 
+phần mềm trong hệ 
+sinh thái trao đổi 
+thông tin hiệu quả, 
+theo chuẩn mở.
+MỤC TIÊU
+Công nghệ tích hợp 
+phổ biến và hiện đại
+Enterprise-ready, 
+hybrid integration
+YÊU CẦU
+WSO2 EI / Apache Camel
+GIẢI PHÁP
+
+=== [Phien_Sang] Trang 37 (Từ khóa: dùng chung) ===
+Kiến Trúc Mô Hình — 3 Lớp & 5 Entity Cốt Lõi
+Kiến Trúc 3 Lớp
+① Lớp Hoạt Động
+P1–P7 (Primary)  ·  S1–S7 (Support)
+↓
+② Lớp Sản Phẩm
+Deliverable (D1–D8) — "hợp đồng" giữa hai ngành
+↓
+③ Lớp Quan Hệ
+Produce (sản xuất)  /  Consume (tiêu thụ)
+Nguyên tắc cốt lõi:  Không FK trực tiếp 
+Discipline→Discipline. Ngành A không "biết" Ngành B 
+— A chỉ biết mình sản xuất một Deliverable.
+5 Entity Cốt Lõi
+DISCIPLINE
+Danh mục tĩnh P1–P7 & S1–S7 (PRIMARY/SUPPORT), không FK trực tiếp 
+giữa các ngành
+DISCIPLINE_DELIVERABLE
+Bảng trung tâm — "hợp đồng" giữa 2 ngành: producer → deliverable → 
+consumer
+R_DELIVERABLE_TYPE
+Danh mục chuẩn hoá loại deliverable dùng chung toàn mô hình
+SUPPORT_FUNC_LINK
+Xử lý S1–S7 khi hoạt động hỗ trợ không phải producer/consumer (role: 
+APPROVE, ARCHIVE, VERIFY…)
+PROJECT_DELIVERABLE
+Instance theo từng dự án: planned_date, actual_date, status, FK → EDMS
+PTSC  |  PPDM Framework — Dual-Code Architecture
+Discipline liên kết với nhau duy nhất thông qua Deliverable — không có FK trực tiếp
+
+=== [Phien_Sang] Trang 40 (Từ khóa: tiêu chuẩn tích hợp) ===
+TIÊU CHUẨN TÍCH HỢP ( A THỊNH)
+— MỤC LỤC
+Nội dung trình bày
+PTSC · Báo cáo Khảo sát – Thiết kế Dữ liệu
+3.2
+
+=== [Phien_Sang] Trang 43 (Từ khóa: tiêu chuẩn tích hợp) ===
+KHUNG TIÊU CHUẨN TÍCH HỢP
+Bảo mật
+Vận hành
+API/Event
+Dữ liệu Biết tích hợp cái gì, từ đâu, mã nào là chuẩn? Tiêu chuẩn 
+dữ liệu
+Biết tích hợp bằng cách nào, realtime hay theo lịch. Có tiêu 
+chuẩn về mặt kỹ thuật tích hợp
+Biết ai được gọi, gọi bằng quyền gì, dữ liệu có an toàn không? 
+Tiêu chuẩn bảo mật
+Biết lỗi ở đâu, xử lý lại thế nào, báo cáo ra sao? Tiêu chuẩn 
+vận hành
+
+=== [Phien_Sang] Trang 44 (Từ khóa: ERP) ===
+TRỤC TÍCH HỢP ESB
+ESB – Enterprise
+Service Bus là trục
+tích hợp trung tâm
+giúp các hệ thống
+phần mềm trao đổi
+dữ liệu với nhau
+một cách có kiểm
+soát, thay vì để
+từng hệ thống kết
+nối trực tiếp lẫn
+nhau
+
+
+=== [Bao_Cao_De_Xuat] Trang 3 (Từ khóa: dùng chung) ===
+ 
+ Trang 3/83 
+  
+MỤC LỤC 
+CHƯƠNG 1 ĐỊNH HƯỚNG MỤC TIÊU VÀ NGUYÊN TẮC  ĐÁNH GIÁ LỰA CHỌN 
+GIẢI PHÁP ................................................................................................................................ 8	
+1.	Tổng quan về Mô hình kiến trúc nền tảng dữ liệu dùng chung tại Tổng công ty 
+PTSC ........................................................................................................................................... 8	
+2.	Mục tiêu trọng tâm của giải pháp .................................................................................... 8	
+3.	Nguyên tắc đánh giá – lựa chọn giải pháp ....................................................................... 9	
+4.	Các yêu cầu kỹ thuật tổng thể cho kiến trúc dữ liệu ...................................................... 9	
+4.1.	 Tuân thủ các quy định pháp lý hiện hành về dữ liệu ................................................... 9	
+4.2.	 Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung ...................................... 9	
+4.3.	 Kiến trúc mô hình dữ liệu hiện đại và linh hoạt ........................................................ 10	
+4.4.	 Đảm bảo khả năng chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai ...... 10	
+4.5.	 Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn) ................................... 10	
+4.6.	 Đáp ứng lộ trình theo Chiến lược Chuyển đổi số của PTSC ..................................... 10	
+CHƯƠNG 2 ĐỊNH HƯỚNG KỸ THUẬT GIẢI PHÁP NỀN TẢNG DỮ LIỆU .............. 11	
+1.	Tổng quan các Mô hình kiến trúc nền tảng dữ liệu ...................................................... 11	
+2.	Kết quả phân tích – đánh giá giải pháp ......................................................................... 11	
+2.1.	 Đánh giá giải pháp chi tiết dựa trên 06 nguyên tắc đánh giá ..................................... 11	
+2.2.	 Tổng hợp kết quả phân tích – đánh giá giải pháp ...................................................... 13	
+3.	Kiến nghị định hướng giải pháp đồng bộ với mô hình kiến trúc đã lựa chọn ........... 15	
+3.1.	 Định hướng giải pháp thiết kế kiến trúc Hybrid Data Platform ................................ 15	
+3.2.	 Định hướng các phân hệ chức năng của Hybrid Data Platform ................................ 16	
+3.3.	 Định hướng kiến trúc nền tảng dữ liệu tại tầng điện toán đám mây (Cloud): ........... 18	
+3.4.	 Định hướng kiến trúc nền tảng dữ liệu tại tầng On-Premise: .................................... 19	
+CHƯƠNG 3 ĐỀ XUẤT THIẾT KẾ KIẾN TRÚC DỮ LIỆU NỀN TẢNG DỮ LIỆU 
+DÙNG CHUNG ........................................................................................................................ 21	
+A.	Giới thiệu chung ............................................................................................................... 21	
+1.	Mục tiêu công việc ........................................................................................................... 21	
+2.	Mô tả công việc Thiết kế kiến trúc dữ liệu .................................................................... 21	
+B.	Phạm vi công việc ............................................................................................................. 22	
+1.	Khảo sát và Phân tích Hệ thống Hiện tại ...................................................................... 22	
+
+=== [Bao_Cao_De_Xuat] Trang 4 (Từ khóa: dùng chung) ===
+ 
+ Trang 4/83 
+1.1.	 Phân tích Hệ sinh thái Ứng dụng: .............................................................................. 22	
+1.2.	 Khảo sát Quy trình Quản trị và Vận hành: ................................................................ 22	
+1.3.	 Kết quả cần đạt .......................................................................................................... 23	
+2.	Thiết kế Cấu trúc Dữ liệu và Quy chuẩn Tích hợp ...................................................... 23	
+2.1.	 Thiết kế kiến trúc hệ thống cơ sở dữ liệu (Data Lake, Data Warehouse, Data 
+Lakehouse,…) và mô hình quản trị dữ liệu (Data Governance) ............................................ 23	
+2.1.1.	Thiết kế kiến trúc hệ thống CSDL ......................................................................... 23	
+2.1.2. Thiết kế mô hình quản trị dữ liệu (Data Governance) ........................................... 23 
+2.2.	 Thiết kế nguyên tắc và các luồng trục tích hợp (ESB) .............................................. 24	
+2.2.1. Mục tiêu của việc xây dựng quy chuẩn và quy tắc tích hợp dữ liệu: ..................... 24 
+2.2.2. Yêu cầu kỹ thuật thực hiện: ................................................................................... 25 
+2.2.3. Kết quả cần đạt: ..................................................................................................... 25 
+2.3.	 Thiết kế ERD (Entity Relationship Diagram) và chuẩn hóa Master Data ................. 25	
+2.3.1. Thiết kế Entity-Relationship Diagram (ERD): ...................................................... 25 
+2.3.2. Chuẩn hóa Master Data: ........................................................................................ 26 
+2.3.3. Kết quả cần đạt: ..................................................................................................... 26 
+2.4.	 Thiết kế quy chuẩn định danh tập trung và phân quyền (SSO/ RBAC) .................... 26	
+2.4.1. Thiết kế quy chuẩn định danh tập trung và phân quyền (SSO/ RBAC) ................ 26 
+2.4.2. Xây dựng ma trận phân quyền theo vai trò (RBAC) ............................................. 26 
+2.4.3. Kết quả cần đạt ...................................................................................................... 26 
+2.5.	 Thiết kế kỹ thuật luồng dữ liệu - Data Pipeline (Data Architectures & Application 
+Integration) ............................................................................................................................ 27	
+2.5.1. Phân loại và đặc điểm luồng dữ liệu ...................................................................... 27 
+2.5.2. Thiết kế kiến trúc pipeline xử lý dữ liệu ................................................................ 27 
+2.5.3. Thiết kế tích hợp giữa ứng dụng và nền tảng dữ liệu ............................................ 27 
+2.5.4. Quản lý pipeline và vận hành kỹ thuật .................................................................. 27 
+2.5.5. Kết quả cần đạt ...................................................................................................... 27 
+3.	Tiêu chí đánh giá .............................................................................................................. 27	
+CHƯƠNG 4 ĐỀ XUẤT KỸ THUẬT HỆ SINH THÁI ỨNG DỤNG NỀN TẢNG DỮ 
+LIỆU DÙNG CHUNG ............................................................................................................. 28	
+A.	KIẾN TRÚC TỔNG THỂ (Hybrid Data Platform) ..................................................... 28	
+B.	ĐỀ XUẤT KỸ THUẬT ................................................................................................... 29	
+I.	Phân tích đánh giá và đề xuất lựa chọn các thành phần của nền tảng dữ liệu tại chỗ 
+(On-prem data platform) ........................................................................................................ 29	
+1.	Phân hệ thu thập dữ liệu (Ingestion) .............................................................................. 29	
+1.1.	 Mô tả yêu cầu nghiệp vụ: ........................................................................................... 29	
+1.2.	 Yêu cầu kỹ thuật ........................................................................................................ 30	
+1.3.	 Đề xuất lựa chọn ........................................................................................................ 31	
+2.	Phân hệ Lưu trữ dữ liệu tại chỗ ..................................................................................... 31	
+
+=== [Bao_Cao_De_Xuat] Trang 5 (Từ khóa: ERP) ===
+ 
+ Trang 5/83 
+2.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 31	
+2.2.	 Yêu cầu kỹ thuật ........................................................................................................ 32	
+2.3.	 Đề xuất lựa chọn ........................................................................................................ 33	
+3.	Phân hệ Trục tích hợp (Enterprise Service Bus – ESB) ............................................... 33	
+3.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 33	
+3.2.	 Yêu cầu kỹ thuật ........................................................................................................ 33	
+3.3.	 Đề xuất lựa chọn ........................................................................................................ 34	
+4.	Phân hệ Quản lý dữ liệu chủ (Master Data Management - MDM) ............................ 34	
+4.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 34	
+4.2.	 Yêu cầu kỹ thuật ........................................................................................................ 35	
+4.2.1. Mô hình hóa dữ liệu (Data Modeling) ................................................................... 35 
+4.2.2. Tích hợp dữ liệu (Data Integration) ....................................................................... 35 
+4.2.3. Làm sạch và chuẩn hóa (Cleansing & Standardization) ........................................ 36 
+4.2.4. So khớp và gộp dữ liệu (Matching & Merging) .................................................... 36 
+4.2.5. Quản trị và giám sát dữ liệu (Governance & Stewardship) ................................... 36 
+4.2.6. Quản lý phiên bản và lịch sử (Versioning & History) ........................................... 36 
+4.2.7. Quy tắc nghiệp vụ và luồng phê duyệt (Business Rules & Workflow) ................. 36 
+4.2.8. Công bố và làm giàu dữ liệu chủ (Publishing & Syndication) .............................. 36 
+4.2.9. Quản lý truy cập và bảo mật (RBAC & Security) ................................................. 36 
+4.3.	 Đề xuất lựa chọn ........................................................................................................ 37	
+5.	Quản lý và phân quyền cho các vai trò nhân sự Quản trị dữ liệu (Data Operation) 37	
+5.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 37	
+5.2.	 Yêu cầu kỹ thuật ........................................................................................................ 37	
+5.3.	 Đề xuất lựa chọn ........................................................................................................ 38	
+6.	Phân hệ Quản lý định danh tập trung và SSO .............................................................. 38	
+6.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 38	
+6.2.	 Yêu cầu kỹ thuật ........................................................................................................ 38	
+7.	Phân hệ Biến đổi / xử lý dữ liệu ...................................................................................... 39	
+7.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 39	
+7.2.	 Yêu cầu kỹ thuật ........................................................................................................ 39	
+7.3.	 Đề xuất lựa chọn ........................................................................................................ 39	
+8.	Phân hệ Công cụ xây dựng báo cáo BI .......................................................................... 40	
+8.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 40	
+8.2.	 Yêu cầu kỹ thuật ........................................................................................................ 40	
+8.3.	 Đề xuất lựa chọn ........................................................................................................ 41	
+
+=== [Bao_Cao_De_Xuat] Trang 6 (Từ khóa: dùng chung) ===
+ 
+ Trang 6/83 
+9.	Phân hệ Khai thác dữ liệu bằng ngôn ngữ tự nhiên (Text to data) ............................. 41	
+9.1.	 Mô tả yêu cầu nghiệp vụ ............................................................................................ 41	
+9.2.	 Yêu cầu kỹ thuật ........................................................................................................ 41	
+9.3.	 Đề xuất giải pháp: ...................................................................................................... 42	
+10.	Thư viện machine learning ............................................................................................. 42	
+11.	Phân hệ kiểm soát hệ thống và giám sát an ninh dữ liệu ............................................. 42	
+11.1.	Mô tả yêu cầu nghiệp vụ ............................................................................................ 42	
+11.2.	Yêu cầu kỹ thuật ........................................................................................................ 42	
+11.3.	Đề xuất giải pháp: ...................................................................................................... 44	
+12.	Phân hệ Quản trị dữ liệu (Metadata governance) ........................................................ 44	
+12.1.	Mô tả yêu cầu nghiệp vụ ............................................................................................ 44	
+12.2.	Yêu cầu kỹ thuật ........................................................................................................ 44	
+12.3.	Đề xuất lựa chọn ........................................................................................................ 45	
+II.	Phân tích đánh giá và đề xuất lựa chọn các thành phần của nền tảng dữ liệu điện 
+toán đám mây (Cloud data platform ..................................................................................... 45	
+1.	Bối cảnh và định hướng triển khai tại PTSC ................................................................ 45	
+2.	Phân tích đánh giá ........................................................................................................... 46	
+2.1.   So sánh Cloud nội địa và Quốc tế ................................................................................. 46	
+2.2    Phân tích các giải pháp Cloud Quốc tế ......................................................................... 49	
+3.     Đánh giá và đề xuất lựa chọn giải pháp ......................................................................... 51	
+3.1.  Bối cảnh và định hướng triển khai phục vụ chiến lược CĐS tại PTSC Giai đoạn (2025-
+2027). 51	
+3.2.   Kết luận và đề xuất lựa chọn ........................................................................................ 51	
+CHƯƠNG 5 ĐỀ XUẤT KỸ THUẬT HẠ TẦNG CÔNG NGHỆ PHỤC VỤ NỀN TẢNG 
+DỮ LIỆU DÙNG CHUNG ...................................................................................................... 52	
+1.	Phân tích lựa chọn mô hình kiến trúc ............................................................................ 52	
+1.1.	 Mô hình kiến trúc hạ tầng công nghệ truyền thống ................................................... 52	
+1.2.	 Mô hình kiến trúc hạ tầng siêu hội tụ HCI ................................................................ 53	
+1.3.	 Mô hình kiến trúc hạ tầng HCI phân tách (dHCI) ..................................................... 55	
+1.4.	 Phân tích đánh giá ...................................................................................................... 57	
+1.5.	 Đề xuất lựa chọn giải pháp hạ tầng công nghệ thông tin ........................................... 58	
+2.	Yêu cầu tài nguyên cho Hybrid data platform ............................................................. 58	
+2.1.	 Cloud data platform ................................................................................................... 58	
+2.1.1. Quy mô triển khai .................................................................................................. 58 
+
+=== [Bao_Cao_De_Xuat] Trang 8 (Từ khóa: dùng chung) ===
+ 
+ Trang 8/83 
+CHƯƠNG 1 
+ĐỊNH HƯỚNG MỤC TIÊU VÀ NGUYÊN TẮC  
+ĐÁNH GIÁ LỰA CHỌN GIẢI PHÁP 
+Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025 
+1. Tổng quan về Mô hình kiến trúc nền tảng dữ liệu dùng chung tại Tổng 
+công ty PTSC 
+Mô hình kiến trúc nền tảng dữ liệu của Tổng công ty PTSC được xây dựng với mục tiêu 
+thu thập, tích hợp và đồng bộ dữ liệu phân tán từ nhiều nguồn khác nhau như: các hệ thống phần 
+mềm nội bộ, nền tảng điện toán đám mây, thiết bị IoT và các hệ thống liên quan khác. Tất cả dữ 
+liệu sẽ được tập trung về một nền tảng chung nhằm quản lý thống nhất, đảm bảo phân quyền, 
+chia sẻ và khai thác dữ liệu hiệu quả giữa Tổng công ty và các Đơn vị thành viên. Trên nền tảng 
+đó, dữ liệu sẽ được phân tích để tạo ra các sản phẩm dữ liệu (Data Product) dùng chung trên 
+toàn Tổng công ty PTSC và các Đơn vị thành viên phục vụ cho: 
+- Dữ liệu tích hợp và hợp nhất phục vụ xuyên suốt các quy trình quản trị, điều hành hoạt 
+động SXKD như tài chính, nhân sự, dự án, bảo hiểm, HSEQ và các nghiệp vụ liên 
+quan; 
+- Dữ liệu cho các lĩnh vực SXKD chủ lực như cơ khí dầu khí, vận hành kho nổi chứa và 
+xuất dầu thô (FSO/FPSO), vận chuyển, lắp đặt, bảo dưỡng công trình biển, dịch vụ 
+cảng dầu khí, tàu dịch vụ, khảo sát địa chất, sửa chữa công trình ngầm, năng lượng tái 
+tạo và các công trình công nghiệp khác. 
+2. Mục tiêu trọng tâm của giải pháp 
+Định hướng giải pháp bao gồm 06 mục tiêu trọng tâm cần tập trung triển khai trong công 
+tác xây dựng Mô hình quản trị dữ liệu: 
+- Tích luỹ: Thu thập và lưu trữ đầy đủ dữ liệu phục vụ hoạt động SXKD của Tổng công 
+ty; 
+- Tích hợp: Tích hợp và xây dựng hệ thống dữ liệu dùng chung trong Tổng công ty và 
+giữa Tổng công ty với các Đơn vị thành viên; 
+- Đồng bộ: Đảm bảo tính liên kết, đồng bộ dữ liệu trong toàn hệ thống của Tổng công 
+ty; 
+- Phân cấp: Thực hiện phân cấp, phân quyền và quản lý truy cập dữ liệu một cách hiệu 
+quả; 
+- Phân tích: Triển khai các giải pháp phân tích dữ liệu nhằm hỗ trợ công tác quản trị và 
+ra quyết định; 
+- Quản trị: Xây dựng hệ thống dữ liệu lớn (Big Data) và thiết lập cơ chế quản trị dữ liệu 
+phù hợp, chặt chẽ. 
+
+=== [Bao_Cao_De_Xuat] Trang 9 (Từ khóa: dùng chung) ===
+ 
+ Trang 9/83 
+3. Nguyên tắc đánh giá – lựa chọn giải pháp 
+Một số nguyên tắc cần được quán triệt trong quá trình lựa chọn và đánh giá giải pháp cũng 
+như thiết kế kiến trúc Mô hình quản trị dữ liệu, cụ thể: 
+- Tuân thủ các quy định pháp lý hiện hành về dữ liệu;  
+- Đảm bảo quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung; 
+- Kiến trúc mô hình dữ liệu hiện đại và linh hoạt; 
+- Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai; 
+- Đảm bảo các yêu cầu, quy định về an toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn); 
+- Đáp ứng lộ trình theo Chiến lược Chuyển đổi số của PTSC 
+4. Các yêu cầu kỹ thuật tổng thể cho kiến trúc dữ liệu 
+4.1. Tuân thủ các quy định pháp lý hiện hành về dữ liệu 
+- Lưu trữ dữ liệu gốc: Đảm bảo toàn bộ dữ liệu gốc (raw data) được lưu trữ và xử lý 
+trong lãnh thổ Việt Nam, phù hợp với quy định pháp luật và yêu cầu bảo vệ dữ liệu 
+quốc gia; 
+- Chia sẻ dữ liệu: Không cho phép chuyển dữ liệu, log hệ thống hoặc bất kỳ thành phần 
+liên quan nào ra nước ngoài, trừ khi có văn bản cho phép chính thức từ cơ quan có thẩm 
+quyền hoặc lãnh đạo Tổng công ty; 
+- Mã hoá dữ liệu: Dữ liệu phải được mã hóa trong suốt quá trình truyền và lưu trữ, tuân 
+theo các tiêu chuẩn về an toàn thông tin; 
+- Bảo vệ dữ liệu: Tuân thủ đầy đủ các quy định pháp luật liên quan đến bảo vệ dữ liệu 
+cá nhân, quyền riêng tư và xử lý thông tin nhạy cảm. 
+- Kiểm duyệt dữ liệu: Thiết lập cơ chế kiểm duyệt dữ liệu chặt chẽ, giám sát toàn bộ hoạt 
+động truy cập và sử dụng dữ liệu, phát hiện kịp thời các hành vi bất thường hoặc rò rỉ 
+dữ liệu. 
+4.2. Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung 
+Tổng công ty PTSC nắm quyền kiểm soát và sở hữu hoàn toàn các thành phần cốt lõi của 
+hệ thống cơ sở dữ liệu dùng chung, kèm theo giá trị tri thức trong quá trình phân tích - sử dụng 
+dữ liệu bao gồm: quy trình xử lý dữ liệu (Pipeline/ Data Transformation Logic), dữ liệu gốc 
+(Raw Data), quá trình trích xuất – biến đổi – nạp dữ liệu (ETL/ELT), thông tin mô tả dữ liệu 
+(Metadata), Bộ khóa Mã hóa dữ liệu và Bộ mã dữ liệu định danh/ Dữ liệu chủ dùng chung trong 
+toàn hệ sinh thái phần mềm - dữ liệu (Master Data).  
+ Việc làm chủ các thành phần trên là điều kiện tiên quyết để thực hiện hiệu quả hoạt động 
+kiểm duyệt dữ liệu, phát hiện sớm sai lệch, ngăn chặn rủi ro trong phân tích báo cáo. Đồng thời, 
+đây cũng là cơ sở để PTSC tuân thủ các tiêu chuẩn quản trị dữ liệu chuyên nghiệp, bền vững, từ 
+đó đảm bảo chất lượng, độ chính xác, tính toàn vẹn và bảo mật của dữ liệu, hướng đến xây dựng 
+tài sản số theo định hướng Chiến lược Chuyển đổi số của Tổng công ty. 
+
+=== [Bao_Cao_De_Xuat] Trang 16 (Từ khóa: dùng chung) ===
+ 
+ Trang 16/83 
+3.2. Định hướng các phân hệ chức năng của Hybrid Data Platform 
+Mô hình Hybrid Data Platform, đáp ứng khả năng mở rộng linh hoạt, kết nối với nhiều 
+nền tảng điện toán đám mây khác nhau (multi-cloud) và nhiều địa điểm khác nhau (multi-site) 
+làm kiến trúc nền tảng dữ liệu dùng chung. 
+Mục 
+tiêu 
+Phân hệ  
+chức năng Mô tả Phân hệ chức năng 
+On-premis 
+Data 
+Platform 
+Cloud Data 
+Platform 
+Tích 
+luỹ 
+1 Phân hệ 
+thu thập 
+dữ liệu 
+Thu thập dữ liệu từ nhiều nguồn 
+khác nhau (file, API, cơ sở dữ 
+liệu, IoT…), chuẩn hóa đầu vào 
+để đưa vào hệ thống lưu trữ 
+trung tâm. 
+Thu thập 
+(Ingestion) 
+Thu thập 
+(Ingestion) 
+2 Phân hệ 
+Lưu trữ 
+dữ liệu 
+(Data 
+lakehouse) 
+Kết hợp ưu điểm của data 
+warehouse và data lake, cho 
+phép lưu trữ dữ liệu cả có cấu 
+trúc và phi cấu trúc, phục vụ 
+phân tích BI và AI trên một nền 
+tảng duy nhất. 
+Lưu trữ 
+(Storage) 
+Lưu trữ 
+(Storage) 
+Tích 
+hợp 
+3 Phân hệ 
+trục tích 
+hợp 
+Là nền tảng trung gian kết nối, 
+truyền dữ liệu giữa các hệ thống 
+Phần mềm khác nhau, đảm bảo 
+khả năng tích hợp nhanh, ổn 
+định và linh hoạt (Enterprise 
+Service Bus – ESB). 
+Trục tích hợp 
+(ESB) 
+Không sử dụng 
+Đồng 
+bộ 
+4 Phân hệ 
+quản lý dữ 
+liệu 
+master 
+data 
+Xây dựng và duy trì bộ mã dữ 
+liệu dùng chung toàn hệ thống 
+(master data), đảm bảo tính nhất 
+quán, toàn vẹn và đồng bộ dữ 
+liệu giữa các hệ thống bao gồm 
+10 chức năng chính: 
+1. Mô hình hóa dữ liệu (Data 
+Modeling) 
+2. Tích hợp dữ liệu (Data 
+Integration) 
+3. Làm sạch và chuẩn hóa 
+(Cleansing & 
+Standardization) 
+4. So khớp và gộp dữ liệu 
+(Matching & Merging) 
+5. Quản trị và giám sát dữ liệu 
+(Governance & 
+Stewardship) 
+Master Data 
+Management 
+Đầy đủ 10 
+chức năng 
+Chỉ có chức 
+năng thứ 9 
+Công bố và 
+chia sẻ dữ liệu 
+chủ (Master 
+Data 
+Publishing) 
+
+=== [Bao_Cao_De_Xuat] Trang 18 (Từ khóa: dùng chung) ===
+ 
+ Trang 18/83 
+Mục 
+tiêu 
+Phân hệ  
+chức năng Mô tả Phân hệ chức năng 
+On-premis 
+Data 
+Platform 
+Cloud Data 
+Platform 
+ngữ tự 
+nhiên 
+nhiên (Natural Language Query 
+– NLQ), không cần viết mã. 
+10 Thư viện 
+Mô hình 
+học máy 
+Tập hợp các thuật toán, công cụ 
+và môi trường huấn luyện mô 
+hình học máy (machine 
+learning) phục vụ dự báo, phân 
+tích nâng cao. 
+Không sử 
+dụng 
+Mô hình học 
+máy 
+AI/ML 
+Quản 
+trị 
+11 Phân hệ 
+kiểm soát 
+hệ thống 
+và giám 
+sát an ninh 
+dữ liệu 
+Theo dõi hoạt động toàn hệ 
+thống dữ liệu, phát hiện sự cố 
+kỹ thuật, rò rỉ dữ liệu, truy cập 
+trái phép, và cảnh báo sớm nguy 
+cơ an ninh. 
+Kiểm soát 
+(Monitor) 
+Không sử dụng 
+12 Phân hệ 
+quản trị 
+siêu dữ 
+liệu 
+Thực hiện kiểm soát quyền truy 
+cập, bảo mật, kiểm duyệt nội 
+dung, theo dõi lịch sử thay đổi 
+và truy vết hành vi trên dữ liệu. 
+Quản trị siêu 
+dữ liệu 
+(Metadata 
+Governance) 
+Quản trị siêu 
+dữ liệu 
+(Metadata 
+Governance) 
+3.3. Định hướng kiến trúc nền tảng dữ liệu tại tầng điện toán đám mây (Cloud): 
+- Xây dựng hệ thống dữ liệu lớn (Big Data): Nền tảng dữ liệu (data platform) cần được 
+thiết kế theo mô hình kiến trúc hiện đại, tương tự như các nền tảng Microsoft Fabric 
+(Azure), AWS Data Platform hoặc Google Cloud Platform; 
+- Mở rộng linh hoạt: Hạ tầng dữ liệu cần được triển khai theo mô hình tách biệt giữa tài 
+nguyên tính toán và lưu trữ, để mở rộng linh hoạt phù hợp với đặc thù biến động theo 
+từng giai đoạn triển khai và tối ưu ngân sách; Hỗ trợ mở rộng đa đám mây (multicloud-
+ready): Kiến trúc cần được thiết kế linh hoạt để có thể triển khai và kết nối với nhiều 
+nền tảng đám mây khác nhau (Azure, AWS, GCP…) mà không phụ thuộc vào công 
+nghệ đặc thù của một nhà cung cấp. 
+- Tích lũy, thu thập đầy đủ dữ liệu và thực hiện phân cấp, phân quyền, quản lý truy cập 
+dữ liệu hiệu quả: Hệ thống hỗ trợ thu thập dữ liệu và truy cập, phân tích dữ liệu trực 
+tiếp từ nhiều nguồn (on-premise/cloud). Triển khai cơ chế phân cấp, phân quyền truy 
+cập rõ ràng, đảm bảo người dùng truy cập và thao tác trên dữ liệu phù hợp với vai trò, 
+chức năng. Đồng thời đảm bảo khả năng quản trị, giám sát bảo mật tập trung với xác 
+thực đa yếu tố, kiểm soát truy cập, ghi log đầy đủ và đảm bảo toàn vẹn dữ liệu; 
+- Tích hợp, xây dựng hệ thống dữ liệu dùng chung trong Tổng công ty và giữa Tổng công 
+ty với các Đơn vị, đảm bảo tính đồng bộ dữ liệu trong toàn Tổng công ty: Hệ thống cần 
+hỗ trợ triển khai mô hình linh hoạt, cho phép phân phối và kết nối dữ liệu nội bộ trong 
+tổng công ty và giữa Tổng công ty PTSC với các đơn vị thành viên theo kiến trúc phù 
+hợp như Data mesh hoặc Data fabric; 
+- Hỗ trợ kết nối và đồng bộ dữ liệu với hệ thống on-premise: Hệ thống cần hỗ trợ kết nối 
+bảo mật và đồng bộ dữ liệu hai chiều với hạ tầng triển khai tại chỗ (on-premise), mã 
+
+=== [Bao_Cao_De_Xuat] Trang 21 (Từ khóa: dùng chung) ===
+ 
+ Trang 21/83 
+CHƯƠNG 3 
+ĐỀ XUẤT THIẾT KẾ KIẾN TRÚC DỮ LIỆU 
+NỀN TẢNG DỮ LIỆU DÙNG CHUNG 
+Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025 
+A. Giới thiệu chung 
+1. Mục tiêu công việc 
+- Chuẩn hóa và tích hợp hệ thống phần mềm, dữ liệu hiện tại (và tương lai) của khách 
+hàng để hỗ trợ chuyển đổi số toàn diện. 
+- Xây dựng kiến trúc hệ thống đồng bộ, cho phép tích hợp dữ liệu từ nhiều nguồn, phục 
+vụ phân tích, báo cáo thông minh, và ứng dụng AI. 
+- Tăng khả năng ra quyết định nhanh chóng thông qua báo cáo thời gian thực và phân 
+tích dữ liệu nâng cao. 
+- Đảm bảo bảo mật, phân quyền, và trải nghiệm người dùng thông qua SSO/RBAC. 
+- Đặt nền tảng cho các sáng kiến AI/ML và GenAI nhằm tăng năng suất lao động (NSLĐ) 
+và hiệu quả vận hành. 
+2. Mô tả công việc Thiết kế kiến trúc dữ liệu   
+Thiết kế kiến trúc dữ liệu, quy chuẩn dữ liệu nhằm phục vụ hoạt động báo cáo, phân tích 
+và xây dựng quy tắc tích hợp dữ liệu trong hệ sinh thái phần mềm của Tổng Công ty PTSC 
+(bao gồm Tổng công ty và các Đơn vị thành viên), bao gồm và không giới hạn các nội dung 
+sau:  
+(a) Thiết kế kiến trúc hệ thống cơ sở dữ liệu (Data Lake, Data Warehouse, Data 
+Lakehouse,…) và mô hình quản trị dữ liệu (Data Governance) 
+(b) Thiết kế nguyên tắc và các luồng trục tích hợp (ESB); 
+(c) Thiết kế ERD (Entity Relationship Diagram) và chuẩn hóa Master Data; 
+(d) Thiết kế quy chuẩn định danh tập trung và phân quyền (SSO/ RBAC) 
+(e) Thiết kế kỹ thuật luồng dữ liệu - Data Pipeline (Data Architectures & Application 
+Integration); 
+ 
+Phạm vi công việc thiết kế Mục tiêu Phân hệ chức năng sẽ sử dụng 
+(a) 
+Thiết kế kiến trúc hệ thống cơ sở dữ 
+liệu (Data Lake, Data Warehouse, 
+Data Lakehouse,…) và mô hình 
+quản trị dữ liệu (Data Governance). 
+Tích luỹ 
+1 Phân hệ thu thập dữ liệu 
+2 Phân hệ Lưu trữ dữ liệu (Data 
+lakehouse) 
+Quản trị 
+ 
+11 
+Phân hệ kiểm soát hệ thống và 
+giám sát an ninh dữ liệu 
+12 Phân hệ quản trị dữ liệu 
+(b) Thiết kế nguyên tắc và các luồng 
+trục tích hợp (ESB); Tích hợp 3 Phân hệ trục tích hợp 
+(c) 
+Thiết kế ERD (Entity Relationship 
+Diagram) và chuẩn hóa Master 
+Data; 
+Đồng bộ 4 Phân hệ quản lý dữ liệu master 
+data 
+
+=== [Bao_Cao_De_Xuat] Trang 22 (Từ khóa: ERP) ===
+ 
+ Trang 22/83 
+ 
+Phạm vi công việc thiết kế Mục tiêu Phân hệ chức năng sẽ sử dụng 
+(d) Thiết kế quy chuẩn định danh tập 
+trung và phân quyền (SSO/ RBAC) Phân chia 
+5 
+Quản lý và phân quyền cho các 
+vai trò nhân sự Quản trị dữ liệu 
+(Data Operation) 
+6 Phân hệ quản lý định danh tập 
+trung và SSO 
+(e) 
+Thiết kế kỹ thuật luồng dữ liệu - 
+Data Pipeline (Data Architectures & 
+Application Integration); 
+Phân tích 
+7 Phân hệ biến đổi / xử lý dữ liệu 
+8 Phân hệ công cụ xây dựng báo 
+cáo BI 
+9 Phân hệ khai thác dữ liệu bằng 
+ngôn ngữ tự nhiên 
+10 Thư viện machine learning 
+B. Phạm vi công việc 
+1. Khảo sát và Phân tích Hệ thống Hiện tại 
+1.1. Phân tích Hệ sinh thái Ứng dụng: 
+- Lập bản đồ hệ sinh thái ứng dụng và dữ liệu: Xác định mối quan hệ giữa các hệ thống 
+thông tin và các phần mềm, từ đó xây dựng ERD và quy chuẩn tích hợp. 
+- Phân tích quy trình kinh doanh: Đảm bảo dữ liệu được chuẩn hóa và đáp ứng nhu cầu 
+quản trị, vận hành của doanh nghiệp. 
+- Thiết kế kiến trúc dữ liệu: Xây dựng ERD, Master Data, và quy chuẩn tích hợp một 
+cách bài bản, chuẩn quốc tế. 
+- Đảm bảo tính đồng bộ và mở rộng: Đặt nền tảng cho Data Lake, Data Warehouse, và 
+các sáng kiến AI/ML trong tương lai. 
+- Phân chia Subdomains và Bounded Contexts: Xác định các miền con (Vận hành, Khách 
+hàng, Nhân sự, Tài chính …) và cô lập dữ liệu/logic trong từng Bounded Context. 
+- Xây dựng Ubiquitous Language: Đảm bảo tính nhất quán giữa kỹ thuật và kinh doanh 
+khi thiết kế ERD và Master Data. 
+- Thiết kế Cấu trúc Dữ liệu: Xác định Entities, Aggregates, và Master Data phù hợp với 
+từng Bounded Context. 
+- Tích hợp Dữ liệu: Sử dụng Context Mapping để định nghĩa cách các hệ thống (HRM, 
+E-Office, ERP …) trao đổi dữ liệu qua trục tích hợp (ESB). 
+- Thực hiện phân tích Data Flow Mapping chi tiết, bao gồm cả các luồng dữ liệu batch 
+và real-time, để phát hiện các điểm nghẽn (bottlenecks) và các vấn đề về tính toàn vẹn 
+dữ liệu (data integrity). 
+1.2. Khảo sát Quy trình Quản trị và Vận hành: 
+- Xem xét kỹ lưỡng cách các phòng ban (như vận hành nhà máy, nhân sự, tài chính) đang 
+làm việc, vẽ lại quy trình làm việc một cách rõ ràng hơn, từ đó tìm ra những thông tin 
+quan trọng cần tập trung (ví dụ: thông tin về hoạt động nhà máy, thông tin nhân viên, 
+hoặc số liệu tài chính). 
+- Kiểm tra và phát hiện những vấn đề như dữ liệu bị tách rời giữa các phòng ban (ví dụ: 
+thông tin nhân sự trong HRM không khớp với dữ liệu trong ERP), sau đó đề xuất cách 
+làm cho dữ liệu đồng bộ và thống nhất trên toàn công ty. 
+
+=== [Bao_Cao_De_Xuat] Trang 24 (Từ khóa: ERP) ===
+ 
+ Trang 24/83 
++ Chính sách chất lượng dữ liệu (Data Quality Policy): định nghĩa các tiêu chí 
+như tính đầy đủ, chính xác, nhất quán, kịp thời 
++ Chính sách truy cập & bảo vệ dữ liệu (Data Access & Protection Policy): phân 
+quyền theo vai trò, nhóm người dùng, kiểm soát truy cập 
++ Quy trình xử lý dữ liệu lỗi, kháng nghị và cập nhật  
+- Quản lý metadata và danh mục dữ liệu 
++ Xây dựng danh mục thuật ngữ dữ liệu (Business Glossary) để đảm bảo hiểu 
+thống nhất giữa các phòng ban 
++ Quản lý metadata kỹ thuật: schema, lineage, data owner, chất lượng 
+- Kiểm soát vòng đời dữ liệu 
++ Xác định thời gian lưu trữ, archive, hoặc huỷ bỏ theo quy định 
++ Áp dụng chính sách versioning và audit thay đổi dữ liệu 
++ Thiết lập quy tắc quản lý data sản sinh bởi hệ thống AI/ML 
+- Kết quả cần đạt 
++ Tài liệu mô hình tổ chức quản trị dữ liệu 
++ Bộ chính sách quản trị dữ liệu (Data Governance Policies) 
++ Danh mục dữ liệu và metadata (Business & Technical Catalog) 
++ Kế hoạch triển khai công cụ và quy trình vận hành 
+2.2. Thiết kế nguyên tắc và các luồng trục tích hợp (ESB) 
+Việc xây dựng các quy chuẩn và quy tắc tích hợp dữ liệu là bước quan trọng để đảm bảo 
+dữ liệu từ các phòng ban và hệ thống khác nhau có thể kết nối và hoạt động hiệu quả. Dưới đây 
+là các mục tiêu và cách thực hiện cụ thể: 
+2.2.1. Mục tiêu của việc xây dựng quy chuẩn và quy tắc tích hợp dữ liệu: 
+- Đảm bảo dữ liệu có ý nghĩa thống nhất trên toàn công ty 
+Quy chuẩn giúp tất cả các hệ thống sử dụng dữ liệu theo cùng một định dạng và ý nghĩa, 
+tránh hiểu nhầm. 
+Ví dụ: Mã tài sản sẽ được chuẩn hóa để đảm bảo ERP, và các phần mềm liên quan đều 
+hiểu "VT001" là cùng một tài sản, không bị nhầm lẫn. 
+- Tăng tốc độ và độ chính xác trong kết nối dữ liệu 
+Quy tắc tích hợp giúp dữ liệu di chuyển giữa các hệ thống một cách nhanh chóng và ít 
+lỗi hơn, giảm thiểu công việc nhập liệu thủ công. 
+Ví dụ: Thông tin bảo trì thiết bị từ ERP có thể tự động cập nhật vào các phần mềm liên 
+quan để hỗ trợ quản trị mà không cần nhập lại. 
+- Chuẩn bị dữ liệu để hỗ trợ các công nghệ mới 
+Quy chuẩn và quy tắc được thiết kế để sẵn sàng cho các công nghệ hiện đại như trí tuệ 
+nhân tạo (AI), giúp doanh nghiệp dễ dàng áp dụng các giải pháp thông minh trong tương 
+lai. 
+Ví dụ: Dữ liệu được chuẩn bị để AI phân tích hành vi khách hàng hoặc dự đoán thời 
+gian bảo trì thiết bị. 
+- Dễ dàng kiểm tra và theo dõi nguồn gốc dữ liệu 
+Quy tắc tích hợp đảm bảo rằng doanh nghiệp có thể biết dữ liệu đến từ đâu và đã được 
+xử lý như thế nào, hỗ trợ việc kiểm tra và quản lý. 
+
+=== [Bao_Cao_De_Xuat] Trang 25 (Từ khóa: ERP) ===
+ 
+ Trang 25/83 
+Ví dụ: Nếu có lỗi trong báo cáo doanh thu, đội ngũ quản trị có thể kiểm tra xem dữ liệu 
+đến từ ERP, HRM hay các phần mềm liên quan để xử lý. 
+2.2.2. Yêu cầu kỹ thuật thực hiện: 
+- Xây dựng quy chuẩn về cách lưu trữ và sử dụng dữ liệu 
+Đặt ra các quy định rõ ràng về cách dữ liệu được lưu trữ và sử dụng trên toàn công ty, 
+ví dụ: định dạng ngày giờ, cách đặt mã định danh cho khách hàng, thiết bị, hoặc sản 
+phẩm. Điều này đảm bảo các hệ thống hiểu nhau và dữ liệu được sử dụng một cách 
+thống nhất. 
+- Thiết lập cách kết nối dữ liệu giữa các hệ thống 
+Xác định các phương thức để dữ liệu di chuyển giữa các hệ thống (như từ ERP sang 
+Quản lý tài chính) một cách hiệu quả và đáng tin cậy, ví dụ: thông tin nhân sự sẽ được 
+gửi tự động từ HRM sang ERP khi cần thiết. 
+- Chuẩn bị dữ liệu cho kho dữ liệu lớn (Data Lake) và kho dữ liệu phân tích (Data 
+Warehouse) 
+Thiết kế cách lưu trữ dữ liệu để phù hợp với cả dữ liệu có cấu trúc (như bảng biểu) và 
+không có cấu trúc (như văn bản, hình ảnh). Đồng thời, dữ liệu sẽ được tổ chức để dễ 
+dàng sử dụng cho báo cáo và phân tích, ví dụ: tạo báo cáo doanh thu nhanh chóng từ 
+nhiều nguồn. 
+- Đảm bảo khả năng theo dõi và kiểm tra dữ liệu 
+Thiết lập hệ thống để doanh nghiệp có thể kiểm tra xem dữ liệu đến từ đâu và đã được 
+xử lý như thế nào, giúp quản lý dữ liệu hiệu quả và minh bạch hơn. 
+2.2.3. Kết quả cần đạt: 
+- Bộ Quy chuẩn và Quy tắc Kết nối Dữ liệu: Một tài liệu chi tiết, dễ hiểu, hướng dẫn cách 
+sử dụng và kết nối dữ liệu trên toàn Tổng công ty. 
+- Kế hoạch Sử dụng Data Lake và Data Warehouse: Một kế hoạch rõ ràng để triển khai 
+kho dữ liệu lớn và kho dữ liệu phân tích, giúp dữ liệu sẵn sàng cho các báo cáo và phân 
+tích trong tương lai. 
+2.3. Thiết kế ERD (Entity Relationship Diagram) và chuẩn hóa Master Data 
+2.3.1. Thiết kế Entity-Relationship Diagram (ERD): 
+- Xây dựng Conceptual ERD và Logical ERD dựa trên các domain nghiệp vụ đã phân 
+tích, đảm bảo các mục tiêu: 
++ Hiểu rõ cấu trúc dữ liệu toàn doanh nghiệp 
++ Tính nhất quán và đồng bộ dữ liệu 
++ Hỗ trợ tích hợp dữ liệu hiệu quả với các phần mềm nghiệp vụ 
++ Nâng cao khả năng báo cáo và phân tích 
++ Tăng cường khả năng mở rộng và linh hoạt 
+- Áp dụng Data Normalization (lên đến 3NF - Third Normal Form) để loại bỏ dư thừa 
+dữ liệu, đồng thời sử dụng Denormalization có kiểm soát cho các trường hợp tối ưu 
+truy vấn hiệu năng cao (high-performance queries). 
+- Tích hợp các Temporal Data Models (hỗ trợ lịch sử dữ liệu) để đáp ứng yêu cầu time-
+travel và truy vấn dữ liệu theo thời gian trong Data Lake/Data Warehouse. 
+
+=== [Bao_Cao_De_Xuat] Trang 26 (Từ khóa: dùng chung) ===
+ 
+ Trang 26/83 
+2.3.2. Chuẩn hóa Master Data: 
+- Xác định và quản lý các bộ Master Data cốt lõi (khách hàng, sản phẩm, nhân viên, tài 
+sản, nhà cung cấp, dự án, cơ cấu tổ chức và các danh mục dùng chung). Sử dụng Data 
+Profiling và Data Quality Assessment để phát hiện và khắc phục các vấn đề về chất 
+lượng dữ liệu (data quality issues) như trùng lặp, thiếu sót, hoặc không nhất quán. 
+- Xây dựng bản ghi chuẩn cho từng loại Master Data, đảm bảo tính duy nhất và tính toàn 
+vẹn trên toàn hệ thống. 
+2.3.3. Kết quả cần đạt: 
+- Tài liệu Conceptual ERD, Logical ERD, và Physical ERD (kèm theo Data Dictionary 
+chi tiết). 
+- Bộ Master Data chuẩn hóa, bao gồm các bản ghi chuẩn và chính sách quản trị Master 
+Data (Data Governance Policy). 
+2.4. Thiết kế quy chuẩn định danh tập trung và phân quyền (SSO/ RBAC) 
+Thiết kế hệ thống định danh tập trung và phân quyền đóng vai trò quan trọng trong việc 
+đảm bảo an toàn dữ liệu, kiểm soát truy cập và nâng cao trải nghiệm người dùng. Phân quyền 
+hợp lý giúp đảm bảo mỗi người dùng chỉ truy cập đúng thông tin cần thiết cho công việc của 
+họ, đồng thời đơn giản hóa quản lý hệ thống thông qua cơ chế đăng nhập một lần (SSO). 
+2.4.1. Thiết kế quy chuẩn định danh tập trung và phân quyền (SSO/ RBAC) 
+- Xây dựng hệ thống quản lý định danh (Identity Management – IAM) sử dụng các nền 
+tảng mã nguồn mở như Keycloak hoặc các nền tảng thương mại như Azure AD, tích 
+hợp với các hệ thống nội bộ. 
+- Áp dụng chuẩn xác thực hiện đại như OAuth2, OpenID Connect, SAML, cho phép liên 
+kết danh tính người dùng giữa các hệ thống khác nhau trong Tổng Công ty. 
+- Phân loại người dùng theo nhóm chức năng: quản trị dữ liệu, nhà phân tích, lãnh đạo, 
+nhân viên vận hành, nhà cung cấp bên ngoài,… 
+2.4.2. Xây dựng ma trận phân quyền theo vai trò (RBAC) 
+- Xác định các vai trò hệ thống và đặc quyền tương ứng, đảm bảo kiểm soát truy cập theo 
+nguyên tắc "phân quyền tối thiểu". 
+- Áp dụng phân quyền truy cập theo: 
++ Vùng dữ liệu (zone): raw, curated, serving… 
++ Loại tài nguyên: bảng dữ liệu, dashboard, API 
++ Mức hành động: đọc, ghi, chia sẻ, cấu hình 
+- Hỗ trợ cơ chế phân quyền linh hoạt theo tổ chức phân cấp (đơn vị thành viên, phòng 
+ban, dự án…). 
+2.4.3. Kết quả cần đạt 
+- Tài liệu thiết kế mô hình định danh tập trung và phân quyền 
+- Ma trận phân quyền RBAC chi tiết theo vai trò và tài nguyên 
+- Sơ đồ tích hợp hệ thống IAM với các hệ thống trong Data Platform 
+- Kế hoạch triển khai và vận hành cơ chế SSO/RBAC toàn hệ thống 
+
+=== [Bao_Cao_De_Xuat] Trang 27 (Từ khóa: dùng chung) ===
+ 
+ Trang 27/83 
+2.5. Thiết kế kỹ thuật luồng dữ liệu - Data Pipeline (Data Architectures & 
+Application Integration) 
+Luồng dữ liệu là trục kỹ thuật quan trọng kết nối dữ liệu từ các hệ thống nguồn về nền 
+tảng dữ liệu dùng chung, thực hiện xử lý, làm sạch, chuẩn hóa và cung cấp cho các hệ thống 
+phân tích, báo cáo và AI. Thiết kế pipeline hiệu quả giúp đảm bảo dữ liệu được đồng bộ, chính 
+xác và sẵn sàng sử dụng. 
+2.5.1. Phân loại và đặc điểm luồng dữ liệu 
+- Luồng batch: Dữ liệu được xử lý theo lịch trình định kỳ (hàng giờ, hàng ngày). Áp dụng 
+với các hệ thống như ERP, HRM, kế toán… 
+- Luồng streaming: Dữ liệu được xử lý thời gian thực hoặc gần thời gian thực (real -
+time/near real-time). Áp dụng với dữ liệu IoT, cảm biến, logs, events từ nhà máy hoặc 
+hệ thống vận hành (nếu có hoặc trong tương lai) 
+2.5.2. Thiết kế kiến trúc pipeline xử lý dữ liệu 
+- Các lớp chức năng chính: 
++ Data Ingestion Layer: thu thập dữ liệu từ hệ thống nguồn 
++ Data Processing Layer: xử lý ETL/ELT, transform, enrichment 
++ Data Storage Layer: lưu trữ thô, bán cấu trúc và cấu trúc (Data Lake + DW) 
++ Data Access & Serving Layer: phục vụ phân tích, BI, AI/ML 
+- Tối ưu hoá pipeline để hỗ trợ dữ liệu lớn và khả năng mở rộng linh hoạt. 
+2.5.3. Thiết kế tích hợp giữa ứng dụng và nền tảng dữ liệu 
+- Kết nối dữ liệu từ các hệ thống nghiệp vụ qua: 
++ API (RESTful, GraphQL) 
++ Cơ chế trích xuất dữ liệu (CDC) từ cơ sở dữ liệu 
++ File-based ingestion (CSV, Excel, XML, JSON) 
++ Message Broker/Event Streaming 
+- Định nghĩa mapping dữ liệu chi tiết giữa hệ thống nguồn và schema chuẩn tại Data 
+Platform. 
+2.5.4. Quản lý pipeline và vận hành kỹ thuật 
+- Lên lịch xử lý dữ liệu (scheduling), kiểm soát lỗi, retry tự động. 
+- Giám sát pipeline thông qua logging, alert, metric tracking. 
+- Lưu vết (lineage) quá trình xử lý dữ liệu, phục vụ kiểm soát chất lượng và truy xuất 
+nguồn gốc. 
+2.5.5. Kết quả cần đạt 
+- Sơ đồ tổng thể kiến trúc pipeline xử lý dữ liệu 
+- Danh sách pipeline chính, mô tả input/output, công cụ và tần suất chạy 
+- Tài liệu hướng dẫn mapping dữ liệu từ hệ thống nguồn 
+- Kế hoạch vận hành, bảo trì và mở rộng pipeline 
+3. Tiêu chí đánh giá 
+Chi tiết như Phụ lục 3 – Tiêu chí đánh giá thiết kế kiến trúc dữ liệu dùng 
+chung  
+
+=== [Bao_Cao_De_Xuat] Trang 28 (Từ khóa: dùng chung) ===
+ 
+ Trang 28/83 
+CHƯƠNG 4 
+ĐỀ XUẤT KỸ THUẬT HỆ SINH THÁI ỨNG DỤNG 
+NỀN TẢNG DỮ LIỆU DÙNG CHUNG 
+Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025  
+A. KIẾN TRÚC TỔNG THỂ (Hybrid Data Platform) 
+Mô hình Hybrid Data Platform bao gồm các phân hệ chức năng và được quy hoạch như 
+sau: 
+Mục 
+tiêu 
+Phân hệ  
+chức năng 
+On-premis Data 
+Platform 
+Cloud Data 
+Platform 
+Tích 
+luỹ 
+1 Phân hệ thu thập dữ liệu Thu thập 
+(Ingestion) 
+Thu thập 
+(Ingestion) 
+2 Phân hệ Lưu trữ dữ liệu (Data 
+lakehouse) 
+Lưu trữ (Storage) Lưu trữ (Storage) 
+Tích 
+hợp 
+3 Phân hệ trục tích hợp Trục tích hợp 
+(ESB) 
+Không sử dụng 
+Đồng 
+bộ 
+4 Phân hệ quản lý dữ liệu master 
+data 
+Master Data 
+Management Đầy 
+đủ 10 chức năng 
+Chỉ có chức năng 
+thứ 9 Công bố và 
+chia sẻ dữ liệu chủ 
+(Master Data 
+Publishing) 
+Phân 
+chia 
+5 Quản lý và phân quyền cho các vai 
+trò nhân sự Quản trị dữ liệu (Data 
+Operation) 
+Quản lý truy cập - 
+phân quyền 
+(RBAC) 
+Quản lý truy cập - 
+phân quyền 
+(RBAC) 
+6 Phân hệ quản lý định danh tập 
+trung và SSO 
+Đăng nhập một lần (SSO) 
+Phân 
+tích 
+7 Phân hệ biến đổi / xử lý dữ liệu Chuyển đổi 
+(Transform) 
+Chuyển đổi 
+(Transform) 
+8 Phân hệ công cụ xây dựng báo 
+cáo BI 
+Trực quan hoá 
+(Visualization) 
+Trực quan hoá 
+(Visualization) 
+9 Phân hệ khai thác dữ liệu bằng 
+ngôn ngữ tự nhiên 
+Trí tuệ nhân tạo - 
+AI (Text to data) 
+Trí tuệ nhân tạo - 
+AI (Text to data) 
+10 Thư viện Mô hình học máy Không sử dụng Mô hình học máy 
+AI/ML 
+
+=== [Bao_Cao_De_Xuat] Trang 29 (Từ khóa: dùng chung) ===
+ 
+ Trang 29/83 
+Mục 
+tiêu 
+Phân hệ  
+chức năng 
+On-premis Data 
+Platform 
+Cloud Data 
+Platform 
+Quản 
+trị 
+11 Phân hệ kiểm soát hệ thống và 
+giám sát an ninh dữ liệu 
+Kiểm soát 
+(Monitor) 
+Không sử dụng 
+12 Phân hệ quản trị siêu dữ liệu Quản trị siêu dữ 
+liệu (Metadata 
+Governance) 
+Quản trị siêu dữ 
+liệu (Metadata 
+Governance) 
+B. ĐỀ XUẤT KỸ THUẬT 
+I. Phân tích đánh giá và đề xuất lựa chọn các thành phần của nền tảng dữ 
+liệu tại chỗ (On-prem data platform) 
+Mô tả tóm tắt phân tầng dữ liệu và kết hợp chức năng quản trị dữ liệu trong mô hình kiến 
+trúc On-premise Data Platform như sau: 
+1. Phân hệ thu thập dữ liệu (Ingestion) 
+1.1. Mô tả yêu cầu nghiệp vụ: 
+- Mô tả nhu cầu: phân hệ có nhiệm vụ kết nối và tự động thu thập dữ liệu từ các hệ 
+thống khác nhau (cả nội bộ và bên ngoài), đưa dữ liệu về kho lưu trữ trung tâm. 
+- Mục tiêu:  
++ Tập hợp đầy đủ, đúng nguồn, đúng thời điểm tất cả các dữ liệu cần thiết 
++ Đảm bảo tính toàn vẹn, định dạng ban đầu và khả năng truy vết của dữ liệu 
++ Có giám sát, theo dõi nguồn gốc dữ liệu 
+- Hình thức thu thập dữ liệu tự động và linh hoạt 
++ Phần mềm cho phép các hình thức thu thập dữ liệu linh hoạt, tự động hoá để tiết 
+kiệm thời gian nhân sự làm việc thủ công. 
++ Các hình thức tự động thu thập dữ liệu như là: 
+ - Theo sự kiện: Trong một hệ sinh thái phần mềm CSDL dùng chung, khi phát 
+sinh sự kiện/ thao tác/ lệnh phần mềm... dữ liệu cập nhật mới tương ứng với sự 
+kiện đó sẽ được tự động thu thập và lưu trữ.  
+- Theo sự thay đổi dữ liệu: Khi một dòng/cột/bảng dữ liệu có sự thay đổi sai/ 
+khác với quá khứ, sự thay đổi sẽ được ghi nhận vào 1 bảng dữ liệu độc lập (Bảng 
+lịch sử thay đổi - Change Log Table). Phần mềm sẽ tự động tra cứu Change Log 
+Table và cập nhật sự thay đổi về CSDL dùng chung.  
+- Bảng tổng hợp Nguồn dữ liệu và Phương pháp thu thập dữ liệu: 
+ 
+ 
+
+=== [Bao_Cao_De_Xuat] Trang 30 (Từ khóa: ERP) ===
+ 
+ Trang 30/83 
+STT Nguồn dữ liệu Phương pháp thu thập dữ 
+liệu Ví dụ 
+1 
+File Excel, bảng 
+báo cáo dữ liệu 
+được nhập, tổng 
+hợp thủ công 
+Đặt vị trí cố định để 
+upload (Folder/ Drive/ 
+SFTP)  
+→ Hệ thống tự động quét 
+file định kỳ (batch) 
+Báo cáo tổng hợp thủ công, file 
+export từ phần mềm cũ 
+2 
+Phần mềm 
+không hỗ trợ 
+API, không hỗ 
+trợ xuất file 
+Thu thập từ Database 
+(CDC - Change Data 
+Capture hoặc Query trực 
+tiếp) 
+Các phần mềm đời cũ, phần 
+mềm đóng, không mở API hoặc 
+vendor không còn hỗ trợ mở 
+thêm API 
+3 Phần mềm có 
+API 
+Tự động gọi API / Nhận 
+file đính kèm theo lịch 
+định kỳ 
+Thu thập dữ liệu từ phần mềm 
+hiện hữu có hỗ trợ API như: 
+ERP, HRM ... 
+4 Gửi báo cáo qua 
+email 
+Quét email để lấy files dữ 
+liệu (đa định dạng) 
+Thu thập dữ liệu nhận qua các 
+email định từ từ các Khách hàng/ 
+Nhà Cung cấp/ Các vị trí địa lý 
+hạn chế mạng internet..vv 
+5 
+Phần mềm kế 
+hoạch tích hợp 
+ESB 
+Thu thập realtime hoặc 
+near-realtime qua ESB 
+(thường dùng API, CDC, 
+Event Streaming kèm theo 
+ESB) 
+Phần mềm quan trọng đã thiết kế 
+tích hợp liên thông giữa các 
+phòng ban 
+1.2. Yêu cầu kỹ thuật 
+Hệ thống cần có khả năng thu thập và tích hợp dữ liệu đa nguồn theo mô hình mở, có khả 
+năng mở rộng và phù hợp với môi trường dữ liệu doanh nghiệp hiện đại. Cụ thể: 
+- Nguồn dữ liệu hỗ trợ: 
++ Cơ sở dữ liệu quan hệ (RDBMS): MySQL, PostgreSQL, SQL Server, Oracle, 
+v.v. 
++ Hệ thống NoSQL: MongoDB, Cassandra, v.v. 
++ Tệp dữ liệu: CSV, Excel, JSON, XML, Parquet, Avro. 
++ Giao diện lập trình ứng dụng (API): REST, GraphQL. 
++ Message/event streams: hỗ trợ các hệ thống gửi dữ liệu thời gian thực. 
+- Yêu cầu kỹ thuật: các giải pháp cần đảm bảo các yêu tố công nghệ cốt lõi batch + 
+real- time, đa dạng côngr kết nối, on-prem, dễ vận hành, CDC mạnh 
++ Hỗ trợ đồng bộ dữ liệu theo lịch (schedule-based) và theo sự kiện (event-based). 
+
+=== [Bao_Cao_De_Xuat] Trang 33 (Từ khóa: dùng chung) ===
+ 
+ Trang 33/83 
+2.3. Đề xuất lựa chọn 
+Đề xuất ứng dụng một trong các công cụ sau (có thể kết hợp): Minio, Parquet, Apache và 
+các giải pháp tương đương, bắt buộc đáp ứng các tiêu chí: 
++ Hỗ trợ định dạng phân tích hiện đại: Parquet + table format như Apache Iceberg 
++ Lưu trữ dạng Object Storage, tương thích S3, triển khai được on-prem 
++ Tích hợp tốt hệ sinh thái mở: Spark, Trino, Kafka, Airbyte, OpenMetadata 
+3. Phân hệ Trục tích hợp (Enterprise Service Bus – ESB) 
+3.1. Mô tả yêu cầu nghiệp vụ 
+- Mô tả: Phân hệ Trục tích hợp (Integration Bus/ESB), đóng vai trò như "xương sống 
+giao tiếp" giữa các hệ thống trong tổ chức – từ ứng dụng nghiệp vụ, hệ thống dữ liệu, 
+cho tới dịch vụ bên ngoài. 
+- Mục tiêu: 
++ Dữ liệu được nhập một lần duy nhất và được dùng chung xuyên suốt các phần 
+mềm 
++ Tạo một hạ tầng tích hợp chính xác, ổn định, mở rộng, linh hoạt và giảm thiểu 
+phụ thuộc kết nối 1:1  point-to-point. 
++ Đảm bảo khả năng tích hợp hệ thống hiện tại và tương lai một cách hiệu quả, 
+giúp hệ sinh thái CNTT của tổ chức trở nên linh hoạt, thông minh và kiểm soát 
+được. 
+3.2. Yêu cầu kỹ thuật 
+- Giao thức và định dạng hỗ trợ 
++ Hỗ trợ đa dạng giao thức truyền thông: HTTP/HTTPS, SOAP, REST, GraphQL, 
+gRPC, JMS, MQTT, WebSocket, FTP/SFTP. 
++ Hỗ trợ tích hợp với message broker hoặc event streaming platform như Kafka, 
+NATS, RabbitMQ. 
++ Có khả năng xử lý và chuyển đổi định dạng dữ liệu phổ biến: JSON, XML, 
+CSV, Text, Avro, Parquet. 
+- Luồng xử lý tích hợp 
++ Hỗ trợ xây dựng luồng tích hợp tùy chỉnh (integration flow) với các chức năng: 
+định tuyến (routing), biến đổi dữ liệu (transformation), gọi dịch vụ, xử lý điều 
+kiện. 
++ Cho phép kết hợp các mô hình xử lý đồng bộ (request-response) và bất đồng bộ 
+(event-driven, queue-based). 
++ Hỗ trợ cấu hình flow qua giao diện đồ họa hoặc ngôn ngữ khai báo (DSL). 
+- Hiệu suất và khả năng mở rộng 
++ Cho phép triển khai dạng cụm phân tán (clustered) để mở rộng tải. 
++ Hỗ trợ thực thi song song, tối ưu thông lượng với khả năng scale-out. 
++ Cung cấp cơ chế xử lý lỗi: retry, timeout, circuit breaker, backpressure. 
+- Bảo mật và quản trị truy cập 
++ Hỗ trợ xác thực đa phương thức: OAuth2, JWT, Basic Auth, API Key, SAML. 
+
+=== [Bao_Cao_De_Xuat] Trang 34 (Từ khóa: dùng chung) ===
+ 
+ Trang 34/83 
++ Có thể phân quyền truy cập đến các endpoint, dịch vụ, dữ liệu trong luồng tích 
+hợp. 
++ Hỗ trợ mã hóa dữ liệu trong quá trình truyền tải và xác minh danh tính giữa các 
+dịch vụ. 
+- Giám sát và ghi log 
++ Ghi log chi tiết từng bước trong luồng xử lý: input/output, lỗi, thời gian thực thi. 
++ Hỗ trợ tích hợp với hệ thống giám sát như ELK, Prometheus, Grafana. 
++ Có khả năng cảnh báo khi có lỗi, tắc nghẽn, hoặc bất thường (qua email, 
+webhook, Slack…). 
+- Quản lý vòng đời tích hợp 
++ Hỗ trợ versioning, rollback và kiểm soát thay đổi của các flow và cấu hình tích 
+hợp. 
++ Cho phép tích hợp với hệ thống quản lý mã nguồn (Git) và quy trình CI/CD. 
++ Có cơ chế xác nhận (approve/release) trước khi áp dụng thay đổi lên môi trường 
+vận hành. 
+- Khả năng tích hợp hệ thống hiện hữu 
++ Cho phép kết nối với hệ thống cơ sở dữ liệu, ứng dụng nghiệp vụ (ERP, CRM, 
+DWH), cổng API và các dịch vụ nội bộ. 
++ Hỗ trợ đồng bộ và luồng dữ liệu thời gian thực giữa các hệ thống dị chủng. 
++ Cung cấp API hoặc SDK để các hệ thống ngoài có thể tương tác với nền tảng 
+tích hợp. 
+3.3. Đề xuất lựa chọn 
+- Đề xuất ứng dụng một trong các công cụ sau (có thể kết hợp): Apache Camel, WSO2 
+Enterprise Integrator, IBM App Connect Enterprise 
+4. Phân hệ Quản lý dữ liệu chủ (Master Data Management - MDM) 
+Giải pháp cần cung cấp năng lực quản lý dữ liệu chủ một cách tập trung, thống nhất, có 
+kiểm soát và có khả năng mở rộng, nhằm đảm bảo tính toàn vẹn, đồng bộ và tin cậy của dữ liệu 
+dùng chung trong toàn bộ hệ sinh thái dữ liệu. 
+4.1. Mô tả yêu cầu nghiệp vụ 
+Giải pháp cần có khả năng quản lý dữ liệu chủ một cách tập trung, linh hoạt, có kiểm soát, 
+đồng thời đảm bảo khả năng đồng bộ giữa các hệ thống và kiểm soát luồng phê duyệt cập nhật 
+dữ liệu. 
+- Hỗ trợ quản lý dữ liệu chủ đa miền (multi-domain) 
++ Cho phép cấu hình và quản lý các loại master data phổ biến: khách hàng, sản 
+phẩm, nhân sự, tổ chức, tài sản, v.v. 
++ Có thể tạo mô hình dữ liệu linh hoạt cho từng miền, bao gồm định nghĩa thuộc 
+tính, khóa chính, khóa thay thế. 
+- Tích hợp và đồng bộ dữ liệu chủ 
+
+=== [Bao_Cao_De_Xuat] Trang 35 (Từ khóa: ERP) ===
+ 
+ Trang 35/83 
++ Hỗ trợ đồng bộ dữ liệu chủ từ các hệ thống nguồn khác nhau theo thời gian thực 
+hoặc batch. 
++ Có cơ chế mapping schema, chuẩn hóa dữ liệu, phát hiện trùng lặp 
+(deduplication), hợp nhất bản ghi (merge & survivorship). 
++ Cho phép xử lý xung đột dữ liệu giữa các hệ thống theo rule hoặc workflow phê 
+duyệt. 
+- Luồng quy trình phê duyệt (workflow governance) 
++ Hỗ trợ cấu hình luồng phê duyệt thêm/sửa/xóa bản ghi dữ liệu chủ. 
++ Cho phép phân quyền người kiểm duyệt theo vai trò, phòng ban, loại dữ liệu. 
++ Có thể cấu hình trạng thái bản ghi: pending, approved, rejected, archived. 
+- Theo dõi thay đổi & kiểm toán (audit trail) 
++ Ghi nhận toàn bộ lịch sử thay đổi: người thao tác, thời gian, nội dung thay đổi. 
++ Hỗ trợ khôi phục bản ghi về trạng thái trước đó (rollback version). 
+- Quản trị metadata cho master data 
++ Cho phép gắn metadata mở rộng cho bản ghi: mô tả, tag, tài liệu liên quan. 
++ Hỗ trợ liên kết giữa master data và các bảng dữ liệu vận hành. 
++ Có khả năng tra cứu lineage và tác động thay đổi (impact analysis). 
+- Phân quyền và kiểm soát truy cập 
++ Phân quyền chi tiết theo từng domain, bản ghi, trường dữ liệu hoặc hành động 
+(xem/sửa/xóa/phê duyệt). 
++ Tích hợp với hệ thống quản lý định danh của tổ chức (IAM) để đồng bộ người 
+dùng và vai trò. 
+- Khả năng mở rộng và tích hợp 
++ Hỗ trợ mở rộng thêm domain, workflow, quy tắc kiểm tra dữ liệu mà không cần 
+lập trình lại toàn hệ thống. 
++ Có API để các hệ thống khác truy xuất hoặc cập nhật dữ liệu chủ theo thời gian 
+thực. 
++ Hỗ trợ tương thích với các hệ thống BI, phân tích, CRM/ERP để sử dụng master 
+data thống nhất. 
+4.2. Yêu cầu kỹ thuật 
+4.2.1. Mô hình hóa dữ liệu (Data Modeling) 
+- Hỗ trợ định nghĩa linh hoạt các mô hình dữ liệu master đa miền như khách hàng, sản 
+phẩm, tổ chức, nhân sự, tài sản… 
+- Cho phép khai báo thuộc tính, kiểu dữ liệu, khóa chính (primary key), khóa thay thế 
+(surrogate key) 
+4.2.2. Tích hợp dữ liệu (Data Integration) 
+- Hỗ trợ thu nhận dữ liệu chủ từ nhiều hệ thống nguồn qua API, file, cơ sở dữ liệu hoặc 
+stream. 
+- Cho phép cấu hình mapping schema giữa dữ liệu nguồn và dữ liệu chủ trung tâm. 
+
+=== [Bao_Cao_De_Xuat] Trang 37 (Từ khóa: tiêu chuẩn tích hợp) ===
+ 
+ Trang 37/83 
+4.3. Đề xuất lựa chọn 
+Một số giải pháp tiêu biểu: IBM InfoSphere MDM, SAP Master Data Governance 
+(MDG)..vv. Hoặc nhà cung cấp đề xuất tự phát triển giải pháp đáp ứng các yêu cầu chức năng 
+trên – cần làm rõ công nghệ và đảm bảo tiêu chuẩn tích hợp mở, bảo trì lâu dài. 
+5. Quản lý và phân quyền cho các vai trò nhân sự Quản trị dữ liệu (Data 
+Operation) 
+Giải pháp cần cung cấp cơ chế phân quyền linh hoạt và bảo mật, cho phép xác định rõ vai 
+trò và phạm vi truy cập của từng nhóm người dùng trong toàn bộ chu trình vận hành dữ liệu 
+(DataOps), từ thu thập, xử lý, phân tích đến giám sát và kiểm soát dữ liệu. 
+5.1. Mô tả yêu cầu nghiệp vụ 
+- Mô tả: Đây là phân hệ dùng để xác định rõ vai trò và quyền hạn của từng nhóm người 
+dùng trong toàn bộ chu trình xử lý dữ liệu (DataOps), từ bước thu thập đến xử lý, 
+phân tích, và giám sát dữ liệu. 
+- Mục tiêu: 
++ Đảm bảo mỗi người chỉ được truy cập đúng phần dữ liệu, đúng chức năng họ 
+được giao. 
++ Tăng cường bảo mật, tránh rò rỉ dữ liệu hoặc thay đổi ngoài quyền hạn. 
++ Hỗ trợ phân quyền linh hoạt, phù hợp với cơ cấu tổ chức và nghiệp vụ quản trị 
+dữ liệu của doanh nghiệp. 
+5.2. Yêu cầu kỹ thuật 
+- Mô hình phân quyền theo vai trò (Role-Based Access Control – RBAC) 
++ Hỗ trợ định nghĩa nhiều vai trò người dùng phù hợp với từng giai đoạn trong 
+DataOps: ingest, transform, quality check, publish, monitor… 
++ Mỗi vai trò có thể gắn với một hoặc nhiều hành động cụ thể: xem, thêm mới, 
+cập nhật, xóa, phê duyệt, cấu hình. 
+- Phạm vi phân quyền chi tiết 
++ Cho phép phân quyền đến mức độ tài nguyên cụ thể: bảng dữ liệu, cột dữ liệu, 
+pipeline xử lý, API endpoint, báo cáo/dashboard. 
++ Có khả năng giới hạn quyền theo miền dữ liệu (data domain) hoặc nhóm dữ liệu 
+(data asset group). 
+- Tích hợp hệ thống định danh tập trung 
++ Hỗ trợ kết nối với hệ thống quản lý định danh như LDAP, Active Directory hoặc 
+hệ thống SSO của tổ chức. 
+- Quản lý và kiểm soát vai trò 
++ Cho phép tạo mới, sửa, gán, thu hồi vai trò một cách linh hoạt qua giao diện 
+quản trị hoặc API. 
++ Hỗ trợ gán vai trò theo người dùng cá nhân hoặc theo nhóm (user group, 
+department). 
+- Theo dõi và ghi nhận hoạt động truy cập 
+
+=== [Bao_Cao_De_Xuat] Trang 46 (Từ khóa: dùng chung) ===
+ 
+ Trang 46/83 
+- Tích lũy, thu thập đầy đủ dữ liệu và thực hiện phân cấp, phân quyền, quản lý truy cập 
+dữ liệu hiệu quả: Hệ thống hỗ trợ thu thập dữ liệu và truy cập, phân tích dữ liệu trực 
+tiếp từ nhiều nguồn (on-premise/cloud). Triển khai cơ chế phân cấp, phân quyền truy 
+cập rõ ràng, đảm bảo người dùng truy cập và thao tác trên dữ liệu phù hợp với vai trò, 
+chức năng. Đồng thời đảm bảo khả năng quản trị, giám sát bảo mật tập trung với xác 
+thực đa yếu tố, kiểm soát truy cập, ghi log đầy đủ và đảm bảo toàn vẹn dữ liệu; 
+- Tích hợp, xây dựng hệ thống dữ liệu dùng chung trong Tổng công ty và giữa Tổng công 
+ty với các Đơn vị, đảm bảo tính đồng bộ dữ liệu trong toàn Tổng công ty: Hệ thống cần 
+hỗ trợ triển khai mô hình linh hoạt, cho phép phân phối và kết nối dữ liệu nội bộ trong 
+tổng công ty và giữa Tổng công ty PTSC với các đơn vị thành viên theo kiến trúc phù 
+hợp như Data mesh hoặc Data fabric; 
+- Hỗ trợ kết nối và đồng bộ dữ liệu với hệ thống on-premise: Hệ thống cần hỗ trợ kết nối 
+bảo mật và đồng bộ dữ liệu hai chiều với hạ tầng triển khai tại chỗ (on-premise), mã 
+hóa dữ liệu trong quá trình truyền tải, kiểm tra toàn vẹn, phân quyền truy cập và ghi 
+log phục vụ giám sát. 
+2. Phân tích đánh giá 
+2.1.   So sánh Cloud nội địa và Quốc tế 
+Trên cơ sở đối chiếu theo 06 tiêu chí kỹ thuật tiêu chuẩn trong đánh giá giải pháp nền tảng 
+dữ liệu, Ban Dự án đã thực hiện so sánh tổng quan giữa nhóm các nền tảng Cloud nội địa (Viettel 
+Cloud, FPT Cloud, CMC Cloud) và nhóm Cloud quốc tế (Microsoft Azure,  Amazon Web 
+Services – AWS, Google Cloud Platform – GCP). Kết quả được trình bày như sau: 
+Tiêu chí 
+đánh giá 
+Cloud quốc tế (Azure, 
+AWS, GCP) 
+Cloud nội địa (Viettel, 
+FPT, CMC) 
+Đánh giá 
+1. Tuân thủ 
+pháp lý và 
+chủ quyền 
+dữ liệu 
+Hạn chế 
+Có nguy cơ không đáp ứng 
+nếu lưu trữ dữ liệu nhạy cảm 
+ngoài lãnh thổ. Tuy nhiên, có 
+thể khắc phục thông qua 
+phương án triển khai song 
+song với hệ thống on -
+premise. 
+Đạt 
+Đáp ứng tốt yêu cầu pháp lý 
+về chủ quyền dữ liệu khi lưu 
+trữ tại Việt Nam. 
+Cả hai đều đáp 
+ứng, trong điều 
+kiện dữ liệu nhạy 
+cảm đã xử lý lưu 
+trữ on-premise. 
+2. Quyền 
+kiểm soát 
+kỹ thuật và 
+sở hữu dữ 
+liệu 
+Đạt 
+Hỗ trợ quản trị chi tiết theo 
+chuẩn quốc tế, có công cụ 
+phân quyền, kiểm soát truy 
+cập và nhật ký đầy đủ. 
+Hạn chế 
+Có khả năng kiểm soát về 
+mặt hạ tầng vật lý, nhưng 
+công cụ hỗ trợ phân quyền 
+và giám sát kỹ thuật chưa 
+đầy đủ. 
+Cloud quốc tế 
+phù hợp hơn với 
+yêu cầu kiểm 
+soát kỹ thuật ở 
+quy mô lớn. 
+3. Kiến trúc 
+mở, hỗ trợ 
+Đạt Hạn chế Cloud nội địa 
+chưa đáp ứng 
+
+=== [Bao_Cao_De_Xuat] Trang 48 (Từ khóa: dùng chung) ===
+ 
+ Trang 48/83 
+Trong bối cảnh dữ liệu nhạy cảm đã được xử lý lưu trữ tại hệ thống on-premise, việc lựa 
+chọn nền tảng Cloud cần ưu tiên các tiêu chí về kiến trúc mở, khả năng tích hợp – liên thông, 
+khả năng mở rộng dài hạn và bảo mật hệ thống. 
+Qua phân tích, các nền tảng Cloud trong nước hiện chưa đáp ứng đầy đủ các yêu cầu kỹ 
+thuật cốt lõi nêu trên, đặc biệt là đối với kiến trúc triển khai đa tầng (hybrid), đa miền (data 
+mesh) và liên thông toàn hệ thống (data fabric). Do đó, việc lựa chọn nền tảng Cloud quốc tế là 
+cần thiết và phù hợp hơn với chiến lược triển khai và vận hành nền tảng dữ liệu dùng chung của 
+Tổng công ty PTSC trong trung và dài hạn. 
+
+=== [Bao_Cao_De_Xuat] Trang 49 (Từ khóa: dùng chung) ===
+ Trang 49/83 
+2.2    Phân tích các giải pháp Cloud Quốc tế 
+Tiêu chí đánh 
+giá Microsoft Fabric AWS (Redshift, 
+Glue, Athena) 
+GCP (BigQuery, 
+Looker) 
+IBM Cloud Pak / 
+DataStage / 
+Watsonx 
+SAP Datasphere / 
+HANA Cloud 
+1. Tuân thủ 
+pháp lý & 
+chủ quyền dữ 
+liệu 
+Đạt 
+Hiện tại, tất cả các nền tảng cloud lớn (Microsoft, AWS, Google, SAP, IBM) đều chưa có trung tâm dữ liệu đặt tại 
+Việt Nam, dữ liệu sẽ được lưu trữ tại các vùng lân cận như Singapore hoặc Hong Kong (tuỳ nhà cung cấp). 
+Với kiến trúc Hybrid data platform, dữ liệu nhạy cảm sẽ được lưu tại Hạ tầng nội bộ tại CQTCT, không lưu trên 
+Cloud, vì vậy tiêu chí đánh giá này không được xét trong phần đánh giá  lựa chọn này. 
+2. Kiểm soát 
+kỹ thuật & sở 
+hữu dữ liệu 
+dùng chung 
+Đạt 
+ Tích hợp tốt với 
+Entra ID, kiểm soát 
+quyền qua Power BI, 
+Purview. 
+Không đạt 
+ Kiểm soát tốt nếu 
+triển khai chuẩn, 
+nhưng phức tạp và 
+cần đội DevOps 
+riêng. 
+Không đạt 
+Tốt cho truy vấn, 
+nhưng AD tích hợp 
+kém – khó kiểm soát 
+identity theo chuẩn 
+Microsoft. 
+Không đạt 
+Có hệ thống phân 
+quyền riêng, nhưng 
+thiếu tích hợp native 
+với AD/M365. 
+Không đạt 
+Rất mạnh nếu toàn bộ 
+hệ thống nằm trong hệ 
+sinh thái SAP. Khó 
+kiểm soát nếu tích 
+hợp công cụ ngoài. 
+3. Kiến trúc 
+mở – hiện đại 
+– hỗ trợ 
+AI/ML – tích 
+hợp dễ d 
+àng 
+Đạt 
+Tích hợp Fabric + 
+Synapse + Copilot 
+AI, hỗ trợ lakehouse, 
+ELT/ETL linh hoạt. 
+Đạt 
+Kiến trúc cloud -
+native, hỗ trợ 
+AI/ML mạnh, tích 
+hợp dễ dàng với 
+Kafka, S3, Redshift 
+Spectrum. 
+Đạt 
+Tối ưu cho Big Data, 
+Looker semantic layer 
+mạnh, Dataflow tốt 
+cho AI/ML. 
+Đạt 
+Hỗ trợ AI thông qua 
+Watsonx, kết hợp 
+ETL mạnh với 
+DataStage. Tuy 
+nhiên tích hợp hiện 
+đại còn hạn chế. 
+Đạt 
+ Kiến trúc chuẩn 
+SAP, nhưng đóng – ít 
+linh hoạt với công cụ 
+ngoài. 
+
+=== [Bao_Cao_De_Xuat] Trang 51 (Từ khóa: dùng chung) ===
+ Trang 51/83 
+3.     Đánh giá và đề xuất lựa chọn giải pháp  
+3.1.  Bối cảnh và định hướng triển khai phục vụ chiến lược CĐS tại PTSC Giai đoạn 
+(2025-2027). 
+Hiện nay, Tổng công ty PTSC đã và đang khai thác hiệu quả hệ sinh thái Microsoft Office 
+365 trong toàn bộ hoạt động điều hành và quản trị nội bộ, bao gồm các nền tảng trọng yếu như 
+Power BI, Microsoft Teams, SharePoint và Azure Active Directory (Entra ID). Đây là cơ sở hạ 
+tầng đã được đầu tư đồng bộ, vận hành ổn định và được cán bộ nhân sự sử dụng thành thạo. 
+Trên cơ sở đó, việc lựa chọn triển khai nền tảng dữ liệu đám mây dựa trên Microsoft Azure 
+là định hướng chiến lược phù hợp cho Giai đoạn 1 Chuyển đổi số, nhằm: 
+- Tận dụng tối đa các khoản đầu tư hạ tầng và bản quyền đã có. 
+- Rút ngắn thời gian triển khai nhờ khả năng tích hợp sẵn với hệ sinh thái M365. 
+- Tối ưu chi phí thông qua việc dùng chung license, đồng bộ danh tính người dùng và tiết 
+kiệm chi phí đào tạo – vận hành. 
+3.2.   Kết luận và đề xuất lựa chọn 
+Ưu tiên triển khai Giai đoạn 1 (2025-2027) trên nền tảng Microsoft Fabric, bao gồm các dịch 
+vụ OneLake Storage, Fabric Capacity, Purview Governance… nhằm tận dụng khả năng tích hợp 
+chặt chẽ với hệ sinh thái Microsoft, phục vụ nhu cầu phân tích và trực quan hoá dữ liệu trong giai 
+đoạn đầu. 
+Giải pháp đề xuất cho Giai đoạn 1: Microsoft Fabric 
+Lựa chọn này được đề xuất trên cơ sở các ưu điểm nổi bật: 
+- Tận dụng hạ tầng sẵn có: Hệ thống Power BI và Microsoft 365 đã triển khai đồng bộ tại 
+Tổng công ty. 
+- Tích hợp liền mạch: Kết nối trực tiếp với Azure Active Directory, giúp đơn giản hóa 
+công tác quản lý người dùng và phân quyền truy cập. 
+- Hỗ trợ triển khai mô hình hybrid: Có thể kết hợp linh hoạt với nền tảng on-prem để 
+triển khai mô hình dữ liệu kết hợp (Hybrid Data Platform). 
+- Khả năng khai thác thông minh: Tích hợp Copilot AI giúp tăng hiệu suất khai thác dữ 
+liệu, truy vấn trực quan và tự động hóa phân tích. 
+- Tối ưu chi phí: Đồng bộ với các gói subscription hiện có, hạn chế phát sinh chi phí license 
+độc lập. 
+Kết luận: Microsoft Fabric  là giải pháp Nền tảng dữ liệu điện toán đám mây (Cloud Data 
+Platform) phù hợp với định hướng phát triển nền tảng dữ liệu dùng chung của PTSC, vừa đảm bảo 
+tính hiệu quả đầu tư, vừa thuận lợi trong quản trị vận hành và mở rộng sau này.  
+
+=== [Bao_Cao_De_Xuat] Trang 52 (Từ khóa: dùng chung) ===
+ 
+ Trang 52/83 
+CHƯƠNG 5 
+ĐỀ XUẤT KỸ THUẬT HẠ TẦNG CÔNG NGHỆ 
+PHỤC VỤ NỀN TẢNG DỮ LIỆU DÙNG CHUNG 
+Đính kèm Phiếu đề xuất số        /ĐX-CĐS, ngày        tháng        năm 2025 
+1. Phân tích lựa chọn mô hình kiến trúc 
+Giải pháp hạ tầng công nghệ thông tin phục vụ mô hình Hybrid Data Platform (On-prem kết 
+hợp Cloud) của Tổng PTSC với quy mô dữ liệu lớn, khả năng mở rộng, tần suất truy cập dữ liệu 
+thường xuyên, yêu cầu về tính sẵn sàng và an toàn, an ninh hệ thống ở mức cao. 
+Hiện nay, có một số mô hình kiến trúc hạ tầng phố biến như sau: 
+1.1. Mô hình kiến trúc hạ tầng công nghệ truyền thống 
+Hạ tầng CNTT truyền thống 3 tầng là mô hình kiến trúc kinh điển trong các trung tâm dữ 
+liệu (Data Center), đặc biệt phổ biến trước khi xuất hiện các giải pháp Hyper -Converged 
+Infrastructure (HCI). Kiến trúc này chia thành 3 tầng riêng biệt, mỗi tầng đảm nhiệm một chức 
+năng rõ ràng và thường do các thiết bị chuyên biệt đảm nhiệm. 
+Mô hình hạ tầng truyền thống gồm: 
+- Compute layer: Máy chủ vật lý (server) hoặc hoặc các máy chủ ảo hoá chạy trên nền 
+hypervisor (như VMware ESXi, Hyper-V...). 
+- Storage layer: Hệ thống lưu trữ chuyên dụng (SAN, NAS) sử dụng giao thức Fibre 
+Channel hoặc iSCSI, ví dụ HPE Alletra Storage , Dell PowerStore, NetApp, Hitachi… 
+- Network layer: Switch, router sử dụng các công nghệ kết nối Ethernet hỗ trợ các kết nối 
+tốc dộ cao 10/25 GE hoặc cao hơn là 40/100 GE.... 
+- Phần mềm quản lý sử dụng các phần mền sẵn có trên mỗi thiết bị, hoặc sử dụng phần mềm 
+quản lý tập trung tới từ bên thứ 3. 
+ 
+ 
+
+
+=== [Bao_Cao_De_Xuat] Trang 56 (Từ khóa: ERP) ===
+ 
+ Trang 56/83 
+ 
+Ưu điểm: 
+- Mở rộng linh hoạt: Có thể mở rộng riêng compute hoặc storage tùy nhu cầu, không bị bắt 
+buộc phải mở rộng cả node (compute và storage) 
+- Hiệu năng cao hơn: Dùng hệ thống lưu trữ chuyên biệt với công nghệ SAN FC nên hiệu 
+suất cao. Đảm bảo hiệu năng ổn định và độ trễ thấp, phù hợp cho workload quan trọng: 
+ERP, ETL, database lớn. 
+- Tối ưu thông minh (AI): Dự báo lỗi, tối ưu tài nguyên, giảm downtime. Có thể chủ động 
+khắc phục sự cố. 
+- Quản lý hợp nhất: Quản lý hợp nhất, đơn giản hóa vận hành, giao diện đồng bộ compute–
+storage - network. Triển khai nhanh, đồng nhất, ít lỗi. 
+- Tách rời compute/storage vật lý: Cho phép cấu hình cao cấp hơn như HA, DR, hoặc chia 
+tải giữa nhiều máy chủ. 
+- dHCI được thiết kế để tích hợp với các nền tảng đám mây công cộng (AWS, Azure, 
+Google Cloud) và đám mây riêng, hỗ trợ các mô hình hybrid cloud và multi-cloud. Điều 
+này giúp doanh nghiệp dễ dàng di chuyển dữ liệu hoặc ứng dụng giữa các môi trường 
+- Hỗ trợ các công nghệ như container (Kubernetes) và microservices, phù hợp với các ứng 
+dụng hiện đại 
+- Các tính năng như tự động hóa, backup, và disaster recovery được tích hợp sẵn, giảm tải 
+công việc quản lý 
+ Nhược điểm: 
+- dHCI phức tạp hơn trong giai đoạn triển khai do cần cấu hình các pool tài nguyên riêng 
+biệt và tích hợp các công nghệ mạng tiên tiến như NVMe-over-Fabrics.  Yêu cầu đội ngũ 
+kỹ thuật có kiến thức chuyên sâu về cả lưu trữ, tính toán, và mạng để triển khai hiệu quả.. 
+- Không thiết kế sẵn cho mô hình xử lý dữ liệu phân tán theo chiều ngang, nếu muốn đáp 
+ứng được thì phải tích hợp thêm tầng công cụ khác để hoàn chỉnh Hybrid Data Platform. 
+  
+
+
+=== [Bao_Cao_De_Xuat] Trang 61 (Từ khóa: ERP) ===
+ 
+ Trang 61/83 
+Yêu cầu Mức đề xuất 
+Tốc độ mạng uplink ra ngoài ≥ 1–2 Gbps 
+Latency nội cụm ≤ 1–2 ms 
+Switch nội bộ Enterprise-grade, hỗ trợ multicast, flow control 
+NIC card Intel/Broadcom 10GbE, hỗ trợ SR-IOV nếu dùng VM 
+  
+3. Mô tả giải pháp lưu trữ dữ liệu 
+Giải pháp này vừa đảm bảo an toàn – dự phòng – tối ưu khai thác, phù hợp với hệ thống 
+phân tán như tại tổng công ty PTSC. 
+* Giải pháp lưu trữ dữ liệu đa tầng – đa bản sao 
+- Mục tiêu chính: 
++ Đảm bảo không ảnh hưởng đến hoạt động sản xuất kinh doanh của chủ đầu tư. 
++ Đảm bảo tính toàn vẹn, sẵn sàng và khôi phục dữ liệu trong mọi tình huống (failure, 
+ransomware, thiên tai…) 
++ Hỗ trợ phân tích, trích xuất dữ liệu tại cả on-prem và cloud 
++ Tách biệt giữa dữ liệu gốc (raw) và sản phẩm dữ liệu (data product) 
+Mô hình lưu trữ dữ liệu đề xuất 
+- Dữ liệu thô (Raw Data) – Lưu thành 3 bản: 
++ 01 bản chính lưu trữ tại Data Center (DC) – phục vụ các ứng dụng hoạt động sản xuất 
+kinh doanh. 
++ 01 bản sao lưu trữ tại hạ tầng Dự phòng thảm họa (Disaster Recovery - DR) – đảm 
+bảo khả năng khôi phục khi có sự cố. 
++ 01 bản sao lưu trữ tại hạ tầng dữ liệu on-premises data platform – Phục vụ công việc 
+sản xuất dữ liệu,  kiểm duyệt dữ liệu. 
+Dữ liệu Vị trí lưu trữ 
+Bản gốc Data Center chính (DC) 
+Bản sao 1 DR (Disaster Recovery) – tại site thứ hai 
+Bản sao 2 On-Prem Data Platform 
+- Sản phẩm dữ liệu (Data Product): Lưu thành 2 bản 
++ 01 bản chính được lưu tại on-prem data platform – phục vụ vận hành, kiểm duyệt dữ 
+liệu, báo cáo, phân tích. 
+
+=== [Bao_Cao_De_Xuat] Trang 65 (Từ khóa: ERP) ===
+ 
+ Trang 65/83 
+4.6. Phần mềm ảo hóa 
+VMware vSphere Foundation được thiết kế để tối ưu hóa cơ sở hạ tầng trung tâm dữ liệu, 
+cung cấp hiệu suất cao, khả năng quản lý thông minh và tích hợp tốt với các môi trường đám 
+mây lai (hybrid cloud). Đây là một giải pháp tích hợp, kết hợp các thành phần cốt lõi của ảo hóa, 
+lưu trữ, và quản lý vận hành tạo ra một giải pháp tích hợp hoàn hảo cho môi trường ảo hoá hạ 
+tầng công nghệ thông tin. 
+VMWare vsphere cung cấp các phần cứng ảo cho các máy ảo khi một máy ảo yêu cầu truy 
+suất hay truy cập một tài nguyên nào đó thì vmkernel sẽ chịu trách nhiệm thiết lập một bản đồ ảo 
+tương tác giữa các yêu cầu của máy ảo với phần cứng vật lý để xử lý. 
+ 
+Mô hình kiến trúc của VMWare 
+Các tính năng nổi bật của VMWare vSphere Enterprise Plus 
+- High Availability (HA): 
++ GĐảm bảo tính sẵn sàng cao bằng cách tự động khởi động lại máy ảo trên các máy 
+chủ khác trong cụm nếu máy chủ chính gặp sự cố. 
++ Hỗ trợ cấu hình dự phòng (redundancy) để giảm thiểu thời gian ngừng hoạt động 
+(downtime). 
+- vMotion và Storage vMotion: 
++ vMotion: Cho phép di chuyển máy ảo đang chạy giữa các máy chủ vật lý mà không 
+gây gián đoạn dịch vụ, giúp cân bằng tải và bảo trì phần cứng dễ dàng. 
++ Storage vMotion: Di chuyển dữ liệu của máy ảo giữa các thiết bị lưu trữ mà không 
+cần dừng dịch vụ, hỗ trợ tối ưu hóa lưu trữ hoặc nâng cấp hệ thống. 
+- Distributed Resource Scheduler (DRS): 
++ Tự động cân bằng tải tài nguyên (CPU, RAM) giữa các máy chủ trong cụm dựa trên 
+nhu cầu của máy ảo, đảm bảo hiệu suất tối ưu. 
+
+
+=== [Bao_Cao_De_Xuat] Trang 81 (Từ khóa: E-Office) ===
+ 
+ Trang 81/83 
+STT Danh mục hàng hóa/ dịch vụ Đơn vị 
+tính 
+Khối 
+lượng 
+yêu cầu 
+Tiến 
+độ 
+cung 
+cấp 
+Địa 
+điểm 
+cung 
+cấp 
+ 
+Hoàn thiện toàn cảnh nội thất gồm: 
+- Hệ vách màn hình bao gồm vách ngăn ngăn phòng, 2 hệ cửa ra vào cách âm 
+- Chất liệu gỗ MDF, vách trơn, hoàn thiện thẩm mỹ, 
+Chi tiết thiết kế đi kèm 
+Gói 1     
+V DỊCH VỤ TRIỂN KHAI, ĐÀO TẠO       
+V.1 Dịch vụ triển khai Hybrid Data platform tại Cơ quan Tổng công ty PTSC       
+ Triển khai cài đặt, thiết lập hybrid data platform Gói 1     
+ Triển khai lắp đặt, cài đặt hạ tầng công nghệ, an toàn thông tin, trung tâm vận 
+hành dữ liệu Gói 1     
+ Dịch vụ cấu hình thiết lập hệ thống MDM: Pipeline, API, RBAC, validation Gói 1     
+ Dịch vụ cấu hình thiết lập hệ thống DW, Data marts Gói 1     
+ Dịch vụ thiết kế và xây dựng tự động hóa báo cáo BI -phân tích dữ liệu: (20 báo 
+cáo) Gói 1     
+V.2 Dịch vụ triển khai tích hợp       
+ Dịch vụ tích hợp phần mềm quản lý tài sản CMMS tại tổng công ty PTSC Gói 1     
+ Dịch vụ tích hợp phần mềm văn phòng số E-office tại tổng công ty PTSC Gói 1     
+
+=== [Bao_Cao_De_Xuat] Trang 82 (Từ khóa: ERP) ===
+ 
+ Trang 82/83 
+STT Danh mục hàng hóa/ dịch vụ Đơn vị 
+tính 
+Khối 
+lượng 
+yêu cầu 
+Tiến 
+độ 
+cung 
+cấp 
+Địa 
+điểm 
+cung 
+cấp 
+ Dịch vụ tích hợp phần mềm nhân sự HRM tại tổng công ty PTSC Gói 1     
+ Dịch vụ tích hợp phần mềm ERP tại tổng công ty PTSC (1 Phân hệ) Gói 1     
+ Dịch vụ tích hợp dữ liệu từ công ty thành viên (áp dụng cho 1 công ty thành 
+viên tại khu vực phía nam) Gói 1     
+V.3 Dịch vụ đào tạo       
+  Đào tạo chuyển giao công nghệ cho 05 nhân sự của Tổng công ty PTSC 
+trong 05 ngày tại địa điểm triển khai. Gói 1     
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+
+=== [Tom_Tat_Giai_Phap] Trang 3 (Từ khóa: dùng chung) ===
+CHIẾN LƯỢC
+CHUYỂN ĐỔI SỐ 
+TỔNG CÔNG TY PTSC
+Định hướng giải pháp Cơ sở dữ liệu dùng chung 
+
+=== [Tom_Tat_Giai_Phap] Trang 9 (Từ khóa: dùng chung) ===
+ĐỊNH HƯỚNG VỀ NỀN TẢNG DỮ LIỆU
+▪Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số;
+▪Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC;
+▪Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị thành viên. Đảm 
+bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ 
+liệu;
+▪Ứng dụng các công nghệ mới nhất về quản trị dữ liệu như: CDP (Customer Data Platform); các 
+kiến trúc data có cấu trúc và phi cấu trúc, Datalake cho vận hành và khai thác tài nguyên số của 
+PTSC;
+▪Hoạch định phân lớp khai thác tài nguyên số  trên cơ sở nhu cầu của người sử dụng dữ liệu.
+
+
+=== [Tom_Tat_Giai_Phap] Trang 10 (Từ khóa: dùng chung) ===
+Giải pháp thực hiện cho trụ cột  “Cơ sở dữ liệu “
+   
+MỤC TIÊU
+2024-2025
+(1)Xây dựng CSDL dùng chung 
+giai đoạn 1 (tại Cơ quan Tổng 
+công ty);
+(2)Xây dựng mô hình quản trị dữ 
+liệu;
+(3) Xây dựng báo cáo thông 
+minh giai đoạn 1: (gồm các Phân 
+hệ TCKT, Quản trị rủi ro, Quản lý 
+nguồn nhân lực, Quản lý Tài 
+sản).
+MỤC TIÊU 
+2026-2027
+(1)Xây dựng CSDL dùng 
+chung giai đoạn 2 (tại 
+các Đơn vị);
+(2)Xây dựng báo cáo 
+thông minh giai đoạn 2;
+(3) Ứng dụng các phần 
+mềm phân tích chuyên 
+sâu trên từng lĩnh vực.
+MỤC TIÊU 
+2028-2030
+(1)Hoàn thành CSDL 
+dùng chung TCT;
+(3) Áp dụng báo cáo 
+thông minh toàn diện.
+
+=== [Tom_Tat_Giai_Phap] Trang 22 (Từ khóa: dùng chung) ===
+CĂN CỨ LẬP ĐỀ XUẤT MÔ HÌNH GIẢI PHÁP
+Sau quá trình Tổ Dữ liệu - Ban dự án Chuyển đổi số thực hiện nghiên cứu, phân tích, xin ý kiến đóng góp và tổng hợp 
+từ các tài liệu sau:
+Tổ Dữ liệu xin đề xuất thống nhất Mô hình kiến trúc Nền tảng Cơ sở dữ liệu dùng chung tại Tổng công ty PTSC" 
+Chiến lược Chuyển 
+đổi số đã được 
+Tổng công ty PTSC 
+ban hành theo Nghị 
+quyết 
+10/NQ-HĐQT-PTSC 
+ngày 7/01/2025 
+Bộ bộ câu hỏi khảo sát 
+- đánh giá các nhà cung 
+cấp giải pháp dữ liệu đã 
+tổng hợp ý kiến của Ban 
+dự án Chuyển đổi số 
+Tổng công ty PTSC hoàn 
+thiện vào ngày 27/5/2025
+(Tổng 114 câu)
+Các Quy định Pháp luật hiện hành 
+có liên quan:
+● Luật Công nghệ thông tin số 
+67/2006/QH11, ngày 29 tháng 6 năm 2006;
+●  Luật An ninh mạng: 24/2018/QH14
+● Nghị định số 53/2022/NĐ-CP của Chính 
+phủ: Quy định chi tiết một số điều của Luật 
+An ninh mạng
+● Nghị định số 13/2023/NĐ-CP của Chính 
+phủ: Bảo vệ dữ liệu cá nhân
+1 2 3
+Biên bản họp thống 
+nhất Mục tiêu và 6 
+Nguyên tắc đánh giá 
+của Dự án "Xây dựng 
+Nền tảng Cơ sở dữ liệu 
+dùng chung tại Tổng 
+công ty PTSC" - Đã được 
+phê duyệt  bởi Trưởng Ban dự án 
+Chuyển đổi số buổi họp ngày 
+13/06/2025
+4
+
+=== [Tom_Tat_Giai_Phap] Trang 23 (Từ khóa: dùng chung) ===
+2.1. CHIẾN LƯỢC CHUYỂN ĐỔI SỐ
+Giải pháp thực hiện cho trụ cột  “Cơ sở dữ liệu”
+MỤC TIÊU
+2024-2025
+MỤC TIÊU 
+2026-2027
+MỤC TIÊU 
+2028-2030
+[1]  Xây dựng CSDL dùng chung giai 
+đoạn 1 (tại Cơ quan Tổng công ty);
+[2]  Xây dựng mô hình quản trị dữ 
+liệu;
+[3]  Xây dựng báo cáo thông minh 
+giai đoạn 1: (gồm các Phân hệ 
+TCKT, Quản trị rủi ro, Quản lý nguồn 
+nhân lực, Quản lý Tài sản).
+[1]  Xây dựng CSDL dùng chung giai 
+đoạn 2 (tại các Đơn vị);
+[2]  Xây dựng báo cáo thông minh 
+giai đoạn 2;
+[3]  Ứng dụng các phần mềm phân 
+tích chuyên sâu trên từng lĩnh vực.
+[1]  Hoàn thành CSDL dùng chung 
+TCT;
+[2]  Áp dụng báo cáo thông minh 
+toàn diện.
+
+=== [Tom_Tat_Giai_Phap] Trang 24 (Từ khóa: dùng chung) ===
+3. ĐỊNH HƯỚNG XÂY DỰNG CHIẾN LƯỢC CĐS CỦA PTSC
+Định hướng về nền tảng dữ liệu
+▪Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số;
+▪Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC;
+▪Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị thành viên. Đảm 
+bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ 
+liệu;
+▪Ứng dụng các công nghệ mới nhất về quản trị dữ liệu như: CDP (Customer Data Platform); các 
+kiến trúc data có cấu trúc và phi cấu trúc, Data Lake cho vận hành và khai thác tài nguyên số của 
+PTSC;
+▪Hoạch định phân lớp khai thác tài nguyên số  trên cơ sở nhu cầu của người sử dụng dữ liệu.
+
+=== [Tom_Tat_Giai_Phap] Trang 25 (Từ khóa: dùng chung) ===
+2.2. TẦM NHÌN GIẢI PHÁP
+Phân lớp dữ liệu để hình thành các dữ liệu dùng chung trong toàn Tổng công ty PTSC và dùng riêng tại các đơn vị thành viên 
+nhưng vẫn đảm bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ liệu (Phối hợp 
+với định hướng nền tảng công nghệ và bảo mật)
+Đối tượng khai thác tài nguyên số được xác định thành các lớp (Định hướng dữ liệu trên cơ sở nhu cầu của người sử dụng dữ 
+liệu):
+- Lớp người dùng phục vụ các công tác điều hành, tác nghiệp vận hành sản xuất, kinh doanh, dịch vụ nội bộ tổ chức 
+PTSC;
+- Lớp người dùng khách hàng, đối tác của PTSC;
+- Lớp người dùng phân tích quản trị, cán bộ quản lý cấp trung, Lãnh đạo cấp cao của PTSC.
+Hỗ trợ công tác lưu trữ và 
+quản trị dữ liệu
+Cho phép tạo lập các môi trường DEV/Test/PoC trên môi trường điện toán đám mây để thử nghiệm ý tưởng mới, huấn luyện mô 
+hình AI/ ML, biểu mẫu… mà không ảnh hưởng hệ thống thật. 
+Các Đơn vị được sử dụng bản sao của data product để tự triển khai các mô hình AI hoặc học máy, phù hợp với đặc thù hoạt 
+động riêng, mà không cần xây dựng hạ tầng dữ liệu. Điều này không chỉ giúp tiết kiệm đáng kể thời gian và nguồn lực, mà còn 
+đặt nền móng cho việc hình thành kho dữ liệu ngành tập trung, có khả năng học hỏi và mở rộng liên tục.
+Cung cấp môi trường thử 
+nghiệm, đổi mới sáng tạo
+2.       Phù hợp nhu cầu lưu trữ, khai thác, chia sẻ tài sản dữ liệu
+ 5
+ 6
+
+=== [Tom_Tat_Giai_Phap] Trang 26 (Từ khóa: dùng chung) ===
+2.3. BỘ 6 NGUYÊN TẮC ĐÁNH GIÁ
+Cụ thể mô tả chi tiết từng mục tiêu: xem phụ lục
+Tuân thủ pháp lý về bảo vệ dữ liệu 1
+Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung2
+Kiến trúc mô hình dữ liệu hiện đại và linh hoạt3
+Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai4
+Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn)5
+Đáp ứng lộ trình Chuyển đổi số theo Chiến lược CĐS của PTSC6
+Từ định hướng và mục tiêu tổng thể như trên, Dự án "Xây dựng Nền tảng Cơ sở dữ liệu dùng 
+chung tại Tổng công ty PTSC" cần đảm bảo 6 mục tiêu cụ thể như sau:
+
+=== [Tom_Tat_Giai_Phap] Trang 27 (Từ khóa: dùng chung) ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+1. Tuân thủ pháp lý về bảo vệ dữ liệu quốc gia
+1. Lưu trữ dữ liệu gốc: Đảm bảo toàn bộ dữ liệu gốc (raw data) được lưu trữ và xử lý trong lãnh thổ Việt Nam, phù hợp với quy định pháp luật và yêu 
+cầu bảo vệ dữ liệu quốc gia.
+2. Chia sẻ dữ liệu: Không cho phép chuyển dữ liệu, log hệ thống hoặc bất kỳ thành phần liên quan nào ra nước ngoài, trừ khi có văn bản cho phép 
+chính thức từ cơ quan có thẩm quyền hoặc lãnh đạo Tổng công ty.
+3. Mã hoá dữ liệu: Mọi dữ liệu trong quá trình truyền và lưu trữ phải được mã hóa theo các tiêu chuẩn an toàn thông tin.
+4. Bảo vệ Dữ liệu: Tuân thủ đầy đủ các quy định pháp luật liên quan đến bảo vệ dữ liệu cá nhân, quyền riêng tư và xử lý thông tin nhạy cảm.
+5. Kiểm duyệt dữ liệu: Thiết lập cơ chế kiểm duyệt dữ liệu chặt chẽ, giám sát toàn bộ hoạt động truy cập và sử dụng dữ liệu, phát hiện kịp thời các 
+hành vi bất thường hoặc rò rỉ dữ liệu.
+2. Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung
+● Tổng công ty PTSC cần nắm quyền kiểm soát và sở hữu hoàn toàn các thành phần cốt lõi của hệ thống cơ sở dữ liệu dùng chung, kèm theo giá trị 
+tri thức trong quá trình phân tích - sử dụng dữ liệu bao gồm: quy trình xử lý dữ liệu (Pipeline/ Data Transformation Logic), dữ liệu gốc (Raw Data), 
+quá trình trích xuất – biến đổi – nạp dữ liệu (ETL/ELT), thông tin mô tả dữ liệu (Metadata), Bộ khóa Mã hóa dữ liệu và Bộ mã dữ liệu định danh/ Dữ 
+liệu chủ dùng chung trong toàn hệ sinh thái phần mềm - dữ liệu (Master Data). 
+●  Việc làm chủ các thành phần trên là điều kiện tiên quyết để thực hiện hiệu quả hoạt động kiểm duyệt dữ liệu, phát hiện sớm sai lệch, ngăn chặn rủi 
+ro trong phân tích báo cáo, đồng thời đảm bảo tuân thủ các tiêu chuẩn quản trị dữ liệu theo hướng chuyên nghiệp và bền vững. Từ đó, đảm bảo 
+chất lượng, tính chính xác, toàn vẹn và bảo mật của dữ liệu hướng đến hình thành tài sản số trong tương theo định hướng Chiến lược CĐS PTSC.
+3. Kiến trúc mô hình dữ liệu hiện đại và linh hoạt
+● Tính linh hoạt: Giải pháp cần được thiết kế với kiến trúc linh hoạt, cho phép tổ chức hệ thống dữ liệu theo các mô hình Hybrid, Multi-cloud, 
+Multi-site, nhằm đáp ứng định hướng và chiến lược dữ liệu dài hạn của Tổng công ty.
+● Tính hiện đại: Bên cạnh đó cần áp dụng các công nghệ mới nhất, các sản phẩm nền tảng dữ liệu thương mại hóa của các hãng lớn trên thế giới và 
+tận dụng hiệu quả sức mạnh tính toán, khả năng mở rộng của hạ tầng điện toán đám mây (cloud) để phục vụ các nghiệp vụ yêu cầu năng lực xử lý 
+cao như: Big Data, Trí tuệ nhân tạo (AI), Học máy (Machine Learning) và Phân tích nâng cao (Analytics).
+
+=== [Tom_Tat_Giai_Phap] Trang 33 (Từ khóa: ERP) ===
+Giải pháp các hãng tương ứng các modules chính của Datalakehouse
+Hãng Quy mô DN mục tiêu Ngành nghề ưu tiên Khu vực trọng điểm Chiến lược tiếp cận
+AWS - Doanh nghiệp lớn (enterprise)
+- Startups & scaleups
+- Chính phủ
+- Thương mại điện tử
+- Tài chính
+- Công nghệ (SaaS)
+- Truyền thông
+Toàn cầu
+Đặc biệt mạnh ở Mỹ, Châu 
+Âu, Ấn Độ
+- Developer-first
+- Tập trung vào flexibility + innovation
+- Cung cấp dịch vụ sâu, rất kỹ thuật
+Microsoft Azure - Doanh nghiệp lớn- Tổ chức công 
+(chính phủ, giáo dục)- Doanh 
+nghiệp sử dụng Microsoft 
+ecosystem
+- Sản xuất
+- Tài chính
+- Y tế
+- DN sử dụng ERP 
+(Dynamics, SAP)
+Toàn cầu
+Đặc biệt mạnh tại các nước 
+dùng Microsoft (Việt Nam, 
+Nhật, châu Âu)
+- Tận dụng hệ sinh thái Microsoft
+- Hybrid cloud + on-prem
+- Mạnh về tính tuân thủ
+Google Cloud (GCP)- Công ty công nghệ
+- Doanh nghiệp cần phân tích dữ 
+liệu lớn
+- Startup dùng AI/ML
+- Fintech
+- Viễn thông
+- Game- Digital-native 
+companies
+Mạnh ở Mỹ, Châu Âu, Đông 
+Nam Á(đang tăng trưởng tại 
+Việt Nam)
+- Data-first, AI/ML-centric
+- Developer & engineering team làm 
+trung tâm
+IBM Cloud - Doanh nghiệp lớn dùng hệ thống 
+truyền thống (legacy IT)
+- Ngành cần bảo mật, tuân thủ cao
+- Tài chính - ngân hàng
+- Viễn thông
+- Bảo hiểm
+- Công nghiệp nặng
+Mỹ, Châu Âu, Nhật, các tập 
+đoàn có IBM core system
+- Hybrid cloud + AI (Watson)
+- Mạnh về private cloud, security, 
+mainframe
+- Tập trung modernization system
+
+=== [Tom_Tat_Giai_Phap] Trang 37 (Từ khóa: dùng chung) ===
+3.3. TỔNG HỢP KẾT QUẢ ĐÁNH GIÁ THEO CÁC TIÊU CHÍ ĐÁNH GIÁ
+Tiêu chí đánh giá Mô hình 
+kiến trúc
+On-Premise Data Platform Cloud Data Platform Hybrid Data Platform
+1. Tuân thủ pháp lý về bảo 
+vệ dữ liệu
+Ưu điểm:
+Tuân thủ pháp lý và bảo vệ dữ liệu 
+quốc gia.
+Nhược điểm:
+Rủi ro pháp lý và chủ quyền dữ liệu.
+Ưu điểm:
+Tuân thủ pháp lý và bảo vệ dữ liệu quốc gia.
+2. Quyền sở hữu và kiểm 
+soát kỹ thuật với CSDL 
+dùng chung
+Ưu điểm:
+Quyền sở hữu và kiểm soát kỹ 
+thuật với CSDL dùng chung.
+Nhược điểm:
+Không thể kiểm soát kỹ thuật với 
+CSDL dùng chung và rủi ro phụ thuộc 
+vào nhà cung cấp dịch vụ điện toán 
+đám mây.
+Ưu điểm:
+Quyền sở hữu và kiểm soát kỹ thuật với 
+CSDL dùng chung.
+3. Kiến trúc mô hình dữ liệu 
+hiện đại và linh hoạt
+Nhược điểm:
+Hạn chế các dịch vụ hỗ trợ cho 
+nhiệm vụ đổi mới sáng tạo.
+Giới hạn trong hợp tác – tích hợp – 
+chia sẻ dữ liệu bên ngoài.
+Ưu điểm:
+Kiến trúc thiết kế hiện đại, mở rộng 
+linh hoạt.
+Ưu điểm:
+Kiến trúc được thiết kế hiện đại, linh hoạt và 
+tối ưu ngân sách.
+Đáp ứng xử lý liên thông dữ liệu thời gian 
+thực
+Chi tiết xem tại Phụ lục 1 - 6 Nguyên tắc đánh giá lựa chọn giải pháp
+
+=== [Tom_Tat_Giai_Phap] Trang 48 (Từ khóa: ERP) ===
+OVERVIEW OF DATA FRAMEWORK
+Framework Deloitte’s Information Value Chain
+Phù hợp PTSC GĐ1 (2025-2027)
+McKinsey’s Data-to-Value
+Phù hợp PTSC GĐ2 (2028-2035) Forrester’s Insights-Driven Gartner’s Data-First
+Phù hợp PTSC GĐ2 (2028-2035)
+Core Focus Transformation of Information Business Value from Data Insights Driving Action Data as Strategic Asset
+Primary Driver Data Flow and Management Measurable Business Outcomes Actionable Insights, Culture Long-Term Strategy, Mindset
+Approach Linear, Process-Focused Practical, Results-Oriented Operational Integration Holistic, Strategic
+Key Emphasis Data Lifecycle, Value Creation at Each 
+Stage Value Definition, Measurement Actionability, Culture Shift Governance, Architecture
+Time Horizon Foundational, Process-Oriented Short to Medium Term Medium to Long Term Long-Term
+Highlights
+Typical Stages: 
+Capture, organize, analyze, interpret, and 
+act. 
+Key Elements:
+* Define Value: Clearly identify the business 
+outcomes and value to be achieved.
+* Source and Structure Data: Acquire, 
+integrate, and prepare data for analysis.
+* Analyze and Generate Insights: Apply 
+analytical techniques to extract meaningful 
+insights.
+* Deploy and Embed Insights: Integrate 
+insights into business processes and 
+decision-making.
+* Measure and Improve: Track the impact of 
+data initiatives and continuously refine the 
+process.
+Key Competencies: 
+Strategy, data, platforms, internal 
+partners, practices, insights to 
+action, culture. 
+Key Principles: 
+Data as a strategic asset, business 
+alignment, data-driven culture, focus on 
+outcomes and value, robust data 
+governance, modern data architecture, 
+data literacy and skills, continuous 
+improvement.
+
+=== [Tom_Tat_Giai_Phap] Trang 50 (Từ khóa: ERP) ===
+[PTSC] INFORMATION VALUE CHAIN FRAMEWORK | KEY STAGES  
+Deloitte’s Information Value Chain Typical stages Highlights
+1. Capture/Generate
+This initial stage involves the creation or 
+acquisition of raw data from various 
+sources.
+Internal Sources Transactional systems (ERP, CRM), operational data, sensor data, employee-generated content, etc.
+External Sources Market research, social media feeds, publicly available data, third-party data providers, etc.
+Focus Ensuring the data captured is relevant, timely, and accurate at its source.
+2. Organize/Manage
+Once data is captured, it needs to be 
+organized, structured, and managed 
+effectively to make it usable for analysis.
+Data Storage Utilizing appropriate data storage solutions (databases, data warehouses, data lakes) based on the type and volume of data.
+Data Integration Combining data from different sources to create a unified view.
+Data Quality Management Implementing processes to cleanse, validate, and ensure the quality and consistency of the data.
+Metadata Management Cataloging and documenting data assets to improve understanding and discoverability.
+Data Governance Establishing policies, procedures, and responsibilities for data security, privacy, compliance, and usage.
+3. Analyze/Synthesize
+This stage involves applying various 
+analytical techniques and tools to 
+process and transform the organized 
+data into meaningful insights.
+Descriptive Analytics Understanding what has happened in the past.
+Diagnostic Analytics Identifying why certain events occurred.
+Predictive Analytics Forecasting future trends and outcomes.
+Prescriptive Analytics Recommending actions to achieve desired results.
+Tools and Technologies Utilizing statistical software, data mining tools, machine learning platforms, and visualization tools.
+4. Interpret/Understand
+The insights generated from analysis 
+need to be interpreted within the 
+business context to derive meaning and 
+understand their implications.
+Contextualization Relating the findings to business goals, strategies, and the broader market environment.
+Communication Translating complex analytical results into clear and understandable language for business stakeholders.
+Collaboration Engaging with business users to validate findings and ensure their relevance.
+Storytelling with Data Presenting insights in a narrative format that resonates with the audience and drives understanding.
+5. Act/Decide
+The final stage involves using the 
+interpreted insights to inform decisions 
+and drive actions that lead to improved 
+business outcomes.
+Decision Support Providing timely and relevant information to support strategic, tactical, and operational decision-making.
+Automation Embedding insights into automated processes and workflows.
+Monitoring and Evaluation Tracking the impact of decisions and actions taken based on the insights.
+Feedback Loop Using the results of actions to refine the data, analysis, and interpretation processes, creating a continuous cycle of improvement.
+
+=== [Tom_Tat_Giai_Phap] Trang 53 (Từ khóa: dùng chung) ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+Chi tiết nguyên tắcNguyên tắc Trả lời câu hỏi
+1. Lưu trữ dữ liệu gốc: Đảm bảo toàn bộ dữ liệu gốc (raw data) được lưu trữ và xử lý trong lãnh 
+thổ Việt Nam, phù hợp với quy định pháp luật và yêu cầu bảo vệ dữ liệu quốc gia.
+2. Chia sẻ dữ liệu: Không cho phép chuyển dữ liệu, log hệ thống hoặc bất kỳ thành phần liên 
+quan nào ra nước ngoài, trừ khi có văn bản cho phép chính thức từ cơ quan có thẩm quyền 
+hoặc lãnh đạo Tổng công ty.
+3. Mã hoá dữ liệu: Mọi dữ liệu trong quá trình truyền và lưu trữ phải được mã hóa theo các tiêu 
+chuẩn an toàn thông tin.
+4. Bảo vệ Dữ liệu: Tuân thủ đầy đủ các quy định pháp luật liên quan đến bảo vệ dữ liệu cá nhân, 
+quyền riêng tư và xử lý thông tin nhạy cảm.
+5. Kiểm duyệt dữ liệu: Thiết lập cơ chế kiểm duyệt dữ liệu chặt chẽ, giám sát toàn bộ hoạt động 
+truy cập và sử dụng dữ liệu, phát hiện kịp thời các hành vi bất thường hoặc rò rỉ dữ liệu.
+Tuân thủ 
+pháp lý về 
+bảo vệ dữ 
+liệu quốc gia
+● Toàn bộ dữ liệu gốc (raw data) có được lưu trữ 
+trong lãnh thổ Việt Nam không?
+● Hệ thống có cho phép lưu bản sao dữ liệu tại 
+nước ngoài không?
+● Nếu có thì có cơ chế mã hóa trước khi gửi 
+không?
+● Nhà cung cấp có đảm bảo không chuyển dữ 
+liệu hoặc log ra ngoài Việt Nam mà chưa được 
+phép không?
+● Tổng công ty PTSC cần nắm quyền kiểm soát và sở hữu hoàn toàn các thành phần cốt lõi của 
+hệ thống cơ sở dữ liệu dùng chung, kèm theo giá trị tri thức trong quá trình phân tích - sử dụng 
+dữ liệu bao gồm: quy trình xử lý dữ liệu (Pipeline/ Data Transformation Logic), dữ liệu 
+gốc (Raw Data), quá trình trích xuất – biến đổi – nạp dữ liệu (ETL/ELT), thông tin mô tả 
+dữ liệu (Metadata), Bộ khóa Mã hóa dữ liệu và Bộ mã dữ liệu định danh/ Dữ liệu chủ 
+dùng chung trong toàn hệ sinh thái phần mềm - dữ liệu (Master Data). 
+● Việc làm chủ các thành phần trên là điều kiện tiên quyết để thực hiện hiệu quả hoạt động kiểm 
+duyệt dữ liệu, phát hiện sớm sai lệch, ngăn chặn rủi ro trong phân tích báo cáo, đồng thời đảm 
+bảo tuân thủ các tiêu chuẩn quản trị dữ liệu theo hướng chuyên nghiệp và bền vững. Từ đó, 
+đảm bảo chất lượng, tính chính xác, toàn vẹn và bảo mật của dữ liệu hướng đến hình thành 
+tài sản số trong tương theo định hướng Chiến lược CĐS PTSC.
+Quyền sở 
+hữu và kiểm 
+soát kỹ thuật 
+với CSDL 
+dùng chung
+● Chủ đầu tư có toàn quyền truy cập dữ liệu và 
+log hay không?
+● Có cơ chế backup và khôi phục dữ liệu chủ 
+động trong nước không?
+● Khi dừng hợp tác, dữ liệu có thể được trích 
+xuất đầy đủ và xóa sạch khỏi hệ thống cloud 
+của nhà cung cấp không?
+1
+2
+
+=== [Tom_Tat_Giai_Phap] Trang 54 (Từ khóa: dùng chung) ===
+Giải thích Nguyên tắc 2
+Nguyên tắc Trả lời câu hỏi
+Quyền sở 
+hữu và kiểm 
+soát kỹ thuật 
+với CSDL 
+dùng chung
+Raw Data Storage – Direct Access & Format Transparency
+a. Dữ liệu raw có được lưu dưới định dạng chuẩn mở (như Parquet, ORC, CSV) trên một tầng lưu trữ độc lập, 
+tương thích tiêu chuẩn (như object storage S3-compatible hoặc ADLS Gen2), và có thể truy cập trực tiếp thông 
+qua các engine phân tích độc — mà không bắt buộc phải đi qua lớp xử lý semantic hoặc permission layer do 
+nền tảng Hãng/ Nhà cung cấp kiểm soát hay không?
+b. Nếu toàn bộ hệ thống xử lý dữ liệu và semantic layer của nền tảng hiện tại bị tắt hoặc ngừng hoạt động, thì 
+dữ liệu raw vẫn có thể được truy cập trực tiếp và khai thác từ các công cụ bên ngoài mà không cần phụ thuộc 
+vào bất kỳ thành phần nào của nền tảng đó không?
+Mô-đun Raw Data Storage
+Dữ liệu raw (ingested data) được lưu dưới định dạng gì mặc định? Có thể quy định cụ thể định dạng chuẩn mở 
+như Parquet, ORC, CSV không?
+Trong trường hợp dừng hợp tác, toàn bộ dữ liệu raw có thể export ra dạng chuẩn mở + metadata schema đi 
+kèm, không mã hóa không?
+Chủ đầu tư có thể chỉ định và quản lý Storage Encryption Key (BYOK) không? Nếu có, key nằm ở đâu: KMS của 
+vendor hay của chủ đầu tư?
+Có hỗ trợ mô hình nào cloud/ Hybrid/ Onprem.
+ETL / Data Processing – Logic Portability & Reusability
+Các bước xử lý (transform, enrich, clean) hiện có đang được lưu dưới dạng mã rõ ràng (SQL, PySpark, hoặc 
+DSL mở), có thể version control bằng Git và tái triển khai trên bất kỳ nền tảng nào (dbt, Spark, Flink...) không?
+Nếu tôi muốn dừng dùng công cụ ETL hiện tại, tôi có thể giữ nguyên logic xử lý và chỉ chuyển execution engine 
+không?
+2
+● Tổng công ty PTSC cần nắm quyền kiểm 
+soát và sở hữu hoàn toàn các thành 
+phần cốt lõi của hệ thống cơ sở dữ liệu 
+dùng chung, kèm theo giá trị tri thức 
+trong quá trình phân tích - sử dụng dữ 
+liệu bao gồm: quy trình xử lý dữ liệu 
+(Pipeline/ Data Transformation Logic), 
+dữ liệu gốc (Raw Data), quá trình trích 
+xuất – biến đổi – nạp dữ liệu 
+(ETL/ELT), thông tin mô tả dữ liệu 
+(Metadata), Bộ khóa Mã hóa dữ liệu và 
+Bộ mã dữ liệu định danh/ Dữ liệu chủ 
+dùng chung trong toàn hệ sinh thái 
+phần mềm - dữ liệu (Master Data). 
+● Việc làm chủ các thành phần trên là điều 
+kiện tiên quyết để thực hiện hiệu quả 
+hoạt động kiểm duyệt dữ liệu, phát hiện 
+sớm sai lệch, ngăn chặn rủi ro trong 
+phân tích báo cáo, đồng thời đảm bảo 
+tuân thủ các tiêu chuẩn quản trị dữ liệu 
+theo hướng chuyên nghiệp và bền vững. 
+Từ đó, đảm bảo chất lượng, tính chính 
+xác, toàn vẹn và bảo mật của dữ liệu 
+hướng đến hình thành tài sản số trong 
+tương theo định hướng Chiến lược CĐS 
+PTSC.
+Chi tiết nguyên tắc
+
+=== [Tom_Tat_Giai_Phap] Trang 55 (Từ khóa: dùng chung) ===
+Giải thích Nguyên tắc 2
+Nguyên tắc Trả lời câu hỏi
+Quyền sở 
+hữu và kiểm 
+soát kỹ thuật 
+với CSDL 
+dùng chung
+Mô-đun Data Ingestion (đẩy dữ liệu vào)
+Pipeline ingest dữ liệu (từ ERP , ﬁle, API…) có thể được thiết kế và quản lý bởi chủ đầu tư hay không, hay phải 
+thao tác qua công cụ riêng (GUI, service) của Hãng/ Nhà cung cấp?
+a. Có thể export ra định dạng YAML/JSON không?
+b. Có thể chạy trên nền tảng khác không?
+c. Các connector (SAP , OPC UA, MQTT…) là dạng module độc lập, hay gắn chặt vào engine riêng của Hãng/ 
+Nhà cung cấp?
+d. Nếu PTSC muốn chuyển sang nền tảng khác, có thể mang connector đi không?
+Data Ingestion – Pipeline Format & Execution Layer Independence
+a. Pipeline ingestion hiện tại có thể được xuất toàn bộ dưới định dạng mở (JSON, YAML, hoặc mã DSL rõ 
+ràng), độc lập với công cụ thực thi không?
+b. Cụ thể, nếu toàn bộ pipeline xử lý hiện tại được trích xuất và chuyển sang chạy trên một nền tảng khác 
+(không thuộc hệ sinh thái của Hãng/ Nhà cung cấp), thì có đảm bảo giữ nguyên logic mà không cần viết lại 
+không? Các pipeline đó có đang bị ràng buộc vào công cụ thiết kế hoặc engine thực thi độc quyền của hệ 
+thống hiện tại không?
+Mô-đun ETL / Data Transformation
+a. Pipeline ETL có được lưu trữ dưới định dạng mở (ví dụ JSON, SQL Script, hoặc Spark code) không? Hay phụ 
+thuộc vào metadata riêng của Hãng/ Nhà cung cấp?
+b. Pipeline có thể được version control trong Git, chỉnh sửa bằng tay (code editor), và deploy qua CI/CD 
+không? Hay phải thao tác qua GUI của nền tảng Hãng/ Nhà cung cấp?
+c. Chủ đầu tư có thể toàn quyền chỉnh sửa, vận hành, và chạy lại (deploy) các pipeline ETL mà không cần tài 
+khoản đặc quyền của Hãng/ Nhà cung cấp không?
+2
+● Tổng công ty PTSC cần nắm quyền kiểm 
+soát và sở hữu hoàn toàn các thành 
+phần cốt lõi của hệ thống cơ sở dữ liệu 
+dùng chung, kèm theo giá trị tri thức 
+trong quá trình phân tích - sử dụng dữ 
+liệu bao gồm: quy trình xử lý dữ liệu 
+(Pipeline/ Data Transformation Logic), 
+dữ liệu gốc (Raw Data), quá trình trích 
+xuất – biến đổi – nạp dữ liệu 
+(ETL/ELT), thông tin mô tả dữ liệu 
+(Metadata), Bộ khóa Mã hóa dữ liệu và 
+Bộ mã dữ liệu định danh/ Dữ liệu chủ 
+dùng chung trong toàn hệ sinh thái 
+phần mềm - dữ liệu (Master Data). 
+● Việc làm chủ các thành phần trên là điều 
+kiện tiên quyết để thực hiện hiệu quả 
+hoạt động kiểm duyệt dữ liệu, phát hiện 
+sớm sai lệch, ngăn chặn rủi ro trong 
+phân tích báo cáo, đồng thời đảm bảo 
+tuân thủ các tiêu chuẩn quản trị dữ liệu 
+theo hướng chuyên nghiệp và bền vững. 
+Từ đó, đảm bảo chất lượng, tính chính 
+xác, toàn vẹn và bảo mật của dữ liệu 
+hướng đến hình thành tài sản số trong 
+tương theo định hướng Chiến lược CĐS 
+PTSC.
+Chi tiết nguyên tắc
+
+=== [Kick_Off] Trang 13 (Từ khóa: dùng chung) ===
+MỤC TIÊU, HÀNH ĐỘNG, KẾT QUẢ CỤ THỂ
+Thiết kế cấu trúc dữ liệu tổng thể, thiết kế giao diện và xây 
+dựng báo cáo BI (Layout): Nâng cấp mở rộng PBI hiện có và 
+Thiết kế PBI với các luồng dữ liệu mới
+Thiết kế và triển khai nền tảng tích hợp dữ liệu (Data 
+platform) - Data Architectures & Application integration 
+(Trục tích hợp, SSO và Kho dữ liệu, Hồ chứa dữ liệu)
+Thiết lập nền tảng kết nối, chuẩn hóa hạ tầng CNTT theo 
+hướng đồng bộ xuyên suốt và xây dựng hệ thống an toàn 
+thông tin theo cấp độ (Nghị định 85/2016/NĐ-CP)
+HÀNH ĐỘNG TRỌNG TÂM
+Thiết kế triển khai trung tâm giám sát điều hành số IOC: 
+trực quan hóa các báo báo BI như HSE, đội tàu, tài chính, 
+vật tư
+Thiết kế kiến trúc dữ 
+liệu tổng thể
+1
+● Thiết kế số hoá quy trình và biểu mẫu liên Phòng-Ban (Tích hợp, API)
+● Tiêu chuẩn tích hợp các phần mềm 
+● Chính sách quản trị dữ liệu 
+● ĐÚNG - ĐỦ - SẠCH - SỐNG - THỐNG NHẤT - DÙNG CHUNG
+● Dữ liệu được tích hợp liên thông giữa các phần mềm
+● Nền tảng ứng dụng báo cáo BI và mô hình AI
+● Mô hình vận hành quản trị dữ liệu tập trung
+● Kết nối mạng ổn định
+● Hạ tầng máy chủ, lưu trữ, sao lưu đồng bộ với các ứng dụng.
+● Dữ liệu lưu trữ tập trung và kiểm soát bảo mật
+● Trung tâm vận hành dữ liệu (DOC) 
+MỤC TIÊU KẾT QUẢ ĐẠT ĐƯỢC
+Triển khai nền tảng tích 
+hợp dữ liệu Data 
+platform
+2
+Chuẩn hoá Hạ tầng 
+CNTT và A TTT3
+
+
+=== [Kick_Off] Trang 18 (Từ khóa: dùng chung) ===
+MÔ PHỎNG KIẾN TRÚC HỆ SINH THÁI CNTT (giai đoạn 1)
+VĂN PHÒNG CĐS / BAN DỰ ÁN CĐS (TCT)
+Kết nối - Đồng bộ - Chia sẻ dữ liệu
+BAN CHỈ ĐẠO CĐS (TCT)
+Trưởng ban: PTGĐ Phạm Văn Hùng
+Số hoá quy trình R&D & Đổi mớiChiến 
+lược & lộ 
+trình
+Chuẩn dữ liệu
+Tích hợp & 
+API 
+ĐỒNG BỘ - CHUẨN HOÁ - TẬP TRUNG ĐIỀU HÀNH - PHÂN QUYỀN THỰC THI
+NỀN TẢNG DỮ LIỆU DÙNG CHUNG (Enterprise Data Platform)
+HỆ THỐNG ỨNG DỤNG DÙNG CHUNG (TCT Triển khai trước -> Đơn vị mở rộng)
+AI/ ML
+Kiến trúc 
+tổng thể
+Chuẩn bảo mật
+Giám sát & 
+Đánh giá Quản trị rủi ro dùng chung khác…
+…
+
+=== [Kick_Off] Trang 19 (Từ khóa: dùng chung) ===
+MÔ PHỎNG KIẾN TRÚC HỆ SINH THÁI CNTT (giai đoạn 2)
+VĂN PHÒNG CĐS / BAN DỰ ÁN CĐS (TCT)
+Kết nối - Đồng bộ - Chia sẻ dữ liệu
+BAN CHỈ ĐẠO CĐS (TCT)
+Trưởng ban: PTGĐ Phạm Văn Hùng
+Số hoá quy trình R&D & Đổi mớiChiến 
+lược & lộ 
+trình
+Chuẩn dữ liệu
+Tích hợp & 
+API 
+ĐỒNG BỘ - CHUẨN HOÁ - TẬP TRUNG ĐIỀU HÀNH - PHÂN QUYỀN THỰC THI
+Kết nối 2 chiều với Data Platform TCT
+PTSC 
+Quảng 
+Ngãi
+NỀN TẢNG DỮ LIỆU DÙNG CHUNG (Enterprise Data Platform)
+HỆ THỐNG ỨNG DỤNG DÙNG CHUNG (TCT Triển khai trước -> Đơn vị mở rộng)
+AI/ ML
+Kiến trúc 
+tổng thể
+Chuẩn bảo mật
+Giám sát & 
+Đánh giá 
+Quản trị rủi ro dùng chung khác
+CQTCT trước
+3. Dùng chung - Tránh trùng lặp
+Hà Nội
+…
+…
+
+=== [Kick_Off] Trang 22 (Từ khóa: dùng chung) ===
+CƠ CẤU TỔ CHỨC BAN QUẢN LÝ DỰ ÁN
+Trưởng Ban chỉ đạo dự án
+PHẠM VĂN HÙNG
+Trưởng ban Quản trị dự 
+án - Giám đốc dự án
+NGUYỄN KIM CƯƠNGPhó giám đốc dự án
+PHAN THỊ NGỌC VÂN
+Trưởng ban Quản trị dự án - Giám đốc dự án
+NGUYỄN ĐỨC THIỆN
+TB chỉ đạo dự án
+HOÀNG VĂN NINH
+Nhóm Số hoá - Tích hợp
+NGUYỄN XUÂN THỊNH
+Nhóm Hạ tầng
+HOÀNG VĂN NINH
+Nhóm Phần mềm DP
+NGUYỄN ĐÌNH CÔNG
+Nhóm Dữ liệu và Báo cáo
+NGUYỄN P. NGỌC TUẤN
+Tổ SHQT BDA
+NGUYỄN QUỐC 
+THỐNG
+Tổ Dữ liệu & RnD 
+NGUYỄN VĂN PHÁT
+Tổ Hạ tầng & ATTT/ 
+Phòng CNTT 
+NGUYỄN VĂN MINH
+- Lãnh đạo các 
+Phòng/Ban chức năng 
+tại CQTCT
+- Lãnh đạo Ban chỉ 
+đạo/ Ban/ Tổ CĐS của 
+các Đơn vị.
+- Nhân sự đầu mối 
+các Phòng/Ban/ Đơn 
+vị được cử tham gia 
+dự án 
+1. Số hoá quy trình
+liên Phòng/Ban
+2. Kịch bản tích hợp
+giữa các phần mềm
+2. Kiến trúc & Chính
+sách quản trị Dữ liệu
+dùng chung - Báo cáo
+3. Phần mềm Data
+Platform
+4. Hạ tầng và Trung
+tâm Vận hành dữ
+liệu DOC
+HUỲNH MINH NHẪN
+KẾT QUẢ CHUNG:
+Business
+Technical
+
