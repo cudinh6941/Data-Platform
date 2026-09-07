@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'neutral',
+        themeVariables: {
+            primaryColor: '#e0f2fe',
+            primaryTextColor: '#0369a1',
+            primaryBorderColor: '#0284c7',
+            lineColor: '#0284c7',
+            fontFamily: 'Segoe UI, Arial, sans-serif',
+            fontSize: '12px'
+        },
+        flowchart: {
+            useMaxWidth: false,
+            htmlLabels: true,
+            curve: 'basis'
+        }
+    });
+</script>
+<style>
+    @page {
+        size: A4 portrait;
+        margin: 16mm 14mm 16mm 14mm;
+    }
+    body {
+        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.5;
+        color: #1e293b;
+        background: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+    .header-banner {
+        border-bottom: 2.5px solid #003366;
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .corp-name {
+        font-size: 10.5pt;
+        font-weight: bold;
+        color: #003366;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .doc-meta {
+        font-size: 8.5pt;
+        color: #64748b;
+        text-align: right;
+    }
+    h1.doc-title {
+        font-size: 17pt;
+        font-weight: 800;
+        color: #002855;
+        margin: 0 0 6px 0;
+        line-height: 1.25;
+        text-transform: uppercase;
+    }
+    h2.section-title {
+        font-size: 12.5pt;
+        font-weight: 700;
+        color: #004080;
+        border-left: 4px solid #0284c7;
+        padding-left: 8px;
+        margin-top: 22px;
+        margin-bottom: 10px;
+        page-break-after: avoid;
+    }
+    h3.sub-title {
+        font-size: 11pt;
+        font-weight: 700;
+        color: #0f172a;
+        margin-top: 14px;
+        margin-bottom: 6px;
+        page-break-after: avoid;
+    }
+    h4.sub2-title {
+        font-size: 10pt;
+        font-weight: 700;
+        color: #334155;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        page-break-after: avoid;
+    }
+    p.para {
+        margin: 5px 0;
+        text-align: justify;
+    }
+    li.bullet {
+        margin-left: 20px;
+        margin-bottom: 3px;
+        list-style-type: square;
+    }
+    li.numbered {
+        margin-left: 20px;
+        margin-bottom: 3px;
+    }
+    hr.divider {
+        border: none;
+        border-top: 1px solid #e2e8f0;
+        margin: 14px 0;
+    }
+    blockquote.callout {
+        background: #f8fafc;
+        border-left: 3.5px solid #0284c7;
+        margin: 10px 0;
+        padding: 8px 12px;
+        font-size: 9.5pt;
+        color: #334155;
+        border-radius: 0 4px 4px 0;
+    }
+    .badge {
+        font-weight: bold;
+        color: #0369a1;
+    }
+    .table-wrap {
+        width: 100%;
+        margin: 12px 0;
+        page-break-inside: avoid;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 9pt;
+    }
+    th {
+        background: #003366;
+        color: #ffffff;
+        font-weight: 600;
+        padding: 7px 9px;
+        text-align: left;
+        border: 1px solid #002855;
+    }
+    td {
+        padding: 6px 9px;
+        border: 1px solid #cbd5e1;
+        vertical-align: top;
+    }
+    tr:nth-child(even) {
+        background: #f8fafc;
+    }
+    .mermaid-box {
+        margin: 14px 0;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 10px;
+        text-align: center;
+        page-break-inside: avoid;
+        overflow-x: auto;
+    }
+    pre.mermaid {
+        margin: 0;
+        display: inline-block;
+    }
+    pre.code-block {
+        background: #0f172a;
+        color: #f8fafc;
+        padding: 10px;
+        border-radius: 4px;
+        font-family: Consolas, Monaco, monospace;
+        font-size: 8.5pt;
+        white-space: pre-wrap;
+        page-break-inside: avoid;
+    }
+    code {
+        background: #f1f5f9;
+        color: #0f172a;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: Consolas, Monaco, monospace;
+        font-size: 8.5pt;
+    }
+</style>
+</head>
+<body>
+<div class="header-banner">
+    <div class="corp-name">TỔNG CÔNG TY CỔ PHẦN DỊCH VỤ DẦU KHÍ VIỆT NAM — PTSC QUẢNG NGÃI</div>
+    <div class="doc-meta">TÀI LIỆU KỸ THUẬT NỘI BỘ<br>MÃ LƯU TRỮ: PTSC-QN-DP-ARCH-2026</div>
+</div>
+<h1 class="doc-title">BẢN ĐẶC TẢ KIẾN TRÚC TỔNG THỂ NỀN TẢNG DỮ LIỆU (HYBRID DATA PLATFORM)</h1><h2 class="section-title">MÔ HÌNH HUB - SPOKE GIỮA TỔNG CÔNG TY VÀ PTSC QUẢNG NGÃI (LEVEL 3)</h2><hr class="divider"/><blockquote class="callout"><strong>Tài liệu tham chiếu:</strong></blockquote><blockquote class="callout"><em> </em>Báo cáo Đề xuất Kỹ thuật Nền tảng Dữ liệu PTSC (Trang 16–38, 59, 78)*</blockquote><blockquote class="callout"><em> </em>Slide Hội thảo Data Platform Tổng công ty – Phiên Sáng & Phiên Chiều (Trang 21–25, 45, 51–56)*</blockquote><blockquote class="callout"><em> </em>Quy chế Quản trị Dữ liệu PTSC (Mô hình 5 Cấp & Chuẩn PPDM)*</blockquote><hr class="divider"/><h2 class="section-title">1. SƠ ĐỒ KIẾN TRÚC TỔNG THỂ TOÀN HỆ THỐNG (END-TO-END ARCHITECTURE)</h2><p class="para">Sơ đồ dưới đây mô tả chi tiết toàn bộ luồng dữ liệu đi qua 4 tầng: <strong>Nguồn nội bộ Quảng Ngãi ➔ Trạm trung chuyển & Vùng đệm kiểm duyệt (Landing Zone) ➔ Nền tảng On-premise Hub tại TCT ➔ Nền tảng Cloud Fabric (Tenant L3) & Dashboard điều hành</strong>.</p><div class="mermaid-box"><pre class="mermaid">
+graph TB
+    %% ==========================================
+    %% TẦNG 1: NGUỒN DỮ LIỆU NỘI BỘ QUẢNG NGÃI
+    %% ==========================================
+    subgraph TANG_1 ["TẦNG 1: CƠ SỞ DỮ LIỆU & PHẦN MỀM NỘI BỘ (PTSC QUẢNG NGÃI)"]
+        direction TB
+        S1[("FAST Accounting<br>• Sổ cái, Công nợ<br>• Doanh thu, Chi phí<br>(SQL Server)")]
+        S2[("MESx - PMSx - FBO<br>• Tiến độ xưởng cơ khí<br>• Vật tư chế tạo<br>• Nhân lực ca kíp<br>(PostgreSQL)")]
+        S3[("VTI - IRTECH<br>• Khai thác Cầu Cảng<br>• Sản lượng bãi, nâng hạ<br>• Nhật trình xe cẩu, tàu<br>(MySQL/Oracle)")]
+        S4[("HSEQ & Mua sắm<br>• Đang chuẩn hóa chuẩn API<br>• Quy trình phê duyệt<br>• Quản lý nhà thầu phụ<br>(REST API Ready)")]
+        S5[("File nghiệp vụ phân tán<br>• File Excel dự toán<br>• Bảng chấm công ngoài bãi<br>• Hồ sơ nghiệm thu PDF")]
+    end
+
+    %% ==========================================
+    %% TẦNG 2: TRẠM TRUNG CHUYỂN & VÙNG ĐỆM LANDING ZONE
+    %% ==========================================
+    subgraph TANG_2 ["TẦNG 2: TRẠM TRUNG CHUYỂN SPOKE & CỔNG PHÊ DUYỆT (NỘI BỘ QUẢNG NGÃI)"]
+        direction TB
+        Agent["Integration Agent / CDC<br>(Thu thập dữ liệu tự động / Batch / API)"]
+        
+        LZ["VÙNG ĐỆM KIỂM DUYỆT (LANDING ZONE)<br>• Lưu trữ tạm thời dữ liệu trích xuất<br>• Kiểm tra cấu trúc Schema<br>• Đối soát mã Master Data"]
+
+        subgraph GATEWAY ["CỔNG PHÊ DUYỆT & BẢO MẬT (DATA GOVERNANCE GATEWAY)"]
+            direction LR
+            DO_Gate{"LÃNH ĐẠO ĐƠN VỊ<br>(Data Owner Cấp 3)<br>Kiểm duyệt & Approve"}
+            Masking["Module Lọc & Che dữ liệu (Masking)<br>• Tách thông tin lương cá nhân<br>• Ẩn số CCCD/Tài khoản ngân hàng<br>• Giữ lại dữ liệu mật kinh doanh"]
+        end
+    end
+
+    %% ==========================================
+    %% TẦNG 3: HẠ TẦNG ON-PREMISE HUB TẠI TỔNG CÔNG TY
+    %% ==========================================
+    subgraph TANG_3 ["TẦNG 3: NỀN TẢNG ON-PREMISE HUB TẬP TRUNG (DATA CENTER TỔNG CÔNG TY)"]
+        direction TB
+        
+        subgraph ZONE_SEC ["Phân vùng Mạng & An toàn thông tin (8 Zones)"]
+            WAF["Firewall & WAF"]
+            VPN_GW["VPN IPSec Gateway<br>(Đường hầm mã hóa Site-to-Site)"]
+        end
+
+        subgraph INTEGRATION_BUS ["Trục tích hợp & Quản trị dữ liệu lõi"]
+            ESB["Trục tích hợp ESB (WSO2 / Camel)<br>• API Gateway tập trung<br>• Message Broker (Kafka)"]
+            MDM["Hệ thống Dữ liệu chủ MDM<br>• 29 Danh mục Master Data<br>• Bản ghi vàng (Golden Record)<br>• Khử trùng lặp mã Nhà cung cấp/Vật tư"]
+        end
+
+        subgraph ONPREM_LAKE ["Hồ chứa dữ liệu tại chỗ (On-premise Lakehouse)"]
+            Bronze[("BRONZE ZONE<br>Raw Data Store<br>(MinIO S3 - Delta/Parquet)<br>Lưu vết dữ liệu gốc")]
+            Silver[("SILVER ZONE<br>Cleaned Data Store<br>Dữ liệu đã chuẩn hóa, gán nhãn")]
+        end
+
+        subgraph SEC_MONITOR ["Giám sát An ninh & Kiểm toán"]
+            SIEM["Hệ thống SIEM / SOC 24/7<br>• Audit Log toàn bộ truy cập<br>• Phát hiện dò quét dữ liệu trái phép"]
+            IAM_Local["Quản lý định danh IAM / Keycloak<br>Phân quyền RBAC theo Domain"]
+        end
+    end
+
+    %% ==========================================
+    %% TẦNG 4: NỀN TẢNG ĐÁM MÂY CLOUD FABRIC & TIÊU THỤ
+    %% ==========================================
+    subgraph TANG_4 ["TẦNG 4: CLOUD DATA PLATFORM & PHÂN VÙNG TENANT L3 (MICROSOFT FABRIC)"]
+        direction TB
+        
+        subgraph TENANT_QN ["WORKSPACE L3 - PTSC QUẢNG NGÃI (ĐỘC LẬP HOÀN TOÀN)"]
+            Gold_QN[("GOLD ZONE (OneLake)<br>• Dữ liệu tổng hợp SXKD<br>• Báo cáo Doanh thu - Dòng tiền<br>• Báo cáo Khai thác Cảng")]
+            Pipeline_QN["Data Factory Pipelines<br>(Tự động tính toán số liệu nội bộ)"]
+            Semantic_QN["Semantic Models (Đo lường KPI)<br>• Tỷ lệ hoàn thành ngân sách<br>• Năng suất cẩu bãi, vòng quay tàu"]
+            PBI_QN["Power BI Reports (Nội bộ QN)<br>• Dashboard Ban Giám đốc QN<br>• Dashboard Trưởng phòng Kế toán/Cảng"]
+        end
+
+        subgraph TENANT_TCT ["WORKSPACE TỔNG CÔNG TY (HỢP NHẤT TOÀN TCT)"]
+            Gold_TCT[("Kho dữ liệu Hợp nhất TCT<br>(Chỉ nhận số liệu tổng hợp)")]
+            PBI_TCT["Dashboard Lãnh đạo TCT<br>(Báo cáo Hợp nhất 17 ĐVTV)"]
+        end
+
+        Purview["Microsoft Purview<br>Data Governance & Catalog toàn hệ thống"]
+    end
+
+    %% ==========================================
+    %% KẾT NỐI VÀ DÒNG CHẢY DỮ LIỆU
+    %% ==========================================
+    S1 & S2 & S3 & S4 & S5 -->|Trích xuất định kỳ/CDC| Agent
+    Agent --> LZ
+    LZ --> DO_Gate
+    
+    DO_Gate -->|Từ chối/Reject| LZ
+    DO_Gate -->|Chấp thuận/Approve| Masking
+    
+    Masking ==>|Truyền an toàn qua kênh VPN| VPN_GW
+    VPN_GW --> WAF --> ESB
+    
+    ESB <--> MDM
+    ESB --> Bronze
+    Bronze -->|Xử lý làm sạch & biến đổi| Silver
+    
+    Silver ==>|Chỉ đẩy số liệu tổng hợp & chuẩn hóa| Gold_QN
+    Gold_QN --> Pipeline_QN --> Semantic_QN --> PBI_QN
+    
+    Silver -->|Trích xuất số liệu hợp nhất TCT| Gold_TCT --> PBI_TCT
+    
+    ESB -.->|Ghi vết kiểm toán| SIEM
+    IAM_Local -.->|Xác thực phân quyền| ESB
+    Purview -.->|Quản trị siêu dữ liệu| Gold_QN & Gold_TCT
+
+    %% Styling
+    classDef qn fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a;
+    classDef tct fill:#f0fdf4,stroke:#15803d,stroke-width:2px,color:#14532d;
+    classDef cloud fill:#faf5ff,stroke:#7e22ce,stroke-width:2px,color:#581c87;
+    classDef gate fill:#fffbeb,stroke:#b45309,stroke-width:2px,color:#78350f;
+    
+    class S1,S2,S3,S4,S5,Agent,LZ,TENANT_QN,Gold_QN,Pipeline_QN,Semantic_QN,PBI_QN qn;
+    class TANG_3,WAF,VPN_GW,ESB,MDM,Bronze,Silver,SIEM,IAM_Local,TENANT_TCT,Gold_TCT,PBI_TCT tct;
+    class TANG_4,Purview cloud;
+    class DO_Gate,Masking gate;
+</pre></div><hr class="divider"/><h2 class="section-title">2. CỔNG QUYẾT ĐỊNH DỮ LIỆU: CÁI GÌ ĐẨY LÊN, CÁI GÌ GIỮ LẠI?</h2><p class="para">Đây là cơ chế kỹ thuật cốt lõi giải tỏa lo lắng của Ban Giám đốc về an toàn bí mật kinh doanh. Dữ liệu trước khi ra khỏi mạng nội bộ của Quảng Ngãi phải đi qua <strong>Bộ lọc phân loại 3 mức</strong>:</p><div class="mermaid-box"><pre class="mermaid">
+flowchart TD
+    Start([Dữ liệu phát sinh tại PTSC Quảng Ngãi]) --> Classify{Phân loại Dữ liệu theo Quy chế}
+
+    %% Nhánh 1: Dữ liệu Cấm ra ngoài / Cực mật
+    Classify -->|MỨC 1: DỮ LIỆU BÍ MẬT & CÁ NHÂN| LocalOnly[GIỮ LẠI 100% TẠI QUẢNG NGÃI]
+    LocalOnly --> N1["• Chi tiết mức lương từng cán bộ, nhân viên<br>• Số CCCD, số tài khoản ngân hàng cá nhân<br>• Dự toán nội bộ các gói thầu đang chuẩn bị đấu thầu<br>• Hồ sơ khiếu nại, tranh chấp hợp đồng riêng"]
+    N1 --> LocalDB[("Cơ sở dữ liệu On-prem nội bộ QN<br>Không kết nối ra Internet")]
+
+    %% Nhánh 2: Dữ liệu Nghiệp vụ chuyên ngành
+    Classify -->|MỨC 2: DỮ LIỆU CHUYÊN NGÀNH NỘI BỘ| WorkspaceL3[LƯU VÀO WORKSPACE L3 CỦA QUẢNG NGÃI]
+    WorkspaceL3 --> N2["• Chi tiết nhật trình từng chuyến xe cẩu, tàu lai dắt tại Cảng<br>• Sản lượng chi tiết từng phân xưởng cơ khí Dung Quất<br>• Nhật ký công trường, chấm công hàng ngày theo ca kíp<br>• Báo cáo quản trị tài chính nội bộ phục vụ riêng Ban Giám đốc QN"]
+    N2 --> MaskingProcess[Qua bước Masking / Làm sạch dữ liệu cá nhân]
+    MaskingProcess --> TenantCloud[("Đẩy vào Tenant L3 trên Fabric<br>(Chỉ User Quảng Ngãi xem được, TCT không thấy)")]
+
+    %% Nhánh 3: Dữ liệu Dùng chung & Hợp nhất
+    Classify -->|MỨC 3: DỮ LIỆU BÁO CÁO HỢP NHẤT| SharedHub[ĐỒNG BỘ VỀ HUB TỔNG CÔNG TY]
+    SharedHub --> N3["• Báo cáo tổng hợp Doanh thu - Lợi nhuận định kỳ<br>• Tổng số lượng lao động & Tổng quỹ lương công ty<br>• Danh mục Master Data: Mã Khách hàng, Nhà cung cấp chuẩn<br>• Báo cáo An toàn HSE, sự cố kỹ thuật theo quy định TCT"]
+    N3 --> Approval{Lãnh đạo Đơn vị Duyệt<br>Approve / Reject}
+    Approval -->|Chấp thuận| HubSync[("Đẩy về Data Hub TCT<br>Phục vụ Báo cáo Hợp nhất Lãnh đạo TCT")]
+    Approval -->|Từ chối| Hold["Tạm dừng, yêu cầu phòng ban chỉnh sửa lại"]
+
+    classDef red fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d;
+    classDef blue fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef green fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+    
+    class LocalOnly,N1,LocalDB red;
+    class WorkspaceL3,N2,MaskingProcess,TenantCloud blue;
+    class SharedHub,N3,Approval,HubSync green;
+</pre></div><hr class="divider"/><h2 class="section-title">3. CƠ CHẾ VÙNG ĐỆM KIỂM DUYỆT (LANDING ZONE) HOẠT ĐỘNG THẾ NÀO?</h2><p class="para">Tại <strong>Trang 23–24 Slide Phiên Sáng</strong>, TCT cam kết: <em>"Dữ liệu không bị lấy tùy ý; mỗi đơn vị có Landing Zone riêng để kiểm duyệt trước khi đưa vào vùng dùng chung"</em>.</p><p class="para">Cơ chế vận hành vùng đệm gồm 4 bước kỹ thuật nghiêm ngặt:</p><pre class="code-block"><code>[4 Phần mềm QN: FAST, MESx, VTI, HSEQ]
+                    │
+                    ▼  (Bước 1: Trích xuất tự động vào nửa đêm)
+┌───────────────────────────────────────────────────────────┐
+│              LANDING ZONE (VÙNG ĐỆM NỘI BỘ)                │
+│                                                           │
+│  [Bảng dữ liệu thô vừa trích xuất]                         │
+│  ├── Doanh thu các dự án tháng vừa qua                     │
+│  ├── Danh sách Nhà cung cấp vật tư mới phát sinh           │
+│  └── Sản lượng bãi cảng hàng hóa                          │
+│                                                           │
+│  [Hệ thống tự động chạy Validation Rule]:                 │
+│  1. Kiểm tra Schema: Đúng định dạng số/chữ/ngày tháng?     │
+│  2. Kiểm tra Master Data: Mã nhà cung cấp có trong MDM?   │
+│  3. Kiểm tra An toàn: Có bị dính thông tin cá nhân (PII)? │
+└───────────────────────────────────────────────────────────┘
+                    │
+                    ▼  (Bước 2: Hiển thị thông báo kiểm duyệt)
+┌───────────────────────────────────────────────────────────┐
+│     GIAO DIỆN PHÊ DUYỆT CỦA DATA STEWARD & DATA OWNER     │
+│                                                           │
+│  • Cán bộ phụ trách dữ liệu (IT QN): Soát lỗi kỹ thuật    │
+│  • Lãnh đạo Đơn vị (Data Owner QN): Duyệt nội dung        │
+│                                                           │
+│  [Nút BẤM: APPROVE] ───────────────► [Nút BẤM: REJECT]    │
+│         │                                    │            │
+└─────────┼────────────────────────────────────┼────────────┘
+          │ (Bước 3: Cho phép truyền)          │ (Bước 4: Hủy luồng)
+          ▼                                    ▼
+[Mã hóa đẩy qua VPN về Hub]          [Gửi email cảnh báo lỗi]</code></pre><hr class="divider"/><h2 class="section-title">4. MA TRẬN PHÂN QUYỀN (RBAC / ABAC) GIỮA CÁC ĐỐI TƯỢNG</h2><p class="para">Hệ thống sử dụng cơ chế định danh tập trung (Microsoft Entra ID / Azure AD) kết hợp phân quyền theo vai trò (Role-Based Access Control):</p><div class="table-wrap"><table><thead><tr><th>Đối tượng người dùng</th><th>Xem số liệu Quảng Ngãi</th><th>Xem số liệu ĐVTV khác (M&C, POS...)</th><th>Xem Báo cáo Hợp nhất TCT</th><th>Quyền hạn trên Tenant L3 Quảng Ngãi</th></tr></thead><tbody><tr><td><strong>Ban Giám đốc PTSC Quảng Ngãi</strong></td><td>✅ <strong>Toàn quyền 100%</strong></td><td>❌ <strong>Không</strong></td><td>✅ <strong>Chỉ tiêu TCT giao cho QN</strong></td><td><strong>Data Owner Cấp 3:</strong> Quyết định phê duyệt dữ liệu, xem toàn bộ Dashboard nội bộ.</td></tr><tr><td><strong>Trưởng phòng / Key User QN</strong></td><td>🟡 <strong>Theo phân quyền</strong> <em>(Phòng nào thấy phòng đó)</em></td><td>❌ <strong>Không</strong></td><td>❌ <strong>Không</strong></td><td><strong>Data Contributor:</strong> Xem Dashboard chuyên ngành của phòng mình phụ trách.</td></tr><tr><td><strong>Admin IT PTSC Quảng Ngãi</strong></td><td>🔧 <strong>Quản trị kỹ thuật</strong></td><td>❌ <strong>Không</strong></td><td>❌ <strong>Không</strong></td><td><strong>Data Steward Cấp 4:</strong> Quản trị luồng Pipeline, tạo báo cáo, phân quyền User nội bộ.</td></tr><tr><td><strong>Lãnh đạo Ban TGĐ Tổng công ty</strong></td><td>🟡 <strong>Chỉ xem số liệu tổng hợp hợp nhất</strong></td><td>✅ <strong>Xem tổng hợp các ĐVTV</strong></td><td>✅ <strong>Toàn quyền TCT</strong></td><td>Không có quyền xem chi tiết nội bộ trong Tenant QN; chỉ xem báo cáo hợp nhất trên Hub.</td></tr><tr><td><strong>Đội IT TCT (Admin Level 5)</strong></td><td>⚙️ <strong>Chỉ thấy trạng thái Server/Kênh mạng</strong></td><td>⚙️ <strong>Chỉ thấy Server/Kênh mạng</strong></td><td>⚙️ <strong>Vận hành hạ tầng</strong></td><td><strong>Không được cấp quyền mở xem dữ liệu nghiệp vụ</strong>. Nếu cố tình truy cập sẽ bị SIEM ghi vết và cảnh báo vi phạm.</td></tr><tr><td><strong>Các Đơn vị bạn (PTSC M&C, POS...)</strong></td><td>❌ <strong>Tuyệt đối cấm</strong></td><td>❌ <strong>Chỉ thấy đơn vị họ</strong></td><td>❌ <strong>Không</strong></td><td>Bị cô lập 100% bởi phân vùng Tenant riêng biệt.</td></tr></tbody></table></div><hr class="divider"/><h2 class="section-title">5. BẢNG ĐẶC TẢ CÁC THÀNH PHẦN KỸ THUẬT CỐT LÕI (TECHNICAL STACK)</h2><div class="table-wrap"><table><thead><tr><th>Thành phần</th><th>Công nghệ / Nền tảng áp dụng</th><th>Vị trí đặt</th><th>Chức năng chi tiết trong hệ thống</th></tr></thead><tbody><tr><td><strong>Spoke Integration Agent</strong></td><td>Docker Container / Light Service</td><td>On-prem QN</td><td>Tự động đọc dữ liệu từ FAST, MESx, VTI đẩy vào Landing Zone nội bộ.</td></tr><tr><td><strong>Landing Zone Staging</strong></td><td>Local Database / Folder bảo mật</td><td>On-prem QN</td><td>Vùng đệm tạm thời để thực hiện kiểm tra chất lượng và duyệt dữ liệu.</td></tr><tr><td><strong>Kênh truyền bảo mật</strong></td><td>IPSec VPN Tunnel (AES-256)</td><td>DC QN ↔ DC TCT</td><td>Kênh truyền dữ liệu riêng biệt qua mạng nội bộ ngành, không lộ IP ra Internet.</td></tr><tr><td><strong>Trục tích hợp (ESB)</strong></td><td>WSO2 Enterprise Integrator / Apache Camel</td><td>On-prem Hub TCT</td><td>Tiếp nhận API, định tuyến dữ liệu, chuyển đổi định dạng và điều phối tải.</td></tr><tr><td><strong>Hồ chứa dữ liệu On-prem</strong></td><td>MinIO Object Storage (S3 API), Iceberg/Parquet</td><td>On-prem Hub TCT</td><td>Lưu trữ dữ liệu thô (Bronze) và dữ liệu chi tiết an toàn trong két sắt nội bộ.</td></tr><tr><td><strong>Hệ thống Dữ liệu chủ (MDM)</strong></td><td>Master Data Management Hub</td><td>On-prem Hub TCT</td><td>Chuẩn hóa danh mục khách hàng, nhà cung cấp, vật tư theo bản ghi chuẩn TCT.</td></tr><tr><td><strong>Giám sát An ninh (SIEM/SOC)</strong></td><td>Centralized SIEM (Wazuh / Splunk)</td><td>On-prem Hub TCT</td><td>Giám sát 24/7, ghi nhận log ai xem gì, lúc nào để chống rò rỉ dữ liệu.</td></tr><tr><td><strong>Phân vùng Tenant L3</strong></td><td>Microsoft Fabric Workspace Capacity</td><td>Microsoft Cloud</td><td>Không gian lưu trữ đám mây riêng của Quảng Ngãi để xử lý dữ liệu báo cáo.</td></tr><tr><td><strong>Hồ chứa đám mây</strong></td><td>OneLake Storage (Delta Parquet)</td><td>Microsoft Cloud</td><td>Chứa dữ liệu đã tinh chế (Gold Zone) phục vụ tính toán phân tích tốc độ cao.</td></tr><tr><td><strong>Quản trị Danh mục Cloud</strong></td><td>Microsoft Purview</td><td>Microsoft Cloud</td><td>Quản lý vòng đời dữ liệu, siêu dữ liệu (Metadata) và truy vết nguồn gốc (Lineage).</td></tr><tr><td><strong>Báo cáo trực quan (BI)</strong></td><td>Power BI Service & Mobile App</td><td>Web & Điện thoại</td><td>Giao diện Dashboard cho Ban Giám đốc và cán bộ quản lý xem số liệu tức thì.</td></tr></tbody></table></div><hr class="divider"/><blockquote class="callout"><span class="badge badge-TIP">[TIP]</span></blockquote><blockquote class="callout"><strong>ĐỀ XUẤT ÁP DỤNG:</strong></blockquote><blockquote class="callout">Sơ đồ và tài liệu đặc tả kiến trúc này được dùng để:</blockquote><blockquote class="callout">1. Đính kèm vào <strong>Báo cáo & Tờ trình gửi Ban Giám đốc PTSC Quảng Ngãi</strong> nhằm chứng minh giải pháp đã được nghiên cứu bài bản, bảo mật tuyệt đối.</blockquote><blockquote class="callout">2. Sử dụng làm tài liệu kỹ thuật chính thức trong <strong>buổi làm việc 3 bên sắp tới giữa BDA CĐS TCT, Liên danh tư vấn HIPT - AITS và PTSC Quảng Ngãi</strong>.</blockquote>
+</body>
+</html>

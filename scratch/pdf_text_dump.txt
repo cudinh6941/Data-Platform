@@ -1,0 +1,322 @@
+=== Page 1 (963 chars) ===
+TỔNG CÔNG TY CỔ PHẦN DỊCH VỤ DẦU KHÍ VIỆT NAM — PTSC
+QUẢNG NGÃI
+TÀI LIỆU KỸ THUẬT NỘI BỘ
+MÃ LƯU TRỮ: PTSC-QN-DP-ARCH-
+2026
+BẢN ĐẶC TẢ KIẾN TRÚC TỔNG THỂ NỀN TẢNG DỮ LIỆU
+(HYBRID DATA PLATFORM)
+MÔ HÌNH HUB - SPOKE GIỮA TỔNG CÔNG TY VÀ PTSC QUẢNG NGÃI (LEVEL 3)
+Tài liệu tham chiếu:
+Báo cáo Đề xuất Kỹ thuật Nền tảng Dữ liệu PTSC (Trang 16–38, 59, 78)*
+Slide Hội thảo Data Platform Tổng công ty – Phiên Sáng & Phiên Chiều (Trang 21–25, 45, 51–56)*
+Quy chế Quản trị Dữ liệu PTSC (Mô hình 5 Cấp & Chuẩn PPDM)*
+1. SƠ ĐỒ KIẾN TRÚC TỔNG THỂ TOÀN HỆ THỐNG (END-TO-END ARCHITECTURE)
+Sơ đồ dưới đây mô tả chi tiết toàn bộ luồng dữ liệu đi qua 4 tầng: Nguồn nội bộ Quảng Ngãi ➔  Trạm trung
+chuyển & Vùng đệm kiểm duyệt (Landing Zone) ➔  Nền tảng On-premise Hub tại TCT ➔  Nền tảng Cloud
+Fabric (Tenant L3) & Dashboard điều hành.
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 1/9
+
+=== Page 2 (145 chars) ===
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 2/9
+
+=== Page 3 (1121 chars) ===
+TẦNG 2: TRẠM TRUNG CHUYỂN SPOKE & CỔNG PHÊ DUYỆT (NỘI BỘ QUẢNG 
+TẦNG 1: CƠ SỞ DỮ LIỆU & PHẦN MỀM NỘI BỘ (PTSC QUẢNG NG
+CỔNG PHÊ DUYỆT & BẢO MẬT (DATA GOVERNANCE GATEWAY)
+Trích xuất định kỳ/CDC Trích xuất định kỳ/CDC Trích xuất định kỳ/CDC Trích xuất đ
+Từ chối/Reject
+Chấp thuận/Approve
+Integration Agent / CDC
+(Thu thập dữ liệu tự động / Batch / API)
+VÙNG ĐỆM KIỂM DUYỆT (LANDING ZONE)
+• Lưu trữ tạm thời dữ liệu trích xuất
+• Kiểm tra cấu trúc Schema
+• Đối soát mã Master Data
+LÃNH ĐẠO ĐƠN VỊ
+(Data Owner Cấp 3)
+Kiểm duyệt & Approve
+Module Lọc & Che dữ liệu (Masking)
+• Tách thông tin lương cá nhân
+• Ẩn số CCCD/Tài khoản ngân hàng
+• Giữ lại dữ liệu mật kinh doanh
+FAST Accounting
+• Sổ cái, Công nợ
+• Doanh thu, Chi phí
+(SQL Server)
+MESx - PMSx - FBO
+• Tiến độ xưởng cơ khí
+• Vật tư chế tạo
+• Nhân lực ca kíp
+(PostgreSQL)
+VTI - IRTECH
+• Khai thác Cầu Cảng
+• Sản lượng bãi, nâng hạ
+• Nhật trình xe cẩu, tàu
+(MySQL/Oracle)
+HSEQ & 
+• Đang chuẩn 
+• Quy trình
+• Quản lý n
+(REST AP
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 3/9
+
+=== Page 4 (780 chars) ===
+TẦNG 3: NỀN TẢNG ON-PREMISE HUB TẬP TRUNG (DAT
+Phân vùng Mạng & An toàn thông tin (8 Zones)
+Trục tích hợp & Quản trị dữ liệu lõi
+Hồ chứa dữ liệu tại chỗ (On-premise
+Truyền an toàn qua kênh VPN
+Xử lý làm sạch & biến đổ
+Ghi vết kiểm toán
+BRONZE ZONE
+Raw Data Store
+(MinIO S3 - Delta/Parque
+Lưu vết dữ liệu gốc
+SILVER ZONE
+Cleaned Data Store
+Dữ liệu đã chuẩn hóa, gán n
+Trục tích hợp ESB (WSO2 / Camel)
+• API Gateway tập trung
+• Message Broker (Kafka)
+Hệ thống Dữ liệu chủ MDM
+• 29 Danh mục Master Data
+• Bản ghi vàng (Golden Record)
+• Khử trùng lặp mã Nhà cung cấp/Vật tư
+Firewall & WAF
+VPN IPSec Gateway
+(Đường hầm mã hóa Site-to-Site)
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 4/9
+
+=== Page 5 (389 chars) ===
+2. CỔNG QUYẾT ĐỊNH DỮ LIỆU: CÁI GÌ ĐẨY LÊN, CÁI GÌ GIỮ LẠI?
+Đây là cơ chế kỹ thuật cốt lõi giải tỏa lo lắng của Ban Giám đốc về an toàn bí mật kinh doanh. Dữ liệu trước khi
+ra khỏi mạng nội bộ của Quảng Ngãi phải đi qua Bộ lọc phân loại 3 mức:
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 5/9
+
+=== Page 6 (936 chars) ===
+ 
+MỨC 1: DỮ LIỆU BÍ MẬT & CÁ NHÂN MỨC 2: DỮ LIỆU CHUYÊN NGÀNH NỘI BỘ
+Dữ liệu phát sinh tại PTSC Quảng Ngãi
+Phân loại Dữ liệu theo Quy chế
+GIỮ LẠI 100% TẠI QUẢNG NGÃI
+• Chi tiết mức lương từng cán bộ, nhân viên
+• Số CCCD, số tài khoản ngân hàng cá nhân
+• Dự toán nội bộ các gói thầu đang chuẩn bị đấu thầu
+• Hồ sơ khiếu nại, tranh chấp hợp đồng riêng
+Cơ sở dữ liệu On-prem nội bộ QN
+Không kết nối ra Internet
+LƯU VÀO WORKSPACE L3 CỦA QUẢNG NGÃI
+• Chi tiết nhật trình từng chuyến xe cẩu, tàu lai dắt tại C
+• Sản lượng chi tiết từng phân xưởng cơ khí Dung Qu
+• Nhật ký công trường, chấm công hàng ngày theo ca 
+• Báo cáo quản trị tài chính nội bộ phục vụ riêng Ban Giám 
+Qua bước Masking / Làm sạch dữ liệu cá nhân
+Đẩy vào Tenant L3 trên Fabric
+(Chỉ User Quảng Ngãi xem được, TCT không thấy)
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 6/9
+
+=== Page 7 (2377 chars) ===
+3. CƠ CHẾ VÙNG ĐỆM KIỂM DUYỆT (LANDING ZONE) HOẠT ĐỘNG THẾ NÀO?
+Tại Trang 23–24 Slide Phiên Sáng, TCT cam kết: "Dữ liệu không bị lấy tùy ý; mỗi đơn vị có Landing Zone riêng
+để kiểm duyệt trước khi đưa vào vùng dùng chung".
+Cơ chế vận hành vùng đệm gồm 4 bước kỹ thuật nghiêm ngặt:
+[4 Phần mềm QN: FAST, MESx, VTI, HSEQ]
+                    │
+                    ▼  (Bước 1: Trích xuất tự động vào nửa đêm)
+┌───────────────────────────────────────────────────────────┐
+│              LANDING ZONE (VÙNG ĐỆM NỘI BỘ)                │
+│                                                           │
+│  [Bảng dữ liệu thô vừa trích xuất]                         │
+│  ├── Doanh thu các dự án tháng vừa qua                     │
+│  ├── Danh sách Nhà cung cấp vật tư mới phát sinh           │
+│  └── Sản lượng bãi cảng hàng hóa                          │
+│                                                           │
+│  [Hệ thống tự động chạy Validation Rule]:                 │
+│  1. Kiểm tra Schema: Đúng định dạng số/chữ/ngày tháng?     │
+│  2. Kiểm tra Master Data: Mã nhà cung cấp có trong MDM?   │
+│  3. Kiểm tra An toàn: Có bị dính thông tin cá nhân (PII)? │
+└───────────────────────────────────────────────────────────┘
+                    │
+                    ▼  (Bước 2: Hiển thị thông báo kiểm duyệt)
+┌───────────────────────────────────────────────────────────┐
+│     GIAO DIỆN PHÊ DUYỆT CỦA DATA STEWARD & DATA OWNER     │
+│                                                           │
+│  • Cán bộ phụ trách dữ liệu (IT QN): Soát lỗi kỹ thuật    │
+│  • Lãnh đạo Đơn vị (Data Owner QN): Duyệt nội dung        │
+│                                                           │
+│  [Nút BẤM: APPROVE] ───────────────► [Nút BẤM: REJECT]    │
+│         │                                    │            │
+└─────────┼────────────────────────────────────┼────────────┘
+          │ (Bước 3: Cho phép truyền)          │ (Bước 4: Hủy luồng)
+          ▼                                    ▼
+[Mã hóa đẩy qua VPN về Hub]          [Gửi email cảnh báo lỗi]
+4. MA TRẬN PHÂN QUYỀN (RBAC / ABAC) GIỮA CÁC ĐỐI TƯỢNG
+Hệ thống sử dụng cơ chế định danh tập trung (Microsoft Entra ID / Azure AD) kết hợp phân quyền theo vai trò
+(Role-Based Access Control):
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 7/9
+
+=== Page 8 (1307 chars) ===
+Đối tượng
+người dùng
+Xem số liệu Quảng
+Ngãi
+Xem số liệu ĐVTV
+khác (M&C, POS...)
+Xem Báo
+cáo Hợp
+nhất TCT
+Quyền hạn trên Tenant L3 Quảng Ngãi
+Ban Giám đốc
+PTSC Quảng
+Ngãi
+✅  Toàn quyền 100% ❌  Không ✅  Chỉ tiêu
+TCT giao
+cho QN
+Data Owner Cấp 3: Quyết định phê
+duyệt dữ liệu, xem toàn bộ Dashboard
+nội bộ.
+Trưởng phòng
+/ Key User QN
+🟡  Theo phân quyền
+(Phòng nào thấy
+phòng đó)
+❌  Không ❌  Không Data Contributor: Xem Dashboard
+chuyên ngành của phòng mình phụ
+trách.
+Admin IT
+PTSC Quảng
+Ngãi
+🔧  Quản trị kỹ thuật ❌  Không ❌  Không Data Steward Cấp 4: Quản trị luồng
+Pipeline, tạo báo cáo, phân quyền User
+nội bộ.
+Lãnh đạo Ban
+TGĐ Tổng
+công ty
+🟡  Chỉ xem số liệu
+tổng hợp hợp nhất
+✅  Xem tổng hợp
+các ĐVTV
+✅  Toàn
+quyền TCT
+Không có quyền xem chi tiết nội bộ
+trong Tenant QN; chỉ xem báo cáo hợp
+nhất trên Hub.
+Đội IT TCT
+(Admin Level
+5)
+⚙  Chỉ thấy trạng
+thái Server/Kênh
+mạng
+⚙  Chỉ thấy
+Server/Kênh
+mạng
+⚙  Vận
+hành hạ
+tầng
+Không được cấp quyền mở xem dữ
+liệu nghiệp vụ. Nếu cố tình truy cập sẽ
+bị SIEM ghi vết và cảnh báo vi phạm.
+Các Đơn vị
+bạn (PTSC
+M&C, POS...)
+❌  Tuyệt đối cấm ❌  Chỉ thấy đơn vị
+họ
+❌  Không Bị cô lập 100% bởi phân vùng Tenant
+riêng biệt.
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 8/9
+
+=== Page 9 (2255 chars) ===
+5. BẢNG ĐẶC TẢ CÁC THÀNH PHẦN KỸ THUẬT CỐT LÕI (TECHNICAL STACK)
+Thành phần Công nghệ / Nền tảng áp
+dụng Vị trí đặt Chức năng chi tiết trong hệ thống
+Spoke Integration
+Agent
+Docker Container / Light
+Service
+On-prem QN Tự động đọc dữ liệu từ FAST, MESx, VTI đẩy
+vào Landing Zone nội bộ.
+Landing Zone
+Staging
+Local Database / Folder bảo
+mật
+On-prem QN Vùng đệm tạm thời để thực hiện kiểm tra chất
+lượng và duyệt dữ liệu.
+Kênh truyền bảo
+mật
+IPSec VPN Tunnel (AES-256) DC QN ↔ DC
+TCT
+Kênh truyền dữ liệu riêng biệt qua mạng nội
+bộ ngành, không lộ IP ra Internet.
+Trục tích hợp (ESB) WSO2 Enterprise Integrator /
+Apache Camel
+On-prem Hub
+TCT
+Tiếp nhận API, định tuyến dữ liệu, chuyển đổi
+định dạng và điều phối tải.
+Hồ chứa dữ liệu On-
+prem
+MinIO Object Storage (S3 API),
+Iceberg/Parquet
+On-prem Hub
+TCT
+Lưu trữ dữ liệu thô (Bronze) và dữ liệu chi tiết
+an toàn trong két sắt nội bộ.
+Hệ thống Dữ liệu
+chủ (MDM)
+Master Data Management Hub On-prem Hub
+TCT
+Chuẩn hóa danh mục khách hàng, nhà cung
+cấp, vật tư theo bản ghi chuẩn TCT.
+Giám sát An ninh
+(SIEM/SOC)
+Centralized SIEM (Wazuh /
+Splunk)
+On-prem Hub
+TCT
+Giám sát 24/7, ghi nhận log ai xem gì, lúc nào
+để chống rò rỉ dữ liệu.
+Phân vùng Tenant
+L3
+Microsoft Fabric Workspace
+Capacity
+Microsoft
+Cloud
+Không gian lưu trữ đám mây riêng của Quảng
+Ngãi để xử lý dữ liệu báo cáo.
+Hồ chứa đám mây OneLake Storage (Delta
+Parquet)
+Microsoft
+Cloud
+Chứa dữ liệu đã tinh chế (Gold Zone) phục vụ
+tính toán phân tích tốc độ cao.
+Quản trị Danh mục
+Cloud
+Microsoft Purview Microsoft
+Cloud
+Quản lý vòng đời dữ liệu, siêu dữ liệu
+(Metadata) và truy vết nguồn gốc (Lineage).
+Báo cáo trực quan
+(BI)
+Power BI Service & Mobile App Web & Điện
+thoại
+Giao diện Dashboard cho Ban Giám đốc và cán
+bộ quản lý xem số liệu tức thì.
+[TIP]
+ĐỀ XUẤT ÁP DỤNG:
+Sơ đồ và tài liệu đặc tả kiến trúc này được dùng để:
+1. Đính kèm vào Báo cáo & Tờ trình gửi Ban Giám đốc PTSC Quảng Ngãi nhằm chứng minh giải pháp đã được
+nghiên cứu bài bản, bảo mật tuyệt đối.
+2. Sử dụng làm tài liệu kỹ thuật chính thức trong buổi làm việc 3 bên sắp tới giữa BDA CĐS TCT, Liên danh tư vấn
+HIPT - AITS và PTSC Quảng Ngãi.
+9/7/26, 11:24 AM Bản đặc tả kiến trúc Hybrid Data Platform - PTSC Quảng Ngãi
+file:///D:/My%20Profiles/DataPlatform/scratch/rendered_arch.html 9/9
+
