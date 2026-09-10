@@ -243,8 +243,3 @@ Hệ thống sử dụng cơ chế định danh tập trung (Microsoft Entra ID 
 
 ---
 
-> [!TIP]
-> **ĐỀ XUẤT ÁP DỤNG:**
-> Sơ đồ và tài liệu đặc tả kiến trúc này được dùng để:
-> 1. Đính kèm vào **Báo cáo & Tờ trình gửi Ban Giám đốc PTSC Quảng Ngãi** nhằm chứng minh giải pháp đã được nghiên cứu bài bản, bảo mật tuyệt đối.
-> 2. Sử dụng làm tài liệu kỹ thuật chính thức trong **buổi làm việc 3 bên sắp tới giữa BDA CĐS TCT, Liên danh tư vấn HIPT - AITS và PTSC Quảng Ngãi**.
