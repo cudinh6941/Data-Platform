@@ -1,0 +1,512 @@
+=== PAGE 1 ===
+
+
+=== PAGE 2 ===
+
+
+=== PAGE 3 ===
+1.1 MỤC TIÊU VỀ NỀN TẢNG DỮ LIỆU
+(DATA PLATFORM)
+
+=== PAGE 4 ===
+CĂN CỨ XÁC ĐỊNH MỤC TIÊU
+Giải pháp thực hiện cho trụ cột “Cơ sở dữ liệu” của chiến lược CĐS PTSC
+MỤC TIÊU MỤC TIÊU MỤC TIÊU
+2024-2025 2026-2027 2028-2030
+[1] Xây dựng CSDL dùng chung
+giai đoạn 1 (tại Cơ quan Tổng công
+[1] Xây dựng CSDL dùng chung
+ty); giai đoạn2(tạicácĐơn vị); [1] Hoàn thành CSDL dùng chung
+[2] Xây dựng mô hình quản trị dữ [2] Xây dựng báo cáo thông minh TCT;
+liệu; giai đoạn2; [2] Áp dụng báo cáo thông minh
+[3] Ứng dụng các phần mềm phân toàndiện.
+[3] Xây dựng báo cáo thông minh
+tíchchuyên sâutrêntừnglĩnh vực.
+giai đoạn 1: (gồm các Phân hệ
+TCKT,Quảntrịrủiro, Quản lý nguồn
+nhânlực,Quảnlý Tàisản).
+
+=== PAGE 5 ===
+QUÁ TRÌNH KHẢO SÁT PHÂN TÍCH
+Sau quá trình Tổ Dữ liệu - Ban dự án Chuyển đổi số thực hiện nghiên cứu, phân tích, xin ý kiến đóng góp và tổng hợp
+từ các tài liệu sau:
+1 2 3 4
+Bộ bộ câu hỏi khảo sát
+Các Quy định Pháp luật hiện hành Biênbảnhọpthốngnhất
+Chiến lược Chuyển giải pháp - từ nhà cung có liên quan: Mục tiêuvà6 Nguyên
+đổi số đã được cấp đã tổng hợp ý kiến tắcđánhgiácủa Dựán
+▪ Luật Công nghệ thông tin số
+Tổng công ty PTSC của Ban dự án Chuyển 67/2006/QH11,ngày29tháng6năm2006; "XâydựngNền tảngCơ
+▪ LuậtAnninhmạng:24/2018/QH14 sởdữliệudùngchungtại
+ban hành theo Nghị đổi số Tổng công ty
+▪ Nghị định số 53/2022/NĐ-CP của Chính Tổng côngty PTSC" -Đã
+quyết 10/NQ-HĐQT- PTSC hoàn thiện vào
+phủ:QuyđịnhchitiếtmộtsốđiềucủaLuật đượcphêduyệt bởi
+PTSC ngày ngày 27/5/2025 và gửi Anninhmạng Trưởng Ban dựán
+▪ Nghị định số 13/2023/NĐ-CP của Chính
+7/01/2025 đến 13 NCC Chuyển đổisốbuổihọp
+phủ:Bảovệdữliệucánhân
+(Tổng 114 câu) ngày13/06/2025
+▪ Cậpnhậtliêntụccácluậtmớibanhành
+
+=== PAGE 6 ===
+6 MỤC TIÊU CỤ THỂ
+Từ định hướng và mục tiêu tổng thể như trên, Dự án "Xây dựng Nền tảng dữ liệu tại Tổng
+công ty PTSC" cần đảm bảo 6 mục tiêu cụ thể như sau:
+1
+Tuân thủ pháp lý về bảo vệ dữ liệu
+2
+Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung
+3
+Kiến trúc mô hình dữ liệu hiện đại và linh hoạt
+4
+Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai
+5
+Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn)
+6
+Đáp ứng lộ trình Chuyển đổi số theo Chiến lược CĐS của PTSC
+
+=== PAGE 7 ===
+3 MÔ HÌNH DATA PLATFORM PHỔ BIẾN HIỆN NAY
+Hiện nay, có 03 mô hình kiến trúc Nền tảng Dữ liệu (Data Platform) phổ biến:
+Mô hình kiến trúc Nền tảng dữ liệu triển khai tại chỗ (On-Premise
+Data Platform): Hạ tầng và dữ liệu được triển khai, quản lý tại chính hệ
+1
+thống máy chủ nội bộ của Tổng công ty PTSC. Mô hình này cho phép
+kiểm soát toàn bộ dữ liệu, nhưng đòi hỏi đầu tư lớn vào ứng dụng, hạ
+tầngcôngnghệ,antoànthôngtin,bảotrìvànhânsựvậnhànhtạichỗ.
+Mô hình kiến trúc Nền tảng dữ liệu Điện toán đám mây (Cloud Data
+Platform): Nền tảng dữ liệu điện toán đám mây được xem xét áp dụng
+2 các sản phẩm thương mại của các hãng lớn trên thời giới như Fabric
+Azure, AWS, Google Cloud Platform…. Khi đó, PTSC không cần đầu tư
+máychủ vật lý, dễ dàngmở rộng và tiếpcậncác công nghệ phântích dữ
+liệutiêntiến(AI,ML).Tuynhiên,cầncânnhắc yếutốpháplý,bảomậtvà
+kiểmsoátdữliệu.
+Mô hình kiến trúc Nền tảng dữ liệu triển khai kết hợp tại chỗ và trên
+đám mây (Hybrid Data Platform): Nền tảng Hybrid, multi-cloud, multi-
+3 site được xem xét áp dụng là kết hợp giữa On-Premise và On-Cloud cho
+phép sở hữu và kiểm soát hoàn toàn dữ liệu gốc tại chỗ (on-prem), đồng
+thời tận dụng khả năng linh hoạt và sức mạnh xử lý của điện toán đám
+mây(cloud).Đâylàxuhướngđượcnhiềutổchứclớnlựachọn.
+
+=== PAGE 8 ===
+LỰA CHỌN KIẾN TRÚC MÔ HÌNH HYBRID DATA PLATFORM
+Mô hình Hybrid Data Platform
+kiến trúc Multi-site Multi-cloud
+- Multi-site (Nhiều địa điểm) hạ tầng lưu trữ tại chỗ liên kết
+nhiều vị trí địa lý khác nhau (Từ CQTCT đến các Đơn vị)
+- Multi-cloud (Nhiều hãng điện toán đám mây) cho phép
+mở rộng sử dụng nhiều cloud dựa trên nhu cầu và điểm
+mạnh của từng Hãng cung cấp
+Bao gồm 12 phân hệ chức năng đáp ứng 6 tính năng chính:
+Tích luỹ -Tích hợp -Đồng bộ
+Phân chia - Phân tích -Quản trị dữ liệu lớn
+
+=== PAGE 9 ===
+HIỆN TRẠNG DỮ LIỆU – BÁO CÁO TẠI PTSC
+310
+Danh mụcbáocáoxemtạifolder tàiliệuhộithảo
+
+=== PAGE 10 ===
+HIỆN TRẠNG MASTER DATA TẠI PTSC
+
+=== PAGE 11 ===
+TỪ DỮ LIỆU PHÂN MẢNH ĐẾN DỮ LIỆU DÙNG CHUNG
+
+=== PAGE 12 ===
+KIẾN TRÚC DỮ LIỆU DỰA TRÊN BPMN CỦA PTSC
+
+=== PAGE 13 ===
+TỔNG QUAN DỮ LIỆU DÙNG CHUNG TCT PTSC
+
+=== PAGE 14 ===
+NỀN TẢNG DỮ LIỆU (DATA PLATFORM)
+Data Platform là giải pháp công nghệ đáp Mô phỏng
+ứng nhu cầu Tích luỹ -Tích hợp -Đồng bộ
+15++ công cụ
+cho 5 vai trò Phân chia -Phân tích -Quản trị dữ liệu lớn
+nhằm phục vụ các bài toán quản trị, tối ưu
+vận hành, R&D của Toàn PTSC
+Tính năng nổi bật
+Dev Ops
+• Trục tích hợp: WSO2; Apache Camel..
+• Ingestion realtime & batch: Airbyte, Debezium,
+Dragster..
+DaDtaat ag oevnegrinnaenecre
+• Lưu trữ Lakehouse: Apache Iceberg, Parquet..
+• Truy vấn & xử lý: Trino, ClickHouse, Flink, Spark
+• Chất lượng dữ liệu: dbt, Great Expectations
+Data analyst • Công cụ vẽ biểu đồ, báo cáo tự động
+• Công cụ phân tích máy học ML
+• Công cụ giám sát an ninh SIEM
+Data admin • Truy vấn tiếng Việt
+• Time-travel dữ liệu / SSO / truy vết người dùng
+Khả năng mở rộng theo cả chiều ngang (thêm dung lượng dữ
+Data governance
+liệu) và chiều dọc (thêm nhiều tính năng khác)
+
+=== PAGE 15 ===
+1.3 SẢN PHẨM NỀN TẢNG DỮ LIỆU
+HYBRID DATA PLATFORM TẠI PTSC
+
+=== PAGE 16 ===
+MỤC TIÊU CỤ THỂ CỦA DỰ ÁN NỀN TẢNG DỮ LIỆU HỢP NHẤT
+Dự ánNền tảngdữliệu hợpnhất gópphầnhìnhthànhnăng lực quảntrị, bảo vệvàkhai thácdữliệu thốngnhấttrên
+toànTổngcôngty vàhỗtrợthựchiện đồngthời04 mụctiêunêutrên.
+
+=== PAGE 17 ===
+SẢN PHẨM HYBRID DATA PLATFORM TẠI CQ TCT PTSC
+Nền tảng dữ liệu trên môi trường điện toán đám mây (Cloud Data Platform)
+
+=== PAGE 18 ===
+SẢN PHẨM HYBRID DATA PLATFORM TẠI CQ TCT PTSC
+Nền tảng dữ liệu tại chỗ đặt tại Tầng 10 - CQ TCT (On-prem Data Platform)
+
+=== PAGE 19 ===
+SẢN PHẨM TRUNG TÂM ĐIỀU HÀNH SỐ (IOC) TẠI CQ TCT PTSC
+
+=== PAGE 20 ===
+MÔ TẢ KIẾN TRÚC TỔNG THỂ CỦA HẠ TẦNG CNTT & ATTT
+
+=== PAGE 21 ===
+MÔ HÌNH KẾT NỐI KHAI THÁC DỮ LIỆU TỔNG CÔNG TY - ĐƠN VỊ
+
+=== PAGE 22 ===
+MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY
+
+=== PAGE 23 ===
+MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY
+Nộidung trọngtâm Vai tròcủa đơnvị Vai tròcủa Tổng côngty Cơchế/ Công cụkỹthuật
+1. Tiếp nhận dữ liệu Có Landing Zone riêng để kiểm Chịu trách nhiệm quản trị nền Hybrid data platform –Landing
+duyệt trước khi gửi về TCT tảng, làm sạch dữ liệu Zone
+2. Kiểm duyệt dữ liệu Chịu trách nhiệm kiểm tra dữ liệu Chỉ tiếp nhận dữ liệu sau khi Workflow, Purview, Data Quality
+nguồn và Approve/Reject thuộc được Approve
+phạm vi đơn vị
+3. Quyền sở hữu dữ liệu Data Owner, chịu trách nhiệm dữ Platform / Governance Owner Purview, Data Governance
+liệu thuộc phạm vi đơn vị
+4. Quyền truy cập & Kiểm soát quyền theo miền dữ liệu Quản trị định danh và quyền Entra ID/Azure AD, Keycloak,
+khai thác và vai trò phân công truy cập SSO, RBAC, OneLake/Fabric
+5. Bảo mật & riêng tư Kiểm soát dữ liệu nhạy cảm trước Ban hành chính sách, giám sát Purview, DLP/DSPM, Encryption,
+khi công bố tập trung PAM/CyberArk
+6. Giám sát & minh bạch Quản lý được dữ liệu của mình được Giám sát, kiểm toán và truy vết SIEM/SOC, Audit Log, Purview
+truy cập/khai thác theo quyền Lineage
+
+=== PAGE 24 ===
+MÔ TẢ DỮ LIỆU ĐƠN VỊ ĐƯA VỀ TỔNG CÔNG TY
+Thông điệpgửiđến các đơn vị Vai trò/ Cơ chếcủa Hybrid data platform
+Dữ liệu khôngbị lấytùyý Mỗi đơnvị cóLanding Zone riêng; dữliệu chỉ đượcđưavào vùng dùngchungsaukhiđơnvị
+kiểmduyệt và phêduyệt
+Không phải ai ở Tổng công ty Các biện pháp kỹ thuật như: IAM + RBAC + SSO + MFA kiểm soát ai được truy cập dữ liệu nào
+cũng xem được dữ liệu
+Dữ liệu nhạy cảmđược bảo vệ Purview + DLP/DSPM + Encryption phân loại và kiểm soát dữ liệu
+Không thể truy cập mà không để Audit Log + SIEM ghi nhận ai –lúc nào –truy cập gì –thực hiện gì
+lại dấu vết
+Đơn vị không phải tự làm toàn bộ Đơn vị chỉkiểmduyệt dữ liệu thô; Tổngcôngty sẽhỗtrợđơn vị trongviệc làm sạch, chuẩnhóa,
+công việc dữ liệu thựcthiquảnlý dữ liệu theocơ chếchính sáchvà xây dựngsảnphẩm dữliệu
+
+=== PAGE 25 ===
+MÔ HÌNH KẾT NỐI KHAI THÁC DỮ LIỆU TỔNG CÔNG TY - ĐƠN VỊ
+
+=== PAGE 26 ===
+TRỤC TÍCH HỢP (ESB)
+Một trong những thách thức và hậu quả “lớn nhất” ở góc
+độ Kỹ thuật của các dự án Chuyển đổi số là Tích hợp các
+phần mềm
+E-Office
+ERP
+● Nhiều hệ thống cũ và mới (Legacy Systems): Đây là
+rào cản lớn nhất. Các hệ thống cũ thường không cóAPI
+(giao diện lập trình ứng dụng) rõ ràng, sử dụng công
+Database
+nghệ lạc hậu, và thiếu tài liệu đầy đủ, khiến việc kết nối Email HRM
+với các công nghệ hiện đại trở nên vô cùng phức tạp và
+tốn kém.
+● Chi phívà Rủi ro:Chi phícho việc tích hợp hệthống có
+thểvượt quángân sách ban đầu, do những vấn đềphát
+Database E-learning
+sinh bất ngờ. Ngoài ra, việc kết nối các hệ thống cũ, vốn
+Đơn vị
+cóthểkém an toàn hơn, cũng làm tăng rủi ro về bảo
+mật.
+● Dữ liệu phân mảnh (Data Silos):Khi các bộphận sử
+dụng hệthống riêng biệt, dữliệu sẽbị phân tán, nảy sinh
+nhiều vấn đềvề sựnhất quán và chất lượng dữ liệu. →
+….+10? EPM
+Không thể hình thành big data
+
+=== PAGE 27 ===
+TRỤC TÍCH HỢP (ESB)
+Trục tích hợp là thành phần quan trọng nhất trong Data Platform của PTSC
+Đảm bảo dữ liệu nhập 1 lần và đồng bộ xuyên suốt hệ sinh thái phần mềm
+E-Office ERP
+HRM
+Database
+Email
+Database
+Đơn vị
+E-learning
+….+10? PMS
+ESB (Enterprise Service Bus) là một mẫu kiến trúc phần mềm được sử dụng để thiết kế và triển khai các hệ thống tích
+hợp phức tạp.Nó hoạt động như một lớp trung gian (middleware) giữa các ứng dụng và dịch vụ khác nhau, cho phép
+chúng giao tiếp và trao đổi dữ liệu một cách thống nhất, linh hoạt, đồng thời liên tục thu thập dữ liệu tập trung.
+
+=== PAGE 28 ===
+PHÂN HỆ: TRỤC TÍCH HỢP (ESB)
+MỤC TIÊU YÊU CẦU GIẢI PHÁP
+Giúp toàn bộ các Công nghệ tích hợp
+phần mềm trong hệ phổ biến và hiện đại
+sinh thái trao đổi Enterprise-ready, WSO2 EI / Apache Camel
+thông tin hiệu quả, hybrid integration
+theo chuẩn mở.
+
+=== PAGE 29 ===
+PHÂN HỆ 02: CÔNG NGHỆ LƯU TRỮ DỮ LIỆU
+MỤC TIÊU
+Kiến trúc lakehouse:
+hiện đại nhất, theo
+chuẩn quốc tế, kết
+hợp cả DATALAKE
+cho các bài toán big-
+data và khả năng
+phân tích của data
+warehouse
+
+=== PAGE 30 ===
+PHÂN HỆ 02: KHO LƯU TRỮ DỮ LIỆU TẬP TRUNG TẠI CHỖ
+Y tế & chăm sóc Tốc độ cập nhật dữ liệu
+Tổng hợp dữ liệu bệnh án, thiết bị IoT, phân tích chuẩn đoán, phát hiện bất thường
+sức khỏe
+tức thời
+Ngân hàng & tài VD: xác thực, thanh toán
+Phân tích hành vi giao dịch, phát hiện gian lận, phân tích rủi ro tín dụng
+chính chuyển tiền; dữ liệu iOT
+SCADA..
+Thương mại
+Gộp dữ liệu đơn hàng, hành vi người dùng, tìm kiếm sản phẩm phục vụ phân tích real-time
+điện tử
+Quy mô dữ liệu lớn và
+Công nghiệp &
+Tích hợp dữ liệu cảm biến IoT, đo hiệu suất thiết bị, bảo trì dự đoán (predictive maintenance)
+sản xuất
+“phình to" rất nhanh
+Chính phủ & VD: vài trăm ngàn -hàng triệu
+Tổng hợp dữ liệu dân cư, dữ liệu phiếu khảo sát, dashboard thống kê ra quyết định
+hành chính công giao dịch/ 1 phút
+Giáo dục & đào
+Phân tích hành vi học tập, gợi ý nội dung, phát hiện học sinh nguy cơ bỏ học
+tạo
+Nguồn dữ liệu đa dạng
+Viễn thông Gộp log hệ thống, dữ liệu trạm BTS, phân tích chất lượng dịch vụ và phát hiện lỗi mạng và số lượng “siêu" lớn
+VD: Cảm biến/ Điện thoại..;
+An ninh mạng / Phân tích log ứng dụng, hành vi truy cập hệ thống, tương quan cảnh báo từ nhiều nguồn log Hàng triệu lượt truy cập cùng
+SIEM lúc Concurrent Users…
+
+=== PAGE 31 ===
+PHÂN HỆ 02: LƯU TRỮ DỮ LIỆU TẬP TRUNG
+Data Lakehouse là mô hình kiến trúc kết hợp Tại sao sử dụng kiến trúc này?
+giữa Data Lake và Data Warehouse, giúp lưu
+trữ, phân tích, truy vấn dữ liệu cấu trúc và phi
+Duy nhất 1 nơi để lưu và xử lý mọi
+1
+cấu trúc trên một nền tảng thống nhất.
+loại dữ liệu (single data platform)
+Hỗ trợ nhiều công cụ BI, AI, ML mà
+2
+Lưu trữ linh hoạt như Data Lake không cần sao chép dữ liệu
+Chi phí thấp hơn Data Warehouse
+3
+thương mại – mở rộng linh hoạt
+Truy vấn mạnh mẽ như Data
+Warehouse
+Dễ tích hợp với SIEM, hệ thống
+4
+giám sát, phân quyền RBAC nội bộ
+Phục vụ cả BI và AI/ML Phù hợp với cả tổ chức chính
+5
+phủ và doanhnghiệp lớn
+Tham khảo: TCB, VCB, VTB, HDB, Viettel, VNPT, Grab, Shopee, Sovico,...
+
+=== PAGE 32 ===
+PHÂN HỆ 02: LƯU TRỮ DỮ LIỆU TẬP TRUNG TẠI CHỖ
+MỤC TIÊU YÊU CẦU GIẢI PHÁP
+Kiến trúc hiện đại
+nhất, theo chuẩn quốc
+Chuẩn mở, multi-
+tế, kết hợp cho các
+cloud không phụ Lưu trữ tại chỗ: MinIO +
+bài toán big-data và
+thuộc vào 1 nhà Iceberg + Parquet
+khả năng phân tích,
+cung cấp duy nhất
+ứng dụng công nghệ
+phân tích AI/ML/iOT..
+
+=== PAGE 33 ===
+PHẦN 2:
+DEMO CÁC TÍNH NĂNG
+CHÍNH CỦA PHẦN MỀM
+
+=== PAGE 34 ===
+PHẦN 3:
+CÁC YÊU CẦU - TIÊU CHUẨN LIÊN
+QUAN DỮ LIỆU VÀ TÍCH HỢP
+
+=== PAGE 35 ===
+—MỤC LỤC
+Nội dung trình bày
+PTSC | PPDM FRAMEWORK
+3.2
+Mô Hình Ngành PPDM
+Dual-Code Architecture & Deliverable Data Model
+Workflow & Entity Specifications · Oil & Gas Services —EPCI & Operations
+PPDM Association Reference · NORSOK Z-DP-002 · ISO 15926 / 14224 / 19008 · VSIC 2018 · CFIHOS 2.0
+
+=== PAGE 36 ===
+Bối Cảnh — Yêu Cầu, Vấn Đề & Giải Pháp
+Vì sao PTSC cần một kiến trúc mã ngành kép (Dual-Code)
+YÊU CẦU VẤN ĐỀ GIẢI PHÁP
+Yêu Cầu 3 Cách Phân Loại Ngành Kiến Trúc Dual-Code
+▪ Đưa yếu tố ngành vào hệ ▪ Ngành kỹ thuật (OFS Value ▪ Mã nội bộ (Company Code):
+thống CSDL để phục vụ Chain) P1–P7, S1–S7 — phản ánh
+quản lý theo các cấp quản trị hoạt động thực tế của PTSC
+▪ Ngành theo VSIC / Bộ Tài
+và đơn vị thành viên
+chính Việt Nam ▪ Mã chuẩn quốc tế (Industry
+▪ Hệ thống phân loại phải Std. Code): NORSOK / ISO /
+▪ Hoạt động đầu tư tài chính
+tương thích với chuẩn quốc VSIC
+tế để hỗ trợ phân tích, so ▪ → Mỗi cách có bộ mã riêng,
+▪ Kết nối qua bảng
+sánh dữ liệu cần mapping để kết nối với
+DISCIPLINE_CODE_XREF
+nhau
+▪ Tham chiếu chuẩn mực quốc với mapping_confidence:
+tế khi xây dựng CSDL EXACT / PARTIAL / NONE
+PTSC | PPDM Framework —Dual-Code Architecture
+
+=== PAGE 37 ===
+Kiến Trúc Mô Hình — 3 Lớp & 5 Entity Cốt Lõi
+Discipline liên kết với nhau duy nhất thông qua Deliverable —không có FK trực tiếp
+Kiến Trúc 3 Lớp 5 Entity Cốt Lõi
+DISCIPLINE
+①Lớp Hoạt Động
+Danh mục tĩnh P1–P7 & S1–S7 (PRIMARY/SUPPORT), không FK trực tiếp
+P1–P7 (Primary) · S1–S7 (Support) giữa các ngành
+↓ DISCIPLINE_DELIVERABLE
+Bảng trung tâm —"hợp đồng" giữa 2 ngành: producer → deliverable →
+②Lớp Sản Phẩm
+consumer
+Deliverable (D1–D8) —"hợp đồng" giữa hai ngành
+R_DELIVERABLE_TYPE
+↓
+Danh mục chuẩn hoá loại deliverable dùng chung toàn mô hình
+③Lớp Quan Hệ
+Produce (sản xuất) / Consume (tiêu thụ) SUPPORT_FUNC_LINK
+Xử lý S1–S7 khi hoạt động hỗ trợ không phải producer/consumer (role:
+APPROVE, ARCHIVE, VERIFY…)
+Nguyên tắc cốt lõi: Không FK trực tiếp PROJECT_DELIVERABLE
+Discipline→Discipline. Ngành A không "biết" Ngành B Instance theo từng dự án: planned_date, actual_date, status, FK → EDMS
+—A chỉ biết mình sản xuất một Deliverable.
+PTSC | PPDM Framework —Dual-Code Architecture
+
+=== PAGE 38 ===
+Chuỗi Giá Trị P1 → P7 & 8 Deliverables (D1–D8)
+Traceability đầy đủ từ hợp đồng đến vận hành khai thác
+P1 P2 P3 P4 P5 P6 P7
+Client
+BD & Bidding Survey & Acq. Engineering Procurement Fabrication T&I / HUC O&M / FPSO
+D1 D2 D3 D4+D5 D6 D7 D8
+Contract Survey Design PR + FAT/ITR CFIHOS
+Package Data Package Material Package Handover
+Supply
+S1–S7 · Ngành Hỗ Trợ
+Corporate Gov. · HR · HSE · Asset Mgmt · IT · Project Controls · Document Control (EDMS) —liên kết qua SUPPORT_FUNC_LINK với vai trò APPROVE /
+ARCHIVE / VERIFY, chạy xuyên suốt toàn chuỗi P1→P7
+Danh Mục 8 Deliverables
+D1 Contract Package D2 Survey Data Package D3 Design Package D4 Purchase Requisition
+P1 → P2 P2 → P3 P3 → P4/P5 P3 → P4
+D5 Material Supply Record D6 FAT / ITR Package D7 CFIHOS Handover + D8 FPSO Availability + Asset
+Marine Svc. Integrity
+P4 → P5 P5 → P6 P6 → P7 P7 → Client
+PTSC | PPDM Framework —Dual-Code Architecture
+
+=== PAGE 39 ===
+Nguyên Tắc Thiết Kế, Lợi Ích & Bước Tiếp Theo
+Tổng kết & đề xuất triển khai
+5 Nguyên tắc bất biến Lợi ích chính
+Không FK trực tiếp Discipline→Discipline —mọi kết nối qua
+1 ▪ Tương thích chuẩn quốc tế (NORSOK / ISO / CFIHOS) phục vụ tích
+DISCIPLINE_DELIVERABLE
+hợp với đối tác & client
+▪ Traceability đầy đủ: từ Contract Package (D1) đến Asset Integrity
+2 Company Code là display key —không dùng surrogate key số Record (D8)
+(VNG-ME-DS-0001)
+▪ Dual-code cho phép báo cáo song song theo VSIC 2018 và theo hoạt
+động thực tế
+Mapping tại cấp thấp nhất —Sub-Discipline
+3 (P3.ME NORSOK:ME = EXACT) ▪ Mở rộng linh hoạt —thêm ngành, deliverable hoặc chuẩn mới mà
+không đổi schema
+Bước tiếp theo
+4 Không sửa code, chỉ retire —set expiry_date, tạo bản ghi mới
+Rà soát & xác nhận bảng DISCIPLINE_CODE_XREF với các đơn vị
+1
+thành viên
+Mở rộng bằng dữ liệu, không bằng schema —thêm ngành mới
+5
+chỉ cần INSERT 2 Hoàn thiện mapping cấp Sub-Discipline còn PARTIAL/NONE (VD: P4,
+S1–S5)
+3 Triển khai thí điểm trên 1–2 dự án để kiểm chứng traceability D1→D8
+PTSC | PPDM Framework —Dual-Code Architecture
+
+=== PAGE 40 ===
+—MỤC LỤC
+Nội dung trình bày
+3.2
+TIÊU CHUẨN TÍCH HỢP ( A THỊNH)
+PTSC · Báo cáo Khảo sát –Thiết kế Dữ liệu
+
+=== PAGE 41 ===
+TÍCH HỢP DỮ LIỆU
+
+=== PAGE 42 ===
+PHƯƠNG ÁN TRIỂN VÀ PHẠM VI TRIỂN KHAI TÍCH HỢP
+
+=== PAGE 43 ===
+KHUNG TIÊU CHUẨN TÍCH HỢP
+Dữ liệu Biết tích hợp cái gì, từ đâu, mã nào là chuẩn? Tiêu chuẩn
+dữ liệu
+Biết tích hợp bằng cách nào, realtime hay theo lịch. Có tiêu
+API/Event
+chuẩn về mặt kỹ thuật tích hợp
+Bảo mật Biết ai được gọi, gọi bằng quyền gì, dữ liệu có an toàn không?
+Tiêu chuẩn bảo mật
+Biết lỗi ở đâu, xử lý lại thế nào, báo cáo ra sao? Tiêu chuẩn
+Vận hành
+vận hành
+
+=== PAGE 44 ===
+TRỤC TÍCH HỢP ESB
+ESB – Enterprise
+Service Bus là trục
+tích hợp trung tâm
+giúp các hệ thống
+phần mềm trao đổi
+dữ liệu với nhau
+một cách có kiểm
+soát, thay vì để
+từng hệ thống kết
+nối trực tiếp lẫn
+nhau
+
+=== PAGE 45 ===
+NGUYÊN TẮC NGHIỆP VỤ
+
+=== PAGE 46 ===
+TRỤC TÍCH HỢP ESB
+
+=== PAGE 47 ===
+LỘ TRÌNH TRIỂN KHAI TÍCH HỢP
+
+=== PAGE 48 ===
+PHẦN 4:
+HỎI ĐÁP

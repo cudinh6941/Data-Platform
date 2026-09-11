@@ -243,3 +243,119 @@ Hệ thống sử dụng cơ chế định danh tập trung (Microsoft Entra ID 
 
 ---
 
+## 6. ÁNH XẠ PHẦN MỀM NỘI BỘ QUẢNG NGÃI VÀO CHUẨN PPDM FRAMEWORK (DUAL-CODE ARCHITECTURE)
+
+> **Tham chiếu:** *Slide Hội thảo Data Platform – Phiên Sáng (Trang 35–39): Mô hình ngành PPDM, Kiến trúc mã kép Dual-Code, Chuỗi giá trị P1→P7 & 8 Deliverables D1–D8.*
+
+Tổng công ty đã xây dựng hệ thống phân loại hoạt động theo chuẩn **PPDM (Professional Petroleum Data Management)** kết hợp **Dual-Code Architecture**: mỗi hoạt động có đồng thời **Mã nội bộ PTSC (Company Code)** và **Mã chuẩn quốc tế (NORSOK / ISO / VSIC 2018)**, liên kết qua bảng `DISCIPLINE_CODE_XREF` với mức tin cậy `EXACT / PARTIAL / NONE`.
+
+Để đảm bảo dữ liệu từ Quảng Ngãi khi đẩy về Hub TCT được gắn đúng nhãn ngành và truy vết nguồn gốc xuyên suốt chuỗi giá trị, các phần mềm nội bộ QN được ánh xạ vào mô hình PPDM như sau:
+
+| Phần mềm nội bộ QN | Mã ngành PPDM (Primary) | Mã ngành PPDM (Support) | Deliverable liên quan | Ghi chú ánh xạ |
+| :--- | :---: | :---: | :---: | :--- |
+| **FAST Accounting** | — | **S1** (Corporate Governance / Finance) | D1 (Contract Package) | Cung cấp dữ liệu Doanh thu – Chi phí – Dòng tiền – Công nợ; phục vụ báo cáo hợp nhất tài chính TCT theo VSIC 2018. |
+| **MESx – PMSx – FBO** | **P5** (Fabrication) | **S4** (Asset Management) | D6 (FAT/ITR Package) | Quản lý tiến độ xưởng cơ khí Dung Quất, vật tư chế tạo, nhân lực ca kíp. Deliverable chính: hồ sơ nghiệm thu chế tạo (FAT). |
+| **VTI – IRTECH (Cảng)** | **P6** (T&I / Marine Services) | **S4** (Asset Management) | D7 (CFIHOS Handover + Marine Svc.) | Sản lượng bãi cảng, nhật trình xe cẩu – tàu lai dắt. Ánh xạ vào mảng dịch vụ cảng & vận tải biển. |
+| **HSEQ** | — | **S3** (HSE) | Xuyên suốt P1→P7 | An toàn lao động, sự cố kỹ thuật, báo cáo HSE theo quy định TCT. Chạy song song toàn chuỗi qua `SUPPORT_FUNC_LINK` với vai trò `VERIFY / APPROVE`. |
+| **Module Mua sắm** | **P4** (Procurement) | **S1** (Corporate Governance) | D4 (Purchase Requisition), D5 (Material Supply) | Đề xuất mua hàng, quản lý nhà thầu phụ, đối soát mã nhà cung cấp chuẩn MDM. |
+| **File Excel / PDF phân tán** | Tùy nội dung | Tùy nội dung | — | Dự toán, chấm công bãi, nghiệm thu → cần số hóa và gắn nhãn Discipline Code trước khi đẩy vào Landing Zone. |
+
+**Nguyên tắc bất biến khi ánh xạ** *(theo 5 nguyên tắc PPDM của TCT – Trang 39 Slide Phiên Sáng):*
+
+1. **Không FK trực tiếp giữa Discipline → Discipline** — mọi liên kết chỉ thông qua Deliverable (bảng `DISCIPLINE_DELIVERABLE`).
+2. **Company Code là display key** — sử dụng mã nội bộ dạng `VNG-ME-DS-0001`, không dùng surrogate key số.
+3. **Mapping tại cấp thấp nhất** (Sub-Discipline) — ví dụ: `P5.ME → NORSOK:ME = EXACT`.
+4. **Không sửa code, chỉ retire** — khi thay đổi: set `expiry_date`, tạo bản ghi mới.
+5. **Mở rộng bằng dữ liệu, không bằng schema** — thêm ngành/phần mềm mới chỉ cần `INSERT`, không đổi cấu trúc bảng.
+
+---
+
+## 7. TIÊU CHUẨN KỸ THUẬT TÍCH HỢP BẮT BUỘC (13 ĐIỀU KHOẢN TỪ PHỤ LỤC TCT)
+
+> **Tham chiếu:** *Phụ lục về yêu cầu tích hợp Data Platform (Văn bản chính thức TCT – PTSC-ADM-RG08-FM10, 5 trang).*
+> Đây là bộ tiêu chuẩn bắt buộc mà **mọi nhà cung cấp phần mềm** (kể cả phần mềm đã triển khai tại QN như FAST, VTI, MESx) phải tuân thủ khi tích hợp với Data Platform của TCT.
+
+| STT | Nhóm tiêu chuẩn | Yêu cầu cốt lõi | Ứng dụng tại Quảng Ngãi |
+| :---: | :--- | :--- | :--- |
+| **1** | Giao diện tích hợp chuẩn | Phần mềm phải cung cấp **REST API** hoặc cho phép truy cập trực tiếp CSDL qua **CDC** (Change Data Capture). | Yêu cầu FAST (SQL Server) mở CDC; VTI/IRTECH mở REST API hoặc cho phép đọc DB replica. |
+| **2** | Hỗ trợ Change Data Capture | Phải có cơ chế CDC hoặc Change Log Table để phát hiện và đồng bộ thay đổi dữ liệu theo thời gian thực hoặc near-realtime. | MESx (PostgreSQL) kích hoạt Logical Replication / Debezium CDC. |
+| **3** | Backfill & Replay | Hỗ trợ cơ chế **backfill/replay theo khoảng thời gian** (time window) để xử lý dữ liệu đến muộn (late arriving) và tái đồng bộ khi sự cố. | Quan trọng khi Pipeline QN bị gián đoạn → cần replay lại dữ liệu từ mốc thời gian cụ thể. |
+| **4** | Ổn định khóa chính (Primary Key) | Khóa chính các thực thể lõi (tổ chức, tài sản, nhân sự, hợp đồng...) phải **ổn định, không thay đổi theo thời gian**. Cam kết mapping ID nội bộ với MDM/ESB của TCT. | Đối soát mã Nhà cung cấp, mã Vật tư giữa FAST ↔ MDM Hub TCT. |
+| **5** | Bảo mật tích hợp & IAM | Hỗ trợ **OAuth 2.0 / OpenID Connect** và/hoặc **mTLS** cho API; cho phép tích hợp IAM/SSO hiện có (Keycloak/ADFS/LDAP). | Tất cả API từ QN về Hub TCT phải qua xác thực OAuth 2.0 token, không dùng Basic Auth. |
+| **6** | Quản lý Metadata & Data Dictionary | Cung cấp **ERD, Data Dictionary** (mô tả bảng/cột/kiểu/ràng buộc); cam kết cập nhật tài liệu khi thay đổi version. | Yêu cầu các vendor cung cấp ERD cho Data Platform đồng bộ vào Data Catalog (Purview). |
+| **7** | Hiệu năng kênh tích hợp | Cam kết **Scalability** cho API & Batch; không giới hạn tích hợp bởi license; không ảnh hưởng hiệu năng giao dịch online khi chạy job trích xuất. | Đảm bảo job trích xuất đêm từ FAST/VTI không gây chậm phần mềm vào giờ làm việc. |
+| **8** | Idempotent & Traceability | API/Message phải **idempotent** (gửi lại nhiều lần cùng request ID không gây trùng dữ liệu); hỗ trợ **correlationId / traceId** end-to-end. | Mỗi giao dịch đồng bộ từ QN về Hub mang correlation ID → truy vết toàn luồng qua ESB, Data Platform. |
+| **9** | Môi trường kiểm thử DEV/UAT | Cung cấp **môi trường DEV/UAT** với API tương đương production; cung cấp dữ liệu mẫu và kịch bản test tích hợp 2 chiều. | Trước khi go-live Pipeline QN, test đầy đủ trên môi trường UAT của từng phần mềm. |
+| **10** | Cam kết mở / Không khóa vendor | Không giới hạn số interface; cấu hình/API tích hợp có thể truy cập bởi đội kỹ thuật QN/TCT, **không phụ thuộc độc quyền vendor**. | Đảm bảo khi hết hợp đồng bảo trì với vendor, QN vẫn tự vận hành được Pipeline. |
+| **11** | Chất lượng dữ liệu & Đối soát | Cung cấp bộ **Data Quality Rules** tối thiểu (null/format/uniqueness/FK/code list); có cơ chế **quarantine** bản ghi lỗi. | Landing Zone QN chạy Validation Rule tự động → tách riêng bản ghi lỗi để phòng ban chỉnh sửa. |
+| **12** | Giám sát vận hành tích hợp | Cơ chế giám sát: số lượng giao dịch, tỷ lệ lỗi, số lần retry, độ trễ đồng bộ (lag/latency); cung cấp **Runbook** xử lý sự cố. | Tích hợp metric giám sát Pipeline QN vào hệ thống SIEM/SOC tập trung của Hub TCT. |
+| **13** | Quản lý thay đổi Schema | Tất cả interface/API/file schema phải có **versioning**; đảm bảo **backward compatible**; có **deprecation policy** khi loại bỏ version cũ. | Khi vendor nâng cấp FAST hoặc VTI → phải thông báo trước và đảm bảo Pipeline không bị gãy. |
+
+**Cách áp dụng thực tế tại PTSC Quảng Ngãi:**
+
+Khi làm việc với các nhà cung cấp phần mềm hiện tại (FAST, VTI/IRTECH, MESx...), đội IT Quảng Ngãi sử dụng đúng 13 điều khoản trên làm **checklist đàm phán kỹ thuật** để yêu cầu vendor mở API, cung cấp tài liệu ERD và cam kết hỗ trợ tích hợp. Các điều khoản này đã được Tổng công ty ban hành chính thức dưới dạng **Phụ lục hợp đồng bắt buộc** cho mọi dự án triển khai phần mềm mới hoặc gia hạn hợp đồng phần mềm hiện hữu.
+
+---
+
+## 8. LỘ TRÌNH DÀI HẠN: ĐIỀU KIỆN "TỐT NGHIỆP" TỪ LEVEL 3 LÊN LEVEL 4 (SPOKE RIÊNG)
+
+> **Tham chiếu:** *Slide Hội thảo Data Platform – Phiên Chiều (Trang 50, 55, 59): Tiêu chí nâng level, Mô hình phục vụ đơn vị nhỏ vs đơn vị lớn.*
+
+Tổng công ty xác định rõ: **Level 3 là mức tối ưu nhất cho PTSC Quảng Ngãi ở giai đoạn hiện tại**, vì tiết kiệm chi phí đầu tư hạ tầng (không phát sinh CAPEX cho cụm dHCI riêng), vẫn được cấp Tenant/Workspace riêng biệt hoàn toàn trên Hub TCT, và đủ đáp ứng nhu cầu báo cáo điều hành nội bộ.
+
+Tuy nhiên, TCT cũng đã quy hoạch sẵn **lộ trình nâng cấp lên Level 4** cho các đơn vị đủ điều kiện, dự kiến xem xét trong **giai đoạn chuyển đổi số thứ ba (sau năm 2028)**:
+
+```mermaid
+flowchart LR
+    subgraph HIEN_TAI ["GIAI ĐOẠN HIỆN TẠI (2026–2028)"]
+        L3["PTSC Quảng Ngãi<br><b>LEVEL 3</b><br>• Tenant riêng trên Hub TCT<br>• Không CAPEX hạ tầng<br>• Đội IT vận hành Pipeline cơ bản"]
+    end
+
+    subgraph DANH_GIA ["XÉT ĐỊNH KỲ HÀNG NĂM"]
+        direction TB
+        TC1["① Khối lượng & tốc độ tăng dữ liệu<br>Đẩy thô về Hub tốn kém hơn<br>xử lý tại chỗ (băng thông, lưu trữ)?"]
+        TC2["② Nhu cầu phân tích chuyên ngành<br>cường độ cao<br>Dữ liệu sensor/IoT/thời gian thực<br>mà độ trễ qua Hub không đáp ứng?"]
+        TC3["③ Ràng buộc pháp lý / hợp đồng<br>Dữ liệu buộc phải lưu và<br>xử lý tại đơn vị?"]
+        TC4["④ Năng lực vận hành<br>Đội CNTT đơn vị đủ khả năng<br>vận hành nền tảng theo chuẩn TCT?"]
+    end
+
+    subgraph TUONG_LAI ["SAU 2028 (NẾU ĐỦ ĐIỀU KIỆN)"]
+        L4["PTSC Quảng Ngãi<br><b>LEVEL 4</b><br>• Cụm dHCI riêng tại đơn vị<br>• Hybrid Data Platform đầy đủ<br>• IT-OT / IoT / Realtime quy mô lớn<br>• Đội vận hành nền tảng chuyên trách"]
+    end
+
+    L3 --> TC1
+    TC1 --> TC2 --> TC3 --> TC4
+    TC4 -->|"Đạt mức trưởng thành số ≥ 3.5"| L4
+    TC4 -->|"Chưa đạt → Giữ L3"| L3
+
+    classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef eval fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
+    classDef future fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+
+    class L3 current;
+    class TC1,TC2,TC3,TC4 eval;
+    class L4 future;
+```
+
+### Bảng so sánh chi phí & lợi ích giữa L3 và L4
+
+| Tiêu chí | Level 3 (Hiện tại) | Level 4 (Tương lai) |
+| :--- | :--- | :--- |
+| **Chi phí hạ tầng (CAPEX)** | Không phát sinh — dùng chung Hub TCT | Cao — phải đầu tư cụm dHCI riêng tại đơn vị |
+| **Chi phí vận hành (OPEX)** | Thấp — phân bổ theo mức sử dụng | Cao — cần đội vận hành nền tảng chuyên trách |
+| **Quyền dữ liệu chuyên ngành** | Có phân vùng Tenant riêng, nhưng hạ tầng nằm tại Hub | Chủ động hoàn toàn — dữ liệu lưu và xử lý tại đơn vị |
+| **Khả năng Real-time / IoT / OT** | Hạn chế — phụ thuộc băng thông và độ trễ về Hub | Chủ động hoàn toàn — xử lý tại chỗ, không phụ thuộc Hub |
+| **Yêu cầu đội IT** | Data Owner + Data Steward + đầu mối kỹ thuật | Đội vận hành nền tảng đầy đủ theo chuẩn TCT |
+| **Mức trưởng thành số (DBI)** | Từ 2.0 đến 3.5 | Trên 3.5 |
+| **Thời điểm xem xét** | Áp dụng ngay | Sau 2028, xét định kỳ hàng năm |
+
+### Nhận định chiến lược
+
+Với quy mô hiện tại của PTSC Quảng Ngãi (4 mảng chính: Cơ khí chế tạo, Khai thác Cảng, Dịch vụ tàu biển, Dịch vụ hỗ trợ), **Level 3 là lựa chọn tối ưu** vì:
+- **Tiết kiệm ngân sách tối đa**: Không phải đầu tư hạ tầng phần cứng dHCI hàng tỷ đồng.
+- **Vẫn có không gian riêng hoàn toàn**: Tenant L3 trên Fabric được cô lập 100%, TCT và các đơn vị bạn không thể nhìn thấy dữ liệu chuyên ngành nội bộ.
+- **Tận dụng năng lực Hub**: Hệ thống MDM, ESB, SIEM, Purview đã được TCT đầu tư và vận hành sẵn — QN chỉ cần tập trung vào nghiệp vụ, không cần lo vận hành hạ tầng nặng.
+- **Giữ lộ trình mở**: Khi nhu cầu dữ liệu IoT/sensor từ bãi cảng hoặc xưởng Dung Quất tăng đột biến, QN hoàn toàn có thể đề xuất nâng lên L4 dựa trên 4 tiêu chí định lượng rõ ràng của TCT.
+
+---
+

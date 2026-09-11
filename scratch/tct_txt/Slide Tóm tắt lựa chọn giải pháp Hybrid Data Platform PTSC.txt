@@ -1,0 +1,937 @@
+=== PAGE 1 ===
+BÁO CÁO ĐỀ XUẤT:
+MÔ HÌNH KIẾN TRÚC GIẢI PHÁP
+NỀN TẢNG DỮ LIỆU KẾT HỢP
+(Hybrid Data Platform)
+
+=== PAGE 2 ===
+Định hướng Chiến lược Chuyển đổi số PTSC về Trụ cột Cơ sở
+dữ liệu (2024-2035)
+1. Tổng quan Hiện trạng và Nhu cầu quản trị Dữ liệu tại PTSC
+2. Phương pháp đánh giá lựa chọn mô hình giải pháp
+NỘI DUNG
+3. Thực tế đánh giá các giải pháp Data Platform
+4. Đề xuất giải pháp phù hợp
+Phụ lục 1 - 6 Nguyên tắc đánh giá lựa chọn giải pháp
+Phụ lục 2 - Các mô hình quản trị dữ liệu tiêu chuẩn quốc tế
+
+=== PAGE 3 ===
+CHIẾN LƯỢC
+CHUYỂN ĐỔI SỐ
+TỔNG CÔNG TY PTSC
+Định hướng giải pháp Cơ sở dữ liệu dùng chung
+
+=== PAGE 4 ===
+ĐỊNH HƯỚNG VỀ NỀN TẢNG CÔNG NGHỆ
+▪ Ứng dụng các công nghệ hạ tầng và công nghệ phát
+triển ứng dụng mới nhất;
+▪ Định hướng ứng dụng Cloud và các ứng dụng SaaS,
+PaaS;
+▪ Các công nghệ giúp tối ưu hóa vận hành hệ thống;
+▪ Đảm bảo tính mở trong triển khai công nghệ.
+
+=== PAGE 5 ===
+ĐỊNH HƯỚNG TỔNG THỂ CHIẾN LƯỢC CĐS CỦA PTSC
+Định hướng về R&D
+Các công nghệ sau luôn cần được nghiên cứu
+ứng dụng trong kế hoạch CĐS của PTSC:
+▪ Ứng dụng Mobility;
+▪ Ứng dụng AI Chatbot;
+▪ Ứng dụng Big Data;
+▪ Ứng dụng BIM/CAD;
+▪ Ứng dụng RPA;
+▪ Ứng dụng Blockchain;
+▪ Ứng dụng Robotic;
+và được thực hiện xuyên suốt trong chiến lược
+CĐS.
+
+=== PAGE 6 ===
+ĐỊNH HƯỚNG TỔNG THỂ CHIẾN LƯỢC CĐS CỦA PTSC
+Định hướng về Quản trị CNTT
+Để thực hiện thành công cần chuyên nghiệp hóa đội ngũ CNTT trong toàn TCTy và
+triển khai các mô hình, tiêu chuẩn và quản trị CNTT theo tiêu chuẩn quốc tế để :
+- Đảm bảo các hoạt động CNTT được liên kết chặt chẽ với chiến
+lược phát triển, hỗ trợ hiệu quả các mục tiêu chiến lược và tạo
+ra giá trị cho PTSC.
+- Đảm bảo các hoạt động CNTT tuân thủ các quy định và luật
+pháp hiện hành. Quản lý hiệu quả các nguồn lực CNTT như
+nhân lực, tài chính, cơ sở hạ tầng và phần mềm. Tối ưu hóa
+việc sử dụng nguồn lực cũng như tiết kiệm chi phí cho doanh
+nghiệp, nâng cao năng lực, hiệu quả hoạt động của CNTT.
+- Cần hình thành bộ máy CNTT & Chuyển đổi số chuyên trách
+cho Cơ quan Tổng công ty và các đơn vị thành viên.
+- Cần triển khai áp dụng các tiêu chuẩn quốc tế vào quản trị
+CNTT như ISO 25000, ISO 20000, ISO 27001 trong phạm vi
+toàn PTSC.
+
+=== PAGE 7 ===
+ĐỊNH HƯỚNG TỔNG THỂ CHIẾN LƯỢC CĐS CỦA PTSC
+Định hướng về hệ thống an toàn - an ninh thông tin
+▪ Tính bảo mật dữ liệu;
+▪ Tính toàn vẹn dữ liệu;
+▪ Tính sẵn sàng của dữ liệu.
+
+=== PAGE 8 ===
+ĐỊNH HƯỚNG VỀ NỀN TẢNG DỮ LIỆU
+
+=== PAGE 9 ===
+ĐỊNH HƯỚNG VỀ NỀN TẢNG DỮ LIỆU
+▪ Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số;
+▪ Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC;
+▪ Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị thành viên. Đảm
+bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ
+liệu;
+▪ Ứng dụng các công nghệ mới nhất về quản trị dữ liệu như: CDP (Customer Data Platform); các
+kiến trúc data có cấu trúc và phi cấu trúc, Datalake cho vận hành và khai thác tài nguyên số của
+PTSC;
+▪ Hoạch định phân lớp khai thác tài nguyên số trên cơ sở nhu cầu của người sử dụng dữ liệu.
+
+=== PAGE 10 ===
+Giải pháp thực hiện cho trụ cột “Cơ sở dữ liệu “
+MỤC TIÊU MỤC TIÊU MỤC TIÊU
+2024-2025 2026-2027 2028-2030
+(1)Xây dựng CSDL dùng chung (1)Xây dựng CSDL dùng (1)Hoàn thành CSDL
+giai đoạn 1 (tại Cơ quan Tổng chung giai đoạn 2 (tại dùng chung TCT;
+công ty); các Đơn vị);
+(3) Áp dụng báo cáo
+(2)Xây dựng mô hình quản trị dữ (2)Xây dựng báo cáo thông minh toàn diện.
+liệu; thông minh giai đoạn 2;
+(3) Xây dựng báo cáo thông (3) Ứng dụng các phần
+minh giai đoạn 1: (gồm các Phân mềm phân tích chuyên
+hệ TCKT, Quản trị rủi ro, Quản lý sâu trên từng lĩnh vực.
+nguồn nhân lực, Quản lý Tài
+sản).
+
+=== PAGE 11 ===
+Giải pháp thực hiện cho trụ cột “Nền tảng công nghệ & Bảo mật “
+• (1)Áp dụng ISO 27001 giai
+• (1)Áp dụng ISO 27001 trong
+đoạn 1 (tại Cơ quan Tổng
+toàn Tổng công ty;
+công ty);
+• (2)Hoàn thiện hệ thống DR
+• (2)Triển khai xây dựng hệ
+(thuê/ xây dựng hệ thống DR
+thống DR (giai đoạn 1: thuê
+U M riêng);
+dịch vụ DR cho một số máy
+Ê5 2 Ụ
+chủ quan trọng); C TI 2 0 2 0 2 6 C T • (3)Triển khai giải pháp Quản lý
+Ụ4 - - 2IÊ định danh và truy cập (IAM);
+• (3)Triển khai giải pháp Cyber M 0 2 0 2U
+2CÔNG NGHỆ 7
+Threat Intelligence;
+• (4)Cải tiến - Đổi mới công
+& BẢO MẬT nghệ.
+• (4)Triển khai giải pháp Bảo
+mật theo mô hình Zero Trust;
+• (5) Xây dựng điện toán đám
+mây
+MỤC TIÊU
+2028-2030
+• Cải tiến đổi mới công nghệ
+
+=== PAGE 12 ===
+TỔNG QUAN HIỆN TRẠNG VÀ
+01
+NHU CẦU QUẢN TRỊ
+DỮ LIỆU TẠI PTSC
+
+=== PAGE 13 ===
+KHẢO SÁT HIỆN TRẠNG HẠ TẦNG CNTT
+Tài liệu tổng hợp: PTSC - Hiện trạng hạ tầng IT.xlsx
+
+=== PAGE 14 ===
+1.1. HIỆN TRẠNG LUỒNG XỬ LÝ DỮ LIỆU POWER BI (Hiện tại)
+
+=== PAGE 15 ===
+1.1. HIỆN TRẠNG LƯU TRỮ DỮ LIỆU BÁO CÁO (Sharepoint MS365)
+
+=== PAGE 16 ===
+1.1. HIỆN TRẠNG QUẢN TRỊ MASTER DATA (Excel Sharepoint)
+
+=== PAGE 17 ===
+1.2 TƯƠNG LAI VAI TRÒ CỦA ĐỘI NGŨ QUẢN TRỊ DỮ LIỆU DOANH NGHIỆP
+METAMODEL of DATA MANAGEMENT CAPABILITIES
+
+=== PAGE 18 ===
+1.2. QUẢN TRỊ VẬN HÀNH DỮ LIỆU (DATA OPERATION) LÀ GÌ?
+
+=== PAGE 19 ===
+Có 4 mô hình Quản trị dữ liệu phổ biến theo tiêu chuẩn quốc tế:
+1. Deloitte’s Information Value Chain
+2. McKinsey’s Data-to-Value
+3. Forrester’s Insights-Driven
+4. Gartner’s Data-First
+DATA
+Mô hình Quản trị dữ liệu phù hợp cho PTSC theo từng giai đoạn:
+GOVERNANCE - Giai đoạn 1 (2025 - 2027): Áp dụng mô hình Deloitte’s Information Value Chain để xây
+dựng nền tảng căn bản về dữ liệu tiêu chuẩn tại PTSC.
+FRAMEWORK
+- Giai đoạn 2 (2027 - 2030, định hướng 2035): Áp dụng kết hợp 2 mô hình Gartner’s
+RESEARCH Data-First để tăng quy mô dữ liệu và mô hình McKinsey’s Data-to-Value để phân tích dữ
+liệu lớn tạo giá trị cho PTSC
+Chi tiết xem tại Phụ lục 1 - Data Governance Frameworks
+
+=== PAGE 20 ===
+NỀN TẢNG DỮ LIỆU (DATA PLATFORM) LÀ GÌ?
+Giải pháp quản trị vận hành dữ liệu cho PTSC
+“Data Platform là nền tảng tập trung cho phép thu thập,
+lưu trữ, xử lý, quản lý, chia sẻ và khai thác dữ liệu từ
+nhiều nguồn trong một tổ chức.”
+Thu Thập Xử Lý Trực Quan Trí Tuệ Nhân
+Dữ Liệu Quản trị luồng
+& Lưu Trữ & Phân Tích Hóa / Tra cứu Tạo & Máy Học
+
+=== PAGE 21 ===
+PHƯƠNG PHÁP ĐÁNH GIÁ
+02
+LỰA CHỌN MÔ HÌNH GIẢI
+PHÁP DATA PLATFORM
+
+=== PAGE 22 ===
+CĂN CỨ LẬP ĐỀ XUẤT MÔ HÌNH GIẢI PHÁP
+Sau quá trình Tổ Dữ liệu - Ban dự án Chuyển đổi số thực hiện nghiên cứu, phân tích, xin ý kiến đóng góp và tổng hợp
+từ các tài liệu sau:
+1 2 3 4
+Bộ bộ câu hỏi khảo sát Các Quy định Pháp luật hiện hành Biên bản họp thống
+Chiến lược Chuyển
+- đánh giá các nhà cung có liên quan: nhất Mục tiêu và 6
+đổi số đã được
+Nguyên tắc đánh giá
+cấp giải pháp dữ liệu đã ● Luật Công nghệ thông tin số
+Tổng công ty PTSC 67/2006/QH11, ngày 29 tháng 6 năm 2006; của Dự án "Xây dựng
+tổng hợp ý kiến của Ban
+ban hành theo Nghị ● Luật An ninh mạng: 24/2018/QH14 Nền tảng Cơ sở dữ liệu
+dự án Chuyển đổi số
+quyết ● Nghị định số 53/2022/NĐ-CP của Chính dùng chung tại Tổng
+Tổng công ty PTSC hoàn phủ: Quy định chi tiết một số điều của Luật
+10/NQ-HĐQT-PTSC công ty PTSC" - Đã được
+An ninh mạng
+thiện vào ngày 27/5/2025
+phê duyệt bởi Trưởng Ban dự án
+ngày 7/01/2025 ● Nghị định số 13/2023/NĐ-CP của Chính
+(Tổng 114 câu) Chuyển đổi số buổi họp ngày
+phủ: Bảo vệ dữ liệu cá nhân 13/06/2025
+Tổ Dữ liệu xin đề xuất thống nhất Mô hình kiến trúc Nền tảng Cơ sở dữ liệu dùng chung tại Tổng công ty PTSC"
+
+=== PAGE 23 ===
+2.1. CHIẾN LƯỢC CHUYỂN ĐỔI SỐ
+Giải pháp thực hiện cho trụ cột “Cơ sở dữ liệu”
+MỤC TIÊU MỤC TIÊU MỤC TIÊU
+2024-2025 2026-2027 2028-2030
+[1] Xây dựng CSDL dùng chung giai
+[1] Xây dựng CSDL dùng chung giai
+đoạn 1 (tại Cơ quan Tổng công ty);
+đoạn 2 (tại các Đơn vị); [1] Hoàn thành CSDL dùng chung
+[2] Xây dựng mô hình quản trị dữ
+TCT;
+[2] Xây dựng báo cáo thông minh
+liệu;
+giai đoạn 2; [2] Áp dụng báo cáo thông minh
+[3] Xây dựng báo cáo thông minh toàn diện.
+[3] Ứng dụng các phần mềm phân
+giai đoạn 1: (gồm các Phân hệ tích chuyên sâu trên từng lĩnh vực.
+TCKT, Quản trị rủi ro, Quản lý nguồn
+nhân lực, Quản lý Tài sản).
+
+=== PAGE 24 ===
+3. ĐỊNH HƯỚNG XÂY DỰNG CHIẾN LƯỢC CĐS CỦA PTSC
+Định hướng về nền tảng dữ liệu
+▪ Xác định, phân loại, tổ chức dữ liệu thành các lớp tài sản số;
+▪ Chuẩn hóa dữ liệu và tiến hành số hóa dữ liệu toàn diện trong phạm vi PTSC;
+▪ Hình thành các dữ liệu dùng chung trong toàn PTSC và dùng riêng tại các Đơn vị thành viên. Đảm
+bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ
+liệu;
+▪ Ứng dụng các công nghệ mới nhất về quản trị dữ liệu như: CDP (Customer Data Platform); các
+kiến trúc data có cấu trúc và phi cấu trúc, Data Lake cho vận hành và khai thác tài nguyên số của
+PTSC;
+▪ Hoạch định phân lớp khai thác tài nguyên số trên cơ sở nhu cầu của người sử dụng dữ liệu.
+
+=== PAGE 25 ===
+2.2. TẦM NHÌN GIẢI PHÁP
+2. Phù hợp nhu cầu lưu trữ, khai thác, chia sẻ tài sản dữ liệu
+5
+Phân lớp dữ liệu để hình thành các dữ liệu dùng chung trong toàn Tổng công ty PTSC và dùng riêng tại các đơn vị thành viên
+nhưng vẫn đảm bảo cập nhật, khai thác trong toàn bộ hệ thống theo hoạch định bảo mật phân quyền khai thác dữ liệu (Phối hợp
+với định hướng nền tảng công nghệ và bảo mật)
+Đối tượng khai thác tài nguyên số được xác định thành các lớp (Định hướng dữ liệu trên cơ sở nhu cầu của người sử dụng dữ
+Hỗ trợ công tác lưu trữ và
+liệu):
+quản trị dữ liệu
+- Lớp người dùng phục vụ các công tác điều hành, tác nghiệp vận hành sản xuất, kinh doanh, dịch vụ nội bộ tổ chức
+PTSC;
+- Lớp người dùng khách hàng, đối tác của PTSC;
+- Lớp người dùng phân tích quản trị, cán bộ quản lý cấp trung, Lãnh đạo cấp cao của PTSC.
+6
+Cho phép tạo lập các môi trường DEV/Test/PoC trên môi trường điện toán đám mây để thử nghiệm ý tưởng mới, huấn luyện mô
+hình AI/ ML, biểu mẫu… mà không ảnh hưởng hệ thống thật.
+Cung cấp môi trường thử Các Đơn vị được sử dụng bản sao của data product để tự triển khai các mô hình AI hoặc học máy, phù hợp với đặc thù hoạt
+nghiệm, đổi mới sáng tạo động riêng, mà không cần xây dựng hạ tầng dữ liệu. Điều này không chỉ giúp tiết kiệm đáng kể thời gian và nguồn lực, mà còn
+đặt nền móng cho việc hình thành kho dữ liệu ngành tập trung, có khả năng học hỏi và mở rộng liên tục.
+
+=== PAGE 26 ===
+2.3. BỘ 6 NGUYÊN TẮC ĐÁNH GIÁ
+Từ định hướng và mục tiêu tổng thể như trên, Dự án "Xây dựng Nền tảng Cơ sở dữ liệu dùng
+chung tại Tổng công ty PTSC" cần đảm bảo 6 mục tiêu cụ thể như sau:
+1 Tuân thủ pháp lý về bảo vệ dữ liệu
+2 Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung
+3 Kiến trúc mô hình dữ liệu hiện đại và linh hoạt
+4 Đảm bảo có thể chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai
+5 Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn)
+6 Đáp ứng lộ trình Chuyển đổi số theo Chiến lược CĐS của PTSC
+Cụ thể mô tả chi tiết từng mục tiêu: xem phụ lục
+
+=== PAGE 27 ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+1. Tuân thủ pháp lý về bảo vệ dữ liệu quốc gia
+1. Lưu trữ dữ liệu gốc: Đảm bảo toàn bộ dữ liệu gốc (raw data) được lưu trữ và xử lý trong lãnh thổ Việt Nam, phù hợp với quy định pháp luật và yêu
+cầu bảo vệ dữ liệu quốc gia.
+2. Chia sẻ dữ liệu: Không cho phép chuyển dữ liệu, log hệ thống hoặc bất kỳ thành phần liên quan nào ra nước ngoài, trừ khi có văn bản cho phép
+chính thức từ cơ quan có thẩm quyền hoặc lãnh đạo Tổng công ty.
+3. Mã hoá dữ liệu: Mọi dữ liệu trong quá trình truyền và lưu trữ phải được mã hóa theo các tiêu chuẩn an toàn thông tin.
+4. Bảo vệ Dữ liệu: Tuân thủ đầy đủ các quy định pháp luật liên quan đến bảo vệ dữ liệu cá nhân, quyền riêng tư và xử lý thông tin nhạy cảm.
+5. Kiểm duyệt dữ liệu: Thiết lập cơ chế kiểm duyệt dữ liệu chặt chẽ, giám sát toàn bộ hoạt động truy cập và sử dụng dữ liệu, phát hiện kịp thời các
+hành vi bất thường hoặc rò rỉ dữ liệu.
+2. Quyền sở hữu và kiểm soát kỹ thuật với CSDL dùng chung
+● Tổng công ty PTSC cần nắm quyền kiểm soát và sở hữu hoàn toàn các thành phần cốt lõi của hệ thống cơ sở dữ liệu dùng chung, kèm theo giá trị
+tri thức trong quá trình phân tích - sử dụng dữ liệu bao gồm: quy trình xử lý dữ liệu (Pipeline/ Data Transformation Logic), dữ liệu gốc (Raw Data),
+quá trình trích xuất – biến đổi – nạp dữ liệu (ETL/ELT), thông tin mô tả dữ liệu (Metadata), Bộ khóa Mã hóa dữ liệu và Bộ mã dữ liệu định danh/ Dữ
+liệu chủ dùng chung trong toàn hệ sinh thái phần mềm - dữ liệu (Master Data).
+● Việc làm chủ các thành phần trên là điều kiện tiên quyết để thực hiện hiệu quả hoạt động kiểm duyệt dữ liệu, phát hiện sớm sai lệch, ngăn chặn rủi
+ro trong phân tích báo cáo, đồng thời đảm bảo tuân thủ các tiêu chuẩn quản trị dữ liệu theo hướng chuyên nghiệp và bền vững. Từ đó, đảm bảo
+chất lượng, tính chính xác, toàn vẹn và bảo mật của dữ liệu hướng đến hình thành tài sản số trong tương theo định hướng Chiến lược CĐS PTSC.
+3. Kiến trúc mô hình dữ liệu hiện đại và linh hoạt
+● Tính linh hoạt: Giải pháp cần được thiết kế với kiến trúc linh hoạt, cho phép tổ chức hệ thống dữ liệu theo các mô hình Hybrid, Multi-cloud,
+Multi-site, nhằm đáp ứng định hướng và chiến lược dữ liệu dài hạn của Tổng công ty.
+● Tính hiện đại: Bên cạnh đó cần áp dụng các công nghệ mới nhất, các sản phẩm nền tảng dữ liệu thương mại hóa của các hãng lớn trên thế giới và
+tận dụng hiệu quả sức mạnh tính toán, khả năng mở rộng của hạ tầng điện toán đám mây (cloud) để phục vụ các nghiệp vụ yêu cầu năng lực xử lý
+cao như: Big Data, Trí tuệ nhân tạo (AI), Học máy (Machine Learning) và Phân tích nâng cao (Analytics).
+
+=== PAGE 28 ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+4. Đảm bảo khả năng chuyển đổi, tái sử dụng và mở rộng quy mô trong tương lai
+● Tính chủ động: Hệ thống nền tảng dữ liệu phải được xây dựng theo định hướng mở và độc lập với các nhà cung cấp, nhằm tránh phụ thuộc vào một
+nền tảng duy nhất, đảm bảo khả năng chuyển đổi, mở rộng và tích hợp linh hoạt trong tương lai.
+● Tính phổ biến: Toàn bộ quy trình xử lý, lưu trữ và hiển thị dữ liệu cần được thiết kế theo hướng mở, sử dụng các định dạng phổ biến và dễ chia sẻ,
+nhằm đảm bảo dữ liệu có thể tái sử dụng và dễ dàng tích hợp với các hệ thống khác. Điều này giúp Tổng công ty có thể chuyển đổi nền tảng hoặc
+mở rộng hệ thống trong tương lai mà không cần xây dựng lại toàn bộ quy trình dữ liệu từ đầu.
+5. Đảm bảo An toàn thông tin (Bảo mật - Sẵn sàng - Toàn vẹn)
+● Kiểm soát người dùng dữ liệu: Thiết kế hệ thống theo dõi và kiểm soát truy cập vào dữ liệu, phân quyền rõ ràng theo vai trò người dùng, tích hợp
+đăng nhập một lần (SSO), xác thực nhiều lớp (MFA), kiểm duyệt thông tin nhạy cảm khi cần thiết, phát hiện các dấu hiệu rò rỉ dữ liệu và có cơ chế
+cảnh báo tự động khi có nguy cơ mất an toàn.
+● Kiểm soát vận hành dữ liệu: Toàn quyền kiểm soát và vận hành hệ thống, bao gồm việc thiết lập, điều chỉnh quy trình xử lý dữ liệu, theo dõi nhật ký
+hoạt động (logs), lên lịch tác vụ… mà không phụ thuộc vào tài khoản đặc biệt hay quyền quản trị của bất kỳ một nhà cung cấp nào.
+6. Đáp ứng lộ trình Chuyển đổi số theo Chiến lược CĐS của PTSC
+● Giải pháp cần được kiến trúc phù hợp và tương thích với 5 trụ cột theo lộ trình Chiến lược Chuyển đổi số của PTSC, đóng vai trò là nền tảng cho việc
+xây dựng hệ sinh thái dữ liệu hiện đại, phục vụ các công tác R&D về: Ứng dụng Mobility, Ứng dụng AI Chatbot, Ứng dụng Big Data, Ứng dụng
+BIM/CAD, Ứng dụng RPA, Ứng dụng Blockchain, Ứng dụng Robotic,…vv.
+
+=== PAGE 29 ===
+THỰC TẾ ĐÁNH GIÁ
+03
+GIẢI PHÁP DATA PLATFORM
+
+=== PAGE 30 ===
+THỬ THÁCH
+Các vấn đề thường gặp
+khi lựa chọn giải pháp
+khi “làm data”
+
+=== PAGE 31 ===
+MỨC ĐỘ TRƯỞNG THÀNH CỦA CÔNG NGHỆ
+
+=== PAGE 32 ===
+CÁC GIẢI PHÁP QUẢN TRỊ DỮ LIỆU
+Tổng quan về các Công cụ Quản trị Dữ liệu trên thị trường
+● Thách thức 1: Các chức năng của công cụ quản trị dữ liệu có sự khác biệt đáng kể so với định nghĩa về quản trị dữ liệu.
+● Thách thức 2: Các nhà cung cấp công cụ CNTT được dán nhãn “quản trị dữ liệu” không công nhận công cụ của họ là như vậy.
+!!!
+Phân loại Công cụ IT theo Nhà cung cấp
+Cần chọn đúng chiến lược lưu trữ -
+chia sẻ – kiểm soát – phối hợp giữa
+các bên liên quan.
+Tools chỉ là phương tiện, không thể
+thay thế được chính sách, quy trình và
+vai trò con người.
+
+=== PAGE 33 ===
+Giải pháp các hãng tương ứng các modules chính của Datalakehouse
+Hãng Quy mô DN mục tiêu Ngành nghề ưu tiên Khu vực trọng điểm Chiến lược tiếp cận
+AWS - Doanh nghiệp lớn (enterprise) - Thương mại điện tử Toàn cầu - Developer-first
+- Startups & scaleups - Tài chính Đặc biệt mạnh ở Mỹ, Châu - Tập trung vào flexibility + innovation
+- Chính phủ - Công nghệ (SaaS) Âu, Ấn Độ - Cung cấp dịch vụ sâu, rất kỹ thuật
+- Truyền thông
+Microsoft Azure - Doanh nghiệp lớn- Tổ chức công - Sản xuất Toàn cầu - Tận dụng hệ sinh thái Microsoft
+(chính phủ, giáo dục)- Doanh - Tài chính Đặc biệt mạnh tại các nước - Hybrid cloud + on-prem
+nghiệp sử dụng Microsoft - Y tế dùng Microsoft (Việt Nam, - Mạnh về tính tuân thủ
+ecosystem - DN sử dụng ERP Nhật, châu Âu)
+(Dynamics, SAP)
+Google Cloud (GCP) - Công ty công nghệ - Fintech Mạnh ở Mỹ, Châu Âu, Đông - Data-first, AI/ML-centric
+- Doanh nghiệp cần phân tích dữ - Viễn thông Nam Á(đang tăng trưởng tại - Developer & engineering team làm
+liệu lớn - Game- Digital-native Việt Nam) trung tâm
+- Startup dùng AI/ML companies
+IBM Cloud - Doanh nghiệp lớn dùng hệ thống - Tài chính - ngân hàng Mỹ, Châu Âu, Nhật, các tập - Hybrid cloud + AI (Watson)
+truyền thống (legacy IT) - Viễn thông đoàn có IBM core system - Mạnh về private cloud, security,
+- Ngành cần bảo mật, tuân thủ cao - Bảo hiểm mainframe
+- Công nghiệp nặng - Tập trung modernization system
+
+=== PAGE 34 ===
+Giải pháp các hãng tương ứng các modules chính của Data Platform
+2010 2006 2011 2013
+● Full data lineage: Có 8 phân hệ chức năng căn
+bản đối với 1 giải pháp on-cloud
+● Từ 1→8 đã phát triển và liên tục tối ưu hơn 10
+năm ⇒ Chức năng khá tương đồng, người
+dùng nếu dùng được 1 cloud thì sẽ dùng đc
+những cloud khác
+Vấn đề lớn nhất cần cân nhắc lựa chọn là:
+- Pháp lý: Server gần nhất ở Sing, ko có ở VN
+- Phụ thuộc (lock-in)
+- Chi phí
+
+=== PAGE 35 ===
+GIẢI PHÁP CÁC HÃNG TƯƠNG ỨNG CÁC MODULES CHÍNH CỦA DATA PLATFORM
+2010 2006 2011 2013
+Mô-đun
+No. Microsoft AWS Google Cloud IBM Cloud
+Data LakeHouse
+Full data lineage: Có 8 phân hệ chức năng
+Dataflows Gen2, AWS Glue, Kinesis Cloud Dataflow,
+IBM DataStage, căn bản đối với 1 giải pháp on-cloud
+1 Data Ingestion Synapse Pipelines, Data Firehose, Pub/Sub, Data
+IBM App Connect
+Azure Data Factory Data Pipeline Fusion
+OneLake, Azure IBM Object
+Raw Data Storage Amazon S3, S3 Cloud Storage,
+2 Data Lake Storage Storage, IBM Db2
+(Data Lake) Glacier BigLake Từ 1→8 đã phát triển và liên tục tối ưu hơn
+Gen2 Warehouse
+Dataflows Gen2, IBM Data Refinery, 10 năm ⇒ Chức năng khá tương đồng,
+AWS Glue, EMR, Dataflow, Dataproc,
+3 ETL / Data Processing Synapse Pipelines, DataStage, Watson
+Step Functions Composer (Airflow) người dùng nếu dùng được 1 cloud thì sẽ
+Fabric Notebook Studio
+AWS Glue Data dùng đc những cloud khác
+Metadata & Dataplex, Data Watson Knowledge
+4 Microsoft Purview Catalog, Lake
+Governance Catalog Catalog
+Formation
+Fabric Lakehouse Amazon Athena, BigQuery SQL, Db2 SQL, Watson
+5 Query / SQL Endpoint
+SQL, Synapse SQL Redshift Spectrum BigLake SQL Query
+Vấn đề lớn nhất là:
+Power BI, Cognos Analytics,
+Analytics / Looker, Data
+6 Embedded BI, Amazon QuickSight Watson Studio - Pháp lý: Server gần nhất ở
+Visualization Studio
+Microsoft Fabric BI Dashboard
+Sing, ko có ở VN
+Azure API
+Amazon API Apigee, Cloud
+7 Data Sharing / API Management, IBM API Connect
+Gateway Endpoints - Phụ thuộc (lock-in)
+Fabric REST API
+Azure Machine - Chi phí
+Watson Machine
+8 Machine Learning / AI Learning, Fabric SageMaker Vertex AI
+Learning
+ML
+
+=== PAGE 36 ===
+1.2.3. MÔ HÌNH DATA PLATFORM PHỔ BIẾN HIỆN NAY
+Hiện nay, có 03 mô hình kiến trúc Nền tảng Dữ liệu (Data Platform) phổ biến:
+Mô hình kiến trúc Nền tảng dữ liệu triển khai tại chỗ (On-Premise
+Data Platform): Hạ tầng và dữ liệu được triển khai, quản lý tại chính hệ
+thống máy chủ nội bộ của Tổng công ty PTSC. Mô hình này cho phép
+1
+kiểm soát toàn bộ dữ liệu, nhưng đòi hỏi đầu tư lớn vào ứng dụng, hạ
+tầng công nghệ, an toàn thông tin, bảo trì và nhân sự vận hành tại chỗ.
+Mô hình kiến trúc Nền tảng dữ liệu Điện toán đám mây (Cloud Data
+Platform): Nền tảng dữ liệu điện toán đám mây được xem xét áp dụng
+các sản phẩm thương mại của các hãng lớn trên thời giới như Fabric
+2 Azure, AWS, Google Cloud Platform…. Khi đó, PTSC không cần đầu tư
+máy chủ vật lý, dễ dàng mở rộng và tiếp cận các công nghệ phân tích dữ
+liệu tiên tiến (AI, ML). Tuy nhiên, cần cân nhắc yếu tố pháp lý, bảo mật và
+kiểm soát dữ liệu.
+Mô hình kiến trúc Nền tảng dữ liệu triển khai kết hợp tại chỗ và trên
+đám mây (Hybrid Data Platform): Nền tảng Hybrid, multi-cloud,
+multi-site được xem xét áp dụng là kết hợp giữa On-Premise và
+3 On-Cloud cho phép sở hữu và kiểm soát hoàn toàn dữ liệu gốc tại chỗ
+(on-prem), đồng thời tận dụng khả năng linh hoạt và sức mạnh xử lý của
+điện toán đám mây (cloud). Đây là xu hướng được nhiều tổ chức lớn lựa
+chọn.
+
+=== PAGE 37 ===
+3.3. TỔNG HỢP KẾT QUẢ ĐÁNH GIÁ THEO CÁC TIÊU CHÍ ĐÁNH GIÁ
+Tiêu chí đánh giá Mô hình On-Premise Data Platform Cloud Data Platform Hybrid Data Platform
+kiến trúc
+1. Tuân thủ pháp lý về bảo Ưu điểm: Nhược điểm: Ưu điểm:
+Tuân thủ pháp lý và bảo vệ dữ liệu Rủi ro pháp lý và chủ quyền dữ liệu. Tuân thủ pháp lý và bảo vệ dữ liệu quốc gia.
+vệ dữ liệu
+quốc gia.
+2. Quyền sở hữu và kiểm Ưu điểm: Nhược điểm: Ưu điểm:
+Quyền sở hữu và kiểm soát kỹ Không thể kiểm soát kỹ thuật với Quyền sở hữu và kiểm soát kỹ thuật với
+soát kỹ thuật với CSDL
+thuật với CSDL dùng chung. CSDL dùng chung và rủi ro phụ thuộc CSDL dùng chung.
+dùng chung
+vào nhà cung cấp dịch vụ điện toán
+đám mây.
+3. Kiến trúc mô hình dữ liệu Nhược điểm: Ưu điểm: Ưu điểm:
+Hạn chế các dịch vụ hỗ trợ cho Kiến trúc thiết kế hiện đại, mở rộng Kiến trúc được thiết kế hiện đại, linh hoạt và
+hiện đại và linh hoạt
+nhiệm vụ đổi mới sáng tạo. linh hoạt. tối ưu ngân sách.
+Giới hạn trong hợp tác – tích hợp – Đáp ứng xử lý liên thông dữ liệu thời gian
+chia sẻ dữ liệu bên ngoài. thực
+Chi tiết xem tại Phụ lục 1 - 6 Nguyên tắc đánh giá lựa chọn giải pháp
+
+=== PAGE 38 ===
+3.3. TỔNG HỢP KẾT QUẢ ĐÁNH GIÁ THEO CÁC TIÊU CHÍ ĐÁNH GIÁ
+Tiêu chí On-Premise Data Platform Cloud Data Platform Hybrid Data Platform
+4. Đảm bảo có thể chuyển Nhược điểm: Nhược điểm: Ưu điểm:
+Không đáp ứng yêu cầu về Khó khăn khi chuyển đổi và không thể tái sử Đảm bảo khả năng chuyển đổi, tái sử dụng và mở rộng
+đổi, tái sử dụng và mở rộng
+kiến trúc hiện đại - linh hoạt, dụng các mô hình kỹ thuật đã thiết lập. quy mô trong tương lai.
+quy mô trong tương lai
+hạn chế khả năng mở rộng. Thuận lợi trong triển khai.
+5. An toàn thông tin (Bảo Ưu điểm: Ưu điểm: Ưu điểm:
+Hiệu năng cao và ngân sách Sao lưu phục hồi, chia sẻ dữ liệu và bảo mật Đảm bảo kiểm soát vận hành ổn định an toàn và bảo mật
+mật – Sẵn sàng – Toàn vẹn)
+tối ưu. toàn diện theo chuẩn quốc tế. toàn diện.
+Phân quyền, vận hành phân Sao lưu phục hồi, chia sẻ dữ liệu.
+Nhược điểm:
+tán.
+Phụ thuộc hoàn toàn vào Internet và đường Nhược điểm:
+truyền quốc tế. Khó khăn trong việc thống nhất chính sách bảo mật và
+Rủi sự cố mất đồng bộ dữ liệu. quản trị dữ liệu.
+Rủi ro bảo mật.
+6. Đáp ứng lộ trình Chuyển Nhược điểm: Ưu điểm: Ưu điểm:
+Hạn chế các dịch vụ hỗ trợ Khả năng tiếp cận công nghệ mới (Big Đáp ứng chiến lược chuyển đổi số dài hạn.
+đổi số theo Chiến lược CĐS
+cho nhiệm vụ đổi mới sáng data/AI/ML). Khả năng tiếp cận công nghệ mới (Big data/AI/ML).
+của PTSC
+tạo. Đáp ứng chiến lược chuyển đổi số dài hạn.
+Nhược điểm:
+Khó đáp ứng lộ trình dài hạn
+Yêu cầu đội ngũ kỹ thuật đa nền tảng.
+2025–2030, định hướng
+Phức tạp trong tích hợp và vận hành
+2035.
+Chi tiết xem tại Phụ lục 1 - 6 Nguyên tắc đánh giá lựa chọn giải pháp
+
+=== PAGE 39 ===
+04
+ĐỀ XUẤT GIẢI PHÁP PHÙ HỢP
+
+=== PAGE 40 ===
+Thành phần kiến trúc cơ bản Hybrid Data Platform
+1.1. 3.2.1.
+3.2.2. Các lớp ứng dụng trên môi trường
+On-Premise
+
+=== PAGE 41 ===
+Thành phần kiến trúc cơ bản Hybrid Data Platform
+1.1. 3.2.1.
+3.2.2. Các lớp ứng dụng trên môi trường
+On-Premise
+
+=== PAGE 42 ===
+Thành phần kiến trúc cơ bản Hybrid Data Platform
+1.1. 3.2.1.
+3.2.2. Các lớp ứng dụng trên môi trường
+On-Premise
+
+=== PAGE 43 ===
+Thành phần kiến trúc cơ bản Hybrid Data Platform
+1.1. 3.2.1.
+3.2.2. Các lớp ứng dụng trên môi trường
+On-Premise
+
+=== PAGE 44 ===
+PHỤ LỤC 1:
+CÁC MÔ HÌNH QUẢN TRỊ VẬN
+HÀNH DỮ LIỆU DOANH NGHIỆP
+
+=== PAGE 45 ===
+● Overview of framework
+● McKinsey’s Data-to-Value
+DATA ● Forrester’s Insights-Driven
+GOVERNANCE ● Gartner’s Data-First
+FRAMEWORK
+● Deloitte’s Information Value Chain
+RESEARCH
+
+=== PAGE 46 ===
+APPROACH TO DEFINE SUITABLE METHODOLOGY & TAILORED SOLUTION TO BEST FIT
+STRATEGY: WHY? BEST PRACTICES IMPLEMENTATION: HOW-TO?
+OUR
+High-level perspective on Comprehensive Utilize the best in each model &
+APPROACH
+the impact of data to guidelines on data customize our solution to fit
+create value management/governance organization’s needs & resources
+
+=== PAGE 47 ===
+APPROACH TO DEFINE SUITABLE METHODOLOGY & TAILORED SOLUTION TO BEST FIT
+STRATEGY: WHY? BEST PRACTICES IMPLEMENTATION: HOW-TO?
+OUR
+High-level perspective on Comprehensive Utilize the best in each model &
+APPROACH
+the impact of data to guidelines on data customize our solution to fit
+create value management/governance organization’s needs & resources
+Deloitte, Forrester, Gartner, McKinsey
+Framework 8 data management & governance models Our tailored solution to best fit
+(Business/Value Focused)
+Leveraging data to achieve strategic business Implementing and building data management
+Primary Focus Managing and governing data assets effectively.
+goals and create value. capabilities.
+Higher-level strategic guidance on the role and Granular and detailed on data management Multi-level: High-level implementation steps and
+Level of Detail
+impact of data. practices and capabilities. detailed capability areas.
+Data management capability model,
+Information flow, insights, data-driven culture, Data quality, data governance, metadata
+Key Concepts implementation method, data assets, data lineage,
+business outcomes, data as an asset. management, maturity stages.
+core data management domains.
+How is data driving our business strategy and How well are we managing and governing our How do we practically establish and mature our
+Core Question
+generating value? data? data management capabilities?
+Data management professionals, IT leaders, data Data management professionals, IT leaders,
+Primary Audience Business leaders, strategists, executives.
+governance teams. potentially business stakeholders.
+Established data management capabilities, tailored
+Enhanced business decision-making, new revenue Improved data management capabilities, higher data management framework, implementation
+Outcome/Deliverable
+streams, competitive advantage. data quality, better governance. roadmap, improved data asset understanding and
+management.
+
+=== PAGE 48 ===
+OVERVIEW OF DATA FRAMEWORK
+Deloitte’s Information Value Chain McKinsey’s Data-to-Value Gartner’s Data-First
+Framework Forrester’s Insights-Driven
+Phù hợp PTSC GĐ1 (2025-2027) Phù hợp PTSC GĐ2 (2028-2035) Phù hợp PTSC GĐ2 (2028-2035)
+Core Focus Transformation of Information Business Value from Data Insights Driving Action Data as Strategic Asset
+Primary Driver Data Flow and Management Measurable Business Outcomes Actionable Insights, Culture Long-Term Strategy, Mindset
+Approach Linear, Process-Focused Practical, Results-Oriented Operational Integration Holistic, Strategic
+Data Lifecycle, Value Creation at Each
+Key Emphasis Value Definition, Measurement Actionability, Culture Shift Governance, Architecture
+Stage
+Time Horizon Foundational, Process-Oriented Short to Medium Term Medium to Long Term Long-Term
+Key Elements:
+* Define Value: Clearly identify the business
+outcomes and value to be achieved.
+* Source and Structure Data: Acquire,
+Key Principles:
+integrate, and prepare data for analysis.
+Data as a strategic asset, business
+Typical Stages: * Analyze and Generate Insights: Apply Key Competencies:
+alignment, data-driven culture, focus on
+Capture, organize, analyze, interpret, and analytical techniques to extract meaningful Strategy, data, platforms, internal
+Highlights outcomes and value, robust data
+act. insights. partners, practices, insights to
+governance, modern data architecture,
+* Deploy and Embed Insights: Integrate action, culture.
+data literacy and skills, continuous
+insights into business processes and
+improvement.
+decision-making.
+* Measure and Improve: Track the impact of
+data initiatives and continuously refine the
+process.
+
+=== PAGE 49 ===
+OVERVIEW OF DATA FRAMEWORK FROM TECHNOLOGY LENS
+Deloitte’s Information Value Chain Gartner’s Data-First
+Framework McKinsey’s Data-to-Value Forrester’s Insights-Driven
+Phù hợp PTSC GĐ1 (2025-2027) Phù hợp PTSC GĐ2 (2028-2035)
+Technology is viewed as a critical enabler
+Focus is more on the application of Strong emphasis on building an "insights Strong emphasis on building a modern and
+Technology Emphasis at each stage of the data transformation
+technology to enable value creation engine" powered by technology robust data architecture
+process
+Capture Technologies: Systems for data Data Processing and Transformation Modern Data Platforms: Scalable and flexible Scalable Infrastructure: Cloud platforms,
+acquisition from various sources (e.g., sensors, Technologies: Tools for cleaning, preparing, infrastructure to support the continuous flow of data lakes, data warehouses designed for
+APIs, data entry tools). and structuring data for analysis. data. growing data volumes and diverse data types.
+Analytics Tools and Platforms: Software for
+Storage and Management Technologies: Integration Capabilities: Tools and platforms
+statistical analysis, data mining, machine Advanced Analytics Platforms: Tools for
+Databases, data warehouses, data lakes, and for seamless data integration across disparate
+learning, and AI model development and data science, AI/ML, and predictive modeling.
+data management platforms. sources.
+deployment.
+Technical elements
+(Note: listed by ordinary
+only, independent across Analytics Technologies: Tools for analysis, Visualization and Reporting Tools: Platforms Real-time Data Processing and Streaming Data Management Technologies: Solutions
+framework, not for modeling, and visualization. for creating dashboards and communicating Technologies: For immediate insight for data quality, metadata management, data
+comparison by insights effectively. generation and action. catalogs, and data governance.
+row/column)
+Integration Technologies: Middleware and Integration Technologies: Tools to embed Self-Service Analytics Tools: Empowering Analytics Platforms: Tools supporting various
+APIs to connect different systems and data insights into business processes and business users to access and analyze data analytical techniques, including BI, data
+sources. applications. independently. science, and AI/ML.
+Delivery and Consumption Technologies: BI
+Integration Capabilities: Connecting insights Security Technologies: Implementing robust
+platforms, dashboards, and systems for
+to operational systems for automated actions. security measures to protect data assets.
+embedding insights into applications.
+
+=== PAGE 50 ===
+[PTSC] INFORMATION VALUE CHAIN FRAMEWORK | KEY STAGES
+Deloitte’s Information Value Chain Typical stages Highlights
+1. Capture/Generate Internal Sources Transactional systems (ERP, CRM), operational data, sensor data, employee-generated content, etc.
+This initial stage involves the creation or External Sources Market research, social media feeds, publicly available data, third-party data providers, etc.
+acquisition of raw data from various
+Focus Ensuring the data captured is relevant, timely, and accurate at its source.
+sources.
+Data Storage Utilizing appropriate data storage solutions (databases, data warehouses, data lakes) based on the type and volume of data.
+2. Organize/Manage
+Data Integration Combining data from different sources to create a unified view.
+Once data is captured, it needs to be Data Quality Management Implementing processes to cleanse, validate, and ensure the quality and consistency of the data.
+organized, structured, and managed
+Metadata Management Cataloging and documenting data assets to improve understanding and discoverability.
+effectively to make it usable for analysis.
+Data Governance Establishing policies, procedures, and responsibilities for data security, privacy, compliance, and usage.
+Descriptive Analytics Understanding what has happened in the past.
+3. Analyze/Synthesize
+Diagnostic Analytics Identifying why certain events occurred.
+This stage involves applying various
+Predictive Analytics Forecasting future trends and outcomes.
+analytical techniques and tools to
+process and transform the organized Prescriptive Analytics Recommending actions to achieve desired results.
+data into meaningful insights.
+Tools and Technologies Utilizing statistical software, data mining tools, machine learning platforms, and visualization tools.
+4. Interpret/Understand Contextualization Relating the findings to business goals, strategies, and the broader market environment.
+Communication Translating complex analytical results into clear and understandable language for business stakeholders.
+The insights generated from analysis
+need to be interpreted within the Collaboration Engaging with business users to validate findings and ensure their relevance.
+business context to derive meaning and
+understand their implications. Storytelling with Data Presenting insights in a narrative format that resonates with the audience and drives understanding.
+5. Act/Decide Decision Support Providing timely and relevant information to support strategic, tactical, and operational decision-making.
+Automation Embedding insights into automated processes and workflows.
+The final stage involves using the
+interpreted insights to inform decisions Monitoring and Evaluation Tracking the impact of decisions and actions taken based on the insights.
+and drive actions that lead to improved
+business outcomes. Feedback Loop Using the results of actions to refine the data, analysis, and interpretation processes, creating a continuous cycle of improvement.
+
+=== PAGE 51 ===
+PHỤ LỤC 2
+6 NGUYÊN TẮC ĐÁNH GÍA
+LỰA CHỌN GIẢI PHÁP
+TƯƠNG ỨNG BỘ CÂU HỎI KHẢO SÁT NHÀ CUNG CẤP
+
+=== PAGE 52 ===
+1 Tuân thủ pháp lý về bảo vệ dữ liệu
+Cụ thể mô tả chi tiết từng mục tiêu: xem phụ lục
+
+=== PAGE 53 ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+Nguyên tắc Chi tiết nguyên tắc Trả lời câu hỏi
+1
+1. Lưu trữ dữ liệu gốc: Đảm bảo toàn bộ dữ liệu gốc (raw data) được lưu trữ và xử lý trong lãnh
+thổ Việt Nam, phù hợp với quy định pháp luật và yêu cầu bảo vệ dữ liệu quốc gia. ● Toàn bộ dữ liệu gốc (raw data) có được lưu trữ
+2. Chia sẻ dữ liệu: Không cho phép chuyển dữ liệu, log hệ thống hoặc bất kỳ thành phần liên trong lãnh thổ Việt Nam không?
+quan nào ra nước ngoài, trừ khi có văn bản cho phép chính thức từ cơ quan có thẩm quyền ● Hệ thống có cho phép lưu bản sao dữ liệu tại
+Tuân thủ
+hoặc lãnh đạo Tổng công ty. nước ngoài không?
+pháp lý về
+3. Mã hoá dữ liệu: Mọi dữ liệu trong quá trình truyền và lưu trữ phải được mã hóa theo các tiêu ● Nếu có thì có cơ chế mã hóa trước khi gửi
+bảo vệ dữ
+chuẩn an toàn thông tin. không?
+liệu quốc gia
+4. Bảo vệ Dữ liệu: Tuân thủ đầy đủ các quy định pháp luật liên quan đến bảo vệ dữ liệu cá nhân, ● Nhà cung cấp có đảm bảo không chuyển dữ
+quyền riêng tư và xử lý thông tin nhạy cảm. liệu hoặc log ra ngoài Việt Nam mà chưa được
+5. Kiểm duyệt dữ liệu: Thiết lập cơ chế kiểm duyệt dữ liệu chặt chẽ, giám sát toàn bộ hoạt động phép không?
+truy cập và sử dụng dữ liệu, phát hiện kịp thời các hành vi bất thường hoặc rò rỉ dữ liệu.
+2
+● Tổng công ty PTSC cần nắm quyền kiểm soát và sở hữu hoàn toàn các thành phần cốt lõi của
+hệ thống cơ sở dữ liệu dùng chung, kèm theo giá trị tri thức trong quá trình phân tích - sử dụng
+● Chủ đầu tư có toàn quyền truy cập dữ liệu và
+dữ liệu bao gồm: quy trình xử lý dữ liệu (Pipeline/ Data Transformation Logic), dữ liệu
+log hay không?
+Quyền sở gốc (Raw Data), quá trình trích xuất – biến đổi – nạp dữ liệu (ETL/ELT), thông tin mô tả
+● Có cơ chế backup và khôi phục dữ liệu chủ
+hữu và kiểm dữ liệu (Metadata), Bộ khóa Mã hóa dữ liệu và Bộ mã dữ liệu định danh/ Dữ liệu chủ
+động trong nước không?
+soát kỹ thuật dùng chung trong toàn hệ sinh thái phần mềm - dữ liệu (Master Data).
+● Khi dừng hợp tác, dữ liệu có thể được trích
+với CSDL ● Việc làm chủ các thành phần trên là điều kiện tiên quyết để thực hiện hiệu quả hoạt động kiểm
+xuất đầy đủ và xóa sạch khỏi hệ thống cloud
+dùng chung duyệt dữ liệu, phát hiện sớm sai lệch, ngăn chặn rủi ro trong phân tích báo cáo, đồng thời đảm
+của nhà cung cấp không?
+bảo tuân thủ các tiêu chuẩn quản trị dữ liệu theo hướng chuyên nghiệp và bền vững. Từ đó,
+đảm bảo chất lượng, tính chính xác, toàn vẹn và bảo mật của dữ liệu hướng đến hình thành
+tài sản số trong tương theo định hướng Chiến lược CĐS PTSC.
+
+=== PAGE 54 ===
+Giải thích Nguyên tắc 2
+Nguyên tắc Chi tiết nguyên tắc Trả lời câu hỏi
+2
+● Tổng công ty PTSC cần nắm quyền kiểm
+soát và sở hữu hoàn toàn các thành
+Raw Data Storage – Direct Access & Format Transparency
+phần cốt lõi của hệ thống cơ sở dữ liệu
+a. Dữ liệu raw có được lưu dưới định dạng chuẩn mở (như Parquet, ORC, CSV) trên một tầng lưu trữ độc lập,
+dùng chung, kèm theo giá trị tri thức
+tương thích tiêu chuẩn (như object storage S3-compatible hoặc ADLS Gen2), và có thể truy cập trực tiếp thông
+trong quá trình phân tích - sử dụng dữ
+qua các engine phân tích độc — mà không bắt buộc phải đi qua lớp xử lý semantic hoặc permission layer do
+liệu bao gồm: quy trình xử lý dữ liệu
+nền tảng Hãng/ Nhà cung cấp kiểm soát hay không?
+(Pipeline/ Data Transformation Logic),
+b. Nếu toàn bộ hệ thống xử lý dữ liệu và semantic layer của nền tảng hiện tại bị tắt hoặc ngừng hoạt động, thì
+dữ liệu gốc (Raw Data), quá trình trích
+dữ liệu raw vẫn có thể được truy cập trực tiếp và khai thác từ các công cụ bên ngoài mà không cần phụ thuộc
+xuất – biến đổi – nạp dữ liệu
+vào bất kỳ thành phần nào của nền tảng đó không?
+(ETL/ELT), thông tin mô tả dữ liệu
+(Metadata), Bộ khóa Mã hóa dữ liệu và
+Quyền sở Mô-đun Raw Data Storage
+Bộ mã dữ liệu định danh/ Dữ liệu chủ
+hữu và kiểm Dữ liệu raw (ingested data) được lưu dưới định dạng gì mặc định? Có thể quy định cụ thể định dạng chuẩn mở
+dùng chung trong toàn hệ sinh thái
+soát kỹ thuật như Parquet, ORC, CSV không?
+phần mềm - dữ liệu (Master Data).
+với CSDL Trong trường hợp dừng hợp tác, toàn bộ dữ liệu raw có thể export ra dạng chuẩn mở + metadata schema đi
+● Việc làm chủ các thành phần trên là điều
+dùng chung kèm, không mã hóa không?
+kiện tiên quyết để thực hiện hiệu quả
+Chủ đầu tư có thể chỉ định và quản lý Storage Encryption Key (BYOK) không? Nếu có, key nằm ở đâu: KMS của
+hoạt động kiểm duyệt dữ liệu, phát hiện
+vendor hay của chủ đầu tư?
+sớm sai lệch, ngăn chặn rủi ro trong
+Có hỗ trợ mô hình nào cloud/ Hybrid/ Onprem.
+phân tích báo cáo, đồng thời đảm bảo
+tuân thủ các tiêu chuẩn quản trị dữ liệu
+ETL / Data Processing – Logic Portability & Reusability
+theo hướng chuyên nghiệp và bền vững.
+Các bước xử lý (transform, enrich, clean) hiện có đang được lưu dưới dạng mã rõ ràng (SQL, PySpark, hoặc
+Từ đó, đảm bảo chất lượng, tính chính
+DSL mở), có thể version control bằng Git và tái triển khai trên bất kỳ nền tảng nào (dbt, Spark, Flink...) không?
+xác, toàn vẹn và bảo mật của dữ liệu
+Nếu tôi muốn dừng dùng công cụ ETL hiện tại, tôi có thể giữ nguyên logic xử lý và chỉ chuyển execution engine
+hướng đến hình thành tài sản số trong
+không?
+tương theo định hướng Chiến lược CĐS
+PTSC.
+
+=== PAGE 55 ===
+Giải thích Nguyên tắc 2
+Nguyên tắc Chi tiết nguyên tắc Trả lời câu hỏi
+2
+● Tổng công ty PTSC cần nắm quyền kiểm
+soát và sở hữu hoàn toàn các thành Mô-đun Data Ingestion (đẩy dữ liệu vào)
+phần cốt lõi của hệ thống cơ sở dữ liệu Pipeline ingest dữ liệu (từ ERP, file, API…) có thể được thiết kế và quản lý bởi chủ đầu tư hay không, hay phải
+dùng chung, kèm theo giá trị tri thức thao tác qua công cụ riêng (GUI, service) của Hãng/ Nhà cung cấp?
+trong quá trình phân tích - sử dụng dữ a. Có thể export ra định dạng YAML/JSON không?
+liệu bao gồm: quy trình xử lý dữ liệu b. Có thể chạy trên nền tảng khác không?
+(Pipeline/ Data Transformation Logic), c. Các connector (SAP, OPC UA, MQTT…) là dạng module độc lập, hay gắn chặt vào engine riêng của Hãng/
+dữ liệu gốc (Raw Data), quá trình trích Nhà cung cấp?
+xuất – biến đổi – nạp dữ liệu d. Nếu PTSC muốn chuyển sang nền tảng khác, có thể mang connector đi không?
+(ETL/ELT), thông tin mô tả dữ liệu
+(Metadata), Bộ khóa Mã hóa dữ liệu và Data Ingestion – Pipeline Format & Execution Layer Independence
+Quyền sở
+Bộ mã dữ liệu định danh/ Dữ liệu chủ a. Pipeline ingestion hiện tại có thể được xuất toàn bộ dưới định dạng mở (JSON, YAML, hoặc mã DSL rõ
+hữu và kiểm
+dùng chung trong toàn hệ sinh thái ràng), độc lập với công cụ thực thi không?
+soát kỹ thuật
+phần mềm - dữ liệu (Master Data). b. Cụ thể, nếu toàn bộ pipeline xử lý hiện tại được trích xuất và chuyển sang chạy trên một nền tảng khác
+với CSDL
+● Việc làm chủ các thành phần trên là điều (không thuộc hệ sinh thái của Hãng/ Nhà cung cấp), thì có đảm bảo giữ nguyên logic mà không cần viết lại
+dùng chung
+kiện tiên quyết để thực hiện hiệu quả không? Các pipeline đó có đang bị ràng buộc vào công cụ thiết kế hoặc engine thực thi độc quyền của hệ
+hoạt động kiểm duyệt dữ liệu, phát hiện thống hiện tại không?
+sớm sai lệch, ngăn chặn rủi ro trong
+phân tích báo cáo, đồng thời đảm bảo Mô-đun ETL / Data Transformation
+tuân thủ các tiêu chuẩn quản trị dữ liệu a. Pipeline ETL có được lưu trữ dưới định dạng mở (ví dụ JSON, SQL Script, hoặc Spark code) không? Hay phụ
+theo hướng chuyên nghiệp và bền vững. thuộc vào metadata riêng của Hãng/ Nhà cung cấp?
+Từ đó, đảm bảo chất lượng, tính chính b. Pipeline có thể được version control trong Git, chỉnh sửa bằng tay (code editor), và deploy qua CI/CD
+xác, toàn vẹn và bảo mật của dữ liệu không? Hay phải thao tác qua GUI của nền tảng Hãng/ Nhà cung cấp?
+hướng đến hình thành tài sản số trong c. Chủ đầu tư có thể toàn quyền chỉnh sửa, vận hành, và chạy lại (deploy) các pipeline ETL mà không cần tài
+tương theo định hướng Chiến lược CĐS khoản đặc quyền của Hãng/ Nhà cung cấp không?
+PTSC.
+
+=== PAGE 56 ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+Nguyên tắc Chi tiết nguyên tắc Trả lời câu hỏi
+3
+● Tính linh hoạt: Giải pháp cần được thiết kế với kiến trúc linh hoạt, cho
+● Các mô-đun nào bắt buộc phải chạy trên cloud? Có phương án
+phép tổ chức hệ thống dữ liệu theo các mô hình Hybrid, Multi-cloud,
+chạy on-prem hoặc hybrid không?
+Multi-site, nhằm đáp ứng định hướng và chiến lược dữ liệu dài hạn của
+● Mô-đun ingestion và raw data storage có triển khai được tại chỗ
+Kiến trúc mô Tổng công ty.
+(on-premise) không?
+hình dữ liệu ● Tính hiện đại: Bên cạnh đó cần áp dụng các công nghệ mới nhất, các sản
+● Giải pháp có hỗ trợ kiến trúc cloud-neutral (không phụ thuộc 1
+hiện đại và phẩm nền tảng dữ liệu thương mại hóa của các hãng lớn trên thế giới và
+hãng) không?
+linh hoạt tận dụng hiệu quả sức mạnh tính toán, khả năng mở rộng của hạ tầng điện
+● Có yêu cầu cụ thể nào buộc khách hàng dùng cloud vendor cố
+toán đám mây (cloud) để phục vụ các nghiệp vụ yêu cầu năng lực xử lý
+định (IBM Cloud, Azure, AWS, Google Cloud Platform)?
+cao như: Big Data, Trí tuệ nhân tạo (AI), Học máy (Machine Learning) và
+Phân tích nâng cao (Analytics).
+
+=== PAGE 57 ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+Nguyên tắc Chi tiết nguyên tắc Trả lời câu hỏi
+4
+● Có hỗ trợ lưu raw data dưới định dạng chuẩn mở (Parquet, CSV, ORC…) và lưu trên object storage chuẩn
+mở không?
+● Tính chủ động: Hệ thống nền tảng ● PTSC có thể toàn quyền truy cập physical layer (HDD/NAS/Object) – không qua API độc quyền không?
+dữ liệu phải được xây dựng theo ● Các file raw có hỗ trợ dùng khóa do PTSC quản lý không? (Bring Your Own Key)
+định hướng mở và độc lập với các ● Metadata schema có được export định kỳ không (JSON, Avro, Glue-compatible)
+nhà cung cấp, nhằm tránh phụ ● Khi PTSC muốn dừng hợp tác với vendor hiện hữu và chuyển qua Hãng/ Nhà cung cấp/ nền tảng khác
+thuộc vào một nền tảng duy nhất, có cần phải viết lại toàn bộ pipeline ETL / Data Flow không?
+đảm bảo khả năng chuyển đổi, mở ● Định dạng pipeline là dạng mở hay độc quyền?
+rộng và tích hợp linh hoạt trong ● Kiến trúc data platform là kiến trúc mở hay đóng. Khi PTSC cần thay thế 1 trong các module của Data
+tương lai. platform có thể thực hiện được không?
+Đảm bảo khả
+● Trong kiến trúc tổng thể của giải pháp, những thành phần nào PTSC có thể toàn quyền kiểm soát, và
+năng chuyển
+● Tính phổ biến: Toàn bộ quy trình những thành phần nào bắt buộc phải phụ thuộc vào nền tảng của Hãng/ Nhà cung cấp? Vui lòng liệt kê
+đổi, tái sử
+xử lý, lưu trữ và hiển thị dữ liệu cần cụ thể theo từng mô-đun: ingestion, ETL, storage, query, analytics.
+dụng và mở
+được thiết kế theo hướng mở, sử ● Nếu sau này PTSC muốn dừng hợp tác và chuyển toàn bộ dữ liệu, pipeline, dashboard và logs sang nền
+rộng quy mô
+dụng các định dạng phổ biến và dễ tảng khác (không dùng IBM/ Azure/ AWS/ Google Cloud Platform nữa), thì: Phần nào có thể export ra
+trong tương
+chia sẻ, nhằm đảm bảo dữ liệu có ngay, dưới chuẩn mở?
+lai
+thể tái sử dụng và dễ dàng tích hợp ● Phần nào phải viết lại, hoặc cần sự hỗ trợ của Hãng/ Nhà cung cấp.
+với các hệ thống khác. Điều này ● Giải pháp có hỗ trợ cơ chế Bring Your Own Key (BYOK) không? Ai là người nắm khóa cuối cùng – nhà
+giúp Tổng công ty có thể chuyển đổi cung cấp hay chủ đầu tư?
+nền tảng hoặc mở rộng hệ thống ● Các pipeline ETL hoặc dataflow được thiết kế trong hệ thống có thể export ra định dạng chuẩn mở như
+trong tương lai mà không cần xây JSON, SQL, YAML hay Apache Airflow DAG không? Hay chỉ chạy được trong môi trường riêng của
+dựng lại toàn bộ quy trình dữ liệu từ Hãng/ Nhà cung cấp?
+đầu. ● Chủ đầu tư có quyền truy cập trực tiếp vào toàn bộ hệ thống logs, monitoring, scheduler và điều chỉnh
+pipeline, hay chỉ có thể thao tác qua lớp giao diện giới hạn?
+
+=== PAGE 58 ===
+PHỤ LỤC: CHI TIẾT NGUYÊN TẮC ĐÁNH GIÁ
+Nguyên tắc Chi tiết nguyên tắc Trả lời câu hỏi
+5
+● Kiểm soát người dùng dữ liệu: Thiết kế hệ thống theo dõi và kiểm soát truy cập ● Dữ liệu trong quá trình truyền (in transit) và lưu trữ (at rest)
+vào dữ liệu, phân quyền rõ ràng theo vai trò người dùng, tích hợp đăng nhập một có được mã hóa theo chuẩn nào?
+Đảm bảo An lần (SSO), xác thực nhiều lớp (MFA), kiểm duyệt thông tin nhạy cảm khi cần thiết, ● Có hỗ trợ kiểm soát truy cập theo vai trò (RBAC) hoặc phân
+toàn thông phát hiện các dấu hiệu rò rỉ dữ liệu và có cơ chế cảnh báo tự động khi có nguy cơ quyền chi tiết theo trường dữ liệu không?
+tin (Bảo mật mất an toàn. ● Có mô-đun SIEM để giám sát hành vi truy cập dữ liệu
+- Sẵn sàng - ● Kiểm soát vận hành dữ liệu: Toàn quyền kiểm soát và vận hành hệ thống, bao không? Tích hợp được với Elastic, Sentinel, hay QRadar
+Toàn vẹn) gồm việc thiết lập, điều chỉnh quy trình xử lý dữ liệu, theo dõi nhật ký hoạt động không?
+(logs), lên lịch tác vụ… mà không phụ thuộc vào tài khoản đặc biệt hay quyền ● Khi có sự cố rò rỉ dữ liệu, hệ thống có cơ chế phát hiện và
+quản trị của bất kỳ một nhà cung cấp nào. cảnh báo không?
+6
+● Giải pháp có khả năng tích hợp và mở rộng để hỗ trợ các
+Đáp ứng lộ ● Giải pháp cần được kiến trúc phù hợp và tương thích với 5 trụ cột theo lộ trình ứng dụng tương lai như AI Chatbot, Big Data, BIM/CAD,
+trình Chuyển Chiến lược Chuyển đổi số của PTSC, đóng vai trò là nền tảng cho việc xây dựng RPA, Robotic theo lộ trình chuyển đổi số của PTSC không?
+đổi số theo hệ sinh thái dữ liệu hiện đại, phục vụ các công tác R&D về: Ứng dụng Mobility, ● Giải pháp có cung cấp API hoặc SDK để phát triển các ứng
+Chiến lược Ứng dụng AI Chatbot, Ứng dụng Big Data, Ứng dụng BIM/CAD, Ứng dụng RPA, dụng mới dựa trên dữ liệu của PTSC không?
+CĐS của Ứng dụng Blockchain, Ứng dụng Robotic,…vv. ● Giải pháp có cung cấp các công cụ hoặc khả năng phân
+PTSC tích dữ liệu nâng cao (ví dụ: Machine Learning, deep
+learning) để phục vụ các mục tiêu R&D của PTSC không?
+
+=== PAGE 59 ===
+Xin cám ơn anh/chị đã xem tài liệu!
+THANK YOU !
+Nếu có thắc mắc/góp ý, vui lòng liên hệ Ban
+dự án Chuyển đổi số - Tổng công ty PTSC.

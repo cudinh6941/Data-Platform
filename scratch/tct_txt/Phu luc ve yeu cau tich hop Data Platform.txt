@@ -1,0 +1,249 @@
+=== PAGE 1 ===
+PHỤ LỤC HỢP ĐỒNG SỐ 02
+(Kèm theo Hợp đồng số: -2026/PTSC-QN/MHH ngày 12 tháng 02 năm 2026)
+YÊU CẦU VỀ TÍCH HỢP VÀ KIẾN TRÚC DỮ LIỆU
+1. Thông tin chung về mô hình quản trị dữ liệu tại Tổng công ty Cổ phần Dịch vụ Kỹ
+thuật Dầu khí Việt Nam (sau đây gọi tắt là Tổng công ty PTSC)
+Mô hình quản trị dữ liệu trong Hệ sinh thái Phần mềm - Dữ liệu tại Tổng công ty PTSC
+có 06 mục tiêu trọng tâm mà phần mềm cần tích hợp với Nền tảng dữ liệu (Data Platform)
+để đáp ứng, bao gồm:
+- Tích luỹ: Dữ liệu từ các phần mềm sẽ được phân loại, đánh giá, thu thập và lưu trữ
+đầy đủ để quản trị và phân tích phục vụ hoạt động SXKD của Tổng công ty PTSC;
+- Tích hợp: Tích hợp và xây dựng cơ sở dữ liệu lớn dùng chung trong Tổng công ty
+PTSC và giữa Tổng công ty PTSC với các Đơn vị thành viên; việc tích hợp giữa các
+phần mềm ưu tiên triển khai tập trung thông qua 01 trục tích hợp (ESB) dùng chung.
+Đối với mô hình SaaS/Cloud, Bên B được phép sử dụng cơ chế kết nối theo kiến trúc dịch
+vụ của nhà sản xuất, với điều kiện luồng tích hợp phía PTSC vẫn được quản trị tập trung
+qua ESB/API Gateway và được PTSC phê duyệt bằng văn bản;
+- Đồng bộ: Đảm bảo tính liên kết, đồng bộ dữ liệu trong toàn hệ thống của Tổng công
+ty PTSC; việc tạo mới/ thay thế/ đồng bộ mapping các mã định danh bắt buộc triển khai
+tập trung trên phân hệ Master Data Management với quy trình phê duyệt rõ ràng trước
+mỗi thay đổi;
+- Phân cấp - Phân quyền: Thực hiện phân cấp, phân quyền, quản lý truy cập dữ liệu và
+việc thực hiện các chức năng trên các phần mềm được quản lý tập trung thông qua phân
+hệ RBAC và SSO để đảm bảo ATTT và hiệu quả;
+- Phân tích: Triển khai các giải pháp phân tích dữ liệu nhằm hỗ trợ công tác quản trị
+và ra quyết định;
+- Quản trị: Xây dựng hệ thống dữ liệu lớn (Big Data) và thiết lập cơ chế quản trị dữ
+liệu phù hợp, chặt chẽ.
+2. Yêu cầu về kỹ thuật tích hợp
+STT Yêu cầu kỹ thuật
+Chuẩn giao tiếp và định dạng dữ liệu với nền tảng dữ liệu
+1 Phần mềm phải hỗ trợ tối thiểu các kênh giao tiếp sau để tích hợp với Data Platform
+(Data Platform) và trục tích hợp (ESB):
+1.1 RESTful API sử dụng JSON, có tài liệu OpenAPI/Swagger đầy đủ.
+Kết nối JDBC/ODBC hoặc view/reporting database để trích xuất batch (áp dụng cho
+phần mềm thiết kế riêng cho PTSC nếu có).
+1.2
+Hoặc Bên B cung cấp cơ chế bulk export/ API export tương đương đối với phần mềm
+SaaS.
+1.3 Xuất/nhập file theo chuẩn mở (CSV, JSON; ưu tiên thêm Parquet/Avro nếu hỗ trợ).
+Định dạng thời gian trong dữ liệu tích hợp phải thống nhất, quy ước timezone rõ ràng
+1.4
+để tránh sai lệch khi đồng bộ đa hệ thống.
+1 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam PTSC-ADM-RG08-FM10
+T (+84) 28 3910 2828 F (+84) 28 3910 2929 www.ptsc.com.vn Trang 1/5
+
+=== PAGE 2 ===
+Các API phục vụ trích xuất/đồng bộ dữ liệu phải hỗ trợ tối thiểu hoặc tương đương:
+- Pagination (limit/offset hoặc cursor);
+1.5 - Filter theo thời gian (ví dụ: updated_since, from/to);
+- Quy định rõ giới hạn kỹ thuật (max page size/max payload/rate limit) và cơ chế trả
+lỗi chuẩn.
+Tiêu chuẩn thiết kế tích hợp
+Bên B cam kết phối hợp khảo sát, thiết kế và lập các sơ đồ thiết kế liên quan đến phần
+mềm, gồm tối thiểu các nội dung sau: .
+1. Sơ đồ thiết kế số hoá quy trình liên phòng ban
+Sơ đồ số hoá quy trình phải mô tả đầy đủ luồng nghiệp vụ, vai trò các bộ phận/nhân
+sự tham gia và xác định rõ mỗi bước được thực hiện trên phần mềm nào trong hệ sinh
+thái.
+Nội dung sơ đồ tối thiểu phải bao gồm:
+- Các vai trò tham gia: đơn vị đề xuất, bộ phận kiểm tra, lãnh đạo phê duyệt, kế toán,
+nhân sự vận hành…
+- Các bước xử lý nghiệp vụ: thể hiện tuần tự logic từ khởi tạo → kiểm tra → phê duyệt
+& ký số → cập nhật trạng thái → lưu trữ.
+- Mapping với hệ thống phần mềm: chỉ rõ mỗi bước được thực hiện trên hệ thống nào
+(ERP, HRM, E-Office, CMMS…).
+- Điểm kiểm soát: thể hiện bước quyết định (Yes/No) hoặc trạng thái xử lý (Pending,
+Approved, Rejected…).
+2. Sơ đồ thiết kế kỹ thuật tích hợp
+1.6
+Sơ đồ kỹ thuật tích hợp phải thể hiện rõ kiến trúc liên thông giữa các hệ thống (ERP,
+HRM, CMMS, E-Office…) thông qua ESB, đồng thời mô tả chi tiết dữ liệu, API, và
+trạng thái trao đổi trong từng kịch bản nghiệp vụ. Nội dung tối thiểu phải bao gồm:
+- Các thành phần tham gia: ERP, E-Office, HRM, CMMS, ESB (hoặc hệ thống khác
+liên quan trong kịch bản quy trình tích hợp bên dưới).
+- Luồng dữ liệu trao đổi: Thể hiện dữ liệu đi và dữ liệu trả về (document, invoice,
+work order, training request…).
+- Các API được sử dụng:
++ CreateTicket – API khởi tạo chứng từ/yêu cầu từ hệ thống nguồn sang E-Office.
++ ApproveSignEO – API phản ánh kết quả phê duyệt/ký số từ E-Office về ESB.
++ UpdateDocument/UpdateInvoice – API cập nhật trạng thái chứng từ về hệ thống
+nguồn (ERP/HRM/CMMS).
++ Các API đặc thù khác (nếu có), phải ghi rõ tên và chức năng.
+- Cập nhật trạng thái dữ liệu: Cần thể hiện rõ trạng thái chuyển đổi trước và sau phê
+duyệt (Pending, Approved, Rejected, Completed…).
+Vai trò xử lý: Làm rõ bước nào do người dùng thực hiện trên hệ thống, bước nào do
+hệ thống tự động đồng bộ qua ESB.
+Hỗ trợ luồng dữ liệu 02 chiều qua ESB/API Gateway và/hoặc Message Broker
+2
+(ví dụ Kafka nếu áp dụng)
+Phần mềm phải cho phép Luồng ra (Phần mềm → Data Platform): phát sinh sự kiện
+2.1 hoặc dữ liệu giao dịch, Master Data, dữ liệu thay đổi CDC – Change Data Capture
+(nếu có) sang ESB/Kafka/topic hoặc API của Data Platform.
+1 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam PTSC-ADM-RG08-FM10
+T (+84) 28 3910 2828 F (+84) 28 3910 2929 www.ptsc.com.vn Trang 2/5
+
+=== PAGE 3 ===
+Phần mềm phải cho phép Luồng vào (Data Platform → Phần mềm): tiếp nhận dữ liệu
+master, dữ liệu chuẩn hóa, kết quả phân tích/ khuyến nghị từ Data Platform thông qua
+2.2 API hoặc messaging, và cập nhật an toàn vào phần mềm.
+Với phần mềm SaaS: Bên B cam kết cung cấp tối thiểu các API inbound/message
+broker để Data Platform có thể đẩy dữ liệu (Master Data) vào phần mềm.
+Cơ chế truy xuất dữ liệu gia tăng CDC – Change Data Capture)/ Incremental (nếu
+3
+có).
+Phần mềm phải có cơ chế hỗ trợ lấy dữ liệu gia tăng, bao gồm tối thiểu một trong các
+phương án:
+- Trường “ngày/giờ cập nhật gần nhất” (Last Updated Date) cho từng bản ghi;
+- Cờ “trạng thái thay đổi” hoặc “phiên bản” (Versioning);
+3.1
+- Hoặc khả năng cung cấp change log/ CDC từ CSDL (Transaction Log, Trigger,…)
+(nếu có);
+- Với phần mềm SaaS: Bên B cam kết cung cấp cơ chế timestamp hoặc versioning
+thông qua API để hỗ trợ tích lũy dữ liệu lịch sử.
+Phần mềm phải có cơ chế hỗ trợ lấy dữ liệu gia tăng, bao gồm tối thiểu một trong các
+phương án:
+- Trường “ngày/ giờ cập nhật gần nhất” (Last Updated Date) cho từng bản ghi;
+- Cờ “trạng thái thay đổi” hoặc “phiên bản” (Versioning);
+3.2
+- Hoặc khả năng cung cấp change log / CDC từ CSDL (Transaction Log, Trigger,…)
+(Nếu có)
+- Với phần mềm SaaS: Bên B cam kết cung cấp cơ chế timestamp hoặc versioning
+thông qua API để hỗ trợ tích lũy dữ liệu lịch sử
+Phần mềm phải hỗ trợ cơ chế backfill/replay theo khoảng thời gian (time window) để
+3.3
+xử lý dữ liệu đến muộn (late arriving) và phục vụ tái đồng bộ khi có sự cố.
+4 Ổn định khóa chính và quy ước định danh
+Phần mềm phải đảm bảo Khóa chính cho các thực thể lõi như tổ chức/đơn vị, tài sản,
+4.1 người dùng/nhân sự, hồ sơ/văn bản, quy trình, rủi ro, khóa học,… (tùy đặc thù nghiệp
+vụ theo từng phần mềm) là ổn định, không thay đổi theo thời gian.
+Phần mềm phải đảm bảo có quy tắc chuẩn, duy nhất, để đồng bộ ID giữa phần mềm
+4.2
+và nền tảng MDM/ Data Platform.
+Bên B cam kết hỗ trợ mapping/đồng bộ ID nội bộ của phần mềm với Master Data dùng
+4.3 chung của PTSC (qua ESB và/hoặc Data Platform/MDM), bảo đảm liên kết dữ liệu
+end-to-end.
+Bảo mật tích hợp & tích hợp với IAM hiện hữu
+5
+Phần mềm khi giao tiếp với Data Platform (API, ESB, Kafka,…) phải:
+5.1 Hỗ trợ OAuth2.0/OpenID Connect và/hoặc mTLS cho API.
+Cho phép tích hợp với phần mềm IAM/SSO hiện có (ví dụ Keycloak/ADFS/ LDAP)
+5.2
+để cấp token truy cập dịch vụ.
+Cho phép cấu hình phạm vi (scope)/ role cho từng client tích hợp (ứng dụng ETL,
+5.3
+ESB, Data Platform,…).
+6 Quản lý metadata & tài liệu mô hình dữ liệu
+1 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam PTSC-ADM-RG08-FM10
+T (+84) 28 3910 2828 F (+84) 28 3910 2929 www.ptsc.com.vn Trang 3/5
+
+=== PAGE 4 ===
+Quản trị kiến trúc dữ liệu dùng chung:
+- Với phần mềm thiết kế riêng cho PTSC: Bên B hỗ trợ cung cấp mô hình dữ liệu
+logic/ physical (ERD), data dictionary (mô tả bảng, cột, kiểu, ràng buộc) đối với những
+6.1
+dữ liệu kết nối với Data Platform của PTSC;
+- Với phần mềm SaaS/Cloud: Bên B hỗ trợ cung cấp data dictionary + logical schema
++ mapping spec/API schema phục vụ data catalog/integration;
+Bên B hỗ trợ cung cấp mapping giữa trường màn hình, báo cáo và trường trong
+6.2
+CSDL/API.
+Bên B phải cam kết cập nhật tài liệu khi có thay đổi version, và cho phép Data Platform
+6.3
+sử dụng để đồng bộ với Data Catalog.
+Bên B phải cung cấp mô hình dữ liệu (ERD/Data Model) phục vụ tích hợp cho các đối
+tượng/bảng trong phạm vi tích hợp, tối thiểu gồm: entities/đối tượng dữ liệu, thuộc
+tính chính, PK/FK, cardinality/relationship, ràng buộc dữ liệu; kèm data dictionary (ý
+6.4 nghĩa trường, kiểu dữ liệu, nullability, code list nếu có). Sau đó, Bên B bổ sung các
+phương án đồng bộ dữ liệu, tích hợp từ các phần mềm. Trường hợp phần
+mềm SaaS không cung cấp physical schema, phải cung cấp ERD logic và API
+schema/Data Dictionary tương đương.
+7 Yêu cầu hiệu năng cho kênh tích hợp với nền tảng dữ liệu của PTSC
+Bên B cam kết khả năng xử lý và mở rộng hiệu năng (Scalability) cho kênh tích hợp,
+đáp ứng khả năng xử lý lượng gọi API và batch để đảm bảo khả năng xử lý hiệu năng
+7.1
+phần mềm. Số lượng API và batch sẽ được trao đổi và thống nhất trong quá trình triển
+khai dự án.
+Phần mềm phải đáp ứng không giới hạn tích hợp bởi license (hoặc ghi rõ giới hạn, nếu
+7.2
+có, về API rate limit, số client, số interface, quota batch/export).
+Phần mềm phải đáp ứng không gây ảnh hưởng đáng kể đến thời gian đáp ứng giao
+7.3
+dịch online khi chạy job trích xuất dữ liệu theo lịch.
+8 Thiết kế API/messaging idempotent, có cơ chế theo dõi giao dịch
+Các API và message inbound vào phần mềm phải thiết kế idempotent (gửi lại nhiều
+8.1
+lần với cùng request ID không gây trùng dữ liệu).
+Các API và message inbound vào phần mềm phải hỗ trợ correlationId/ traceId để
+8.2
+theo dõi end-to-end qua ESB, Data Platform và phần mềm.
+Các API/Message phục vụ đồng bộ dữ liệu phải hỗ trợ upsert semantics (insert nếu
+8.3 chưa có, update nếu đã tồn tại) theo khóa định danh thống nhất; cơ chế xử lý xung đột
+(conflict) phải được mô tả rõ (ưu tiên theo updated_at hoặc version)
+Khi có lỗi tích hợp, phải có cơ chế retry có kiểm soát (backoff), tránh tạo trùng dữ
+8.4
+liệu; mô tả rõ các mã lỗi có thể retry/không retry.
+9 Môi trường kiểm thử tích hợp & hỗ trợ triển khai
+Bên B phải cung cấp môi trường DEV/UAT với đầy đủ API, cấu hình tích hợp giống
+production.
+9.1 - Phần mềm phát triển riêng cho PTSC: cung cấp DEV/UAT tương đương;
+- Phần mềm SaaS: cung cấp sandbox/UAT tenant (hoặc môi trường test) có API
+tương đương production.
+Bên B phải cung cấp bộ dữ liệu mẫu, kịch bản test chuẩn để Data Platform & khách
+9.2
+hàng test tích hợp 02 chiều.
+1 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam PTSC-ADM-RG08-FM10
+T (+84) 28 3910 2828 F (+84) 28 3910 2929 www.ptsc.com.vn Trang 4/5
+
+=== PAGE 5 ===
+Bên B phải bố trí đầu mối kỹ thuật hỗ trợ trong giai đoạn thiết kế interface, test
+9.3
+SIT/UAT.
+Bên B phải hỗ trợ cơ chế reprocess/re-drive (theo khoảng thời gian, theo batch/job
+9.4
+hoặc theo request/correlation id) để xử lý lỗi và tái đồng bộ dữ liệu.
+10 Cam kết mở/ không khóa chặt tích hợp
+Bên B phải cam kết: Không giới hạn số interface/ kênh tích hợp ở mức “không hợp lý
+10.1
+về mặt kỹ thuật”.
+Bên B phải cam kết:
+- Với phần mềm thiết kế riêng cho PTSC: Mọi cấu hình/ API tích hợp với Data
+Platform đều có thể truy cập, cấu hình bởi đội kỹ thuật khách hàng/ Data Platform
+10.2 theo quyền được cấp, không phụ thuộc độc quyền vào vendor.
+- Với phần mềm SaaS: PTSC có quyền truy cập admin console/API management trong
+phạm vi được cấp; có tài khoản service và tài liệu cấu hình để PTSC/đơn vị Data
+Platform tự vận hành tích hợp.
+11 Yêu cầu chất lượng dữ liệu & đối soát nghiệm thu
+Bên B phải thống nhất và cung cấp bộ quy tắc Data Quality tối thiểu cho dữ liệu tích
+11.1
+hợp (null/format/uniqueness/foreign key/code list…), kèm ngưỡng chấp nhận.
+Phải có cơ chế tách riêng bản ghi lỗi (quarantine/holding) và cung cấp danh sách lỗi
+11.2
+để xử lý/đồng bộ lại
+12 Yêu cầu vận hành tích hợp
+Tích hợp phải có cơ chế giám sát trạng thái và cảnh báo tối thiểu: số lượng giao dịch,
+12.1
+tỷ lệ lỗi, số lần retry, độ trễ đồng bộ (lag/latency).
+Phải cung cấp hướng dẫn vận hành (runbook) cho các tình huống: retry, reprocess,
+12.2
+truy vết theo correlation id
+13 Quản lý thay đổi interface/schema
+Tất cả interface/API/file schema phải có versioning; đảm bảo tương thích ngược khi
+13.1
+thay đổi (backward compatible) hoặc có phương án song song version.
+Phải có changelog và quy trình thông báo thay đổi trước khi loại bỏ phiên bản cũ
+13.2
+(deprecation policy) theo thời gian tối thiểu do Bên A quy định.
+1 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam PTSC-ADM-RG08-FM10
+T (+84) 28 3910 2828 F (+84) 28 3910 2929 www.ptsc.com.vn Trang 5/5

@@ -1,0 +1,391 @@
+=== PAGE 1 ===
+LỄ KHỞI ĐỘNG
+DỰ ÁN GIẢI PHÁP NỀN TẢNG DỮ LIỆU (DATA PLATFORM) - GIAI ĐOẠN 1
+HDP26
+GIỮA TỔNG CÔNG TY CP DỊCH VỤ KỸ THUẬT DẦU KHÍ VIỆT NAM (PTSC)
+VÀ LIÊN DANH HIPT-AITS
+Mã dự án HDP26 - Hybrid Data Platform 2026
+TP. Hồ Chí Minh, ngày 04 tháng 03 năm 2026
+
+=== PAGE 2 ===
+NỘI DUNG TỔNG QUÁT
+VP PTSC –PetroVietnam Tower
+04-03-2026 | 13h00–14h30 & 18h00–20h00 Tiệc tối
+Thành phần: PTSC & HIPT-AITS
+THỜI GIAN NỘI DUNG CHƯƠNG TRÌNH
+13h00 - 13h15 | 15p ➤ Phát biểu khai mạc & định hướng hợp tác
+13h15 - 13h45 | 30p ➤ Kế hoạch Dự án giải pháp nền tảng dữ liệu GĐ1
+A. Tổng quan dự án
+B. Giới thiệu về bên B (Liên danh HIPT- AITS)
+C. Mục tiêu & Kết quả
+D. Cơ cấu tổ chức Ban quản lý dự án & cách thức phối hợp
+E. Kế hoạch triển khai
+13h45 - 14h00 | 15p ➤ Hoạt động trao đổi & bế mạc
+- Thảo luận & Trao đổi
+- Nghi thức Lễkhởi động dự án
+- Phát biểu bế mạc
+18h00 - 20h00 ➤ Tiệc tối & giao lưu kết nối
+
+=== PAGE 3 ===
+TỔNG QUAN DỰ ÁN
+THÔNG TIN NỘI DUNG
+Số: 1-2026/PTSC-CDS/HĐ
+Hợp đồng
+Gói thầu “DỰ ÁN GIẢI PHÁP NỀN TẢNG DỮ LIỆU (DATA PLATFORM) -GIAI ĐOẠN 1”.
+Bên A TỔNG CÔNG TY CP DỊCH VỤ KỸ THUẬT DẦU KHÍ VIỆT NAM (PTSC)
+LIÊN DANH CÔNG TY CỔ PHẦN TẬP ĐOÀN HIPT-CÔNG TY CỔ PHẦN TIN HỌC-VIỄN THÔNG HÀNG KHÔNG
+Bên B
+(LIÊN DANH HIPT-AITS)
+Bàn giao bản quyền phần mềm
+Bàn giao, lắp đặt thiết bị
+Công việc chính Cài đặt, cấu hình thiết bị, phần mềm, tích hợp
+Đào tạo, chuyển giao công nghệ
+Nghiệm thu tổng thể
+
+=== PAGE 4 ===
+A.
+GIỚI THIỆU VỀ LIÊN DANH HIPT-AITS
+
+=== PAGE 5 ===
+GIỚI THIỆU VỀ CÔNG TY
+Công ty Cổ phần Tập đoàn HiPT
+(HiPT Group)là một trong những
+doanh nghiệp công nghệ thông tin
+hàng đầu tại Việt Nam, được thành
+lập vào năm 1994
+Quy mô doanh thu: ~ 1200 tỷ
+đồng/năm
+Trụ sở chính tại Hà Nội: Chi nhánh Hồ Chí Minh:
+Số 152 Thụy Khuê, Quận Tây Hồ, Thành phố Hà Nội Tầng trệt tòa nhà Thiên Sơn
+Tel: (+84) 24 3847 4548 Số 5 đường Nguyễn Gia Thiều, Phường Võ Thị Sáu, Quận
+Email: info@hipt.vn 3, Thành phố Hồ Chí Minh
+Tel: (+84) 28 3935 2525
+Email: info@hipt.vn
+
+=== PAGE 6 ===
+ĐỐI TÁC CHIẾN LƯỢC & KHÁCH HÀNG TIÊU BIỂU
+Đối tác chiến lược
+HiPT là đối tác uy tín của
+các hãng CNTT hàng đầu
+Thế giới trong chiến lược
+phát triển thị trường tại
+Việt Nam và khu vực.
+Khách hàng tiêu biểu
+Định vị thương hiệu bằng
+năng lực triển khai các dự
+án CNTT tiêu biểu, HiPT là
+lựa chọn tối ưu của nhiều
+khách hàng lớn.
+
+=== PAGE 7 ===
+SẢN PHẨM - DỊCH VỤ & KHÁCH HÀNG - ĐỐI TÁC
+Công ty Cổ phần Tin học – Viễn
+thông Hàng không (Aits)
+được thành lập vào năm 2008
+Quy mô doanh thu: ~ 400 tỷ đồng/năm
+
+=== PAGE 8 ===
+HỢP ĐỒNG TƯƠNG TỰ VỀ DỮ LIỆU ĐÃ TRIỂN KHAI
+> GIAI ĐOẠN 1:
+● DỊCH VỤ XỬ LÝ DỮ LIỆU CHO TỔNG CÔNG TY HÀNG KHÔNG VIỆT NAM
+THỜI GIAN THỰC HIỆN HỢP ĐỒNG: TỪ 2018 ĐẾN 2023
+QUY MÔ HỢP ĐỒNG: ~ 74 TỶ ĐỒNG.
+> GIAI ĐOẠN TIẾP THEO GIA HẠN TỪNG NĂM:
+● DỊCH VỤ XỬ LÝ DỮ LIỆU CHO TỔNG CÔNG TY HÀNG KHÔNG VIỆT NAM
+THỜI GIAN THỰC HIỆN HỢP ĐỒNG: 12 THÁNG
+QUY MÔ HỢP ĐỒNG: ~ 40 TỶ ĐỒNG/ 1 NĂM.
+
+=== PAGE 9 ===
+B.
+TỔNG QUAN DỰ ÁN
+
+=== PAGE 10 ===
+PHẠM VI DỰ ÁN
+1. Thời gian thực hiện hợp đồng: 18 tháng; (trong đó : Xây dựng hệ thống: 6 tháng; Vận hành, xử lý kỹ thuật: 12 tháng)
+01/04/2026 Dự kiến bàn giao bản quyền phần mềm
+15/06/2026 Dự kiến bàn giao hàng hóa phần cứng
+01/08/2026 Dự kiến hoàn thành triển khai & nghiệm thu chạy thử
+10/08/2026 Thời gian nghiệm thu, đào tạo
+20/08/2026 Thời gian bàn giao dự án
+27/08/2026 Thời gian đưa hệ thống vào sử dụng
+27/08/2026 -
+Vận hành, xử lý kỹ thuật
+27/08/2027
+2. Địa điểm triển khai:PetroVietnam, Số 1 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh.
+3. Hạng mục sản phẩm:
+Trung tâm vận hành dữ liệu (DOC)
+Nền tảng dữ liệu (hybrid data platform)
+Hệ thống hạ tầng CNTT & ATTT phục vụ dữ liệu
+
+=== PAGE 11 ===
+C.
+MỤC TIÊU & KẾT QUẢ DỰ ÁN
+
+=== PAGE 12 ===
+TIẾP CẬN VẤN ĐỀ & ĐỊNH HƯỚNG GIẢI PHÁP
+VẤN ĐỀ GIẢI PHÁP CHIẾN LƯỢC
+Xác định hướng đi trong lộ trình chuyển đổi số
+5 trụ cột chính của lộ trình Đề xuất áp dụng chiến
+Chuyển đổi số lấy dữ liệu
+chuyển đổi số PTSC lược Data First cho
+làm trung tâm
+PTSC
+Năng lực
+& cơ cấu Biến dữ liệu rời rạc thành tri
+tổ chức
+thức hệ thống
+Nghiên Chuyển đổi số chỉ thực sự
+Số hóa &
+cứu &
+cải tiến thành công khi dữ liệu
+phát triển
+Trụ cột quy trình được chuyển hóa thành
+(R&D)
+chính
+thông tin có ích để hỗ trợ
+ra quyết định và tạo giá trị
+Nền tảng
+công Cơ sở dữ
+KIẾN
+nghệ & liệu
+KIẾN TRÚC
+bảo mật TRÚC
+DỮ LIỆU
+HẠ TẦNG
+
+=== PAGE 13 ===
+MỤC TIÊU, HÀNH ĐỘNG, KẾT QUẢ CỤ THỂ
+HÀNH ĐỘNG TRỌNG TÂM
+MỤC TIÊU KẾT QUẢ ĐẠT ĐƯỢC
+● Thiết kế số hoá quy trình và biểu mẫu liên Phòng-Ban (Tích hợp, API)
+Thiết kế kiến trúc dữ ● Tiêu chuẩn tích hợp các phần mềm Thiết kế cấu trúc dữ liệu tổng thể, thiết kế giao diện và xây
+1
+liệu tổng thể ● Chính sách quản trị dữ liệu dựng báo cáo BI (Layout): Nâng cấp mở rộng PBI hiện có và
+Thiết kế PBI với các luồng dữ liệu mới
+● ĐÚNG -ĐỦ -SẠCH -SỐNG -THỐNG NHẤT -DÙNG CHUNG
+Triển khai nền tảng tích ● Dữ liệu được tích hợp liên thông giữa các phần mềm Thiết kế và triển khai nền tảng tích hợp dữ liệu (Data
+2 hợp dữ liệu Data ● Nền tảng ứng dụng báo cáo BI và mô hình AI platform) -Data Architectures & Application integration
+platform ● Mô hình vận hành quản trị dữ liệu tập trung (Trục tích hợp, SSO và Kho dữ liệu, Hồ chứa dữ liệu)
+Thiết lập nền tảng kết nối, chuẩn hóa hạ tầng CNTT theo
+hướng đồng bộ xuyên suốt và xây dựng hệ thống an toàn
+● Kết nối mạng ổn định
+thông tin theo cấp độ (Nghị định 85/2016/NĐ-CP)
+Chuẩn hoá Hạ tầng ● Hạ tầng máy chủ, lưu trữ, sao lưu đồng bộ với các ứng dụng.
+3
+CNTT và ATTT ● Dữ liệu lưu trữ tập trung và kiểm soát bảo mật
+Thiết kế triển khai trung tâm giám sát điều hành số IOC:
+● Trung tâm vận hành dữ liệu (DOC) trực quan hóa các báo báo BI như HSE, đội tàu, tài chính,
+vật tư
+
+=== PAGE 14 ===
+KẾT QUẢ SẢN PHẨM CỤ THỂ
+[1] LOGIN SSO-ĐĂNG NHẬP THEO ĐỊNH DANH NGƯỜI DÙNG
+[2] GIAO DIỆN CÁC BÁO CÁO
+
+=== PAGE 15 ===
+DANH MỤC SẢN PHẨM
+HỆ THỐNG HẠ TẦNG CNTT
+TRUNG TÂM VẬN HÀNH DỮ LIỆU
+& ATTT PHỤC VỤ DỮ LIỆU
+NỀN TẢNG DỮ LIỆU (DATA PLATFORM)
+
+=== PAGE 16 ===
+KIẾN TRÚC MÔ HÌNH HYBRID DATA PLATFORM
+Mô hình Hybrid Data Platform
+kiến trúc Multi-site Multi-cloud
+- Multi-site (Nhiều địa điểm) hạ tầng lưu trữ tại chỗ liên kết
+nhiều vị trí địa lý khác nhau (Từ CQTCT đến các Đơn vị)
+- Multi-cloud (Nhiều hãng điện toán đám mây) cho phép
+mở rộng sử dụng nhiều cloud dựa trên nhu cầu và điểm
+mạnh của từng Hãng cung cấp
+Bao gồm 12 phân hệ chức năng đáp ứng 6 tính năng chính:
+Tích luỹ -Tích hợp -Đồng bộ
+Phân chia -Phân tích -Quản trị dữ liệu lớn
+
+=== PAGE 17 ===
+XÂY DỰNG NỀN TẢNG DỮ LIỆU (DATA PLATFORM)
+Data Platform là giải pháp công nghệ đáp ứng nhu cầu Tích luỹ -Tích
+Mô phỏng
+hợp -Đồng bộ -Phân chia -Phân tích -Quản trị dữ liệu lớn
+nhằm phục vụ các bài toán quản trị, tối ưu vận hành, R&D của Toàn PTSC
+Tính năng nổi bật
+Đội ngũ > 30 nhân
+sự kỹ thuật 1. Trục tích hợp - liên thông tất cả
+phần mềm
+Dev Ops
+2. Lưu trữ Lakehouse - công nghệ
+hiện đại nhất
+DDataat ag oevnegrinnaeencre
+3. Truy vấn bằng ngôn ngữ tự
+nhiên
+Data analyst
+4. Khả năng mở rộng theo cả chiều
+ngang (thêm dung lượng dữ
+Data admin
+liệu) và chiều dọc (thêm nhiều
+tính năng khác)
+Data governance
+
+=== PAGE 18 ===
+MÔ PHỎNG KIẾN TRÚC HỆ SINH THÁI CNTT (giai đoạn 1)
+ĐỒNG BỘ -CHUẨN HOÁ -TẬP TRUNG ĐIỀU HÀNH -PHÂN QUYỀN THỰC THI
+BAN CHỈ ĐẠO CĐS (TCT)
+Trưởng ban: PTGĐ Phạm Văn Hùng
+VĂN PHÒNG CĐS / BAN DỰ ÁN CĐS (TCT)
+Chiến Số hoá quy trình R&D & Đổi mới
+lược & lộ
+trình AI/ ML
+NỀN TẢNG DỮ LIỆU DÙNG CHUNG (Enterprise Data Platform)
+Kiến trúc
+tổng thể
+CChhuuẩẩnn b dảữo lmiệậut
+Kết nối -Đồng bộ -Chia sẻ dữ liệu
+…
+HỆ THỐNG ỨNG DỤNG DÙNG CHUNG (TCT Triển khai trước -> Đơn vị mở rộng)
+GTíicáhm h sợápt &&
+ĐánAhP Ig iá Quản trị rủi ro … dùng chung khác
+
+=== PAGE 19 ===
+MÔ PHỎNG KIẾN TRÚC HỆ SINH THÁI CNTT (giai đoạn 2)
+ĐỒNG BỘ -CHUẨN HOÁ -TẬP TRUNG ĐIỀU HÀNH -PHÂN QUYỀN THỰC THI
+BAN CHỈ ĐẠO CĐS (TCT)
+Trưởng ban: PTGĐ Phạm Văn Hùng
+VĂN PHÒNG CĐS / BAN DỰ ÁN CĐS (TCT)
+Chiến Số hoá quy trình R&D & Đổi mới
+lược & lộ
+trình
+NỀN TẢNG DỮ LIỆU DÙNG CHUNG (Enterprise Data Platform)
+Kiến trúc
+tổng thể AI/ ML
+Chuẩn dữ liệu
+Kết nối -Đồng bộ -Chia sẻ dữ liệu
+Chuẩn bảo mật
+HỆ THỐNG ỨNG DỤNG DÙNG CHUNG (TCT Triển khai trước -> Đơn vị mở rộng)
+Tích hợp &
+API
+…
+Giám sát & Quản trị rủi ro … dùng chung khác
+Đánh giá
+CQTCT trước
+PTSC
+Quảng Hà Nội
+Ngãi
+Kết nối 2 chiều với Data Platform TCT
+3. Dùng chung -Tránh trùng lặp
+
+=== PAGE 20 ===
+CƠ CẤU TỔ CHỨC BAN QLDA &
+D.
+CÁCH THỨC PHỐI HỢP
+
+=== PAGE 21 ===
+QUY TRÌNH PHỐI HỢP
+Phạm vi xử lý & điều kiện chuyển
+Cấp Vai trò PTSC Vai trò HIPT-AITS
+cấp
+Cấp 1 –Ban Chỉ Định hướng mục tiêu và Cam kết nguồn lực & đảm Quyết định các thay đổi ảnh hưởng mục tiêu
+đạo Dự án ưu tiên chiến lược bảo năng lực triển khai tổng thể, ngân sách hoặc định hướng dự án
+Điều hành nghiệp vụ, Xử lý vấn đề ảnh hưởng tiến độ hoặc phạm vi
+Cấp 2 –Ban Quản Điều phối kế hoạch kỹ thuật
+kiểm soát phạm vi & tiến trong dự án. Chuyển cấp khi ảnh hưởng mục
+trịDự án & quản lý triển khai
+độ tiêu tổng thể hoặc phát sinh ngân sách
+Xử lý vấn đề trong phạm vi đã thống nhất.
+Cấp 3 –Đội Triển Làm rõ nghiệp vụ, xác Thiết kế, phát triển, tích hợp Chuyển cấp khi: ảnh hưởng mốc tiến độ cam
+khai Dự án nhận dữ liệu & kiểm thử & xử lý kỹ thuật kết, phát sinh chi phí ngoài phạm vi, hoặc thay
+đổi yêu cầu đã được thống nhất
+
+=== PAGE 22 ===
+CƠ CẤU TỔ CHỨC BAN QUẢN LÝ DỰ ÁN
+Business
+Trưởng Ban chỉ đạo dự án TB chỉ đạo dự án
+Technical
+PHẠM VĂN HÙNG HOÀNG VĂN NINH
+Trưởng ban Quản trị dự án -Giám đốc dự án
+NGUYỄN ĐỨC THIỆN Trưởng ban Quản trị dự
+án -Giám đốc dự án
+Phó giám đốc dự án NGUYỄN KIM CƯƠNG KẾTQUẢ CHUNG:
+PHAN THỊ NGỌC VÂN
+1. Số hoá quy trình
+- Lãnh đạo các
+Tổ SHQT BDA liênPhòng/Ban
+Phòng/Ban chức năng Nhóm Số hoá -Tích hợp 2. Kịch bản tích hợp
+NGUYỄN QUỐC
+tại CQTCT NGUYỄN XUÂN THỊNH giữacácphầnmềm
+THỐNG
+- Lãnh đạo Ban chỉ 2. Kiến trúc & Chính
+đạo/ Ban/ Tổ CĐS của Nhóm Dữ liệu và Báo cáo sách quản trị Dữ liệu
+Tổ Dữ liệu & RnD
+các Đơn vị. NGUYỄN P. NGỌC TUẤN dùngchung-Báocáo
+NGUYỄN VĂN PHÁT
+- Nhân sự đầu mối
+HUỲNH MINH NHẪN Nhóm Phần mềm DP 3. Phần mềm Data
+các Phòng/Ban/ Đơn
+NGUYỄN ĐÌNH CÔNG Platform
+vị được cử tham gia
+dự án
+Tổ Hạ tầng & ATTT/
+4. Hạ tầng và Trung
+Nhóm Hạ tầng
+Phòng CNTT tâm Vận hành dữ
+HOÀNG VĂN NINH
+NGUYỄN VĂN MINH liệuDOC
+
+=== PAGE 23 ===
+E.
+KẾ HOẠCH TRIỂN KHAI
+
+=== PAGE 24 ===
+KẾ HOẠCH KHẢO SÁT (dự kiến)
+TUẦN 1 TUẦN 2
+PHÒNG BAN/ HOẠT ĐỘNG
+Thứ 2 Thứ 3 Thứ 4 Thứ 5 Thứ 6 Thứ 2 Thứ 3 Thứ 4 Thứ 5 Thứ 6
+2.3 3.3 4.3 5.3 6.3 9.3 10.3 11.3 12.3 13.3
+Kick-Off & Đào Tạo CĐS All | 2h
+BOD Buổi 1 | 2h Buổi 2 | 1h
+Ban Dự Án Chuyển Đổi Số Buổi 1 | 2h Buổi 2 | 1h
+Ban Tài Chính Kế Toán Buổi 1 | 2h Buổi 2 | 1h
+Ban Thương Mại Buổi 1 | 2h Buổi 2 | 1h
+Ban Kỹ Thuật Sản Xuất Buổi 1 | 2h Buổi 2 | 1h
+Ban An Toàn Chất Lượng Buổi 1 | 2h Buổi 2 | 1h
+Ban Công Nghiệp Buổi 1 | 2h Buổi 2 | 1h
+Ban Quản Trị Nguồn Nhân Lực Buổi 1 | 2h Buổi 2 | 1h
+Ban Kế Hoạch Đầu Tư Buổi 1 | 2h Buổi 2 | 1h
+Ban Nghiên Cứu Phát Triển Buổi 1 | 2h Buổi 2 | 1h
+Văn Phòng Buổi 1 | 1h Buổi 2 | 1h
+Ban Pháp Chế Buổi 1 | 1h Buổi 2 | 1h
+Văn Phòng Đảng -Đoàn Thể Buổi 1 | 1h Buổi 2 | 1h
+Ban thư ký Buổi 1 | 1h Buổi 2 | 1h
+
+=== PAGE 25 ===
+NỘI DUNG BUỔI HỌP
+Toàn công ty/ Đại diện các
+ALL Kick-off & đào tạonhận thức chung về dự án CĐS lãnh đạo, Key user các
+Phòng/Ban
+Yêu cầu danh sách PIC của từng ban
+BUỔI 1
+a) Tuyên bố mục tiêu và giới thiệu chung về dự án HDP26. • Lãnh đạo Ban chức năng
+phụ trách CĐS
+b) Giới thiệu nhân sự tham gia buổi họp.
+• Trưởng/Phó phòng
+c) Trao đổi về định hướng quản trị bằng dữ liệu, chuẩn hóa quy trình với lãnh đạo
+Phòng/Ban. • Nhân sự đầu mối tham
+gia dự án
+d) Phòng/Ban trình bày hiện trạng quy trình tổng hợp số liệu báo cáo, thông tin các phần
+mềm đang sử dụng và nhu cầu kết nối, đồng bộ, lưu trữ dữ liệu tập trung.
+e) Hỏi đáp giữa Phòng/Ban và nhóm dự án HDP26.
+f) Chốt nội dung buổi họp, các kế hoạch tiếp theo. Ký biên bản ghi nhận thông tin khảo
+sát.
+• Trưởng/Phó phòng
+BUỔI 2
+a) Tuyên bố mục tiêu & nhân sự tham gia buổi họp.
+• Nhân sự đầu mối tham
+b) Hỏi đáp giữa Phòng/Ban và nhóm dự án HDP26 về các điểm cần làm rõ.
+gia dự án
+c) Chốt nội dung buổi họp, các kế hoạch tiếp theo. Ký biên bản ghi nhận thông tin khảo sát.
+
+=== PAGE 26 ===
+Q&A
+
+=== PAGE 27 ===
+XIN CÁM ƠN ANH/CHỊ ĐÃ LẮNG NGHE!
