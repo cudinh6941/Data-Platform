@@ -1,0 +1,101 @@
+employee_id,first_name,last_name,gender,date_of_birth,job_title,department,salary,hire_date,email,processing_time
+1,Hugues,Chatin,Male,1/13/1968,Desktop Support Technician,Finance,47378.95,1/7/2011,hchatin0@privacy.gov.au,9.49
+2,Hilda,Ventham,Female,2/15/1968,Programmer III,HR,88184.42,1/2/2007,hventham1@utexas.edu,5.95
+3,Davis,Coenraets,Male,3/19/1992,Research Associate,IT,99321.08,3/12/2001,dcoenraets2@va.gov,10.84
+4,Gwyneth,Busby,Genderfluid,9/29/1995,Food Chemist,HR,40476.16,10/22/2007,gbusby3@diigo.com,17.49
+5,Iain,Yeaman,Male,6/19/1990,Staff Accountant IV,Finance,104809.51,12/14/2011,iyeaman4@ed.gov,10.47
+6,Marji,Labbett,Female,7/11/1981,Financial Advisor,Sales,76388.36,1/13/2000,mlabbett5@telegraph.co.uk,21.18
+7,Adriana,Cooney,Female,4/28/1992,Accountant III,Sales,131231.38,2/5/2019,acooney6@t-online.de,9.93
+8,Latia,Swinford,Non-binary,1/22/1970,Account Representative I,Finance,54088.11,6/29/2023,lswinford7@unesco.org,23.81
+9,Buddie,Geill,Male,2/3/1961,Assistant Manager,IT,116572.73,2/20/2024,bgeill8@cmu.edu,2.41
+10,Egon,Hurton,Male,3/15/1956,Administrative Officer,HR,126743.15,8/17/2024,ehurton9@tinyurl.com,15.96
+11,Tisha,Brandham,Female,7/27/1958,Business Systems Development Analyst,Marketing,114746.06,4/9/2008,tbrandhama@cmu.edu,19.15
+12,Natalie,Peegrem,Female,5/4/1977,VP Quality Control,Marketing,32478.23,6/20/2005,npeegremb@yahoo.co.jp,21.71
+13,Eyde,Rappport,Female,6/15/1995,VP Accounting,IT,142482.69,1/17/2004,erappportc@miibeian.gov.cn,21.69
+14,Joy,Late,Female,5/26/1977,Human Resources Manager,Sales,135663.25,4/10/2004,jlated@nbcnews.com,0.22
+15,Robinett,Josilevich,Female,7/2/1993,VP Sales,Marketing,96917.32,2/14/2004,rjosileviche@drupal.org,6.32
+16,Ivar,Duplock,Male,8/29/1983,Internal Auditor,Marketing,136476.71,10/12/2011,iduplockf@harvard.edu,17.39
+17,Shae,Lakes,Male,12/5/1987,Senior Cost Accountant,Marketing,144973.87,5/17/2003,slakesg@cisco.com,2.18
+18,Alfredo,Scardafield,Male,7/2/1964,Geological Engineer,Marketing,77759.07,9/14/2015,ascardafieldh@elegantthemes.com,4.27
+19,Arabele,O Sullivan,Female,2/12/1980,Accountant II,Marketing,88766.6,8/18/2022,aosullivani@scribd.com,17.59
+20,Chris,Seebert,Male,12/22/1963,VP Product Management,Marketing,94743.25,10/22/2009,cseebertj@engadget.com,6.01
+21,Lauri,Cranna,Female,4/12/1996,Environmental Specialist,Finance,147102.01,4/30/2011,lcrannak@trellian.com,20.27
+22,Sonja,Rosiello,Female,7/19/1952,Programmer II,IT,110905.05,4/3/2014,srosiellol@google.com.hk,1.74
+23,Benetta,Candlin,Female,12/2/1983,VP Quality Control,Finance,63205.63,10/2/2020,bcandlinm@arizona.edu,10.59
+24,Darn,Alastair,Genderqueer,4/17/1965,Senior Financial Analyst,IT,73046.71,4/14/2024,dalastairn@comsenz.com,3.93
+25,Koo,Shipton,Female,12/7/1991,Environmental Specialist,Finance,137090.87,2/22/2015,kshiptono@yolasite.com,17.99
+26,Archaimbaud,Raffeorty,Agender,11/17/1994,Research Associate,Sales,66740.09,7/20/2018,araffeortyp@blogspot.com,18.19
+27,Oliy,Broxton,Female,10/10/1984,Senior Developer,Finance,108748.61,7/26/2006,obroxtonq@marketwatch.com,16.35
+28,Walther,Thomlinson,Male,7/5/1993,Compensation Analyst,IT,77843.6,2/13/2022,wthomlinsonr@tumblr.com,1.24
+29,Esmaria,Gimert,Female,2/11/1968,Research Assistant III,Finance,38599.18,12/23/2023,egimerts@ebay.co.uk,10.41
+30,Timmi,Follen,Female,7/5/1958,Associate Professor,Finance,60087.48,4/24/2002,tfollent@yellowbook.com,16.05
+31,Ivette,Veal,Female,9/21/1980,Accounting Assistant IV,HR,78007.2,8/22/2025,ivealu@berkeley.edu,23.59
+32,Tamas,Poppleston,Polygender,11/29/1991,Human Resources Assistant I,Sales,109735.23,7/12/2001,tpopplestonv@booking.com,22.48
+33,Clarence,Schollar,Male,5/12/1983,Desktop Support Technician,Marketing,81892.54,1/23/2019,cschollarw@vistaprint.com,16.51
+34,Nathanael,Charle,Male,7/11/1950,Assistant Media Planner,Marketing,67087.49,8/18/2002,ncharlex@ehow.com,8.58
+35,Dell,Mammatt,Agender,12/20/1974,Information Systems Manager,Finance,146110.06,10/2/2012,dmammatty@census.gov,20.7
+36,Annamaria,Elliker,Female,5/18/1976,Accountant II,IT,61155.26,9/4/2008,aellikerz@geocities.com,17.11
+37,Constantine,Margiotta,Female,11/27/1995,Speech Pathologist,Sales,110688.71,12/10/2022,cmargiotta10@technorati.com,2.39
+38,Willi,Perche,Female,6/29/1966,Quality Engineer,Finance,91429.62,3/3/2002,wperche11@nydailynews.com,10.25
+39,Shoshanna,Petruska,Female,4/27/1978,Professor,HR,102153.91,6/23/2001,spetruska12@howstuffworks.com,9.38
+40,Rhonda,Attyeo,Female,3/28/1975,Business Systems Development Analyst,IT,40929.89,8/23/2024,rattyeo13@twitpic.com,23.89
+41,Lesli,Craig,Female,10/19/1995,Paralegal,HR,66081.25,6/12/2013,lcraig14@addthis.com,22.69
+42,Rudd,Matlock,Male,12/10/1968,Computer Systems Analyst II,Sales,88899.05,5/1/2020,rmatlock15@hibu.com,16.67
+43,Dori,Aggio,Female,4/22/1987,Associate Professor,IT,88150.91,1/31/2022,daggio16@vk.com,6.5
+44,Giffy,True,Male,8/17/1961,Software Engineer III,IT,42006.08,7/3/2003,gtrue17@angelfire.com,17.39
+45,Merwin,Varley,Male,10/12/1980,Research Nurse,IT,40946.33,10/12/2007,mvarley18@telegraph.co.uk,17.84
+46,Catha,Best,Female,9/27/1953,Senior Quality Engineer,IT,136413.81,6/5/2005,cbest19@wikipedia.org,16.92
+47,Leda,Maes,Female,4/15/1970,Registered Nurse,Marketing,122916.91,10/5/2012,lmaes1a@wikimedia.org,3.28
+48,Rochester,Duffan,Male,10/9/1967,Staff Scientist,Marketing,55171.96,4/1/2017,rduffan1b@biblegateway.com,21.63
+49,Marney,Graddon,Genderqueer,8/2/1970,Structural Engineer,HR,100575.01,4/16/2008,mgraddon1c@hugedomains.com,6.9
+50,Susie,Melloy,Female,11/20/1975,Marketing Assistant,IT,141668.27,8/17/2004,smelloy1d@weather.com,4.44
+51,Laurie,Dafter,Female,1/9/1986,Marketing Assistant,Marketing,118222.48,4/1/2010,ldafter1e@google.nl,7.84
+52,Conroy,Bakesef,Male,8/18/1974,Clinical Specialist,Marketing,95600.71,10/27/2017,cbakesef1f@homestead.com,1.18
+53,Thain,Weatherhead,Male,9/4/1974,Graphic Designer,HR,40524.94,8/14/2009,tweatherhead1g@nifty.com,19.41
+54,Caralie,Magenny,Female,1/17/1980,Environmental Tech,Sales,126971.42,10/8/2008,cmagenny1h@yale.edu,14.91
+55,Amii,Rylstone,Female,12/29/1956,Senior Financial Analyst,HR,66345.94,1/14/2009,arylstone1i@berkeley.edu,18.39
+56,Rutledge,Plett,Male,4/5/1953,Biostatistician IV,Sales,139618.18,1/22/2024,rplett1j@dropbox.com,1.26
+57,Nelly,Prevett,Agender,7/31/1957,Account Coordinator,HR,108995.34,10/21/2003,nprevett1k@ebay.com,3.42
+58,Caz,Tschirschky,Non-binary,12/10/1961,Account Coordinator,HR,61408.46,1/18/2007,ctschirschky1l@purevolume.com,0.28
+59,Alanson,Omond,Male,10/20/1996,Staff Accountant I,Marketing,133310.55,1/24/2025,aomond1m@bbc.co.uk,9.59
+60,Orelie,Senten,Female,6/28/1992,Community Outreach Specialist,Marketing,112481.59,3/28/2023,osenten1n@taobao.com,2.47
+61,Garth,Augie,Male,4/27/1976,Analog Circuit Design manager,IT,149504.71,4/24/2023,gaugie1o@so-net.ne.jp,10.65
+62,Nana,Dedrick,Genderqueer,12/8/1960,Social Worker,Marketing,85170.8,12/7/2023,ndedrick1p@dagondesign.com,2.67
+63,Janek,Molan,Male,11/27/1976,Administrative Officer,HR,85920.18,1/30/2000,jmolan1q@privacy.gov.au,13.66
+64,Zia,Allitt,Non-binary,9/30/1987,VP Accounting,Marketing,53916.58,10/8/2007,zallitt1r@oakley.com,17.49
+65,Aimee,Ben-Aharon,Female,11/27/1999,Civil Engineer,Marketing,110728.52,10/3/2018,abenaharon1s@icq.com,8.66
+66,Merwin,Geraldez,Genderqueer,12/7/1963,Social Worker,Sales,134219.23,6/23/2014,mgeraldez1t@biglobe.ne.jp,5.81
+67,Ambrose,Penrose,Male,3/9/1983,VP Product Management,Marketing,106034.8,2/5/2022,apenrose1u@squarespace.com,5.91
+68,Giuseppe,Labusquiere,Male,9/4/1986,Assistant Media Planner,HR,42406.59,8/13/2007,glabusquiere1v@ning.com,11.83
+69,Perkin,Hartless,Male,5/26/1963,Senior Financial Analyst,Sales,58011.12,11/14/2006,phartless1w@indiatimes.com,7.48
+70,De,Tomala,Female,9/25/1998,Actuary,IT,131127.2,7/25/2005,dtomala1x@apache.org,13.09
+71,Ingemar,Willavize,Male,4/24/1981,Community Outreach Specialist,Finance,88244.67,10/2/2025,iwillavize1y@parallels.com,17.82
+72,Penrod,Bruneau,Male,10/3/1978,VP Quality Control,IT,132885.95,7/27/2018,pbruneau1z@addtoany.com,7.32
+73,Rosene,Clibbery,Female,9/27/1951,Occupational Therapist,Sales,131850.29,11/25/2015,rclibbery20@amazon.co.uk,18.35
+74,Francesco,Houtby,Male,11/12/1997,Programmer Analyst IV,IT,65020.9,11/14/2021,fhoutby21@unesco.org,3.06
+75,Ad,Parnell,Male,8/2/1996,Structural Engineer,Marketing,147190.46,2/18/2001,aparnell22@bandcamp.com,11.05
+76,Adam,Tatham,Male,2/14/1959,Senior Financial Analyst,Marketing,77647.21,1/13/2025,atatham23@slate.com,2.08
+77,Deerdre,Hamly,Female,4/28/1982,Dental Hygienist,Finance,115904.51,10/23/2025,dhamly24@github.io,19.15
+78,Madeleine,Gingles,Female,3/19/1977,Marketing Assistant,Sales,139913.46,12/23/2011,mgingles25@sbwire.com,22.31
+79,Barri,Abramamov,Male,2/22/1987,Database Administrator II,Finance,88851.25,5/11/2008,babramamov26@nhs.uk,14.33
+80,Lynda,Radki,Female,12/21/1978,VP Marketing,Finance,115951.66,4/18/2018,lradki27@live.com,1.2
+81,Leda,Drioli,Female,3/8/1992,Electrical Engineer,HR,80969.65,10/18/2014,ldrioli28@wikispaces.com,1.96
+82,Betti,Skeat,Female,10/9/1967,Analog Circuit Design manager,Sales,100818.74,8/20/2020,bskeat29@zimbio.com,2.05
+83,Scarface,Thorley,Male,9/27/1970,Analyst Programmer,Sales,90613.04,2/21/2025,sthorley2a@mozilla.org,2.41
+84,Ramsey,Brackenridge,Male,7/14/1989,Project Manager,Sales,70768.34,11/5/2005,rbrackenridge2b@walmart.com,15.56
+85,Elfie,Schwand,Female,11/4/1996,Desktop Support Technician,HR,134914.73,3/26/2002,eschwand2c@redcross.org,8.89
+86,Freida,Burnall,Female,2/1/1973,Office Assistant III,Sales,72102.41,6/8/2019,fburnall2d@qq.com,3.1
+87,Shellysheldon,McAsgill,Male,10/20/1976,Nurse,Finance,144104.89,12/4/2022,smcasgill2e@webnode.com,10.09
+88,Delores,Guerreau,Female,4/18/1968,Information Systems Manager,Marketing,57082.58,1/16/2001,dguerreau2f@weebly.com,4.54
+89,Siobhan,Habden,Female,1/30/1990,Chief Design Engineer,IT,136178.02,12/22/2021,shabden2g@webeden.co.uk,4.13
+90,Eliot,Redmell,Male,10/3/1986,Budget/Accounting Analyst II,Sales,108580.57,7/26/2006,eredmell2h@friendfeed.com,10.84
+91,Ase,Burrett,Male,11/25/1994,Product Engineer,Sales,103180.75,12/7/2011,aburrett2i@gov.uk,14.32
+92,Tadd,Spinige,Male,7/13/1997,VP Marketing,Sales,64610.18,9/16/2023,tspinige2j@bravesites.com,9.99
+93,Vergil,Swash,Male,4/5/1981,VP Quality Control,HR,56503.7,2/27/2008,vswash2k@patch.com,20.55
+94,Clarabelle,Molloy,Female,7/14/1951,Junior Executive,Marketing,71738.25,5/17/2025,cmolloy2l@shinystat.com,15.16
+95,Drona,Jerosch,Female,1/6/1959,Developer IV,HR,105674.57,1/25/2011,djerosch2m@java.com,1.33
+96,Abdel,De Bruyn,Male,10/8/1970,Teacher,Marketing,83737.96,9/10/2022,adebruyn2n@mayoclinic.com,11.85
+97,Angeli,Tinham,Male,6/9/1977,Accounting Assistant II,Sales,68510.84,2/5/2003,atinham2o@samsung.com,0.43
+98,Drucy,Tewkesbury,Female,3/5/1995,Staff Accountant IV,IT,109740.11,11/11/2009,dtewkesbury2p@desdev.cn,18.06
+99,Jolene,Risbridge,Female,2/12/1961,Office Assistant III,Sales,101645.86,6/18/2006,jrisbridge2q@accuweather.com,0.79
+100,Ravid,Readhead,Male,7/15/1998,Account Executive,Marketing,83709.06,10/14/2003,rreadhead2r@discovery.com,2.2

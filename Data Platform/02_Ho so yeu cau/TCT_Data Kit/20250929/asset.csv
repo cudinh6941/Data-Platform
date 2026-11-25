@@ -1,0 +1,101 @@
+asset_id,asset_name,asset_value,purchase_date,location,department,asset_category,asset_condition,maintenance_cost,depreciation_rate
+1,Mrs,Yuan Renminbi,12/12/2025,6865 Dennis Drive,Sales,furniture,new,Real,0.26
+2,Mrs,Yuan Renminbi,6/22/2012,57 Cherokee Alley,Product Management,vehicles,new,Yuan Renminbi,0.16
+3,Ms,Zloty,10/13/2021,71337 Declaration Trail,Legal,furniture,new,Zloty,0.29
+4,Mrs,Peso,8/9/2015,6843 Arkansas Trail,Legal,furniture,refurbished,Rupiah,0.12
+5,Honorable,Euro,8/3/2006,50744 Eagan Lane,Human Resources,vehicles,new,Euro,0.32
+6,Dr,Ruble,6/27/2016,379 Del Mar Trail,Business Development,electronics,new,Peso,0.17
+7,Mr,Euro,1/29/2020,5925 Loeprich Hill,Human Resources,electronics,refurbished,Peso,0.32
+8,Ms,Gourde,2/23/2021,4 Tony Alley,Human Resources,vehicles,refurbished,Yuan Renminbi,0.11
+9,Rev,Krona,5/29/2002,44284 Westend Terrace,Legal,furniture,used,Yen,0.2
+10,Honorable,Dong,1/4/2024,1230 Garrison Road,Research and Development,furniture,refurbished,Yuan Renminbi,0.42
+11,Honorable,Yuan Renminbi,5/31/2016,36 Sherman Drive,Research and Development,electronics,new,Ruble,0.12
+12,Honorable,Yuan Renminbi,2/7/2013,91970 Melby Hill,Human Resources,vehicles,used,Rial,0.44
+13,Honorable,Krone,9/18/2014,5172 Blaine Terrace,Research and Development,electronics,refurbished,Ringgit,0.49
+14,Dr,Hryvnia,8/8/2024,5 Summerview Point,Support,vehicles,new,Peso,0.36
+15,Mr,Dollar,3/25/2017,35 Twin Pines Drive,Human Resources,vehicles,refurbished,Rial,0.12
+16,Ms,Pound,2/9/2020,02 Graceland Court,Legal,vehicles,new,Peso,0.31
+17,Mrs,Baht,10/13/2020,6425 3rd Trail,Accounting,electronics,new,Euro,0.22
+18,Mr,Zloty,8/17/2015,641 Weeping Birch Street,Business Development,vehicles,new,Euro,0.19
+19,Rev,Euro,12/10/2005,16 Luster Way,Training,electronics,new,Peso,0.44
+20,Ms,Real,7/4/2017,18941 Lakeland Lane,Business Development,furniture,used,Koruna,0.13
+21,Dr,Peso,1/22/2000,4 Charing Cross Pass,Legal,furniture,used,Dollar,0.2
+22,Mr,Franc,3/11/2002,8 Anderson Point,Human Resources,furniture,refurbished,Baht,0.41
+23,Rev,Som,4/8/2022,72 Donald Plaza,Support,electronics,used,Peso,0.1
+24,Dr,Euro,12/30/2002,5546 Dixon Junction,Support,furniture,new,Baht,0.49
+25,Mr,Real,10/14/2006,65 Carioca Avenue,Research and Development,furniture,refurbished,Rupiah,0.23
+26,Ms,Dollar,11/26/2000,41995 Duke Alley,Marketing,electronics,refurbished,Dollar,0.33
+27,Honorable,Peso,1/18/2012,489 Garrison Trail,Marketing,vehicles,used,Baht,0.1
+28,Mrs,Rupiah,9/13/2013,46357 Mcguire Drive,Engineering,furniture,used,Krone,0.44
+29,Mr,Hryvnia,1/6/2020,0 Bunting Circle,Legal,electronics,used,Yuan Renminbi,0.5
+30,Rev,Rupiah,2/3/2012,8 Gulseth Drive,Sales,furniture,refurbished,Yuan Renminbi,0.33
+31,Honorable,Krone,6/2/2019,8712 Iowa Alley,Accounting,vehicles,refurbished,Baht,0.4
+32,Mr,Yuan Renminbi,7/29/2012,8 Stephen Drive,Human Resources,furniture,new,Yuan Renminbi,0.26
+33,Mr,Kuna,2/11/2003,32 Grasskamp Point,Legal,furniture,refurbished,Rupiah,0.46
+34,Rev,Franc,11/8/2006,0 Sachtjen Center,Accounting,furniture,refurbished,Afghani,0.11
+35,Dr,Euro,9/1/2009,38 Spohn Road,Support,vehicles,used,Dollar,0.46
+36,Mrs,Zloty,2/6/2017,01499 Nova Alley,Product Management,vehicles,refurbished,Dollar,0.15
+37,Mr,Real,7/17/2010,01895 Maple Wood Center,Sales,electronics,refurbished,Yuan Renminbi,0.25
+38,Rev,Ruble,3/27/2014,6 Cascade Court,Accounting,vehicles,used,Zloty,0.18
+39,Dr,Yuan Renminbi,12/14/2008,0414 Texas Crossing,Research and Development,furniture,new,Hryvnia,0.22
+40,Mrs,Real,5/26/2022,7421 Stuart Hill,Human Resources,furniture,refurbished,Real,0.3
+41,Dr,Colon,2/1/2001,893 Lotheville Park,Product Management,electronics,refurbished,Zloty,0.16
+42,Dr,Rupiah,8/29/2007,266 Prairie Rose Alley,Services,furniture,refurbished,Shilling,0.23
+43,Honorable,Yuan Renminbi,6/25/2012,42091 Mallory Street,Marketing,furniture,new,Dollar,0.13
+44,Mr,Peso,3/2/2025,70978 Little Fleur Parkway,Business Development,furniture,used,Rupiah,0.15
+45,Mrs,Peso,9/24/2010,5 Pankratz Court,Accounting,electronics,used,Euro,0.36
+46,Honorable,Yuan Renminbi,2/15/2009,40161 Eastwood Center,Accounting,vehicles,refurbished,Sol,0.17
+47,Mrs,Real,10/19/2002,5 Oak Valley Avenue,Services,furniture,used,Euro,0.18
+48,Ms,Yuan Renminbi,5/22/2003,782 Clyde Gallagher Alley,Sales,furniture,new,Real,0.4
+49,Mr,Euro,10/21/2010,679 Rutledge Road,Training,electronics,used,Ruble,0.11
+50,Rev,Balboa,8/1/2002,38 Havey Pass,Legal,electronics,used,Euro,0.43
+51,Honorable,Sol,7/10/2023,7 Vahlen Place,Training,furniture,used,Lempira,0.2
+52,Rev,Zloty,9/29/2018,96179 Bellgrove Hill,Support,electronics,refurbished,Marka,0.32
+53,Rev,Yuan Renminbi,10/16/2010,7540 Myrtle Lane,Support,electronics,used,Peso,0.21
+54,Mr,Guarani,1/9/2017,4 Dottie Plaza,Services,vehicles,used,Euro,0.17
+55,Rev,Tenge,12/23/2022,09 Rigney Street,Research and Development,electronics,refurbished,Rupiah,0.3
+56,Dr,Manat,5/26/2019,82098 Arrowood Hill,Human Resources,electronics,used,Rupiah,0.18
+57,Mrs,Euro,8/19/2017,0397 Starling Crossing,Human Resources,furniture,used,Peso,0.12
+58,Mr,Rupee,7/5/2019,4709 Carioca Avenue,Support,furniture,used,Peso,0.48
+59,Rev,Dollar,9/3/2007,5 Welch Drive,Marketing,vehicles,refurbished,Peso,0.35
+60,Honorable,Yen,10/22/2017,8958 Canary Street,Services,furniture,used,Yuan Renminbi,0.1
+61,Dr,Shilling,2/24/2019,46556 Westport Alley,Marketing,electronics,used,Peso,0.11
+62,Ms,Yuan Renminbi,8/7/2012,1602 Oakridge Avenue,Services,furniture,new,Real,0.45
+63,Ms,Real,3/18/2007,72028 Spohn Hill,Product Management,vehicles,new,Rupiah,0.21
+64,Ms,Peso,9/2/2002,6368 Golf Course Junction,Services,furniture,new,Peso,0.31
+65,Rev,Shekel,8/30/2003,2194 Charing Cross Terrace,Marketing,furniture,refurbished,Manat,0.19
+66,Dr,Zloty,5/24/2008,37945 American Point,Legal,furniture,refurbished,Peso,0.47
+67,Mr,Yuan Renminbi,2/16/2023,3633 Dovetail Street,Marketing,furniture,refurbished,Peso,0.22
+68,Mrs,Euro,5/2/2022,3268 Ridge Oak Avenue,Training,furniture,new,Real,0.23
+69,Mrs,Ruble,11/18/2005,72 Spenser Terrace,Marketing,vehicles,new,Rupee,0.39
+70,Rev,Euro,6/2/2014,0948 Manitowish Center,Research and Development,vehicles,new,Peso,0.41
+71,Dr,Real,11/10/2003,52942 Clyde Gallagher Park,Engineering,furniture,refurbished,Koruna,0.39
+72,Honorable,Rupiah,2/8/2003,72 Continental Terrace,Support,furniture,new,Ruble,0.23
+73,Rev,Yuan Renminbi,9/11/2021,21275 Everett Terrace,Sales,furniture,used,Tugrik,0.39
+74,Ms,Yuan Renminbi,1/20/2008,67 Walton Terrace,Research and Development,vehicles,new,Koruna,0.31
+75,Honorable,Yuan Renminbi,5/8/2001,3800 Southridge Point,Engineering,furniture,refurbished,Rupiah,0.43
+76,Ms,Dollar,7/28/2007,82075 Mccormick Lane,Business Development,furniture,used,Sol,0.22
+77,Dr,Dinar,5/1/2008,741 Sachtjen Parkway,Support,electronics,new,Dollar,0.29
+78,Ms,Baht,8/25/2006,86 Straubel Court,Sales,vehicles,used,Yuan Renminbi,0.14
+79,Dr,Zloty,1/7/2011,90 Florence Parkway,Research and Development,furniture,new,Peso,0.4
+80,Mrs,Rupiah,4/23/2005,73 Tennyson Center,Business Development,vehicles,new,Rupiah,0.21
+81,Ms,Peso,2/4/2000,1 Marcy Junction,Support,vehicles,used,Rupiah,0.35
+82,Rev,Rupiah,12/12/2000,15 Carberry Terrace,Sales,vehicles,refurbished,Yuan Renminbi,0.34
+83,Ms,Peso,9/16/2023,1 Sugar Hill,Research and Development,furniture,new,Dollar,0.33
+84,Mr,Ruble,9/21/2019,953 Sundown Street,Training,electronics,refurbished,Dirham,0.34
+85,Dr,Peso,2/1/2002,50 Union Park,Marketing,electronics,used,Rupee,0.38
+86,Mr,Franc,2/12/2003,21 Hoard Park,Accounting,electronics,used,Krona,0.38
+87,Ms,Euro,1/5/2023,4 Washington Court,Training,furniture,refurbished,Euro,0.25
+88,Rev,Euro,2/17/2019,4 Eagle Crest Point,Marketing,vehicles,new,Ringgit,0.29
+89,Rev,Euro,7/14/2013,8593 Northport Avenue,Training,electronics,used,Franc,0.39
+90,Dr,Rupiah,12/14/2016,67 Loeprich Terrace,Legal,electronics,refurbished,Ruble,0.13
+91,Mr,Yuan Renminbi,12/10/2003,3964 Mariners Cove Pass,Marketing,furniture,used,Naira,0.46
+92,Mr,Ruble,3/25/2017,723 Clarendon Court,Legal,vehicles,new,Yuan Renminbi,0.33
+93,Ms,Yuan Renminbi,3/11/2002,16301 Mendota Drive,Training,vehicles,refurbished,Bolivar,0.37
+94,Mrs,Manat,10/1/2014,983 Blaine Trail,Training,electronics,new,Leu,0.37
+95,Rev,Yuan Renminbi,2/10/2021,70775 Mandrake Center,Marketing,furniture,refurbished,Peso,0.45
+96,Ms,Dinar,12/21/2007,52879 Sundown Hill,Sales,furniture,refurbished,Euro,0.24
+97,Dr,Euro,9/20/2016,9 4th Street,Support,electronics,new,Real,0.41
+98,Mr,Yuan Renminbi,3/11/2006,4 Bunker Hill Terrace,Services,furniture,refurbished,Euro,0.4
+99,Ms,Euro,4/24/2023,99799 Carberry Avenue,Legal,furniture,new,Rand,0.5
+100,Mr,Tenge,12/14/2003,357 Heath Street,Accounting,furniture,refurbished,Hryvnia,0.47
