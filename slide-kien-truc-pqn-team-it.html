@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiến trúc Kỹ thuật Mô hình PQN — Thuyết trình Team I&T</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      /* Primitive tokens */
+      --raw-navy-950: #060B19;
+      --raw-navy-900: #0B1328;
+      --raw-slate-900: rgba(15, 23, 42, 0.78);
+      --raw-slate-950: rgba(15, 23, 42, 0.94);
+      --raw-slate-100: #F1F5F9;
+      --raw-slate-300: #CBD5E1;
+      --raw-slate-400: #94A3B8;
+      --raw-slate-600: #475569;
+      --raw-cyan-400: #22D3EE;
+      --raw-cyan-500: #06B6D4;
+      --raw-orange-400: #FB923C;
+      --raw-emerald-400: #34D399;
+      --raw-red-400: #F87171;
+      --raw-blue-300: #93C5FD;
+      --raw-blue-400: #60A5FA;
+
+      /* Semantic tokens */
+      --color-bg: var(--raw-navy-950);
+      --color-surface: var(--raw-navy-900);
+      --color-panel: var(--raw-slate-900);
+      --color-panel-solid: var(--raw-slate-950);
+      --color-fg: var(--raw-slate-100);
+      --color-fg-secondary: var(--raw-slate-300);
+      --color-fg-muted: var(--raw-slate-400);
+      --color-primary: var(--raw-cyan-400);
+      --color-primary-tint: rgba(34, 211, 238, 0.12);
+      --color-primary-border: rgba(34, 211, 238, 0.42);
+      --color-primary-border-strong: rgba(34, 211, 238, 0.78);
+      --color-warn: var(--raw-orange-400);
+      --color-warn-tint: rgba(251, 146, 60, 0.12);
+      --color-warn-border: rgba(251, 146, 60, 0.45);
+      --color-ok: var(--raw-emerald-400);
+      --color-ok-tint: rgba(52, 211, 153, 0.12);
+      --color-ok-border: rgba(52, 211, 153, 0.45);
+      --color-danger: var(--raw-red-400);
+      --color-danger-tint: rgba(248, 113, 113, 0.12);
+      --color-danger-border: rgba(248, 113, 113, 0.48);
+      --color-border: rgba(148, 163, 184, 0.18);
+      --color-border-strong: rgba(148, 163, 184, 0.36);
+
+      /* Component tokens */
+      --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --pad-x: clamp(20px, 2.8vw, 44px);
+      --pad-y: clamp(14px, 1.8vh, 22px);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --shadow-panel: 0 10px 30px rgba(0, 0, 0, 0.36);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: var(--color-bg);
+      color: var(--color-fg);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        radial-gradient(circle at 12% 14%, rgba(34, 211, 238, 0.08), transparent 42%),
+        radial-gradient(circle at 88% 85%, rgba(251, 146, 60, 0.06), transparent 44%),
+        radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 24px 24px;
+    }
+
+    .top-progress-track {
+      position: fixed; top: 0; left: 0; right: 0; height: 3px;
+      background: rgba(148, 163, 184, 0.14); z-index: 1000;
+    }
+    .top-progress-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-warn));
+      transition: width 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .deck-shell {
+      position: relative; width: 100vw; height: 100vh;
+      padding: var(--pad-y) var(--pad-x);
+      display: grid; grid-template-rows: minmax(0, 1fr) auto;
+      gap: clamp(8px, 1.2vh, 14px);
+      z-index: 1;
+    }
+
+    .slide-stage { position: relative; min-height: 0; width: 100%; height: 100%; }
+
+    @keyframes slideIn { from { opacity: 0.35; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .slide {
+      position: absolute; inset: 0; display: none;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: clamp(10px, 1.3vh, 16px);
+      min-height: 0;
+    }
+    .slide.active { display: grid; animation: slideIn 0.22s ease-out; }
+    .slide.is-hero { grid-template-rows: minmax(0, 1fr); }
+
+    .header-band {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 14px; flex-wrap: wrap;
+    }
+    .headline-group { flex: 1; min-width: 280px; }
+    .q-kicker {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--font-mono); font-size: clamp(10.5px, 0.82vw, 12px);
+      color: var(--color-primary); letter-spacing: 0.03em; margin-bottom: 4px;
+    }
+    .q-kicker::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--color-primary); box-shadow: 0 0 8px var(--color-primary);
+    }
+    .q-kicker.is-warn { color: var(--color-warn); }
+    .q-kicker.is-warn::before { background: var(--color-warn); box-shadow: 0 0 8px var(--color-warn); }
+
+    h1.slide-h1 {
+      font-size: clamp(20px, 2.15vw, 30px);
+      font-weight: 700; line-height: 1.18; letter-spacing: -0.02em;
+    }
+    .slide-sub {
+      font-size: clamp(12px, 0.96vw, 14px);
+      color: var(--color-fg-muted); margin-top: 3px; line-height: 1.4;
+    }
+    .c-cyan { color: var(--color-primary); }
+    .c-warn { color: var(--color-warn); }
+    .c-ok { color: var(--color-ok); }
+    .c-danger { color: var(--color-danger); }
+
+    /* Truth Badges */
+    .badge-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .t-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+      padding: 3px 8px; border-radius: 4px; white-space: nowrap;
+      border: 1px solid var(--color-border);
+    }
+    .t-badge.doc { color: var(--color-primary); background: var(--color-primary-tint); border-color: var(--color-primary-border); }
+    .t-badge.inferred { color: var(--color-warn); background: var(--color-warn-tint); border-color: var(--color-warn-border); }
+    .t-badge.pending { color: var(--color-danger); background: var(--color-danger-tint); border-color: var(--color-danger-border); }
+    .t-badge.ok { color: var(--color-ok); background: var(--color-ok-tint); border-color: var(--color-ok-border); }
+
+    /* Panels & Layouts */
+    .slide-body { min-height: 0; display: flex; flex-direction: column; gap: clamp(10px, 1.3vh, 16px); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 1.4vw, 20px); min-height: 0; flex: 1; }
+    .grid-2-wide { display: grid; grid-template-columns: 1.28fr 1fr; gap: clamp(12px, 1.4vw, 20px); min-height: 0; flex: 1; }
+    .grid-2-narrow { display: grid; grid-template-columns: 0.92fr 1.28fr; gap: clamp(12px, 1.4vw, 20px); min-height: 0; flex: 1; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 18px); min-height: 0; flex: 1; }
+
+    .panel {
+      background: var(--color-panel);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: clamp(12px, 1.3vw, 18px);
+      box-shadow: var(--shadow-panel);
+      min-height: 0;
+      display: flex; flex-direction: column; gap: 10px;
+      overflow-y: auto;
+    }
+    .panel.glow-cyan { border-color: var(--color-primary-border); }
+    .panel.glow-warn { border-color: var(--color-warn-border); }
+    .panel.glow-ok { border-color: var(--color-ok-border); }
+    .panel.glow-danger { border-color: var(--color-danger-border); }
+
+    .panel-title {
+      display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;
+      font-size: clamp(13.5px, 1.08vw, 16px); font-weight: 700; color: var(--color-fg);
+    }
+    .mono-label {
+      font-family: var(--font-mono); font-size: 10.5px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-primary);
+    }
+    .mono-label.warn { color: var(--color-warn); }
+    .mono-label.ok { color: var(--color-ok); }
+    .mono-label.danger { color: var(--color-danger); }
+
+    .clean-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .clean-list li {
+      font-size: clamp(12px, 0.94vw, 13.8px); line-height: 1.45;
+      color: var(--color-fg-secondary); padding-left: 14px; position: relative;
+    }
+    .clean-list li::before {
+      content: '▸'; position: absolute; left: 0; top: 0; color: var(--color-primary);
+    }
+    .clean-list.warn-bullets li::before { color: var(--color-warn); }
+    .clean-list.danger-bullets li::before { color: var(--color-danger); }
+    .clean-list.ok-bullets li::before { color: var(--color-ok); }
+    .clean-list strong { color: var(--color-fg); }
+
+    code {
+      font-family: var(--font-mono); font-size: 0.9em;
+      color: var(--color-primary); background: rgba(34, 211, 238, 0.09);
+      padding: 1px 5px; border-radius: 4px;
+    }
+
+    .callout {
+      padding: 9px 12px; border-radius: 6px;
+      border: 1px solid var(--color-primary-border);
+      background: var(--color-primary-tint);
+      font-size: clamp(11.5px, 0.9vw, 13px); line-height: 1.45; color: var(--color-fg-secondary);
+    }
+    .callout.warn {
+      border-color: var(--color-warn-border); background: var(--color-warn-tint);
+    }
+    .callout.danger {
+      border-color: var(--color-danger-border); background: var(--color-danger-tint);
+    }
+    .callout.ok {
+      border-color: var(--color-ok-border); background: var(--color-ok-tint);
+    }
+
+    /* Tables */
+    .data-table { width: 100%; border-collapse: collapse; font-size: clamp(11.2px, 0.88vw, 13px); }
+    .data-table th, .data-table td {
+      padding: 7px 9px; border-bottom: 1px solid var(--color-border);
+      text-align: left; vertical-align: top; line-height: 1.38;
+    }
+    .data-table th {
+      font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--color-primary);
+      background: rgba(34, 211, 238, 0.06); position: sticky; top: 0;
+    }
+    .data-table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.02); }
+    .data-table td strong { color: var(--color-fg); }
+
+    /* Hero Slide */
+    .hero-wrap {
+      display: grid; grid-template-columns: 1.25fr 0.95fr; gap: clamp(16px, 2.2vw, 32px);
+      align-items: center; height: 100%; min-height: 0;
+    }
+    .hero-title {
+      font-size: clamp(28px, 3.3vw, 48px); font-weight: 800; line-height: 1.12;
+      letter-spacing: -0.025em; margin: 10px 0 14px;
+    }
+    .hero-title .grad {
+      background: linear-gradient(120deg, var(--color-primary), var(--raw-blue-300) 55%, var(--color-warn));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: clamp(13.5px, 1.1vw, 16px); color: var(--color-fg-secondary);
+      line-height: 1.55; max-width: 60ch; margin-bottom: 18px;
+    }
+    .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .mini-stat {
+      padding: 11px 13px; border-radius: 8px;
+      border: 1px solid var(--color-border); background: rgba(11, 19, 40, 0.72);
+    }
+    .mini-stat .num { font-family: var(--font-mono); font-size: clamp(18px, 1.6vw, 24px); font-weight: 700; color: var(--color-primary); }
+    .mini-stat .lbl { font-size: 12px; color: var(--color-fg-muted); margin-top: 2px; line-height: 1.35; }
+
+    /* Interactive Tabs / Pills */
+    .tab-bar { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pill-btn {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+      padding: 6px 11px; border-radius: 6px; cursor: pointer;
+      background: rgba(11, 19, 40, 0.8); border: 1px solid var(--color-border-strong);
+      color: var(--color-fg-secondary); transition: all 0.16s ease;
+    }
+    .pill-btn:hover { border-color: var(--color-primary-border-strong); color: var(--color-fg); }
+    .pill-btn.active {
+      background: var(--color-primary-tint); border-color: var(--color-primary-border-strong);
+      color: var(--color-primary);
+    }
+    .pill-btn.warn.active {
+      background: var(--color-warn-tint); border-color: var(--color-warn-border); color: var(--color-warn);
+    }
+    .pill-btn.danger.active {
+      background: var(--color-danger-tint); border-color: var(--color-danger-border); color: var(--color-danger);
+    }
+
+    /* Interactive Stepper (Slide 5) */
+    .step-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .flow-step {
+      text-align: left; cursor: pointer;
+      padding: 9px 11px; border-radius: 7px;
+      border: 1px solid var(--color-border); background: rgba(11, 19, 40, 0.75);
+      transition: all 0.18s ease;
+    }
+    .flow-step:hover { border-color: var(--color-primary-border); }
+    .flow-step.active {
+      border-color: var(--color-primary-border-strong);
+      background: var(--color-primary-tint);
+      box-shadow: 0 0 16px rgba(34, 211, 238, 0.14);
+    }
+    .flow-step .s-num { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-primary); font-weight: 700; }
+    .flow-step .s-name { font-size: 12.5px; font-weight: 700; color: var(--color-fg); margin: 2px 0; }
+    .flow-step .s-sub { font-size: 11px; color: var(--color-fg-muted); line-height: 1.3; }
+
+    /* Interactive SVG Diagram (Slide 4) */
+    .mmap-wrap { display: flex; flex-direction: column; gap: 8px; min-height: 0; flex: 1; }
+    .mmap-board {
+      flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(11, 19, 40, 0.45); border: 1px solid var(--color-border);
+      border-radius: 10px; padding: 6px; overflow: hidden;
+    }
+    .mmap-board svg { width: 100%; height: 100%; max-height: 100%; display: block; }
+    .mmap-board svg text { font-family: var(--font-sans); }
+    .mmap-info {
+      padding: 8px 12px; border: 1px solid var(--color-border); border-radius: 7px;
+      background: var(--color-surface); font-size: 12.5px; color: var(--color-fg-secondary); line-height: 1.42;
+      min-height: 40px;
+    }
+    .mmap-info b { color: var(--color-primary); }
+    svg .mmap-node, svg .mmap-edge { transition: opacity 0.35s ease; }
+    svg .mmap-edge { pointer-events: none; }
+    svg.mmap-dim .mmap-node, svg.mmap-dim .mmap-edge { opacity: 0.16; }
+    svg .mmap-edge.mmap-on {
+      stroke-width: 3.4px !important; stroke-dasharray: 10 7 !important;
+      animation: mmapDash 1s linear infinite;
+    }
+    @keyframes mmapDash { to { stroke-dashoffset: -17; } }
+    svg .mmap-node.mmap-on { filter: drop-shadow(0 0 7px rgba(34, 211, 238, 0.85)); }
+    svg .mmap-node.mmap-on rect { stroke-width: 2.8px !important; }
+
+    /* Lakehouse 3 Tiers */
+    .tier-box {
+      padding: 10px 12px; border-radius: 7px; border: 1px solid var(--color-border);
+      background: rgba(11, 19, 40, 0.72);
+    }
+    .tier-box.raw { border-left: 4px solid var(--color-fg-muted); }
+    .tier-box.silver { border-left: 4px solid var(--color-primary); }
+    .tier-box.gold { border-left: 4px solid var(--color-warn); }
+
+    /* Domain Chips */
+    .domain-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .d-chip {
+      font-family: var(--font-mono); font-size: 11px; padding: 4px 8px; border-radius: 5px;
+      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--color-border);
+      color: var(--color-fg-secondary);
+    }
+    .d-chip.hot { border-color: var(--color-warn-border); color: var(--color-warn); background: var(--color-warn-tint); }
+
+    /* Footer */
+    .command-footer {
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 14px;
+      padding-top: clamp(6px, 0.8vh, 10px); border-top: 1px solid var(--color-border);
+      font-size: 11.5px;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
+    .unit-badge { font-family: var(--font-mono); font-weight: 700; color: var(--color-primary); white-space: nowrap; }
+    .act-trail { display: inline-flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+    .act-crumb {
+      font-family: var(--font-mono); font-size: 10.5px; padding: 3px 8px; border-radius: 4px;
+      background: transparent; border: 1px solid transparent; color: var(--color-fg-muted); cursor: pointer;
+    }
+    .act-crumb:hover { color: var(--color-fg); border-color: var(--color-border-strong); }
+    .act-crumb.is-active {
+      color: var(--color-primary); border-color: var(--color-primary-border); background: var(--color-primary-tint); font-weight: 600;
+    }
+    .trail-sep { color: var(--color-border-strong); }
+
+    .nav-cluster { position: relative; display: flex; align-items: center; gap: 6px; }
+    .nav-btn {
+      height: 32px; min-width: 32px; padding: 0 9px; border-radius: 5px;
+      background: var(--color-surface); border: 1px solid var(--color-border-strong);
+      color: var(--color-fg-secondary); cursor: pointer; font-family: var(--font-mono); font-size: 11.5px;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .nav-btn:hover { border-color: var(--color-primary-border-strong); color: var(--color-fg); }
+    .slide-counter { font-family: var(--font-mono); font-size: 11.5px; color: var(--color-fg-muted); padding: 0 4px; }
+
+    /* Jump Menu & Notes Drawer */
+    .jump-menu {
+      position: absolute; bottom: 42px; right: 0; width: min(390px, 88vw); max-height: 62vh;
+      overflow-y: auto; background: var(--color-panel-solid); border: 1px solid var(--color-border-strong);
+      border-radius: 8px; padding: 6px; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55); z-index: 1200;
+    }
+    .jump-item {
+      width: 100%; text-align: left; display: flex; gap: 8px; align-items: baseline;
+      padding: 7px 9px; border-radius: 5px; border: none; background: transparent;
+      color: var(--color-fg-secondary); cursor: pointer; font-family: var(--font-sans); font-size: 12px;
+    }
+    .jump-item:hover { background: rgba(255, 255, 255, 0.05); color: var(--color-fg); }
+    .jump-item.is-active { background: var(--color-primary-tint); color: var(--color-primary); font-weight: 600; }
+    .jump-item .idx { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-primary); }
+
+    .notes-drawer {
+      position: fixed; right: 20px; bottom: 56px; width: min(520px, 92vw); max-height: 44vh;
+      overflow-y: auto; background: var(--color-panel-solid); border: 1px solid var(--color-primary-border);
+      border-radius: 10px; padding: 14px 16px; box-shadow: 0 20px 44px rgba(0, 0, 0, 0.62); z-index: 1150;
+    }
+    .notes-head {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+      font-family: var(--font-mono); font-size: 11px; color: var(--color-primary); font-weight: 700;
+    }
+    .notes-body { font-size: 13px; color: var(--color-fg-secondary); line-height: 1.55; white-space: pre-line; }
+
+    .chart-box { position: relative; width: 100%; height: clamp(160px, 24vh, 230px); }
+
+    @media (max-width: 960px) {
+      .hero-wrap, .grid-2, .grid-2-wide, .grid-2-narrow, .grid-3 { grid-template-columns: 1fr; }
+      .step-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      svg .mmap-edge.mmap-on { animation: none; }
+      .slide.active { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-progress-track"><div class="top-progress-fill" id="progressBar"></div></div>
+
+  <div class="deck-shell">
+    <main class="slide-stage">
+
+      <!-- SLIDE 01: HERO -->
+      <section class="slide is-hero active" data-act="0" data-title="Mở đầu · Kiến trúc PQN & Quy ước nguồn">
+        <div class="hero-wrap">
+          <div>
+            <div class="q-kicker">PHẦN 2 KỸ THUẬT · TEAM I&amp;T PTSC QUẢNG NGÃI</div>
+            <h1 class="hero-title">
+              Kiến trúc Kỹ thuật <span class="grad">Mô hình PQN</span><br />
+              Từng thành phần đảm nhiệm gì?
+            </h1>
+            <p class="hero-desc">
+              Bản giải mã thực chiến từ Báo cáo kỹ thuật &amp; Hồ sơ yêu cầu về đúng bài toán của Quảng Ngãi:
+              <strong>6 hệ thống hiện hữu</strong> đi đâu về đâu, thành phần nào ở <strong>Hub</strong>, phần nào của <strong>đơn vị</strong>,
+              và team I&amp;T cần chuẩn bị gì trước khảo sát <strong>GĐ2A</strong>.
+            </p>
+            <div class="badge-row" style="margin-bottom: 14px;">
+              <span class="t-badge doc">Tài liệu nói = Đã nêu trong Báo cáo KT / Slide HT / YCKT</span>
+              <span class="t-badge inferred">Suy ra kiến trúc = Cách đọc từ Hub xuống PQN</span>
+              <span class="t-badge pending">Chờ GĐ2A = Chưa chốt, tuyệt đối không nói cứng</span>
+            </div>
+            <div class="callout ok">
+              <strong>Mô hình mặc định cho Quảng Ngãi:</strong> <strong>L3 Tenant trên Hub</strong>.
+              L4 Spoke chỉ xét khi đạt đủ 4 tiêu chí sau khảo sát GĐ2A — mọi nội dung về Spoke trong bài là <em>phương án có điều kiện</em>.
+            </div>
+          </div>
+
+          <div class="panel glow-cyan" style="gap: 12px;">
+            <div class="panel-title">
+              <span>Cấu trúc buổi trình bày (12 slide)</span>
+              <span class="mono-label">4 CHẶNG</span>
+            </div>
+            <div class="hero-cards">
+              <div class="mini-stat">
+                <div class="num">01 · Bức tranh</div>
+                <div class="lbl">3 tầng kiến trúc, 3 nguyên tắc vàng &amp; bài toán chồng lấn 6 hệ PQN</div>
+              </div>
+              <div class="mini-stat">
+                <div class="num">02 · Luồng chạy</div>
+                <div class="lbl">Sơ đồ tương tác toàn nền tảng + theo chân 1 bản ghi từ FAST tới BI</div>
+              </div>
+              <div class="mini-stat">
+                <div class="num">03 · 6 Nhóm</div>
+                <div class="lbl">12 phân hệ (A → E) + Cụm Hub 8 node &amp; Fabric (F) + việc PQN phải làm</div>
+              </div>
+              <div class="mini-stat">
+                <div class="num">04 · Vận hành</div>
+                <div class="lbl">Phân vai HQ/PQN/Vendor, L3 vs L4, 6 điểm chưa chốt &amp; checklist ngay</div>
+              </div>
+            </div>
+            <div class="callout warn">
+              <strong>Phím tắt thuyết trình:</strong> <code>←</code> / <code>→</code> chuyển slide · <code>N</code> mở Ghi chú diễn giải · <code>G</code> mở Danh mục slide.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 02: 3 TẦNG & 3 NGUYÊN TẮC VÀNG -->
+      <section class="slide" data-act="0" data-title="Bức tranh tổng 3 tầng & 3 nguyên tắc vàng">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 1 · BỨC TRANH TỔNG THỂ</div>
+            <h1 class="slide-h1">Mô hình PQN gồm <span class="c-cyan">3 tầng</span> &amp; <span class="c-warn">3 nguyên tắc vàng</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge doc">Báo cáo KT §3.2–3.4, §4.2.7</span>
+            <span class="t-badge doc">YCKT §1–§2 · Phiên sáng &amp; chiều</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-3">
+            <div class="panel glow-ok">
+              <div class="panel-title">
+                <span>Tầng 1 — Tại Đơn vị (Quảng Ngãi)</span>
+                <span class="mono-label ok">ON-PREM ĐƠN VỊ</span>
+              </div>
+              <ul class="clean-list ok-bullets">
+                <li><strong>6 hệ thống nguồn:</strong> Cảng · ERP FAST · MESX · Bán hàng · E-Office · HRM.</li>
+                <li><strong>Đầu kết nối tại chỗ:</strong> Agent thu thập hoặc gọi trực tiếp qua API.</li>
+                <li>Đẩy dữ liệu qua đường truyền SD-WAN / VPN lên Hub TCT.</li>
+              </ul>
+              <div class="callout ok" style="margin-top: auto;">
+                Với <strong>L3 Tenant</strong>, đơn vị không tự xây Hub, không mua cụm dHCI, không dựng ESB riêng.
+              </div>
+            </div>
+
+            <div class="panel glow-cyan">
+              <div class="panel-title">
+                <span>Tầng 2 — Tenant PQN trên Hub (L3)</span>
+                <span class="mono-label">PHÂN VÙNG RIÊNG</span>
+              </div>
+              <ul class="clean-list">
+                <li><strong>Vùng lưu trữ riêng</strong> trong Lakehouse Hub cho dữ liệu chuyên ngành PQN.</li>
+                <li><strong>Pipeline riêng &amp; Landing Zone riêng</strong> để kiểm lỗi và duyệt dữ liệu.</li>
+                <li><strong>Workspace BI riêng</strong> phục vụ báo cáo nội bộ đơn vị.</li>
+                <li><strong>Cách ly RBAC / ABAC theo tenant:</strong> đơn vị chỉ thấy dữ liệu của mình.</li>
+              </ul>
+              <div class="callout" style="margin-top: auto;">
+                <span class="t-badge inferred">Suy ra kiến trúc</span> Chi tiết phân bổ tài nguyên nội bộ trong phân vùng tenant sẽ cụ thể hóa khi thiết kế GĐ2A.
+              </div>
+            </div>
+
+            <div class="panel glow-warn">
+              <div class="panel-title">
+                <span>Tầng 3 — Dùng chung tại Hub TCT</span>
+                <span class="mono-label warn">TRUNG TÂM + CLOUD</span>
+              </div>
+              <ul class="clean-list warn-bullets">
+                <li><strong>Trục tích hợp Vùng 5:</strong> ESB + API Gateway + Kafka + CDC/ETL + QC.</li>
+                <li><strong>MDM Golden Record:</strong> do HQ sở hữu, cấp mã chuẩn toàn TCT.</li>
+                <li><strong>Hạ tầng lõi Hub:</strong> Lakehouse trung tâm, SIEM tập trung, SSO tập trung.</li>
+                <li><strong>Microsoft Fabric / Power BI:</strong> trên Cloud cho dữ liệu đã chuẩn hóa.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" style="flex: 0 0 auto;">
+            <div class="panel-title"><span>3 Nguyên tắc xuyên suốt (nhắc ở đầu · giữa · cuối)</span></div>
+            <div class="grid-3">
+              <div class="callout"><strong>1. Dữ liệu gốc không bao giờ lên Cloud</strong><br />Chỉ dữ liệu đã làm sạch, chuẩn hóa, tổng hợp (GOLD) mới lên OneLake/Fabric; dữ liệu gốc ở lại on-prem tại Việt Nam.</div>
+              <div class="callout warn"><strong>2. MỘT trục ESB duy nhất ở Hub TCT</strong><br />Đơn vị không bao giờ tự xây Hub; Spoke cũng không có ESB riêng. Điểm bắt buộc đi qua là cả <strong>Vùng 5</strong>.</div>
+              <div class="callout ok"><strong>3. Đơn vị là Data Owner</strong><br />Dữ liệu từ 6 hệ chỉ được phép đi vào vùng dùng chung sau khi Data Owner / Steward của đơn vị <strong>duyệt tại Landing Zone</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 03: 6 HỆ THỐNG PQN & CHỒNG LẤN -->
+      <section class="slide" data-act="0" data-title="6 hệ thống Quảng Ngãi & điểm nóng chồng lấn mã">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 1 · BÀI TOÁN THỰC TẾ CỦA PQN</div>
+            <h1 class="slide-h1">6 hệ thống nguồn &amp; <span class="c-warn">Điểm nóng chồng lấn dữ liệu chủ</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge pending">Cách nối từng hệ: CHƯA CHỐT · Chờ GĐ2A</span>
+            <span class="t-badge doc">Chuẩn YCKT: REST+OpenAPI / JDBC-ODBC / File mở</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2-wide">
+            <div class="panel">
+              <div class="panel-title">
+                <span>Danh sách làm việc: 6 hệ thống tại Quảng Ngãi</span>
+                <span class="t-badge pending">Chờ CNTT xác nhận hệ ngầm/hệ chết</span>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Hệ thống</th>
+                    <th>Dữ liệu chính</th>
+                    <th>Domain MDM liên quan</th>
+                    <th>Cần xác minh trước GĐ2A</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Phần mềm Cảng</strong></td>
+                    <td>Vận hành cảng, tàu, hàng hóa</td>
+                    <td>Khách hàng, Hợp đồng, Dự án</td>
+                    <td>DB gì? Có API không? Xuất file được không?</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. ERP FAST</strong></td>
+                    <td>Tài chính, mua sắm, kho, NCC</td>
+                    <td>NCC, Vật tư/DV, Khách hàng, Hợp đồng</td>
+                    <td>DB gì? CDC đọc log DB được không? Vendor hợp tác?</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. MESX</strong></td>
+                    <td>Vật tư/tài sản, bảo dưỡng sửa chữa</td>
+                    <td>Vật tư/Dịch vụ, Tài sản</td>
+                    <td>Mức độ trùng vật tư với FAST? Tạo mã gốc ở đâu?</td>
+                  </tr>
+                  <tr>
+                    <td><strong>4. PM Bán hàng</strong></td>
+                    <td>Bán hàng, khách hàng, doanh thu</td>
+                    <td>Khách hàng, Hợp đồng</td>
+                    <td>Khách hàng trùng với FAST và Cảng ra sao?</td>
+                  </tr>
+                  <tr>
+                    <td><strong>5. E-Office</strong></td>
+                    <td>Văn bản, phê duyệt, công văn</td>
+                    <td>Đơn vị, Nhân sự</td>
+                    <td>YCKT nêu 4 API: <code>CreateTicket</code>, <code>ApproveSignEO</code>, <code>UpdateDocument</code>, <code>UpdateInvoice</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>6. HRM</strong></td>
+                    <td>Nhân sự, tổ chức, lương</td>
+                    <td>Nhân sự, Đơn vị</td>
+                    <td><strong>Chỉ lấy cấu trúc trường</strong>, không lấy dữ liệu cá nhân thật; nguồn tin cậy nhân sự</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="panel glow-warn">
+              <div class="panel-title">
+                <span>3 điểm nóng chồng lấn mã cần MDM giải quyết</span>
+                <span class="mono-label warn">LÝ DO PHẢI CHUẨN HÓA</span>
+              </div>
+              <div class="callout danger">
+                <strong>Nóng nhất — Vật tư / Tài sản (FAST ↔ MESX):</strong><br />
+                Ở Quảng Ngãi vật tư nằm ở cả 2 hệ. Comment PDT27 gợi ý "vật tư → ERP", nhưng <strong>nguồn tin cậy cho PQN chưa quyết</strong> (Câu hỏi số 5 gửi đoàn khảo sát).
+              </div>
+              <div class="callout warn">
+                <strong>Khách hàng nằm ở 3 hệ (FAST / Bán hàng / Cảng):</strong><br />
+                Cùng 1 khách hàng nhưng mỗi phần mềm đặt một mã riêng → cần MDM so khớp fuzzy (MST, tên, địa chỉ) ra 1 Golden Record.
+              </div>
+              <div class="callout">
+                <strong>Nhân sự &amp; Đơn vị gốc ở HRM:</strong><br />
+                HRM là nguồn tin cậy tổ chức/nhân sự để đồng bộ sang E-Office và các hệ khác, tuân thủ ràng buộc không đưa dữ liệu cá nhân nhạy cảm.
+              </div>
+              <div class="callout" style="margin-top: auto;">
+                <strong>Lưu ý kỹ thuật:</strong> Phương thức nối (REST + OpenAPI, JDBC/ODBC, hay file CSV/Excel/JSON/XML/Parquet/Avro) sẽ quyết theo từng hệ ở GĐ2A.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 04: SƠ ĐỒ TƯƠNG TÁC TOÀN NỀN TẢNG -->
+      <section class="slide" data-act="1" data-title="Sơ đồ tương tác — Toàn bộ Data Platform trên 1 trang">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 2 · LUỒNG CHẠY END-TO-END</div>
+            <h1 class="slide-h1">Bức tranh tổng — <span class="c-cyan">3 luồng chạy chính</span> qua các vùng kiến trúc</h1>
+          </div>
+          <div class="tab-bar">
+            <button type="button" class="pill-btn" id="mmap-b-up" onclick="mmapPlay('up')">1 · Đi lên (Thô → Hub → Cloud)</button>
+            <button type="button" class="pill-btn warn" id="mmap-b-down" onclick="mmapPlay('down')">2 · Đi xuống (Mã chuẩn &amp; BI)</button>
+            <button type="button" class="pill-btn danger" id="mmap-b-siem" onclick="mmapPlay('siem')">3 · Giám sát (Log → SIEM)</button>
+            <button type="button" class="pill-btn" onclick="mmapPlayAll()">▶ Chạy cả 3</button>
+            <button type="button" class="pill-btn" onclick="mmapReset()">Reset</button>
+          </div>
+        </div>
+
+        <div class="mmap-wrap">
+          <div class="mmap-board">
+            <svg id="mmap-svg" viewBox="0 0 1240 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ tổng thể Data Platform PTSC">
+              <defs>
+                <marker id="mmap-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0L10 5L0 10z" fill="#64748B"></path>
+                </marker>
+              </defs>
+
+              <!-- 4 CỘT -->
+              <rect x="16" y="14" width="284" height="632" rx="12" fill="rgba(52,211,153,.05)" stroke="rgba(148,163,184,.32)" stroke-width="1.5"/>
+              <text x="30" y="38" font-size="11.5" font-weight="700" letter-spacing="1.5" fill="#94A3B8">ĐƠN VỊ — PTSC QUẢNG NGÃI</text>
+              <rect x="316" y="14" width="120" height="632" rx="12" fill="rgba(148,163,184,.05)" stroke="rgba(148,163,184,.32)" stroke-width="1.5"/>
+              <text x="376" y="38" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#94A3B8" text-anchor="middle">ĐƯỜNG TRUYỀN</text>
+              <rect x="456" y="14" width="452" height="632" rx="12" fill="rgba(96,165,250,.05)" stroke="rgba(148,163,184,.32)" stroke-width="1.5"/>
+              <text x="470" y="38" font-size="11.5" font-weight="700" letter-spacing="1.5" fill="#94A3B8">HUB — TỔNG CÔNG TY (ON-PREM)</text>
+              <rect x="926" y="14" width="298" height="632" rx="12" fill="rgba(147,197,253,.05)" stroke="rgba(148,163,184,.32)" stroke-width="1.5"/>
+              <text x="940" y="38" font-size="11.5" font-weight="700" letter-spacing="1.5" fill="#94A3B8">MICROSOFT CLOUD — FABRIC</text>
+
+              <!-- 6 HỆ -->
+              <g class="mmap-node" id="n-s1" style="cursor:pointer"><rect x="34" y="58" width="174" height="44" rx="8" fill="rgba(52,211,153,.10)" stroke="#34D399" stroke-width="1.5"/><text x="46" y="77" font-size="12.5" font-weight="600" fill="#F1F5F9">Phần mềm Cảng</text><text x="46" y="93" font-size="10.5" fill="#94A3B8">tàu · hàng hóa</text></g>
+              <g class="mmap-node" id="n-s2" style="cursor:pointer"><rect x="34" y="112" width="174" height="44" rx="8" fill="rgba(52,211,153,.10)" stroke="#34D399" stroke-width="1.5"/><text x="46" y="131" font-size="12.5" font-weight="600" fill="#F1F5F9">ERP FAST</text><text x="46" y="147" font-size="10.5" fill="#94A3B8">tài chính · mua sắm</text></g>
+              <g class="mmap-node" id="n-s3" style="cursor:pointer"><rect x="34" y="166" width="174" height="44" rx="8" fill="rgba(52,211,153,.10)" stroke="#34D399" stroke-width="1.5"/><text x="46" y="185" font-size="12.5" font-weight="600" fill="#F1F5F9">MESX</text><text x="46" y="201" font-size="10.5" fill="#94A3B8">vật tư · tài sản</text></g>
+              <g class="mmap-node" id="n-s4" style="cursor:pointer"><rect x="34" y="220" width="174" height="44" rx="8" fill="rgba(52,211,153,.10)" stroke="#34D399" stroke-width="1.5"/><text x="46" y="239" font-size="12.5" font-weight="600" fill="#F1F5F9">PM Bán hàng</text><text x="46" y="255" font-size="10.5" fill="#94A3B8">bán hàng · doanh thu</text></g>
+              <g class="mmap-node" id="n-s5" style="cursor:pointer"><rect x="34" y="274" width="174" height="44" rx="8" fill="rgba(52,211,153,.10)" stroke="#34D399" stroke-width="1.5"/><text x="46" y="293" font-size="12.5" font-weight="600" fill="#F1F5F9">E-Office</text><text x="46" y="309" font-size="10.5" fill="#94A3B8">văn bản · 4 API YCKT</text></g>
+              <g class="mmap-node" id="n-s6" style="cursor:pointer"><rect x="34" y="328" width="174" height="44" rx="8" fill="rgba(52,211,153,.10)" stroke="#34D399" stroke-width="1.5"/><text x="46" y="347" font-size="12.5" font-weight="600" fill="#F1F5F9">HRM</text><text x="46" y="363" font-size="10.5" fill="#94A3B8">nhân sự (chỉ cấu trúc)</text></g>
+
+              <g class="mmap-node" id="n-ag" style="cursor:pointer">
+                <rect x="228" y="58" width="58" height="314" rx="9" fill="rgba(52,211,153,.14)" stroke="#34D399" stroke-width="1.5"/>
+                <text transform="rotate(-90 257 215)" x="257" y="215" font-size="11.5" font-weight="700" letter-spacing="1.4" fill="#A7F3D0" text-anchor="middle">AGENT / API (CHỜ GĐ2A)</text>
+              </g>
+              <g class="mmap-node" id="n-mh" style="cursor:pointer">
+                <rect x="34" y="418" width="252" height="48" rx="8" fill="rgba(52,211,153,.10)" stroke="#34D399" stroke-width="1.5"/>
+                <text x="46" y="438" font-size="12.5" font-weight="600" fill="#F1F5F9">Màn hình khai thác &amp; Hệ nguồn</text>
+                <text x="46" y="455" font-size="10.5" fill="#94A3B8">Power BI · Superset · Nhận lại mã chuẩn</text>
+              </g>
+              <g class="mmap-node" id="n-pd" style="cursor:pointer">
+                <rect x="34" y="482" width="252" height="48" rx="8" fill="rgba(251,146,60,.10)" stroke="#FB923C" stroke-width="1.5"/>
+                <text x="46" y="502" font-size="12.5" font-weight="600" fill="#F1F5F9">Phê duyệt Landing Zone</text>
+                <text x="46" y="519" font-size="10.5" fill="#CBD5E1">Data Owner / Steward đơn vị duyệt</text>
+              </g>
+
+              <g class="mmap-node" id="n-nw" style="cursor:pointer">
+                <rect x="328" y="305" width="96" height="82" rx="10" fill="rgba(148,163,184,.10)" stroke="#94A3B8" stroke-width="1.5"/>
+                <text x="376" y="332" font-size="12" font-weight="700" fill="#F1F5F9" text-anchor="middle">SD-WAN</text>
+                <text x="376" y="350" font-size="12" font-weight="700" fill="#F1F5F9" text-anchor="middle">VPN</text>
+                <text x="376" y="368" font-size="10.5" fill="#94A3B8" text-anchor="middle">OAuth2 / mTLS</text>
+              </g>
+
+              <!-- HUB -->
+              <g class="mmap-node" id="n-z5" style="cursor:pointer">
+                <rect x="476" y="96" width="194" height="108" rx="10" fill="rgba(34,211,238,.12)" stroke="#22D3EE" stroke-width="1.5"/>
+                <text x="488" y="120" font-size="12.5" font-weight="700" fill="#F1F5F9">Vùng 5 — Trục tích hợp</text>
+                <text x="488" y="140" font-size="11" fill="#CBD5E1">ESB · API Gateway · Kafka</text>
+                <text x="488" y="158" font-size="11" fill="#CBD5E1">Ingestion (CDC / ETL / Batch)</text>
+                <text x="488" y="176" font-size="11" fill="#94A3B8">Kiểm tra QC cửa vào</text>
+              </g>
+              <g class="mmap-node" id="n-lz" style="cursor:pointer">
+                <rect x="690" y="96" width="200" height="108" rx="10" fill="rgba(251,146,60,.12)" stroke="#FB923C" stroke-width="1.5"/>
+                <text x="702" y="120" font-size="12.5" font-weight="700" fill="#F1F5F9">Landing Zone (Tenant)</text>
+                <text x="702" y="140" font-size="11" fill="#CBD5E1">Đơn vị duyệt trước khi</text>
+                <text x="702" y="158" font-size="11" fill="#CBD5E1">vào vùng dùng chung</text>
+                <text x="702" y="176" font-size="11" fill="#FB923C">Lỗi → Khu cách ly</text>
+              </g>
+              <g class="mmap-node" id="n-z4" style="cursor:pointer">
+                <rect x="524" y="244" width="366" height="128" rx="10" fill="rgba(96,165,250,.14)" stroke="#60A5FA" stroke-width="1.5"/>
+                <text x="538" y="268" font-size="12.5" font-weight="700" fill="#F1F5F9">Vùng lõi Hub (8 Node dHCI)</text>
+                <text x="538" y="289" font-size="11" fill="#CBD5E1">Lakehouse: MinIO + Parquet + Iceberg (RAW→SILVER→GOLD)</text>
+                <text x="538" y="308" font-size="11" fill="#CBD5E1">Transform: Spark · Flink · Trino · Airflow</text>
+                <text x="538" y="327" font-size="11" fill="#CBD5E1">MDM (10 chức năng · Golden Record) · Superset · SSO</text>
+                <text x="538" y="346" font-size="11" fill="#94A3B8">Metadata Governance (OpenMetadata / Atlas / DataHub)</text>
+              </g>
+              <g class="mmap-node" id="n-z3" style="cursor:pointer">
+                <rect x="656" y="420" width="234" height="64" rx="10" fill="rgba(248,113,113,.10)" stroke="#F87171" stroke-width="1.5"/>
+                <text x="668" y="446" font-size="12.5" font-weight="700" fill="#F1F5F9">SIEM &amp; Monitoring (Node 7)</text>
+                <text x="668" y="465" font-size="11" fill="#CBD5E1">Audit log tách theo tenant · Chỉ on-prem</text>
+              </g>
+
+              <!-- CLOUD -->
+              <g class="mmap-node" id="n-cl" style="cursor:pointer">
+                <rect x="946" y="244" width="260" height="128" rx="10" fill="rgba(147,197,253,.10)" stroke="#93C5FD" stroke-width="1.5"/>
+                <text x="958" y="268" font-size="12.5" font-weight="700" fill="#F1F5F9">Fabric F16 · OneLake 20 TB</text>
+                <text x="958" y="289" font-size="11" fill="#CBD5E1">Power BI (70 user) · Text-to-data Q&amp;A</text>
+                <text x="958" y="308" font-size="11" fill="#CBD5E1">Purview (500 tài sản) · Workspace riêng</text>
+                <text x="958" y="327" font-size="11" fill="#CBD5E1">AI/ML Library (CHỈ chạy trên Cloud)</text>
+                <text x="958" y="346" font-size="11" fill="#94A3B8">MDM Publishing (chỉ chức năng 9)</text>
+              </g>
+              <g class="mmap-node" id="n-rule" style="cursor:pointer">
+                <rect x="946" y="420" width="260" height="64" rx="10" fill="rgba(147,197,253,.07)" stroke="#475569" stroke-width="1"/>
+                <text x="958" y="446" font-size="11.5" font-weight="600" fill="#CBD5E1">Chỉ nhận dữ liệu đã chuẩn hóa/tổng hợp</text>
+                <text x="958" y="465" font-size="11" fill="#94A3B8">Dữ liệu thô ở lại on-prem Việt Nam</text>
+              </g>
+
+              <!-- EDGES -->
+              <path id="e-s1-ag" class="mmap-edge" d="M208 80 H228" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-s2-ag" class="mmap-edge" d="M208 134 H228" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-s3-ag" class="mmap-edge" d="M208 188 H228" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-s4-ag" class="mmap-edge" d="M208 242 H228" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-s5-ag" class="mmap-edge" d="M208 296 H228" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-s6-ag" class="mmap-edge" d="M208 350 H228" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-ag-nw" class="mmap-edge" d="M286 215 C 312 215, 304 346, 328 346" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-nw-z5" class="mmap-edge" d="M424 346 C 456 346, 448 150, 476 150" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-z5-lz" class="mmap-edge" d="M670 150 H690" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-lz-z4" class="mmap-edge" d="M790 204 V244" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-z4-cl" class="mmap-edge" d="M890 308 H946" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-z4-z3" class="mmap-edge" d="M773 372 V420" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#mmap-ar)"/>
+              <path id="e-lz-pd" class="mmap-edge" d="M690 176 H448 V556 H160 V530" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#mmap-ar)"/>
+              <path id="e-z4-mh" class="mmap-edge" d="M590 372 V598 H160 V466" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#mmap-ar)"/>
+              <path id="e-cl-mh" class="mmap-edge" d="M1076 372 V598 H160 V466" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#mmap-ar)"/>
+
+              <text x="315" y="548" font-size="11" fill="#64748B">Đơn vị phê duyệt ở Landing Zone</text>
+              <text x="530" y="590" font-size="11" fill="#64748B">Đi xuống: Mã chuẩn (qua ESB) · Bản ghi vàng · Báo cáo BI &amp; Text-to-data</text>
+            </svg>
+          </div>
+          <div class="mmap-info" id="mmap-info">Bấm 1 trong 3 nút luồng ở góc trên, hoặc bấm vào bất kỳ khối nào trong sơ đồ để xem kết nối &amp; vai trò.</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 05: THEO CHÂN 1 BẢN GHI -->
+      <section class="slide" data-act="1" data-title="Theo chân 1 bản ghi — Từ NCC-001 đến Bản ghi vàng">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 2 · MINH HỌA LUỒNG DỮ LIỆU SỐNG</div>
+            <h1 class="slide-h1">Theo chân 1 bản ghi: <span class="c-cyan">NCC-001 (FAST)</span> + <span class="c-warn">KH-118 (MESX)</span></h1>
+            <p class="slide-sub">Ví dụ minh họa (không phải mã thật): cùng 1 nhà cung cấp ở 2 hệ, đi qua 8 bước để thành Bản ghi vàng <code>NCC-PTSC-0001</code>.</p>
+          </div>
+          <div class="tab-bar">
+            <button type="button" class="pill-btn" onclick="stepRecord(-1)">◀ Bước trước</button>
+            <button type="button" class="pill-btn active" onclick="stepRecord(1)">Bước tiếp ▶</button>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="step-grid" id="recStepGrid">
+            <button type="button" class="flow-step active" data-rstep="0" onclick="selectRecordStep(0)"><div class="s-num">BƯỚC 1 · THU THẬP</div><div class="s-name">A1 Ingestion / CDC</div><div class="s-sub">Đọc log DB FAST, không quét bảng</div></button>
+            <button type="button" class="flow-step" data-rstep="1" onclick="selectRecordStep(1)"><div class="s-num">BƯỚC 2 · TRỤC CHUNG</div><div class="s-name">Vùng 5 (ESB·GW·Kafka)</div><div class="s-sub">QC cửa vào trước Landing Zone</div></button>
+            <button type="button" class="flow-step" data-rstep="2" onclick="selectRecordStep(2)"><div class="s-num">BƯỚC 3 · DUYỆT</div><div class="s-name">Landing Zone</div><div class="s-sub">Đơn vị bấm Duyệt / Cách ly</div></button>
+            <button type="button" class="flow-step" data-rstep="3" onclick="selectRecordStep(3)"><div class="s-num">BƯỚC 4 · LƯU THÔ</div><div class="s-name">Lakehouse RAW</div><div class="s-sub">MinIO + Iceberg · 3 bản sao</div></button>
+            <button type="button" class="flow-step" data-rstep="4" onclick="selectRecordStep(4)"><div class="s-num">BƯỚC 5 · LÀM SẠCH</div><div class="s-name">Transform + Airflow</div><div class="s-sub">8 tiêu chí DQ → tầng SILVER</div></button>
+            <button type="button" class="flow-step" data-rstep="5" onclick="selectRecordStep(5)"><div class="s-num">BƯỚC 6 · GỘP TRÙNG</div><div class="s-name">MDM (Chức năng 3+4)</div><div class="s-sub">Fuzzy match → 1 Bản ghi vàng</div></button>
+            <button type="button" class="flow-step" data-rstep="6" onclick="selectRecordStep(6)"><div class="s-num">BƯỚC 7 · SẢN PHẨM</div><div class="s-name">Lakehouse GOLD</div><div class="s-sub">Dữ liệu sạch · 2 bản sao</div></button>
+            <button type="button" class="flow-step" data-rstep="7" onclick="selectRecordStep(7)"><div class="s-num">BƯỚC 8 · TRẢ VỀ</div><div class="s-name">8a MDM &amp; 8b BI + SIEM</div><div class="s-sub">Ghi ngược mã + Dashboard/Lineage</div></button>
+          </div>
+
+          <div class="grid-2-wide" style="flex: 1;">
+            <div class="panel glow-cyan" id="recDetailPanel">
+              <div class="panel-title">
+                <span id="recTitle">Bước 1 · Thu thập tại nguồn (A1 Ingestion / CDC)</span>
+                <span class="t-badge doc" id="recBadge">Tự động</span>
+              </div>
+              <div class="callout" id="recIO"><strong>Đầu vào → Đầu ra:</strong> Thay đổi tạo <code>NCC-001</code> trong DB FAST → sự kiện đẩy lên Hub ngay.</div>
+              <ul class="clean-list" id="recBullets">
+                <li><strong>Cơ chế:</strong> CDC (như Debezium) đọc nhật ký giao dịch (transaction log) thay vì chạy <code>SELECT</code> quét toàn bảng → không làm chậm phần mềm kế toán.</li>
+                <li><strong>Với PQN:</strong> Cách nối từng hệ (CDC, API hay file) sẽ chốt sau khảo sát GĐ2A.</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <div class="panel-title">
+                <span>Bảng tóm tắt 8 bước &amp; Luồng song song</span>
+                <span class="mono-label">AI BẤM NÚT?</span>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr><th>Bước</th><th>Thành phần</th><th>Ai quyết / Chú ý</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>1–2</strong></td><td>Ingestion → Vùng 5</td><td>Tự động; gói sai định dạng chặn ngay tại Vùng 5</td></tr>
+                  <tr><td><strong>3</strong></td><td>Landing Zone</td><td><strong>Đơn vị bấm Duyệt</strong>; từ chối → khu cách ly + báo key user</td></tr>
+                  <tr><td><strong>4–5</strong></td><td>RAW (3 bản) → SILVER</td><td>Quy tắc DQ do team PQN định nghĩa; Airflow/Flink chạy</td></tr>
+                  <tr><td><strong>6–7</strong></td><td>MDM → GOLD (2 bản)</td><td>Máy fuzzy match; ca khó → <strong>Data Steward phân xử</strong></td></tr>
+                  <tr><td><strong>8a</strong></td><td>MDM Publishing (ESB)</td><td><span class="t-badge pending">Chờ GĐ2A</span> Cơ chế ghi ngược về FAST/MESX</td></tr>
+                  <tr><td><strong>8b + //</strong></td><td>BI / Q&amp;A + SIEM + Metadata</td><td>Dashboard + Audit log + Data Lineage xuyên suốt</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 06: NHÓM A — THU THẬP & VÙNG 5 -->
+      <section class="slide" data-act="2" data-title="Nhóm A — Thu thập (Ingestion/CDC) & Vùng 5">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 3 · ZOOM 6 NHÓM THÀNH PHẦN (NHÓM A)</div>
+            <h1 class="slide-h1">Thu thập &amp; Vùng 5: <span class="c-warn">4 anh em, không phải ESB chứa hết</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge doc">Phân hệ 1 &amp; 3 · Báo cáo KT §4.1, §4.3.3</span>
+            <span class="t-badge doc">Phiên sáng tr.25 · YCKT §1–§2</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <div class="panel glow-cyan">
+              <div class="panel-title">
+                <span>A1 Ingestion &amp; A5 CDC/ETL — "Cái phễu đầu tiên"</span>
+                <span class="mono-label">NODE 5 HUB + AGENT PQN</span>
+              </div>
+              <ul class="clean-list">
+                <li><strong>Công cụ đề xuất:</strong> <code>Airbyte</code> / <code>IBM StreamSets</code> / <code>Apache NiFi</code> (400+ connector); CDC: <code>Debezium</code> / <code>IBM Data Replication</code> / <code>Maxwell</code> / <code>Kafka Connector</code>.</li>
+                <li><strong>Chạy ở đâu:</strong> Ingestion on-prem nằm trên Node 5 Hub; tại PQN chỉ đặt <strong>agent thu thập</strong> hoặc kéo qua API.</li>
+                <li><strong>Đảm nhiệm cho PQN:</strong> Gom dữ liệu từ 6 hệ theo 2 nhịp: lô định kỳ (batch/file) hoặc theo dòng (CDC đọc log DB, không làm chậm hệ cũ).</li>
+                <li><strong>YCKT §2 bắt buộc:</strong> CDC/incremental + backfill/replay + khóa chính ổn định + idempotency + <code>correlationId</code> + upsert + retry.</li>
+              </ul>
+              <div class="callout ok" style="margin-top: auto;">
+                <strong>Việc team PQN ngay bây giờ:</strong> Trả lời phiếu phỏng vấn từng hệ (DB gì? Có API không? Xuất file được không? Vendor có hợp tác?) trước khi đoàn GĐ2A tới.
+              </div>
+            </div>
+
+            <div class="panel glow-warn">
+              <div class="panel-title">
+                <span>Vùng 5 — 3 thành phần còn lại (chạy on-prem tại Hub)</span>
+                <span class="mono-label warn">PHÂN BIỆT RÕ</span>
+              </div>
+              <div class="tab-bar" id="z5Tabs">
+                <button type="button" class="pill-btn warn active" onclick="selectZ5(0)">A2 · ESB</button>
+                <button type="button" class="pill-btn" onclick="selectZ5(1)">A3 · API Gateway</button>
+                <button type="button" class="pill-btn" onclick="selectZ5(2)">A4 · Kafka</button>
+              </div>
+              <div id="z5Detail" class="callout warn">
+                <strong>A2 · Trục tích hợp ESB (Phân hệ 3 — CHỈ on-prem):</strong><br />
+                Công cụ: <code>Apache Camel</code>, <code>WSO2 EI</code>, <code>IBM App Connect Enterprise</code>.<br />
+                Là "tổng đài" request–response 2 chiều (vd: trả mã chuẩn từ MDM về FAST, tra cứu dữ liệu dùng chung). Không có bản sao tại đơn vị; ngoại lệ SaaS phải có văn bản chấp thuận của PTSC.
+              </div>
+              <div class="callout danger">
+                <strong>Điểm hay hiểu sai:</strong> ESB <strong>KHÔNG</strong> chứa API Gateway, Kafka hay CDC/ETL. Cả 4 là anh em trong Vùng 5 cùng hội tụ về Landing Zone — cái bắt buộc là <strong>cả Vùng 5</strong>, không phải mọi byte đều chui qua ESB.
+              </div>
+              <div class="callout" style="margin-top: auto;">
+                <strong>Phân biệt nhanh:</strong> <strong>ESB</strong> = hỏi–đáp có trả lời ngay · <strong>Kafka</strong> = phát sự kiện 1 chiều (ai đăng ký thì nhận).
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 07: NHÓM B — LAKEHOUSE & TRANSFORM -->
+      <section class="slide" data-act="2" data-title="Nhóm B — Lakehouse (RAW→SILVER→GOLD) & Transform">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 3 · ZOOM 6 NHÓM THÀNH PHẦN (NHÓM B)</div>
+            <h1 class="slide-h1">Lưu trữ <span class="c-cyan">Lakehouse</span> &amp; Dây chuyền <span class="c-warn">Transform / Airflow</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge doc">Phân hệ 2 &amp; 7 · Báo cáo KT §2.2.3, §4.2, §4.7</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <div class="panel glow-cyan">
+              <div class="panel-title">
+                <span>B1 · Lakehouse (Phân hệ 2) — Kho dữ liệu 3 tầng</span>
+                <span class="mono-label">MINIO + PARQUET + ICEBERG</span>
+              </div>
+              <div style="font-size: 12.5px; color: var(--color-fg-secondary);">
+                Chạy on-prem trên <strong>Node 1–2</strong> (Storage) và Cloud <strong>OneLake 20 TB</strong> (chỉ nhận GOLD/tổng hợp). Phân vùng PQN cách ly bằng RBAC/ABAC.
+              </div>
+              <div class="tier-box raw">
+                <div class="mono-label" style="color: var(--color-fg-muted);">1 · TẦNG RAW (THÔ) — 3 BẢN SAO</div>
+                <div style="font-size: 12.5px; color: var(--color-fg-secondary); margin-top: 3px;">Giữ nguyên như hệ nguồn. Lưu 3 bản: 1 chính tại DC · 1 tại DR · 1 tại on-prem Data Platform.</div>
+              </div>
+              <div class="tier-box silver">
+                <div class="mono-label">2 · TẦNG SILVER (ĐÃ LÀM SẠCH)</div>
+                <div style="font-size: 12.5px; color: var(--color-fg-secondary); margin-top: 3px;">Qua kiểm lỗi + chuẩn hóa. <strong>Landing Zone</strong> phải duyệt xong mới được vào đây.</div>
+              </div>
+              <div class="tier-box gold">
+                <div class="mono-label warn">3 · TẦNG GOLD (SẢN PHẨM DỮ LIỆU) — 2 BẢN SAO</div>
+                <div style="font-size: 12.5px; color: var(--color-fg-secondary); margin-top: 3px;">Đã tổng hợp, gắn mã chuẩn, sẵn sàng cho BI/AI. Lưu 2 bản, bản chính tại on-prem DP.</div>
+              </div>
+            </div>
+
+            <div class="panel glow-warn">
+              <div class="panel-title">
+                <span>B2 · Transform (Phân hệ 7) &amp; B3 · Airflow</span>
+                <span class="mono-label warn">NODE 3–4 + NODE 8</span>
+              </div>
+              <ul class="clean-list warn-bullets">
+                <li><strong>Công cụ đề xuất:</strong> <code>Apache Spark</code>, <code>Apache Flink</code>, <code>Hadoop MapReduce</code>, <code>Airflow</code>, <code>Presto/Trino</code> (hoặc tương đương).</li>
+                <li><strong>Dây chuyền làm sạch (RAW → SILVER → GOLD):</strong> Kiểm lỗi theo 8 tiêu chí chất lượng, chuẩn hóa định dạng, gộp trùng, gắn mã chuẩn.</li>
+                <li><strong>2 nhịp xử lý:</strong> Theo sự kiện thời gian thực (Flink) &amp; theo lô định kỳ (Spark/Airflow batch đêm).</li>
+                <li><strong>Airflow (Node 8):</strong> Đặt lịch, giám sát, chạy lại (replay) khi job lỗi — điểm đầu tiên vận hành nhìn vào khi có sự cố batch.</li>
+              </ul>
+              <div class="callout danger" style="margin-top: auto;">
+                <strong>Việc team PQN đang thiếu &amp; cần làm ngay:</strong><br />
+                1) <strong>Đo khối lượng dữ liệu hiện tại + tốc độ tăng/năm</strong> của 6 hệ (hiện chưa đo — quyết định dung lượng tenant &amp; đường truyền).<br />
+                2) Định nghĩa <strong>bộ quy tắc kiểm lỗi (DQ rules)</strong> + luồng xử lý bản ghi bị cách ly (quarantine).
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 08: NHÓM C — MDM -->
+      <section class="slide" data-act="2" data-title="Nhóm C — MDM 10 chức năng, 9 Domain & Ánh xạ 3 tầng">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 3 · ZOOM 6 NHÓM THÀNH PHẦN (NHÓM C)</div>
+            <h1 class="slide-h1">MDM — "Bộ phiên dịch" <span class="c-warn">9 Domain</span> &amp; <span class="c-cyan">Ánh xạ 3 tầng</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge pending">Tài liệu KHÔNG nêu tên sản phẩm MDM</span>
+            <span class="t-badge doc">Node 8 On-prem · Báo cáo KT §3.2, §4.2</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <div class="panel glow-cyan">
+              <div class="panel-title">
+                <span>10 Chức năng MDM (3 cụm vai trò)</span>
+                <span class="mono-label">HQ SỞ HỮU GOLDEN RECORD</span>
+              </div>
+              <div class="callout">
+                <strong>Cụm 1 · Nhận &amp; Chuẩn hóa (1–3):</strong> Mô hình hóa ERD · Tích hợp dữ liệu chủ từ các hệ · Làm sạch &amp; chuẩn hóa.
+              </div>
+              <div class="callout warn">
+                <strong>Cụm 2 · Khớp &amp; Phân xử (4–8):</strong> Fuzzy Matching &amp; Merging (MST, tên, địa chỉ) · <strong>Stewardship</strong> (Steward phân xử ca máy không quyết được) · Phiên bản &amp; lịch sử · Quy tắc/luồng duyệt · Phân cấp quan hệ.
+              </div>
+              <div class="callout ok">
+                <strong>Cụm 3 · Công bố &amp; Bảo mật (9–10):</strong> Publishing &amp; Syndication (trả mã chuẩn + Bản ghi vàng — <em>chức năng duy nhất có trên Cloud</em>) · RBAC &amp; Security.
+              </div>
+              <div class="callout danger" style="margin-top: auto;">
+                <strong>Nguyên tắc cốt lõi:</strong> Giữ nguyên mã cũ ở phần mềm đơn vị (FAST vẫn ghi <code>NCC-001</code>) — MDM tự động ánh xạ lên mã chuẩn TCT &amp; PVN.
+              </div>
+            </div>
+
+            <div class="panel glow-warn">
+              <div class="panel-title">
+                <span>9 Domain &amp; Bài tập bộ mã của Quảng Ngãi</span>
+                <span class="mono-label warn">ĐẦU VÀO + ĐẦU RA</span>
+              </div>
+              <div class="domain-chips">
+                <span class="d-chip">1. Đơn vị</span>
+                <span class="d-chip">2. Dự án</span>
+                <span class="d-chip hot">3. Khách hàng (3 hệ)</span>
+                <span class="d-chip hot">4. Nhà cung cấp</span>
+                <span class="d-chip">5. Hợp đồng</span>
+                <span class="d-chip hot">6. Tài sản</span>
+                <span class="d-chip hot">7. Vật tư / Dịch vụ (FAST↔MESX)</span>
+                <span class="d-chip">8. Nhân sự</span>
+                <span class="d-chip">9. Bộ mã dùng chung</span>
+              </div>
+
+              <table class="data-table">
+                <thead>
+                  <tr><th>Mã tại PQN</th><th>Mã chuẩn TCT</th><th>Mã PVN</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>NCC-001</code> (FAST) / <code>KH-118</code> (MESX)</td><td><em>Để trống — chờ TCT ban hành</em></td><td><em>Để trống</em></td></tr>
+                </tbody>
+              </table>
+
+              <ul class="clean-list warn-bullets">
+                <li><strong>Thứ tự làm phiếu bộ mã tại PQN:</strong> <code>FAST → MESX → HRM → Bán hàng → Cảng → E-Office</code> (FAST &amp; MESX đã phát phiếu).</li>
+                <li><strong>2 câu hỏi gửi đoàn khảo sát GĐ2A:</strong> (1) Khi nào ban hành bộ mã chuẩn TCT/PVN (Câu 6)? (2) Nguồn tin cậy vật tư là FAST hay MESX (Câu 5)?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 09: NHÓM D & E — KHAI THÁC & BẢO MẬT -->
+      <section class="slide" data-act="2" data-title="Nhóm D & E — Khai thác (BI/NLQ/AI) & Bảo mật/Metadata">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 3 · ZOOM 6 NHÓM THÀNH PHẦN (NHÓM D &amp; E)</div>
+            <h1 class="slide-h1">Khai thác đầu ra (<span class="c-ok">BI · NLQ · AI</span>) &amp; Lớp khóa <span class="c-danger">Bảo mật / Lineage</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge doc">Phân hệ 5, 6, 8, 9, 10, 11, 12</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <div class="panel glow-ok">
+              <div class="panel-title">
+                <span>Nhóm D — Khai thác (Dữ liệu trả về để dùng)</span>
+                <span class="mono-label ok">BI + TEXT-TO-DATA + AI/ML</span>
+              </div>
+              <ul class="clean-list ok-bullets">
+                <li><strong>D1 · BI (Phân hệ 8):</strong> <code>Power BI</code> (trên Fabric, 70 user thường xuyên, có Power BI Gateway về on-prem) + <code>Superset</code> (on-prem Vùng 4 cho báo cáo cơ bản). Thay thế <strong>~310 báo cáo rời rạc ghép tay Excel</strong>.</li>
+                <li><strong>D2 · Text-to-data (Phân hệ 9):</strong> <code>Power BI Q&amp;A</code> — hỏi bằng tiếng Việt tự nhiên để sinh biểu đồ, nhúng vào cổng nội bộ.</li>
+                <li><strong>D3 · AI/ML (Phân hệ 10 — CHỈ Cloud):</strong> Huấn luyện/dự báo trên Fabric. Chỉ làm việc trên dữ liệu đã chuẩn hóa/tổng hợp, <strong>không chạm dữ liệu gốc</strong>.</li>
+              </ul>
+              <div class="callout ok" style="margin-top: auto;">
+                <strong>Việc team PQN (chốt từ 23/10):</strong> Thu thập nhu cầu báo cáo/dashboard thật của lãnh đạo đơn vị — xây theo nhu cầu thật, không đoán.
+              </div>
+            </div>
+
+            <div class="panel glow-danger">
+              <div class="panel-title">
+                <span>Nhóm E — Phân quyền, SSO, SIEM &amp; Metadata</span>
+                <span class="mono-label danger">AI THẤY GÌ · TRUY VẾT RA SAO</span>
+              </div>
+              <ul class="clean-list danger-bullets">
+                <li><strong>E1 · RBAC/ABAC (Phân hệ 5):</strong> Khóa cách ly tenant; bảo mật phụ thuộc phân cấp phân quyền chứ không chỉ vị trí lưu. <em>Việc PQN: rà soát ai được quyền gì trên dữ liệu nào.</em></li>
+                <li><strong>E2 · IAM / SSO (Phân hệ 6 · Node 6):</strong> <code>Keycloak</code> hoặc <code>Azure AD (Entra ID)</code> — 1 tài khoản đăng nhập 1 lần (OAuth2 / OIDC / mTLS).</li>
+                <li><strong>E3 · SIEM (Phân hệ 11 · CHỈ on-prem · Node 7):</strong> Audit log tách theo tenant, riêng với Lakehouse; POC cảnh báo đăng nhập sai 5 lần/2 phút.</li>
+                <li><strong>E4 · Metadata (Phân hệ 12 · Node 5):</strong> <code>OpenMetadata / Apache Atlas / Amundsen / DataHub</code> — truy vết data lineage (con số từ đâu ra). YCKT bắt buộc vendor giao ERD + từ điển dữ liệu.</li>
+              </ul>
+              <div class="callout danger" style="margin-top: auto;">
+                <strong>Giới hạn thật nói thẳng với team:</strong> Ở tầng hạ tầng sâu nhất, đội vận hành nền tảng về kỹ thuật có thể truy cập — kiểm soát bằng phân quyền, ghi nhật ký và truy vết, không phải "cách ly vật lý tuyệt đối".
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: NHÓM F — HẠ TẦNG CỤM HUB 8 NODE & FABRIC -->
+      <section class="slide" data-act="2" data-title="Nhóm F — Hạ tầng Cụm Hub dHCI 8 Node & Fabric Cloud">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker">CHẶNG 3 · ZOOM 6 NHÓM THÀNH PHẦN (NHÓM F)</div>
+            <h1 class="slide-h1">Hạ tầng: <span class="c-cyan">Cụm dHCI 8 Node tại TCT</span> &amp; <span class="c-warn">Microsoft Fabric</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge doc">Báo cáo KT §2.2.2 (tr.59–60), §3.3</span>
+            <span class="t-badge ok">L3 Tenant = 0 CAPEX mua cụm dHCI</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2-wide">
+            <div class="panel glow-cyan">
+              <div class="panel-title">
+                <span>Cụm dHCI tại tầng 10 Cơ quan TCT (8 Node)</span>
+                <span class="mono-label">40 TB → &gt;200 TB</span>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr><th>Node</th><th>Vai trò</th><th>Cấu hình mỗi node</th><th>Chạy phân hệ</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>1–2</strong></td><td>Storage</td><td>16 vCPU · 128 GB RAM · 20 TB HDD + 1 TB SSD</td><td>Lakehouse (MinIO/Iceberg) RAW/SILVER/GOLD</td></tr>
+                  <tr><td><strong>3–4</strong></td><td>Processing</td><td>32 vCPU · 128 GB RAM · 2 TB SSD</td><td>Transform (Spark / Flink / Trino)</td></tr>
+                  <tr><td><strong>5</strong></td><td>Query + Meta + Ingest</td><td>16 vCPU · 128 GB RAM · 1 TB SSD</td><td>Trino query, Metadata Governance, Ingestion</td></tr>
+                  <tr><td><strong>6</strong></td><td>Gov + API + IAM</td><td>16 vCPU · 64 GB RAM · 1 TB SSD</td><td>RBAC, API Gateway, SSO (Keycloak/Entra ID)</td></tr>
+                  <tr><td><strong>7</strong></td><td>SIEM &amp; Monitoring</td><td><strong>32 vCPU · 256 GB RAM · 4 TB SSD</strong></td><td>SIEM tập trung (node mạnh nhất cụm)</td></tr>
+                  <tr><td><strong>8</strong></td><td>Workflow + MDM</td><td>32 vCPU · 128 GB RAM · 1 TB SSD</td><td>Airflow, MDM (Golden Record)</td></tr>
+                </tbody>
+              </table>
+              <div class="callout">
+                <strong>Mạng &amp; Ảo hóa:</strong> Nội cụm 10 Gbps (≤ 1–2 ms), uplink ≥ 1–2 Gbps · <code>VMware vSphere/ESXi</code>, <code>Tanzu K8s</code>, <code>Aria Operations</code>, backup <code>Veeam v12</code> (khôi phục theo log, chống ransomware).
+              </div>
+            </div>
+
+            <div class="panel glow-warn">
+              <div class="panel-title">
+                <span>Phân bổ tài nguyên Hub &amp; Cloud Fabric</span>
+                <span class="mono-label warn">F16 + ONELAKE 20 TB</span>
+              </div>
+              <div class="chart-box">
+                <canvas id="hubChart"></canvas>
+              </div>
+              <ul class="clean-list warn-bullets">
+                <li><strong>Microsoft Fabric Cloud (đã xác nhận 2 tài liệu):</strong> Capacity <code>F16</code>, <code>OneLake 20 TB</code>, <code>Power BI</code>, <code>Purview 500 tài sản</code>, <code>70 người dùng thường xuyên</code>.</li>
+                <li><strong>Mục đích Cloud:</strong> Power BI xem mọi nơi, thuê compute phân tích nặng/AI (Phân hệ 10), sandbox DEV/Test — <strong>chỉ nhận GOLD/tổng hợp</strong>.</li>
+                <li><strong>Ý nghĩa với PQN:</strong> Cụm 8 node đặt tại TCT; với L3 Tenant, PQN dùng chung hạ tầng này, <strong>không tự mua máy</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: AI VẬN HÀNH GÌ & L3 VS L4 -->
+      <section class="slide" data-act="3" data-title="Ai vận hành gì (HQ/PQN/Vendor) & L3 Tenant vs L4 Spoke">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker is-warn">CHẶNG 4 · VẬN HÀNH &amp; MÔ HÌNH TRIỂN KHAI</div>
+            <h1 class="slide-h1">Ai vận hành cái gì &amp; <span class="c-warn">Khi nào xét lên L4 Spoke?</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge doc">Phương án 3 · Phiên chiều slide 50, 59</span>
+            <span class="t-badge pending">L4 chỉ là phương án có điều kiện</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2-wide">
+            <div class="panel">
+              <div class="panel-title">
+                <span>Ma trận trách nhiệm (Phương án 3)</span>
+                <span class="mono-label">HQ / PQN / VENDOR</span>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr><th>Nhiệm vụ</th><th>HQ (TCT)</th><th>PQN (Đơn vị)</th><th>Vendor</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Cụm Hub 8 node, Lakehouse, SIEM, SSO, ESB, MDM</td><td><strong>X (Vận hành lõi)</strong></td><td>—</td><td>—</td></tr>
+                  <tr><td>Fabric / Power BI Cloud</td><td><strong>X (Thuê MS)</strong></td><td>—</td><td>Microsoft</td></tr>
+                  <tr><td>Agent thu thập, kết nối 6 hệ lên Hub</td><td>Hướng dẫn, cấp chuẩn</td><td><strong>X (Team I&amp;T PQN)</strong></td><td>Hỗ trợ theo HĐ</td></tr>
+                  <tr><td>Duyệt / Từ chối ở Landing Zone</td><td>—</td><td><strong>X (Data Owner/Steward)</strong></td><td>—</td></tr>
+                  <tr><td>Xuất file mã, điền phiếu bộ mã, đối chiếu mã</td><td>—</td><td><strong>X (Key user từng hệ)</strong></td><td>—</td></tr>
+                  <tr><td>Định nghĩa quy tắc kiểm lỗi (DQ)</td><td>Phê duyệt khung</td><td><strong>X (Team đơn vị)</strong></td><td>—</td></tr>
+                  <tr><td>Tích hợp 6 hệ + làm sạch dữ liệu</td><td>Khung + chuẩn</td><td><strong>X (Đơn vị chi trả)</strong></td><td>Thi công gói thầu</td></tr>
+                  <tr><td>Vận hành L3 vs L4</td><td>L3: tính phí phân bổ · L4: giám sát chuẩn</td><td>L3: dùng · <strong>L4: đội riêng tại chỗ</strong></td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="panel glow-warn">
+              <div class="panel-title">
+                <span>L3 Tenant vs L4 Spoke — Thành phần nào dịch chuyển?</span>
+                <span class="mono-label warn">KHÔNG CHUYỂN ESB/MDM/SIEM</span>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr><th>Thành phần</th><th>L3 Tenant (Mặc định)</th><th>L4 Spoke (Nếu đạt 4 tiêu chí)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Lakehouse + Transform + BI Superset</td><td>Phân vùng trên Hub</td><td><span class="c-warn">Chuyển xuống Spoke tại chỗ</span></td></tr>
+                  <tr><td>Governance / API / Workflow / Monitor</td><td>Trên Hub</td><td><span class="c-warn">Chuyển xuống Spoke nội bộ</span></td></tr>
+                  <tr><td><strong>ESB · MDM Golden Record · SIEM</strong></td><td>Hub</td><td><strong>Ở LẠI HUB</strong> (Spoke không có bản riêng)</td></tr>
+                  <tr><td>AI/ML Library</td><td>Cloud (Fabric)</td><td>Cloud (không đổi)</td></tr>
+                  <tr><td>Mạng đồng bộ lên Hub</td><td>Đẩy toàn bộ (dòng dày)</td><td>Chỉ đồng bộ dùng chung + tổng hợp</td></tr>
+                </tbody>
+              </table>
+              <div class="callout warn" style="margin-top: auto;">
+                <strong>4 tiêu chí xét lên L4 (Slide 50 phiên chiều):</strong> (1) Khối lượng &amp; tốc độ tăng dữ liệu lớn · (2) Phân tích chuyên ngành cường độ cao / thời gian thực · (3) Ràng buộc pháp lý / hợp đồng buộc lưu tại chỗ · (4) <strong>Đủ đội IT tự vận hành theo chuẩn TCT</strong>. Quyết định sau GĐ2A.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: CHƯA CHỐT & CHECKLIST TEAM I&T -->
+      <section class="slide" data-act="3" data-title="6 điểm KHÔNG nói như đã chốt & Việc làm ngay">
+        <div class="header-band">
+          <div class="headline-group">
+            <div class="q-kicker is-warn">CHẶNG 4 · CHỐT RANH GIỚI &amp; HÀNH ĐỘNG NGAY</div>
+            <h1 class="slide-h1">6 điểm <span class="c-danger">KHÔNG nói như đã chốt</span> &amp; <span class="c-ok">Việc của Team I&amp;T</span></h1>
+          </div>
+          <div class="badge-row">
+            <span class="t-badge pending">Mục 7 · Kỷ luật trình bày</span>
+            <span class="t-badge ok">Chuẩn bị khảo sát GĐ2A</span>
+          </div>
+        </div>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <div class="panel glow-danger">
+              <div class="panel-title">
+                <span>6 điều KHÔNG được trình bày như đã chốt</span>
+                <span class="mono-label danger">TRÁNH LỖI DECK CŨ</span>
+              </div>
+              <ul class="clean-list danger-bullets">
+                <li><strong>1. Tên sản phẩm MDM:</strong> Tài liệu không nêu tên sản phẩm — không tự gán tên thương hiệu.</li>
+                <li><strong>2. Cách nối từng hệ (CDC / API / File):</strong> Chờ khảo sát GĐ2A quyết theo từng hệ (không nói "6 hệ nối qua CDC/Airbyte").</li>
+                <li><strong>3. Cấu hình phần cứng Spoke cụ thể:</strong> Tài liệu chỉ có cấu hình Hub 8 node, chưa có cấu hình Spoke chính thức.</li>
+                <li><strong>4. Chi tiết nội bộ phân vùng Tenant:</strong> Tài liệu chỉ nêu tenant là phân vùng riêng + agent/API; phần chi tiết là cách đọc kỹ thuật.</li>
+                <li><strong>5. Con số chi phí ước tính:</strong> Không đưa ước tính giả định thành số chính thức của PTSC trong buổi kỹ thuật.</li>
+                <li><strong>6. Mốc GĐ2 &amp; phân nhóm chưa thống nhất:</strong> Không chốt GĐ2 = 2026–2027 hay 2028+, không chốt Combo 2 cho PQN hay số lượng đơn vị (21 vs 17).</li>
+              </ul>
+            </div>
+
+            <div class="panel glow-ok">
+              <div class="panel-title">
+                <span>5 việc Team I&amp;T &amp; Key User làm ngay trước GĐ2A</span>
+                <span class="mono-label ok">ACTION PLAN</span>
+              </div>
+              <ul class="clean-list ok-bullets">
+                <li><strong>1. Chốt danh sách hệ thống thực tế tại PQN:</strong> Xác nhận 6 hệ + kiểm tra còn hệ ngầm / hệ chết nào không.</li>
+                <li><strong>2. Khảo sát kỹ thuật &amp; đo dung lượng 6 hệ:</strong> DB gì, có API/xuất file không, vendor có hợp tác không + <strong>tổng dung lượng hiện tại &amp; tốc độ tăng/năm</strong>.</li>
+                <li><strong>3. Xuất file bộ mã &amp; điền phiếu theo thứ tự:</strong> <code>FAST → MESX → HRM → Bán hàng → Cảng → E-Office</code> (để trống cột mã chuẩn TCT/PVN).</li>
+                <li><strong>4. Chuẩn bị bộ câu hỏi cho đoàn GĐ2A:</strong> Nguồn tin cậy vật tư FAST vs MESX (Câu 5), thời điểm ban hành mã chuẩn (Câu 6), cơ chế MDM ghi ngược về nguồn, phân quyền RBAC.</li>
+                <li><strong>5. Thu thập nhu cầu Dashboard &amp; Quy tắc DQ:</strong> Nhu cầu báo cáo thật của lãnh đạo + quy tắc kiểm lỗi &amp; xử lý cách ly.</li>
+              </ul>
+              <div class="callout ok" style="margin-top: auto;">
+                <strong>Nhắc lại 3 nguyên tắc vàng:</strong> Dữ liệu gốc ở lại on-prem · 1 trục ESB duy nhất ở Hub · Đơn vị là Data Owner duyệt ở Landing Zone.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="command-footer">
+      <div class="footer-left">
+        <span class="unit-badge">PTSC QUẢNG NGÃI · I&amp;T</span>
+        <div class="act-trail" id="actTrail"></div>
+      </div>
+      <div class="nav-cluster">
+        <button type="button" class="nav-btn" onclick="prevSlide()" title="Slide trước (←)">←</button>
+        <span class="slide-counter"><span id="currentSlideNum">01</span> / <span id="totalSlideNum">12</span></span>
+        <button type="button" class="nav-btn" onclick="nextSlide()" title="Slide tiếp (→)">→</button>
+        <button type="button" class="nav-btn" id="notesBtn" onclick="toggleNotes()" title="Ghi chú diễn giải (N)">Ghi chú</button>
+        <button type="button" class="nav-btn" onclick="toggleJumpMenu()" title="Danh mục slide (G)">Mục lục</button>
+        <div class="jump-menu" id="jumpMenu" hidden></div>
+      </div>
+    </footer>
+  </div>
+
+  <aside class="notes-drawer" id="notesDrawer" hidden>
+    <div class="notes-head">
+      <span id="notesTitle">GHI CHÚ KỸ THUẬT · SLIDE 01</span>
+      <button type="button" class="nav-btn" style="height:24px;min-width:24px;" onclick="toggleNotes()">✕</button>
+    </div>
+    <div class="notes-body" id="notesBody"></div>
+  </aside>
+
+  <script>
+    const ACTS = [
+      { label: '1. Bức tranh & 6 hệ', slide: 2 },
+      { label: '2. Luồng chạy & 1 bản ghi', slide: 4 },
+      { label: '3. 6 Nhóm thành phần (A–F)', slide: 6 },
+      { label: '4. Vận hành, L4 & Chốt ranh giới', slide: 11 }
+    ];
+
+    const SPEAKER_NOTES = [
+      'Slide mở đầu: Đặt rõ bối cảnh trình bày cho team I&T PTSC Quảng Ngãi để chuẩn bị khảo sát GĐ2A. Nhấn mạnh quy ước 3 nhãn: [Tài liệu nói] vs [Suy ra kiến trúc] vs [Chờ GĐ2A]. Khẳng định mô hình mặc định là L3 Tenant trên Hub; mọi chỗ nhắc L4 Spoke là phương án có điều kiện.',
+      'Slide 02: Nêu bức tranh 3 tầng (Đơn vị → Tenant L3 trên Hub → Dùng chung Hub/Cloud) và 3 nguyên tắc vàng: (1) Dữ liệu gốc không bao giờ lên Cloud, (2) MỘT trục ESB duy nhất ở Hub TCT — bắt buộc đi qua cả Vùng 5, (3) Đơn vị là Data Owner duyệt ở Landing Zone. Nhớ gắn caveat: chi tiết nội bộ tenant là cách đọc kỹ thuật, chờ khảo sát xác nhận.',
+      'Slide 03: Bắt đầu bằng bài toán thật của Quảng Ngãi — 6 hệ thống và 3 điểm nóng chồng lấn mã (nóng nhất Vật tư/Tài sản FAST ↔ MESX; Khách hàng ở 3 hệ; Nhân sự gốc HRM). Nhấn mạnh danh sách 6 hệ đang là danh sách làm việc (chờ CNTT xác nhận còn hệ ngầm/hệ chết không) và phương thức kết nối chưa chốt, chỉ liệt kê các chuẩn YCKT cho phép.',
+      'Slide 04: Sơ đồ tương tác toàn nền tảng. Bấm lần lượt 3 chế độ: (1) Đi lên — dữ liệu thô qua Agent/API (chờ GĐ2A), đường truyền vào Vùng 5 → Landing Zone → Hub lõi → chỉ GOLD/chuẩn hóa mới lên Cloud; (2) Đi xuống — mã chuẩn qua ESB + Bản ghi vàng + báo cáo BI về đơn vị; (3) Giám sát — audit log về SIEM. Bấm vào từng hộp để giải đáp nhanh khi team hỏi.',
+      'Slide 05: Theo chân 1 bản ghi minh họa (lưu ý nói rõ NCC-001 và KH-118 là mã minh họa, không phải mã thật). Đi qua đủ 8 bước: CDC đọc transaction log → Vùng 5 QC cửa vào → Đơn vị duyệt ở Landing Zone (nếu từ chối → khu cách ly + báo Steward/key user sửa tại nguồn) → RAW (3 bản) → Transform SILVER (8 tiêu chí DQ) → MDM fuzzy match (Steward phân xử ca khó) → GOLD (2 bản) → trả mã chuẩn về nguồn (cơ chế ghi ngược chờ GĐ2A) + BI/SIEM/Lineage.',
+      'Slide 06 (Nhóm A): Phân biệt rạch ròi Vùng 5 gồm 4 anh em: Ingestion/CDC (Node 5 + agent đơn vị), ESB (CHỈ on-prem — tổng đài request-response 2 chiều), API Gateway (cửa kiểm soát 50 API chuẩn GĐ1; quy trình đăng ký là suy ra kiến trúc), và Kafka (event streaming 1 chiều + forward log tới SIEM). Nhắc team: không phải ESB chứa tất cả.',
+      'Slide 07 (Nhóm B): Giải thích Lakehouse (MinIO + Parquet + Iceberg trên Node 1–2; OneLake 20 TB Cloud chỉ nhận dữ liệu đã chuẩn hóa) và 3 tầng RAW (3 bản: DC/DR/DP) → SILVER (sau Landing Zone) → GOLD (2 bản). Transform chạy 2 nhịp (Flink stream + Spark/Airflow batch). Nhấn 2 việc PQN phải làm: đo dung lượng + tốc độ tăng/năm (hiện chưa có số) và định nghĩa DQ rules.',
+      'Slide 08 (Nhóm C): Nhắc ngay trên slide: tài liệu KHÔNG nêu tên sản phẩm MDM — không tự đặt tên khi nói. MDM chạy on-prem Node 8 với đủ 10 chức năng (Cloud chỉ có chức năng 9 Publishing). Gom 10 chức năng thành 3 cụm. Nhấn bài tập ánh xạ 3 tầng: giữ nguyên mã cũ ở FAST/MESX, điền phiếu theo thứ tự FAST → MESX → HRM → Bán hàng → Cảng → E-Office, để trống cột TCT/PVN vì chưa ban hành.',
+      'Slide 09 (Nhóm D & E): Đầu ra gồm Power BI (70 user) + Superset on-prem thay thế ~310 báo cáo Excel ghép tay, Power BI Q&A hỏi tiếng Việt, và AI/ML chỉ chạy trên Cloud với dữ liệu đã chuẩn hóa. Phần bảo mật nhấn mạnh RBAC/ABAC là khóa cách ly tenant, SSO (Keycloak/Entra ID), SIEM chỉ on-prem (Node 7 mạnh nhất), Metadata Governance (lineage + vendor giao ERD). Nói thẳng giới hạn thật ở tầng hạ tầng sâu nhất.',
+      'Slide 10 (Nhóm F): Trình bày bảng 8 node dHCI tại tầng 10 Cơ quan TCT (từ Báo cáo KT §2.2.2) và cấu hình Fabric Cloud (F16, OneLake 20 TB, Purview 500 tài sản, 70 user). Thông điệp chốt cho PQN: với L3 Tenant, đơn vị không mua máy (0 CAPEX hạ tầng dHCI) mà dùng chung cụm này.',
+      'Slide 11 (Vận hành & L4): Trình bày ma trận HQ / PQN / Vendor theo Phương án 3. Khi sang bảng L3 vs L4, giữ kỷ luật Mục 7: không đưa số tiền giả định hay cấu hình 5 node ước tính lên slide kỹ thuật. Chỉ chốt thành phần nào xuống Spoke, thành phần nào BẮT BUỘC ở lại Hub (ESB, MDM Golden Record, SIEM) và 4 tiêu chí xét L4 (Slide 50 phiên chiều).',
+      'Slide 12 (Chốt ranh giới & Việc ngay): Đọc rõ 6 điều không được nói như đã chốt để cả team thống nhất cách giao tiếp với đoàn khảo sát và các phòng ban. Khép lại bằng 5 việc làm ngay của Team I&T và Key User trước khảo sát GĐ2A.'
+    ];
+
+    const Z5_DATA = [
+      {
+        cls: 'callout warn',
+        html: '<strong>A2 · Trục tích hợp ESB (Phân hệ 3 — CHỈ on-prem):</strong><br />Công cụ: <code>Apache Camel</code>, <code>WSO2 EI</code>, <code>IBM App Connect Enterprise</code>.<br />Là "tổng đài" request–response 2 chiều (trả mã chuẩn từ MDM về FAST, tra cứu dữ liệu dùng chung). Không có bản sao tại đơn vị; ngoại lệ SaaS phải có văn bản chấp thuận của PTSC.'
+      },
+      {
+        cls: 'callout',
+        html: '<strong>A3 · API Gateway (Vùng 5):</strong><br />Kiểm soát truy cập API — ai được gọi API nào, giới hạn tốc độ &amp; ghi nhật ký (vd: 50 API chuẩn GĐ1). Khi hệ của đơn vị kéo trực tiếp qua API lên Hub thì đi qua đây.<br /><span class="t-badge inferred" style="margin-top:4px;">Suy ra kiến trúc</span> Đăng ký API qua Gateway thay vì mở cổng trực tiếp vào DB Hub.'
+      },
+      {
+        cls: 'callout ok',
+        html: '<strong>A4 · Kafka — Event Streaming (Vùng 5):</strong><br />Chở các <strong>sự kiện</strong> 1 chiều (vd: vừa tạo 1 NCC trong FAST → phát sự kiện ngay, không đợi batch đêm) và forward log hệ thống tới SIEM. Không thay thế được cơ chế hỏi–đáp 2 chiều của ESB.'
+      }
+    ];
+
+    const REC_STEPS = [
+      {
+        title: 'Bước 1 · Thu thập tại nguồn (A1 Ingestion / CDC)',
+        badge: 'Tự động', badgeCls: 't-badge doc',
+        io: '<strong>Đầu vào → Đầu ra:</strong> Thay đổi tạo <code>NCC-001</code> trong DB FAST → sự kiện đẩy lên Hub ngay.',
+        bullets: [
+          '<strong>Cơ chế:</strong> CDC (như Debezium) đọc tuần tự nhật ký DB, không quét toàn bảng → không làm chậm phần mềm kế toán.',
+          '<strong>Với PQN:</strong> <span class="t-badge pending">Chờ GĐ2A</span> Phương thức nối từng hệ (CDC, API hay file) sẽ chốt sau khảo sát.'
+        ]
+      },
+      {
+        title: 'Bước 2 · Vào trục chung Vùng 5 (ESB + API Gateway + Kafka)',
+        badge: 'QC cửa vào', badgeCls: 't-badge doc',
+        io: '<strong>Đầu vào → Đầu ra:</strong> Sự kiện qua Vùng 5 → kiểm tra sơ bộ (đúng định dạng, đủ trường bắt buộc?).',
+        bullets: [
+          '<strong>Cơ chế:</strong> Tự động theo quy tắc; gói lỗi bị <strong>chặn ngay ở Vùng 5</strong>, không vào Landing Zone.',
+          '<strong>YCKT §2:</strong> Gắn <code>correlationId</code>, kiểm tra idempotency chống trùng khi gửi lại.'
+        ]
+      },
+      {
+        title: 'Bước 3 · Đơn vị duyệt tại Landing Zone (Phân vùng Tenant)',
+        badge: 'Đơn vị bấm Duyệt', badgeCls: 't-badge ok',
+        io: '<strong>Đầu vào → Đầu ra:</strong> Gói dữ liệu chờ duyệt → Data Owner / Steward đơn vị Duyệt hoặc Từ chối.',
+        bullets: [
+          '<strong>Nếu Duyệt:</strong> Cho phép đi vào Lakehouse vùng dùng chung.',
+          '<strong>Nếu Từ chối:</strong> Nằm lại khu cách ly trong LZ → gửi thông báo + danh sách lỗi về Steward &amp; key user hệ nguồn để sửa tại nguồn và gửi lại.'
+        ]
+      },
+      {
+        title: 'Bước 4 · Lưu thô vào Lakehouse — Tầng RAW (MinIO / Iceberg)',
+        badge: '3 bản sao', badgeCls: 't-badge doc',
+        io: '<strong>Đầu vào → Đầu ra:</strong> Dữ liệu duyệt xong → lưu nguyên trạng ở tầng RAW.',
+        bullets: [
+          '<strong>Sao lưu 3 bản:</strong> 1 bản chính tại Data Center · 1 bản tại DR (site dự phòng) · 1 bản tại on-prem Data Platform.',
+          '<strong>Nguyên tắc:</strong> Dữ liệu thô giữ nguyên định dạng lịch sử để truy vết hoặc chạy lại (replay).'
+        ]
+      },
+      {
+        title: 'Bước 5 · Làm sạch & Chuẩn hóa (Transform + Airflow)',
+        badge: '8 tiêu chí DQ', badgeCls: 't-badge doc',
+        io: '<strong>Đầu vào → Đầu ra:</strong> RAW → kiểm lỗi 8 tiêu chí chất lượng + chuẩn hóa → tầng SILVER.',
+        bullets: [
+          '<strong>Quy tắc DQ:</strong> Do team Quảng Ngãi định nghĩa cho dữ liệu của mình (vd: thiếu MST thì báo lỗi gì, ai xử lý).',
+          '<strong>Điều phối:</strong> Chạy theo sự kiện (Flink) hoặc theo lịch batch đêm trên Airflow (Node 8).'
+        ]
+      },
+      {
+        title: 'Bước 6 · Gộp trùng & Gắn mã chuẩn (MDM Chức năng 3+4)',
+        badge: 'Máy + Steward', badgeCls: 't-badge warn',
+        io: '<strong>Đầu vào → Đầu ra:</strong> SILVER (<code>NCC-001</code> FAST) + dữ liệu MESX (<code>KH-118</code>) → đối sánh fuzzy → <strong>1 Bản ghi vàng</strong> (vd minh họa: <code>NCC-PTSC-0001</code>).',
+        bullets: [
+          '<strong>Đối sánh fuzzy:</strong> So khớp theo mã số thuế, tên, địa chỉ.',
+          '<strong>Phân xử (Chức năng 5):</strong> Ca mờ máy không tự quyết được → đẩy cho <strong>Data Steward</strong> phân xử.'
+        ]
+      },
+      {
+        title: 'Bước 7 · Lưu sản phẩm dữ liệu — Tầng GOLD',
+        badge: '2 bản sao', badgeCls: 't-badge doc',
+        io: '<strong>Đầu vào → Đầu ra:</strong> Bản ghi vàng &amp; dữ liệu đã tổng hợp → tầng GOLD.',
+        bullets: [
+          '<strong>Sao lưu 2 bản:</strong> Bản chính tại on-prem Data Platform.',
+          '<strong>Cầu lên Cloud:</strong> Chỉ dữ liệu tầng GOLD / đã chuẩn hóa mới đủ điều kiện đồng bộ lên OneLake / Fabric.'
+        ]
+      },
+      {
+        title: 'Bước 8 · Trả về (8a MDM Publishing & 8b BI) + Song song SIEM/Metadata',
+        badge: 'Đầu ra & Giám sát', badgeCls: 't-badge inferred',
+        io: '<strong>8a:</strong> Mã chuẩn ghi ngược về FAST/MESX qua ESB · <strong>8b:</strong> GOLD → Power BI / Superset / Q&amp;A.',
+        bullets: [
+          '<strong>Cơ chế ghi ngược 8a:</strong> <span class="t-badge pending">Chờ GĐ2A</span> Do thiết kế tích hợp từng hệ quyết (upsert + <code>correlationId</code>).',
+          '<strong>Song song mọi bước:</strong> Ghi audit log về SIEM (Node 7) và data lineage vào Metadata Governance (Node 5).'
+        ]
+      }
+    ];
+
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const totalSlides = slides.length;
+    let currentSlide = 1;
+    let currentRec = 0;
+    const pad2 = (n) => String(n).padStart(2, '0');
+
+    document.getElementById('totalSlideNum').textContent = pad2(totalSlides);
+    document.getElementById('jumpMenu').innerHTML = slides.map((s, i) =>
+      `<button type="button" class="jump-item" data-jump="${i + 1}" onclick="goToSlide(${i + 1}); toggleJumpMenu(false);"><span class="idx">${pad2(i + 1)}</span><span>${s.dataset.title}</span></button>`
+    ).join('');
+
+    function renderActs(actIdx) {
+      document.getElementById('actTrail').innerHTML = ACTS.map((a, i) =>
+        `<button type="button" class="act-crumb ${i === actIdx ? 'is-active' : ''}" onclick="goToSlide(${a.slide})">${a.label}</button>`
+      ).join('<span class="trail-sep">›</span>');
+    }
+
+    function goToSlide(n) {
+      currentSlide = Math.max(1, Math.min(totalSlides, n));
+      slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide - 1));
+      const sEl = slides[currentSlide - 1];
+      document.getElementById('currentSlideNum').textContent = pad2(currentSlide);
+      document.getElementById('progressBar').style.width = `${Math.round((currentSlide / totalSlides) * 100)}%`;
+      document.getElementById('notesTitle').textContent = `GHI CHÚ KỸ THUẬT · SLIDE ${pad2(currentSlide)}`;
+      document.getElementById('notesBody').textContent = SPEAKER_NOTES[currentSlide - 1] || '';
+      document.querySelectorAll('.jump-item').forEach((el) => el.classList.toggle('is-active', Number(el.dataset.jump) === currentSlide));
+      renderActs(Number(sEl.dataset.act || 0));
+    }
+
+    function nextSlide() { if (currentSlide < totalSlides) goToSlide(currentSlide + 1); }
+    function prevSlide() { if (currentSlide > 1) goToSlide(currentSlide - 1); }
+
+    function toggleJumpMenu(force) {
+      const m = document.getElementById('jumpMenu');
+      m.hidden = typeof force === 'boolean' ? !force : !m.hidden;
+    }
+    function toggleNotes() {
+      const d = document.getElementById('notesDrawer');
+      d.hidden = !d.hidden;
+    }
+
+    function selectZ5(idx) {
+      document.querySelectorAll('#z5Tabs .pill-btn').forEach((b, i) => {
+        b.classList.toggle('active', i === idx);
+        b.classList.toggle('warn', i === idx && idx === 0);
+      });
+      const box = document.getElementById('z5Detail');
+      box.className = Z5_DATA[idx].cls;
+      box.innerHTML = Z5_DATA[idx].html;
+    }
+
+    function selectRecordStep(idx) {
+      currentRec = Math.max(0, Math.min(REC_STEPS.length - 1, idx));
+      document.querySelectorAll('#recStepGrid .flow-step').forEach((el, i) => el.classList.toggle('active', i === currentRec));
+      const d = REC_STEPS[currentRec];
+      document.getElementById('recTitle').textContent = d.title;
+      const badge = document.getElementById('recBadge');
+      badge.textContent = d.badge;
+      badge.className = d.badgeCls;
+      document.getElementById('recIO').innerHTML = d.io;
+      document.getElementById('recBullets').innerHTML = d.bullets.map((b) => `<li>${b}</li>`).join('');
+    }
+    function stepRecord(delta) {
+      selectRecordStep((currentRec + delta + REC_STEPS.length) % REC_STEPS.length);
+    }
+
+    // Interactive SVG Diagram (Slide 4)
+    (function () {
+      const svg = document.getElementById('mmap-svg');
+      const NS = 'http://www.w3.org/2000/svg';
+      const XLINK = 'http://www.w3.org/1999/xlink';
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      let token = 0;
+
+      const FLOWS = {
+        up: {
+          color: '#22D3EE', dot: '#22D3EE', label: 'Đi lên — dữ liệu thô lên Hub, GOLD lên Cloud',
+          edges: ['e-s1-ag','e-s2-ag','e-s3-ag','e-s4-ag','e-s5-ag','e-s6-ag','e-ag-nw','e-nw-z5','e-z5-lz','e-lz-z4','e-z4-cl'],
+          steps: [['s1','s2','s3','s4','s5','s6'], ['ag'], ['nw'], ['z5'], ['lz'], ['z4'], ['cl']]
+        },
+        down: {
+          color: '#FB923C', dot: '#FB923C', label: 'Đi xuống — mã chuẩn qua ESB & BI trả về đơn vị',
+          edges: ['e-z4-mh','e-cl-mh','e-lz-pd'],
+          steps: [['z4','cl'], ['mh','pd']]
+        },
+        siem: {
+          color: '#F87171', dot: '#F87171', label: 'Giám sát — audit log tách theo tenant về SIEM',
+          edges: ['e-z4-z3'],
+          steps: [['z4'], ['z3']]
+        }
+      };
+
+      const NAMES = {
+        s1: 'Phần mềm Cảng', s2: 'ERP FAST', s3: 'MESX', s4: 'PM Bán hàng', s5: 'E-Office', s6: 'HRM',
+        ag: 'Agent / API tại PQN (chờ GĐ2A)', nw: 'Đường truyền SD-WAN/VPN',
+        z5: 'Vùng 5 — ESB · API GW · Kafka · Ingestion', lz: 'Landing Zone (Tenant PQN)',
+        z4: 'Vùng lõi Hub (Lakehouse + Transform + MDM)', z3: 'SIEM & Monitoring (Node 7)',
+        cl: 'Microsoft Cloud — Fabric F16', mh: 'Màn hình khai thác & Hệ nguồn',
+        pd: 'Phê duyệt Data Owner / Steward', rule: 'Quy tắc: dữ liệu gốc không lên Cloud'
+      };
+      const INFO = {
+        z5: 'Gồm 4 anh em: ESB (on-prem), API Gateway, Kafka và Ingestion (CDC/ETL). Cả 4 cùng hội tụ về Landing Zone; gói sai định dạng bị chặn ngay tại đây.',
+        lz: 'Vùng đệm riêng của Quảng Ngãi — đơn vị là Data Owner duyệt trước khi vào vùng dùng chung. Bản ghi bị từ chối nằm lại khu cách ly.',
+        z4: 'Cụm dHCI 8 node tại TCT: Lakehouse (MinIO/Iceberg), Transform (Spark/Flink/Trino), MDM (10 chức năng · Golden Record), Superset, Metadata.',
+        cl: 'Chỉ nhận dữ liệu đã làm sạch, chuẩn hóa và tổng hợp (GOLD) — dữ liệu thô ở lại on-prem Việt Nam. AI/ML Library chỉ chạy tại đây.',
+        ag: 'Tác nhân thu thập tại đơn vị hoặc Hub kéo qua API — cơ chế cụ thể cho 6 hệ sẽ chốt sau khảo sát GĐ2A.',
+        z3: 'SIEM chạy chỉ on-prem tại Node 7 (node mạnh nhất cụm). Audit log tách theo tenant, riêng với dữ liệu nghiệp vụ trong Lakehouse.'
+      };
+
+      function clearAll() {
+        svg.querySelectorAll('.mmap-on').forEach((e) => e.classList.remove('mmap-on'));
+        svg.classList.remove('mmap-dim');
+        svg.querySelectorAll('circle.mmap-dot').forEach((c) => c.remove());
+        svg.querySelectorAll('.mmap-edge').forEach((p) => { p.style.stroke = ''; });
+      }
+      function spawnDot(pathEl, color) {
+        const c = document.createElementNS(NS, 'circle');
+        c.setAttribute('r', '6'); c.setAttribute('fill', color); c.setAttribute('class', 'mmap-dot');
+        const am = document.createElementNS(NS, 'animateMotion');
+        am.setAttribute('dur', '1.4s'); am.setAttribute('repeatCount', 'indefinite');
+        const mp = document.createElementNS(NS, 'mpath');
+        mp.setAttributeNS(XLINK, 'xlink:href', '#' + pathEl.id);
+        am.appendChild(mp); c.appendChild(am); svg.appendChild(c);
+      }
+      function markBtn(name) {
+        ['up', 'down', 'siem'].forEach((n) => {
+          const b = document.getElementById('mmap-b-' + n);
+          if (b) b.classList.toggle('active', n === name);
+        });
+      }
+      async function play(name, myToken) {
+        const f = FLOWS[name];
+        const my = (myToken !== undefined ? myToken : ++token);
+        clearAll(); markBtn(name); svg.classList.add('mmap-dim');
+        f.edges.forEach((id) => {
+          const p = document.getElementById(id);
+          if (!p) return;
+          p.classList.add('mmap-on'); p.style.stroke = f.color; spawnDot(p, f.dot);
+        });
+        for (let i = 0; i < f.steps.length; i++) {
+          if (my !== token) return;
+          f.steps[i].forEach((k) => { const g = svg.querySelector('#n-' + k); if (g) g.classList.add('mmap-on'); });
+          document.getElementById('mmap-info').innerHTML = `<b>${f.label}:</b> đang tới ${f.steps[i].map((k) => NAMES[k] || k).join(' + ')}`;
+          await sleep(450);
+        }
+        if (my !== token) return;
+        document.getElementById('mmap-info').innerHTML = `<b>${f.label}:</b> ${f.steps.flat().map((k) => NAMES[k] || k).join(' → ')}`;
+      }
+
+      window.mmapPlay = (name) => play(name);
+      window.mmapReset = () => {
+        token++; clearAll(); markBtn('');
+        document.getElementById('mmap-info').textContent = 'Đã xóa animation — bấm 1 nút luồng hoặc bấm vào 1 khối trong sơ đồ.';
+      };
+      window.mmapPlayAll = async () => {
+        const my = ++token;
+        await play('up', my); if (my !== token) return; await sleep(1000);
+        await play('down', my); if (my !== token) return; await sleep(1000);
+        await play('siem', my);
+      };
+
+      svg.querySelectorAll('g.mmap-node').forEach((g) => {
+        g.addEventListener('click', () => {
+          const key = g.id.replace(/^n-/, '');
+          token++; clearAll(); markBtn(''); svg.classList.add('mmap-dim');
+          const links = [];
+          svg.querySelectorAll('path.mmap-edge').forEach((p) => {
+            const parts = p.id.replace(/^e-/, '').split('-');
+            if (parts.includes(key)) {
+              p.classList.add('mmap-on'); p.style.stroke = '#22D3EE'; spawnDot(p, '#22D3EE');
+              links.push((NAMES[parts[0]] || parts[0]) + ' ↔ ' + (NAMES[parts[1]] || parts[1]));
+            }
+          });
+          g.classList.add('mmap-on');
+          const extra = INFO[key] ? '<br />' + INFO[key] : '';
+          document.getElementById('mmap-info').innerHTML = `<b>${NAMES[key] || key}</b> nối với: ${links.join(' · ') || 'khối quy tắc tham chiếu'}${extra}`;
+        });
+      });
+    })();
+
+    // Chart.js on Slide 10 (Hub 8-node resource profile)
+    (function () {
+      const canvas = document.getElementById('hubChart');
+      if (!canvas || typeof Chart === 'undefined') return;
+      new Chart(canvas, {
+        type: 'bar',
+        data: {
+          labels: ['N1-2 Storage (x2)', 'N3-4 Process (x2)', 'N5 Query/Meta', 'N6 Gov/API/IAM', 'N7 SIEM', 'N8 WF/MDM'],
+          datasets: [
+            { label: 'vCPU / node', data: [16, 32, 16, 16, 32, 32], backgroundColor: 'rgba(34, 211, 238, 0.72)', borderColor: '#22D3EE', borderWidth: 1 },
+            { label: 'RAM (GB / 4)', data: [32, 32, 32, 16, 64, 32], backgroundColor: 'rgba(251, 146, 60, 0.68)', borderColor: '#FB923C', borderWidth: 1 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: '#CBD5E1', font: { family: 'JetBrains Mono', size: 10 } } },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => ctx.datasetIndex === 1
+                  ? `RAM: ${ctx.raw * 4} GB / node`
+                  : `vCPU: ${ctx.raw} / node`
+              }
+            }
+          },
+          scales: {
+            x: { ticks: { color: '#94A3B8', font: { size: 10 } }, grid: { color: 'rgba(148,163,184,0.08)' } },
+            y: { ticks: { color: '#94A3B8', font: { size: 10 } }, grid: { color: 'rgba(148,163,184,0.08)' } }
+          }
+        }
+      });
+    })();
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'ArrowDown') { e.preventDefault(); nextSlide(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prevSlide(); }
+      else if (e.key === 'n' || e.key === 'N') toggleNotes();
+      else if (e.key === 'g' || e.key === 'G') toggleJumpMenu();
+      else if (e.key === 'Escape') {
+        toggleJumpMenu(false);
+        document.getElementById('notesDrawer').hidden = true;
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-cluster')) toggleJumpMenu(false);
+    });
+
+    goToSlide(1);
+  </script>
+</body>
+</html>
+
