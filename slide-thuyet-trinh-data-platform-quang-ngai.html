@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTSC Data Platform — PTSC Quảng Ngãi (28 Slides · L3)</title>
+    <title>PTSC Data Platform — PTSC Quảng Ngãi (30 Slides · L3)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -249,7 +249,32 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            gap: 16px;
+            gap: 12px 16px;
+            flex-wrap: wrap;
+            padding-right: 84px;
+        }
+
+        .top-slide-counter {
+            position: fixed;
+            top: 9px;
+            right: clamp(14px, 2.2vw, 32px);
+            z-index: 950;
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--color-fg-secondary);
+            background: rgba(11, 19, 40, 0.86);
+            border: 1px solid var(--color-border-strong);
+            border-radius: 5px;
+            padding: 4px 10px;
+            backdrop-filter: blur(8px);
+            cursor: pointer;
+            transition: border-color 0.18s, color 0.18s;
+        }
+
+        .top-slide-counter:hover {
+            border-color: var(--color-cyan-border-strong);
+            color: var(--color-cyan);
         }
 
         .headline-group h1 {
@@ -1072,11 +1097,67 @@
             }
         }
 
+        /* Hide ugly scrollbars while preserving wheel/touch scroll when needed */
+        .slide::-webkit-scrollbar,
+        .glass-panel::-webkit-scrollbar,
+        .board-frame::-webkit-scrollbar,
+        .mmap-board::-webkit-scrollbar,
+        .inspector-col::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            display: none;
+        }
+
+        .slide,
+        .glass-panel,
+        .board-frame,
+        .mmap-board,
+        .inspector-col {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        @media (max-height: 700px) {
+            :root {
+                --slide-pad-y: 8px;
+            }
+
+            .headline-group h1 {
+                font-size: clamp(17px, 2vw, 25px);
+            }
+
+            .glass-panel {
+                padding: 10px 13px;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 5px 8px;
+                font-size: 11.5px;
+            }
+
+            .warn-banner {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 1120px) {
+            .glass-panel {
+                min-width: 0;
+            }
+
+            .footer-left {
+                gap: 6px;
+            }
+        }
+
         @media (max-width: 980px) {
 
             html,
             body {
                 overflow-y: auto;
+                overflow-x: hidden;
             }
 
             .deck-shell {
@@ -1087,6 +1168,7 @@
             .slide {
                 position: relative;
                 height: auto;
+                overflow: visible !important;
             }
 
             .command-split,
@@ -1094,7 +1176,66 @@
             .grid-3,
             .grid-4,
             .command-footer {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+            }
+
+            .board-frame {
+                overflow-x: auto;
+                overflow-y: visible;
+                justify-content: flex-start;
+            }
+
+            .coord-board {
+                min-width: 540px;
+                max-width: 100%;
+                max-height: none;
+            }
+
+            .mmap-board {
+                overflow-x: auto;
+            }
+
+            .mmap-board svg {
+                min-width: 720px;
+            }
+
+            .glass-panel,
+            .inspector-col {
+                overflow-x: auto;
+                overflow-y: visible;
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .act-trail,
+            .station-trail {
+                flex-wrap: wrap;
+            }
+
+            .nav-cluster {
+                justify-self: end;
+            }
+
+            .jump-menu {
+                width: min(410px, calc(100vw - 28px));
+            }
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --slide-pad-x: 12px;
+                --slide-pad-y: 10px;
+            }
+
+            .header-band {
+                padding-right: 0;
+            }
+
+            .top-slide-counter {
+                top: 6px;
+                right: 10px;
+                font-size: 10.5px;
+                padding: 2px 7px;
             }
         }
 
@@ -1215,6 +1356,9 @@
     <div class="top-progress-track" aria-hidden="true">
         <div class="top-progress-fill" id="progressBar"></div>
     </div>
+    <button type="button" class="top-slide-counter" id="topSlideCounter" onclick="toggleJumpMenu()" title="Chọn nhanh slide">
+        <span id="topCurrentSlideNum">01</span> / <span id="topTotalSlideNum">28</span>
+    </button>
 
     <div class="deck-shell">
         <main class="slide-stage">
@@ -3216,16 +3360,64 @@
             </section>
 
             <!-- SLIDE 19: HỆ THỐNG DỰ KIẾN PQN (L3 + COMBO 2) — SƠ ĐỒ ĐỘNG -->
+            <!-- SLIDE 19: GIẢI THÍCH L1–L4 BẰNG TIẾNG VIỆT THƯỜNG TRƯỚC KHI VÀO MÔ HÌNH PQN -->
             <section class="slide" data-slide="19" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
-                data-title="Hệ thống dự kiến PQN (L3 + Dùng chung TCT)" data-section="19 · HỆ THỐNG DỰ KIẾN PQN"
+                data-title="L1, L2, L3, L4 là gì? PQN đứng ở đâu?" data-section="19 · PHÂN BIỆT L1–L4"
+                data-source="Phiên chiều tr. 50–59 (Phân cấp DBI L1–L4 & Nhóm 4 PQN)" data-steps="1">
+                <div class="header-band">
+                    <div class="headline-group">
+                        <h1>L1, L2, L3, L4 nghĩa là gì — <span class="c-cyan">PTSC Quảng Ngãi</span> chọn đứng ở đâu?</h1>
+                        <p class="headline-sub">Giải thích nhanh 4 mức tham gia Data Platform (từ dùng chung hoàn toàn đến tự dựng trạm riêng)</p>
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-rows:minmax(0,1fr) auto; gap:12px; min-height:0;">
+                    <div class="grid-4" style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; min-height:0;">
+                        <div class="glass-panel" style="display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                                <span class="mono-tag is-muted">MỨC L1 · DÙNG CHUNG 100%</span>
+                                <h2 style="font-size:18px; margin:8px 0;">Chi nhánh nhỏ (DBI 0–2)</h2>
+                                <p style="font-size:13px; color:var(--color-fg-secondary); line-height:1.55;">Dữ liệu ít, không có phần mềm đặc thù phức tạp. Dùng chung hoàn toàn hạ tầng &amp; báo cáo chuẩn của TCT.</p>
+                            </div>
+                            <div class="chip-row" style="margin-top:8px;"><span class="chip">0 máy chủ riêng</span></div>
+                        </div>
+                        <div class="glass-panel" style="display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                                <span class="mono-tag is-muted">MỨC L2 · DÙNG CHUNG &gt;70%</span>
+                                <h2 style="font-size:18px; margin:8px 0;">Chi nhánh vừa (DBI 0–2)</h2>
+                                <p style="font-size:13px; color:var(--color-fg-secondary); line-height:1.55;">Dùng chung phần lớn trên Hub TCT, có thêm một ít phần mềm/báo cáo riêng của đơn vị.</p>
+                            </div>
+                            <div class="chip-row" style="margin-top:8px;"><span class="chip">0 máy chủ riêng</span></div>
+                        </div>
+                        <div class="glass-panel glow-cyan" style="display:flex; flex-direction:column; justify-content:space-between; border-color:var(--color-cyan-border-strong); background:rgba(34,211,238,0.07);">
+                            <div>
+                                <span class="mono-tag">MỨC L3 · PQN DỰ KIẾN CHỌN</span>
+                                <h2 style="font-size:18px; margin:8px 0; color:var(--color-cyan);">Thuê “phòng riêng” trên TCT</h2>
+                                <p style="font-size:13px; color:var(--color-fg-secondary); line-height:1.55;"><strong>Giữ nguyên phần mềm tại PQN</strong>, không mua cụm máy chủ mới — chỉ thuê <strong>1 phân vùng riêng có khóa</strong> trên máy chủ Hub của TCT.</p>
+                            </div>
+                            <div class="chip-row" style="margin-top:8px;"><span class="chip" style="border-color:var(--color-ok); color:var(--color-ok);">Nhẹ gánh IT · 0 mua dHCI</span></div>
+                        </div>
+                        <div class="glass-panel glow-orange" style="display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                                <span class="mono-tag is-orange">MỨC L4 · DỰ PHÒNG (DBI &gt; 3,5)</span>
+                                <h2 style="font-size:18px; margin:8px 0; color:var(--color-orange);">Tự dựng “trạm riêng” tại đơn vị</h2>
+                                <p style="font-size:13px; color:var(--color-fg-secondary); line-height:1.55;">Chỉ áp cho đơn vị rất lớn đủ 4 tiêu chí: <strong>tự mua cụm dHCI</strong> &amp; tự nuôi đội IT trực 24/7 tại chỗ, chỉ gửi số tổng hợp lên TCT.</p>
+                            </div>
+                            <div class="chip-row" style="margin-top:8px;"><span class="chip" style="border-color:var(--color-orange-border); color:var(--color-orange);">Chi phí &amp; nhân sự gấp ~2–3 lần</span></div>
+                        </div>
+                    </div>
+                    <div class="warn-banner" style="font-size:13px;"><strong>Vì sao PQN đi theo L3?</strong> Quảng Ngãi thuộc Nhóm 4 (có thể L3 hoặc L4, chưa chốt). Chọn <strong>L3</strong> giúp PQN không tốn tiền mua cụm máy chủ mới (chỉ tận dụng VM nhẹ trên Dell R760xs hiện có) và không phải tuyển thêm đội trực hạ tầng 24/7 — sang Slide sau xem chi tiết mô hình PQN theo L3.</div>
+                </div>
+            </section>
+
+            <section class="slide" data-slide="20" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
+                data-title="Hệ thống dự kiến PQN (L3 + Dùng chung TCT)" data-section="20 · HỆ THỐNG DỰ KIẾN PQN"
                 data-source="Phiên chiều tr. 42, 51, 55; Phiên sáng tr. 17–20; PDT27 (Combo 2); Định hướng PQN L3"
                 data-steps="1">
                 <div class="header-band">
                     <div class="headline-group">
-                        <h1>Hệ thống dự kiến của PTSC Quảng Ngãi: <span class="c-cyan">L3 Tenant + Dùng chung TCT</span>
+                        <h1>Mô hình dự kiến của PTSC Quảng Ngãi (L3): <span class="c-cyan">Giữ gì ở nhà, gửi gì lên TCT?</span>
                         </h1>
-                        <p class="headline-sub">E-Office &amp; HRM dùng chung nền tảng TCT · 4 hệ thống riêng tại PQN
-                            nối qua Adapter lên phân vùng Tenant L3</p>
+                        <p class="headline-sub">E-Office &amp; HRM dùng chung sẵn của TCT · 4 phần mềm riêng của PQN gửi dữ liệu về “phòng riêng” trên Hub TCT</p>
                     </div>
                     <div class="mode-switch">
                         <button type="button" class="mode-btn is-active" id="pqn19BtnBoth"
@@ -3353,8 +3545,8 @@
             </section>
 
             <!-- SLIDE 20: CHI TIẾT 6 HỆ THỐNG NGUỒN PQN (LỌC TƯƠNG TÁC) -->
-            <section class="slide" data-slide="20" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
-                data-title="Chi tiết 6 hệ thống PQN: Dùng chung vs Đặc thù" data-section="20 · 6 HỆ THỐNG NGUỒN PQN"
+            <section class="slide" data-slide="21" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
+                data-title="Chi tiết 6 hệ thống PQN: Dùng chung vs Đặc thù" data-section="21 · 6 HỆ THỐNG NGUỒN PQN"
                 data-source="PDT27 (Combo 1/2); YCKT §2; Báo cáo KT §4; Định hướng PQN dùng chung E-Office & HRM"
                 data-steps="1">
                 <div class="header-band">
@@ -3452,8 +3644,8 @@
             </section>
 
             <!-- SLIDE 21: THÀNH PHẦN ĐẶT TẠI PQN & MÔ PHỎNG KẾT NỐI WAN BIÊN -->
-            <section class="slide" data-slide="21" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
-                data-title="Thành phần đặt tại PQN & Kết nối WAN lên Hub" data-section="21 · THÀNH PHẦN TẠI PQN"
+            <section class="slide" data-slide="22" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
+                data-title="Thành phần đặt tại PQN & Kết nối WAN lên Hub" data-section="22 · THÀNH PHẦN TẠI PQN"
                 data-source="Phiên sáng tr. 20, 25; Phiên chiều tr. 55, 57; Phụ lục YCKT §2; PDT27" data-steps="1">
                 <div class="header-band">
                     <div class="headline-group">
@@ -3557,9 +3749,9 @@
             </section>
 
             <!-- SLIDE 22: 12 PHÂN HỆ TRÊN HUB & CLOUD — TƯƠNG TÁC PHÂN VÙNG RIÊNG VS DÙNG CHUNG -->
-            <section class="slide" data-slide="22" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
+            <section class="slide" data-slide="23" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
                 data-title="Thành phần của PQN trên Hub & Cloud TCT (12 phân hệ)"
-                data-section="22 · THÀNH PHẦN PQN TRÊN HUB & CLOUD"
+                data-section="23 · THÀNH PHẦN PQN TRÊN HUB & CLOUD"
                 data-source="Báo cáo KT §3.2; Phiên sáng tr. 17–18, 25; Phiên chiều tr. 42–43, 55" data-steps="1">
                 <div class="header-band">
                     <div class="headline-group">
@@ -3649,8 +3841,8 @@
             </section>
 
             <!-- SLIDE 23: NHÂN SỰ & PHÂN QUYỀN VẬN HÀNH PQN (CHỌN VAI TRÒ TƯƠNG TÁC) -->
-            <section class="slide" data-slide="23" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
-                data-title="Nhân sự & Phân quyền vận hành PQN (Khung chuẩn TCT)" data-section="23 · BỘ MÁY VẬN HÀNH PQN"
+            <section class="slide" data-slide="24" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
+                data-title="Nhân sự & Phân quyền vận hành PQN (Khung chuẩn TCT)" data-section="24 · BỘ MÁY VẬN HÀNH PQN"
                 data-source="Phiên chiều tr. 17–19, 24, 33, 44–45; Phiên sáng tr. 20, 23; YCKT (DOC); Nhân sự PQN chưa chốt"
                 data-steps="1">
                 <div class="header-band">
@@ -3707,9 +3899,9 @@
             </section>
 
             <!-- SLIDE 24: CƠ CHẾ VẬN HÀNH HẰNG NGÀY (3 NHỊP KHÉP KÍN — ANIMATION VÒNG LẶP) -->
-            <section class="slide" data-slide="24" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
+            <section class="slide" data-slide="25" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
                 data-title="Cơ chế vận hành hằng ngày (3 nhịp & 12 quy trình)"
-                data-section="24 · VẬN HÀNH HẰNG NGÀY PQN"
+                data-section="25 · VẬN HÀNH HẰNG NGÀY PQN"
                 data-source="Phiên chiều tr. 19, 23–24, 32–33; Phiên sáng tr. 22–24" data-steps="1">
                 <div class="header-band">
                     <div class="headline-group">
@@ -3770,9 +3962,9 @@
             </section>
 
             <!-- SLIDE 25: MÔ PHỎNG XỬ LÝ SỰ CỐ (PQN ↔ DOC TCT) & CHUYỂN ĐỔI VẬN HÀNH -->
-            <section class="slide" data-slide="25" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
+            <section class="slide" data-slide="26" data-act="PHẦN III · HỆ THỐNG DỰ KIẾN PQN (L3)"
                 data-title="Xử lý sự cố (PQN ↔ DOC TCT) & Chuyển đổi vận hành"
-                data-section="25 · XỬ LÝ SỰ CỐ & CHUYỂN ĐỔI"
+                data-section="26 · XỬ LÝ SỰ CỐ & CHUYỂN ĐỔI"
                 data-source="Phiên chiều tr. 23, 32; PDT27 (Cutover & Hypercare)" data-steps="1">
                 <div class="header-band">
                     <div class="headline-group">
@@ -3863,8 +4055,8 @@
             </section>
 
             <!-- SLIDE 20: CHI PHÍ THEO CẤP L1–L4 + CỘT XẾP CHỒNG (§9) -->
-            <section class="slide" data-slide="26" data-act="PHẦN IV · CHI PHÍ & ĐẦU TƯ"
-                data-title="Phân bổ chi phí theo cấp L1–L4" data-section="26 · CHI PHÍ THEO LEVEL L1–L4"
+            <section class="slide" data-slide="27" data-act="PHẦN IV · CHI PHÍ & ĐẦU TƯ"
+                data-title="Phân bổ chi phí theo cấp L1–L4" data-section="27 · CHI PHÍ THEO LEVEL L1–L4"
                 data-source="Phiên chiều, slide in 58, trang PDF 62" data-steps="1">
                 <div class="header-band">
                     <div class="headline-group">
@@ -3941,183 +4133,195 @@
                         </div>
                     </div>
                     <aside class="glass-panel glow-cyan inspector-col">
-                        <span class="mono-tag">SO SÁNH CỘT XẾP CHỒNG (ƯỚC TÍNH)</span>
                         <span class="mono-tag">SO SÁNH CHI PHÍ THEO NĂM (ƯỚC TÍNH PQN)</span>
                         <div
                             style="display:flex; justify-content:space-around; align-items:flex-end; height:165px; padding-top:6px;">
-                            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;"><span
-                                    style="font-family:var(--font-mono); font-size:12px;">~16,8 tỷ</span>
-                                style="font-family:var(--font-mono); font-size:12px;">~6,5–8 tỷ</span>
+                            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+                                <span style="font-family:var(--font-mono); font-size:12px;">~6,5–8 tỷ</span>
                                 <div class="cost-stack-col is-focused-cyan" id="s20ColL3">
-                                    <div class="cost-seg-one" id="s20L3One" style="height:36%;"></div>
                                     <div class="cost-seg-one" id="s20L3One" style="height:32%;"></div>
                                     <div class="cost-seg-yr" id="s20L3Yr" style="height:6%;"></div>
-                                </div><span style="font-size:12px;">L3 (5 năm)</span>
-                            </div><span style="font-size:11.5px; text-align:center;">L3 (+0,9–1,2 tỷ/năm)</span>
+                                </div>
+                                <span style="font-size:11.5px; text-align:center;">L3 (+0,9–1,2 tỷ/năm)</span>
+                            </div>
+                            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+                                <span style="font-family:var(--font-mono); font-size:12px; color:var(--color-orange);">~19–21 tỷ</span>
+                                <div class="cost-stack-col is-dim" id="s20ColL4">
+                                    <div class="cost-seg-one" id="s20L4One" style="height:76%;"></div>
+                                    <div class="cost-seg-yr" id="s20L4Yr" style="height:18%;"></div>
+                                </div>
+                                <span style="font-size:11.5px; text-align:center;">L4 (+3,9–4,4 tỷ/năm)</span>
+                            </div>
                         </div>
-                        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;"><span
-                                style="font-family:var(--font-mono); font-size:12px; color:var(--color-orange);">~40,4
-                                style="font-family:var(--font-mono); font-size:12px; color:var(--color-orange);">~19–21
-                                tỷ</span>
-                            <div class="cost-stack-col is-dim" id="s20ColL4">
-                                <div class="cost-seg-one" id="s20L4One" style="height:55%;"></div>
-                                <div class="cost-seg-yr" id="s20L4Yr" style="height:24%;"></div>
-                            </div><span style="font-size:12px;">L4 (5 năm)</span>
-                            <div class="cost-seg-one" id="s20L4One" style="height:76%;"></div>
-                            <div class="cost-seg-yr" id="s20L4Yr" style="height:18%;"></div>
-                        </div><span style="font-size:11.5px; text-align:center;">L4 (+3,9–4,4 tỷ/năm)</span>
+                        <div class="cost-delta-pill" id="s20DeltaPill">L3 nhẹ hơn <strong>~12–13 tỷ</strong> năm đầu
+                            &amp; <strong>~3 tỷ/năm</strong> sau đó</div>
+                        <div style="font-size:11.5px; color:var(--color-fg-muted);">Xanh: Đầu tư Năm 1 (4 hệ riêng PQN)
+                            · Cam: Chi phí duy trì / 1 năm (từ Năm 2).</div>
+                    </aside>
                 </div>
-    </div>
-    <div class="cost-delta-pill" id="s20DeltaPill">Chênh 5 năm: <strong>~23,6 tỷ</strong> (ước tính
-        ngoài tài liệu)</div>
-    <div style="font-size:11.5px; color:var(--color-fg-muted);">Xanh: Đầu tư một lần (năm 1) · Cam:
-        Vận hành hằng năm (năm 2–5).</div>
-    <div class="cost-delta-pill" id="s20DeltaPill">L3 nhẹ hơn <strong>~12–13 tỷ</strong> năm đầu
-        &amp; <strong>~3 tỷ/năm</strong> sau đó</div>
-    <div style="font-size:11.5px; color:var(--color-fg-muted);">Xanh: Đầu tư Năm 1 (4 hệ riêng PQN)
-        · Cam: Chi phí duy trì / 1 năm (từ Năm 2).</div>
-    </aside>
-    </div>
-    </section>
+            </section>
 
-    <!-- SLIDE 22: ƯỚC TÍNH CHI PHÍ L3 VS L4 -->
-    <section class="slide" data-slide="27" data-act="PHẦN IV · CHI PHÍ & ĐẦU TƯ"
-        data-title="Ước tính chi phí L3 vs L4 (Giả định tham khảo)" data-section="27 · ƯỚC TÍNH L3 VS L4"
-        data-source="Ước tính nội bộ theo giả định thị trường — Chờ khái toán chính thức GĐ2A" data-steps="1">
-        data-title="Ước tính chi phí theo năm: L3 vs L4 (Giả định PQN)" data-section="27 · ƯỚC TÍNH L3 VS L4"
+    <!-- SLIDE 27: ƯỚC TÍNH CHI PHÍ L3 VS L4 -->
+    <section class="slide" data-slide="28" data-act="PHẦN IV · CHI PHÍ & ĐẦU TƯ"
+        data-title="Ước tính chi phí theo năm: L3 vs L4 (Giả định PQN)" data-section="28 · ƯỚC TÍNH L3 VS L4"
         data-source="Ước tính tham chiếu thị trường VN cho 4 hệ riêng PQN — Chờ khái toán chính thức GĐ2A"
         data-steps="1">
         <div class="header-band">
             <div class="headline-group">
-                <h1>Ước tính chi phí <span class="c-cyan">L3</span> vs <span class="c-orange">L4</span></h1>
                 <h1>Ước tính chi phí theo năm: <span class="c-cyan">L3</span> vs <span class="c-orange">L4</span></h1>
             </div>
         </div>
-        <div style="display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:12px; min-height:0;">
-            <div class="warn-banner" style="font-size:15px;"><strong>SỐ ƯỚC TÍNH THEO GIẢ ĐỊNH THỊ TRƯỜNG, KHÔNG
-                    PHẢI SỐ LIỆU PTSC.</strong> Khái toán chính thức chỉ có sau khảo sát GĐ2A + sizing.</div>
-            <div class="glass-panel">
-                <table class="data-table">
-                    <div style="display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:10px; min-height:0;">
-                        <div class="warn-banner" style="font-size:14px;"><strong>SỐ ƯỚC TÍNH THAM CHIẾU THỊ TRƯỜNG CHO
-                                PQN
-                                (4 HỆ RIÊNG), KHÔNG PHẢI SỐ LIỆU PTSC.</strong> Khái toán chính thức chỉ có sau khảo sát
-                            GĐ2A + sizing.</div>
-                        <div class="glass-panel" style="padding:12px 16px;">
-                            <table class="data-table" style="font-size:13.5px;">
-                                <thead>
-                                    <tr>
-                                        <th>Chỉ tiêu (Số ước tính)</th>
-                                        <th class="c-center">L3 (Tenant)</th>
-                                        <th class="c-center">L4 (Spoke)</th>
-                                        <th>Chênh lệch &amp; Ghi chú</th>
-                                        <th>Khoản mục ngân sách (Ước tính cho PQN)</th>
-                                        <th class="c-center">L3 (Tenant — Chọn)</th>
-                                        <th class="c-center">L4 (Spoke — Dự phòng)</th>
-                                        <th>Chênh lệch &amp; Ghi chú thực tế</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Tổng năm đầu</td>
-                                        <td class="c-center">~10,0 tỷ</td>
-                                        <td class="c-center" style="color:var(--color-orange);">~22,0 tỷ</td>
-                                        <td>Chênh ~12,0 tỷ</td>
-                                        <td><strong>Tổng Năm 1 (Đầu tư ban đầu)</strong></td>
-                                        <td class="c-center"><strong class="c-cyan">~6,5–8,0 tỷ</strong></td>
-                                        <td class="c-center" style="color:var(--color-orange);"><strong>~19,0–21,0
-                                                tỷ</strong></td>
-                                        <td>L3 nhẹ hơn <strong>~12–13 tỷ</strong> (0 mua dHCI ~8,5 tỷ &amp; triển khai
-                                            gọn)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tổng 5 năm</td>
-                                        <td class="c-center">~16,8 tỷ</td>
-                                        <td class="c-center" style="color:var(--color-orange);">~40,4 tỷ</td>
-                                        <td>Chênh ~23,6 tỷ</td>
-                                        <td style="padding-left:20px; color:var(--color-fg-secondary);">↳ Trong đó: Tích
-                                            hợp 4 hệ riêng PQN</td>
-                                        <td class="c-center">~4,0–5,5 tỷ</td>
-                                        <td class="c-center">~4,0–5,5 tỷ</td>
-                                        <td>Tốn như nhau <em>(Cảng, FAST, MESX, Bán hàng; E-Office &amp; HRM dùng chung
-                                                TCT)</em></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phí vận hành (tính từ năm 2)</td>
-                                        <td class="c-center">0,6 tỷ / năm</td>
-                                        <td class="c-center" style="color:var(--color-orange);">2,4 tỷ / năm</td>
-                                        <td>KHÔNG nằm trong tổng năm đầu</td>
-                                        <td><strong>Chi phí duy trì / 1 năm (từ Năm 2)</strong></td>
-                                        <td class="c-center"><strong class="c-cyan">~0,9–1,2 tỷ / năm</strong></td>
-                                        <td class="c-center" style="color:var(--color-orange);"><strong>~3,9–4,4 tỷ /
-                                                năm</strong></td>
-                                        <td>Chênh <strong>~3,0–3,2 tỷ/năm</strong> vào ngân sách vận hành hằng năm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tích hợp + dữ liệu (6 hệ thống)</td>
-                                        <td class="c-center">~7,1 tỷ</td>
-                                        <td class="c-center">~7,1 tỷ</td>
-                                        <td>Tốn như nhau ở cả 2 phương án</td>
-                                        <td style="padding-left:20px; color:var(--color-fg-secondary);">↳ Gồm: Vận hành
-                                            + Gia hạn License</td>
-                                        <td class="c-center">~0,6 + ~0,3–0,6 tỷ</td>
-                                        <td class="c-center" style="color:var(--color-orange);">~2,4 + ~1,5–2,0 tỷ</td>
-                                        <td>L4 tốn thêm đội 4–5 kỹ sư &amp; bản quyền hạ tầng VMware/Veeam</td>
-                                    </tr>
-                                    <tr style="color:var(--color-fg-muted);">
-                                        <td>Tham chiếu tổng 5 năm (Năm 1 + 4 năm)</td>
-                                        <td class="c-center">~10–13 tỷ</td>
-                                        <td class="c-center">~35–39 tỷ</td>
-                                        <td>Tham khảo dài hạn — chênh ~24–26 tỷ sau 5 năm</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="glass-panel" style="padding:10px 16px;"><span
-                                style="font-size:13.5px; color:var(--color-fg-secondary);">Tiền chênh nằm ở hạ tầng,
-                                license
-                                và vận hành riêng — không nằm ở phần tích hợp 6 hệ thống.</span></div>
-                        <div class="glass-panel" style="padding:9px 16px;"><span
-                                style="font-size:12.8px; color:var(--color-fg-secondary);"><strong>3 điểm cần làm rõ với
-                                    TCT ở GĐ2A:</strong>
-                                (1) Mục nào trong 10 license dùng Open Source (0đ) vs mua thương mại; (2) Công thức phân
-                                bổ chi phí chung;
-                                (3) E-Office &amp; HRM dùng chung có miễn phí tích hợp cho đơn vị không.</span></div>
-                    </div>
+        <div style="display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:10px; min-height:0;">
+            <div class="warn-banner" style="font-size:13.5px;"><strong>SỐ ƯỚC TÍNH THAM CHIẾU THỊ TRƯỜNG CHO PQN (4 HỆ RIÊNG), KHÔNG PHẢI SỐ LIỆU PTSC.</strong> Khái toán chính thức chỉ có sau khảo sát GĐ2A + sizing.</div>
+            <div class="glass-panel" style="padding:12px 16px;">
+                <table class="data-table" style="font-size:13px;">
+                    <thead>
+                        <tr>
+                            <th>Khoản mục ngân sách (Ước tính PQN)</th>
+                            <th class="c-center">L3 (Tenant — Chọn)</th>
+                            <th class="c-center">L4 (Spoke — Dự phòng)</th>
+                            <th>Chênh lệch &amp; Ghi chú thực tế</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tổng Năm 1 (Đầu tư ban đầu)</strong></td>
+                            <td class="c-center"><strong class="c-cyan">~6,5–8,0 tỷ</strong></td>
+                            <td class="c-center" style="color:var(--color-orange);"><strong>~19,0–21,0 tỷ</strong></td>
+                            <td>L3 nhẹ hơn <strong>~12–13 tỷ</strong> (0 mua dHCI ~8,5 tỷ &amp; triển khai gọn)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:20px; color:var(--color-fg-secondary);">↳ Tích hợp 4 hệ riêng PQN</td>
+                            <td class="c-center">~4,0–5,5 tỷ</td>
+                            <td class="c-center">~4,0–5,5 tỷ</td>
+                            <td>Tốn như nhau <em>(Cảng, FAST, MESX, Bán hàng; E-Office &amp; HRM dùng chung TCT)</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chi phí duy trì / 1 năm (từ Năm 2)</strong></td>
+                            <td class="c-center"><strong class="c-cyan">~0,9–1,2 tỷ / năm</strong></td>
+                            <td class="c-center" style="color:var(--color-orange);"><strong>~3,9–4,4 tỷ / năm</strong></td>
+                            <td>Chênh <strong>~3,0–3,2 tỷ/năm</strong> vào ngân sách vận hành hằng năm</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:20px; color:var(--color-fg-secondary);">↳ Vận hành + Gia hạn License</td>
+                            <td class="c-center">~0,6 + ~0,3–0,6 tỷ</td>
+                            <td class="c-center" style="color:var(--color-orange);">~2,4 + ~1,5–2,0 tỷ</td>
+                            <td>L4 tốn thêm đội 4–5 kỹ sư &amp; bản quyền hạ tầng VMware/Veeam</td>
+                        </tr>
+                        <tr style="color:var(--color-fg-muted);">
+                            <td>Tham chiếu tổng 5 năm (Năm 1 + 4 năm)</td>
+                            <td class="c-center">~10–13 tỷ</td>
+                            <td class="c-center">~35–39 tỷ</td>
+                            <td>Tham khảo dài hạn — chênh ~24–26 tỷ sau 5 năm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="glass-panel" style="padding:9px 16px;"><span
+                    style="font-size:12.5px; color:var(--color-fg-secondary);"><strong>3 điểm cần làm rõ với TCT ở GĐ2A:</strong>
+                    (1) Mục nào trong 10 license dùng Open Source (0đ) vs thương mại; (2) Công thức phân bổ chi phí chung;
+                    (3) E-Office &amp; HRM dùng chung có miễn phí tích hợp cho đơn vị không.</span></div>
+        </div>
     </section>
 
-    <!-- SLIDE 21: PHƯƠNG ÁN 3 -->
-    <section class="slide" data-slide="28" data-act="PHẦN IV · CHI PHÍ & ĐẦU TƯ"
-        data-title="Phương án 3 — Cơ chế đầu tư kiến nghị" data-section="28 · PHƯƠNG ÁN 3"
+    <!-- SLIDE 28: CHI TIẾT HẠNG MỤC ĐẦU TƯ & GIÁ ƯỚC TÍNH L3 VS L4 -->
+    <section class="slide" data-slide="29" data-act="PHẦN IV · CHI PHÍ & ĐẦU TƯ"
+        data-title="Chi tiết hạng mục đầu tư & ước tính: L3 vs L4" data-section="29 · CHI TIẾT ĐẦU TƯ L3 VS L4"
+        data-source="Ước tính tham chiếu thị trường VN + Báo cáo KT §2.2.2 + Phiên chiều tr. 62"
+        data-steps="1">
+        <div class="header-band">
+            <div class="headline-group">
+                <h1>Chi tiết hạng mục đầu tư &amp; <span class="c-cyan">ước tính chi phí</span>: <span class="c-cyan">L3</span> vs <span class="c-orange">L4</span></h1>
+            </div>
+        </div>
+        <div style="display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:9px; min-height:0;">
+            <div class="warn-banner" style="font-size:12.5px;"><strong>Ước tính tham chiếu thị trường VN cho PQN (4 hệ riêng: Cảng, FAST, MESX, Bán hàng)</strong> — chưa phải báo giá chính thức PTSC; cấu hình Spoke 5 node là đề xuất tham khảo thu gọn từ Hub 8 node, chờ sizing GĐ2A.</div>
+            <div class="glass-panel" style="padding:10px 14px;">
+                <table class="data-table" style="font-size:12.2px;">
+                    <thead>
+                        <tr>
+                            <th>Hạng mục đầu tư chi tiết</th>
+                            <th class="c-center">L3 (Tenant — Đề xuất)</th>
+                            <th class="c-center">L4 (Spoke — Dự phòng)</th>
+                            <th>Chi tiết cấu thành &amp; Hiện trạng PQN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Phần cứng máy chủ &amp; Lưu trữ</strong></td>
+                            <td class="c-center"><strong class="c-cyan">0 đ</strong></td>
+                            <td class="c-center" style="color:var(--color-orange);"><strong>~8,5 tỷ</strong> <span style="font-weight:400;">(6–12 tỷ)</span></td>
+                            <td>L3: tận dụng 1–2 VM nhẹ trên Dell R760xs · L4: mua mới ~5 node dHCI + switch 10G (R760xs + IBM x3650 M4 không ghép thành cụm HA)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. License hạ tầng tại chỗ</strong></td>
+                            <td class="c-center"><strong class="c-cyan">0 đ</strong></td>
+                            <td class="c-center" style="color:var(--color-orange);"><strong>~1,5–2,0 tỷ/năm</strong></td>
+                            <td>L4 tự chịu bản quyền VMware vSphere/ESXi + Tanzu K8s + Veeam Backup Immutable trên cụm Spoke</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Triển khai &amp; Tích hợp 4 hệ riêng</strong></td>
+                            <td class="c-center">~4,0–5,5 tỷ</td>
+                            <td class="c-center" style="color:var(--color-orange);">~7,0–8,5 tỷ</td>
+                            <td>Nối 4 PM riêng (Cảng, FAST, MESX, Bán hàng; E-Office &amp; HRM dùng chung TCT); L4 tốn thêm dựng Spoke &amp; đồng bộ Hub</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. License nền tảng (10 mục · 12 tháng)</strong></td>
+                            <td class="c-center">~0,3–0,6 tỷ/năm</td>
+                            <td class="c-center" style="color:var(--color-orange);">~0,5–1,0 tỷ/năm</td>
+                            <td>Gồm 10 mục (Cloud, Ingestion, Lakehouse, ESB, MDM, Data Ops, Transform, Text-to-Data, SIEM, Metadata) — hỏi TCT mục nào Open Source</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Nhân sự &amp; Vận hành (từ Năm 2)</strong></td>
+                            <td class="c-center">~0,6 tỷ/năm</td>
+                            <td class="c-center" style="color:var(--color-orange);">~2,4 tỷ/năm</td>
+                            <td>L3: phí vận hành phân bổ Hub · L4: tự nuôi đội 4–5 kỹ sư trực 24/7 K8s, Storage, Backup, Patching</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="glass-panel" style="padding:8px 14px;"><span style="font-size:12.5px; color:var(--color-fg-secondary);"><strong class="c-cyan">Tổng hợp:</strong> Năm 1: <strong>L3 ~6,5–8,0 tỷ</strong> vs <strong style="color:var(--color-orange);">L4 ~19,0–21,0 tỷ</strong> · Duy trì từ Năm 2: <strong>L3 ~0,9–1,2 tỷ/năm</strong> vs <strong style="color:var(--color-orange);">L4 ~3,9–4,4 tỷ/năm</strong>.</span></div>
+        </div>
+    </section>
+
+    <!-- SLIDE 29: PHƯƠNG ÁN 3 -->
+    <section class="slide" data-slide="30" data-act="PHẦN IV · CHI PHÍ & ĐẦU TƯ"
+        data-title="Phương án 3 — Cơ chế đầu tư kiến nghị" data-section="30 · PHƯƠNG ÁN 3"
         data-source="Phiên chiều, slide in 59, trang PDF 63" data-steps="1">
         <div class="header-band">
             <div class="headline-group">
-                <h1>Phương án 3: <span class="c-cyan">Cơ chế đầu tư kết hợp</span> giữa TCT &amp; Đơn vị</h1>
+                <h1>Phương án 3: <span class="c-cyan">TCT &amp; Quảng Ngãi</span> chia nhau đầu tư thế nào?</h1>
             </div>
         </div>
-        <div style="display:grid; grid-template-rows:minmax(0,1fr) auto; gap:14px; min-height:0;">
+        <div style="display:grid; grid-template-rows:auto minmax(0,1fr) auto; gap:10px; min-height:0;">
+            <div class="glass-panel" style="padding:9px 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <span style="font-size:13px; color:var(--color-fg-secondary);"><strong class="c-cyan">Vì sao chọn Phương án 3?</strong> (PA1: TCT bao hết · PA2: Đơn vị tự lo hết · <strong style="color:var(--color-fg);">PA3 kiến nghị:</strong> Kết hợp để không đầu tư dàn trải nhưng vẫn gắn trách nhiệm đơn vị)</span>
+            </div>
             <div class="split-equal">
-                <div class="glass-panel glow-cyan"><span class="mono-tag">TỔNG CÔNG TY ĐẦU
-                        TƯ</span>
-                    <ul style="margin:12px 0 0 18px; font-size:15px; color:var(--color-fg-secondary); line-height:1.7;">
-                        <li>Hạ tầng Hub trung tâm.</li>
-                        <li>Nền tảng dùng chung toàn TCT.</li>
-                        <li>Bản quyền khung &amp; bộ tiêu chuẩn.</li>
-                        <li>Thiếu nguồn kinh phí: TCT đầu tư trước và <strong>ghi nợ</strong>.</li>
-                    </ul>
+                <div class="glass-panel glow-cyan" style="display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <span class="mono-tag">1. TỔNG CÔNG TY BỎ VỐN (LÕI DÙNG CHUNG)</span>
+                        <ul style="margin:10px 0 0 18px; font-size:14px; color:var(--color-fg-secondary); line-height:1.65;">
+                            <li><strong>Hạ tầng Hub Tầng 10 CQTCT:</strong> Cụm dHCI 8 node, trục ESB Vùng 5, Lakehouse, MDM và hệ thống an ninh SIEM.</li>
+                            <li><strong>Cloud &amp; Bộ tiêu chuẩn:</strong> Microsoft Fabric F16, Purview và bản quyền khung toàn PTSC.</li>
+                            <li><strong>Hệ thống dùng chung TCT:</strong> Đầu tư phần lõi &amp; tích hợp các phần mềm chung toàn TCT (như E-Office, HRM).</li>
+                        </ul>
+                    </div>
+                    <div class="chip-row" style="margin-top:8px;"><span class="chip">TCT giữ vai trò đầu tư nền tảng lõi</span></div>
                 </div>
-                <div class="glass-panel glow-orange"><span class="mono-tag is-orange">ĐƠN
-                        VỊ ĐẦU TƯ / CHI TRẢ</span>
-                    <ul style="margin:12px 0 0 18px; font-size:15px; color:var(--color-fg-secondary); line-height:1.7;">
-                        <li>Đầu tư hoặc thuê Spoke (nếu L4) / Tenant mở rộng.</li>
-                        <li>Tích hợp nội bộ theo định mức chuẩn.</li>
-                        <li>Phí vận hành phân bổ theo mức sử dụng.</li>
-                    </ul>
+                <div class="glass-panel glow-orange" style="display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <span class="mono-tag is-orange">2. PTSC QUẢNG NGÃI CHI TRẢ (ÁP THEO L3)</span>
+                        <ul style="margin:10px 0 0 18px; font-size:14px; color:var(--color-fg-secondary); line-height:1.65;">
+                            <li><strong>Không tốn chi phí mua máy chủ lõi:</strong> Không đầu tư cụm dHCI riêng <em>(chỉ tự mua Spoke nếu chọn L4)</em>.</li>
+                            <li><strong>Tích hợp 4 phần mềm riêng PQN:</strong> Mở cổng &amp; kết nối <em>Cảng, ERP FAST, MESX, Bán hàng</em> theo định mức chuẩn.</li>
+                            <li><strong>Phân bổ hằng năm:</strong> Đóng góp tiền bản quyền (10 mục) &amp; phí vận hành theo mức sử dụng thực tế.</li>
+                        </ul>
+                    </div>
+                    <div class="chip-row" style="margin-top:8px;"><span class="chip" style="border-color:var(--color-orange-border); color:var(--color-orange);">Thiếu ngân sách ngay: TCT đầu tư trước &amp; ghi nợ</span></div>
                 </div>
             </div>
-            <div class="warn-banner"><strong>Minh bạch tỷ lệ:</strong> Tỷ lệ phân bổ chi
-                phí cụ thể được xây dựng trong Giai đoạn 2A — <strong>hiện chưa có tỷ lệ</strong> (không tự ước
-                đoán tỷ lệ).</div>
+            <div class="warn-banner" style="font-size:13px;"><strong>Minh bạch tỷ lệ &amp; Điểm cần chốt ở GĐ2A:</strong> Tỷ lệ chia tiền cụ thể (%) giữa TCT và đơn vị hiện <strong>chưa có số chốt</strong> — sẽ được xây dựng chính thức trong Giai đoạn 2A (không tự ước đoán tỷ lệ).</div>
         </div>
     </section>
 
@@ -4175,17 +4379,18 @@
             "Slide 16: Chủ quyền dữ liệu 3 lớp & giới hạn trung thực: audit log đổ về SIEM trung tâm; kiểm soát để mọi truy cập đều có quyền, mục đích và dấu vết.",
             "Slide 17: Phương án L3 Tenant mà PQN chọn: đơn vị không tự mua dHCI mà thuê phân vùng riêng trên Hub. Bấm so sánh mật độ L3/L4.",
             "Slide 18: Phương án L4 Spoke là phương án dự phòng mở rộng sau này nếu đạt 4 tiêu chí. Đơn vị không bao giờ tự xây Hub và Spoke cũng không có ESB riêng.",
-            "Slide 19 (Sơ đồ động PQN L3): Bấm 3 nút phía trên để cho Giám đốc thấy rõ 2 luồng: 4 hệ riêng PQN đi qua Adapter + SD-WAN về phân vùng L3, còn E-Office & HRM dùng chung ngay trong nền tảng TCT.",
-            "Slide 20 (6 hệ thống PQN): Bấm lọc từng nhóm để thấy ngay 2 hệ dùng chung TCT vs 4 hệ riêng cần Adapter và điểm nóng trùng mã vật tư FAST ↔ MESX.",
-            "Slide 21 (Thành phần tại PQN & WAN biên): Bấm 'Mô phỏng đứt đường chính' để minh họa cơ chế chuyển sang đường dự phòng Internet/4G-5G; nhấn rõ ở L3 đơn vị không mua dHCI, ESB hay SIEM riêng.",
-            "Slide 22 (12 phân hệ trên Hub & Cloud): Bấm chuyển qua lại giữa 'Phần riêng PQN' và 'Dùng chung TCT' để Giám đốc nắm rõ PQN được cách ly những gì trên Hub & Fabric.",
-            "Slide 23 (Bộ máy 5 cấp & Nhân sự PQN): Bấm lần lượt Cấp 3, Cấp 4, Cấp 5. Khung toàn TCT gồm 5 cấp (Cấp 1 HĐ Quản trị, Cấp 2 HĐ Khối tại TCT), nhưng PQN KHÔNG cử người cho cả 5 cấp — chỉ bố trí Cấp 3 (quản trị) và Cấp 4 (nghiệp vụ + IT). Hiện chưa chốt số lượng cụ thể.",
-            "Slide 24 (Vận hành hằng ngày): Bấm 'Chạy vòng lặp' để minh họa 3 nhịp khép kín (Tự động → PQN duyệt & gắn 6 nhãn → 12 quy trình điện tử & kiểm toán quý/năm). Nhấn nguyên tắc SSOT sửa tại phần mềm gốc.",
-            "Slide 25 (Mô phỏng xử lý sự cố): Bấm lần lượt 4 tình huống để chỉ rõ ai xử lý lỗi gì và SLA lỗi nghiêm trọng (phương án tạm trong 01 ngày làm việc), kèm 4 bước chuyển đổi L3 (Cutover + Hypercare 2–4 tuần).",
-            "Slide 26: Bảng chi phí L1–L4 đúng Phiên chiều slide in 58 / PDF 62. L3 có '0 CAPEX hạ tầng dHCI' nhưng vẫn trả license 12 tháng (10 mục), triển khai, tích hợp và vận hành phân bổ.",
-            "Slide 27: Bảng ước tính L3 (~10 tỷ năm đầu / ~16,8 tỷ 5 năm) vs L4 (~22 tỷ / ~40,4 tỷ). Nhấn mạnh đây là ước tính thị trường, không phải số PTSC; tích hợp 6 hệ thống (~7,1 tỷ) tốn như nhau.",
-            "Slide 27: Bảng ước tính theo năm sát thực tế PQN (4 hệ riêng, bỏ E-Office & HRM dùng chung TCT): L3 Năm 1 ~6,5–8,0 tỷ và duy trì ~0,9–1,2 tỷ/năm từ Năm 2; L4 Năm 1 ~19–21 tỷ và duy trì ~3,9–4,4 tỷ/năm. Nhấn mạnh đây là ước tính thị trường chờ sizing GĐ2A.",
-            "Slide 28: Phương án 3 — TCT đầu tư Hub & khung chuẩn; đơn vị chịu Spoke/tích hợp nội bộ; thiếu nguồn được TCT đầu tư trước và ghi nợ; tỷ lệ phân bổ xây dựng ở GĐ2A (chưa có tỷ lệ)."
+            "Slide 19 (Phân biệt L1–L4): Giải thích bằng tiếng Việt thường 4 mức tham gia để lãnh đạo chưa rành kỹ thuật nắm ngay: L1/L2 dùng chung; L3 (PQN chọn) là thuê 'phòng riêng có khóa' trên Hub TCT, không mua cụm máy chủ mới; L4 là tự dựng trạm máy chủ riêng và tự trực 24/7.",
+            "Slide 20 (Sơ đồ động PQN L3): Bấm 3 nút phía trên để cho Giám đốc thấy rõ 2 luồng: 4 hệ riêng PQN (Cảng, FAST, MESX, Bán hàng) giữ nguyên tại nhà rồi gửi qua Adapter + SD-WAN về phòng riêng L3, còn E-Office & HRM dùng chung ngay trong nền tảng TCT.",
+            "Slide 21 (6 hệ thống PQN): Bấm lọc từng nhóm để thấy ngay 2 hệ dùng chung TCT vs 4 hệ riêng cần Adapter và điểm nóng trùng mã vật tư FAST ↔ MESX.",
+            "Slide 22 (Thành phần tại PQN & WAN biên): Bấm 'Mô phỏng đứt đường chính' để minh họa cơ chế chuyển sang đường dự phòng Internet/4G-5G; nhấn rõ ở L3 đơn vị không mua dHCI, ESB hay SIEM riêng.",
+            "Slide 23 (12 phân hệ trên Hub & Cloud): Bấm chuyển qua lại giữa 'Phần riêng PQN' và 'Dùng chung TCT' để Giám đốc nắm rõ PQN được cách ly những gì trên Hub & Fabric.",
+            "Slide 24 (Bộ máy 5 cấp & Nhân sự PQN): Bấm lần lượt Cấp 3, Cấp 4, Cấp 5. Khung toàn TCT gồm 5 cấp (Cấp 1 HĐ Quản trị, Cấp 2 HĐ Khối tại TCT), nhưng PQN KHÔNG cử người cho cả 5 cấp — chỉ bố trí Cấp 3 (quản trị) và Cấp 4 (nghiệp vụ + IT). Hiện chưa chốt số lượng cụ thể.",
+            "Slide 25 (Vận hành hằng ngày): Bấm 'Chạy vòng lặp' để minh họa 3 nhịp khép kín (Tự động → PQN duyệt & gắn 6 nhãn → 12 quy trình điện tử & kiểm toán quý/năm). Nhấn nguyên tắc SSOT sửa tại phần mềm gốc.",
+            "Slide 26 (Mô phỏng xử lý sự cố): Bấm lần lượt 4 tình huống để chỉ rõ ai xử lý lỗi gì và SLA lỗi nghiêm trọng (phương án tạm trong 01 ngày làm việc), kèm 4 bước chuyển đổi L3 (Cutover + Hypercare 2–4 tuần).",
+            "Slide 27: Bảng chi phí L1–L4 đúng Phiên chiều slide in 58 / PDF 62. L3 có '0 CAPEX hạ tầng dHCI' nhưng vẫn trả license 12 tháng (10 mục), triển khai, tích hợp và vận hành phân bổ.",
+            "Slide 28: Bảng ước tính theo năm sát thực tế PQN (4 hệ riêng, bỏ E-Office & HRM dùng chung TCT): L3 Năm 1 ~6,5–8,0 tỷ và duy trì ~0,9–1,2 tỷ/năm từ Năm 2; L4 Năm 1 ~19–21 tỷ và duy trì ~3,9–4,4 tỷ/năm. Nhấn mạnh đây là ước tính thị trường chờ sizing GĐ2A.",
+            "Slide 29: Chi tiết từng hạng mục đầu tư và ước tính chi phí giữa L3 vs L4 cho PQN: L3 không mua máy chủ dHCI (~0đ phần cứng, tận dụng VM trên R760xs) và không mua VMware/Veeam tại chỗ; L4 phải đầu tư mới cụm dHCI ~5 node (~8,5 tỷ), license hạ tầng (~1,5–2,0 tỷ/năm) và đội 4–5 kỹ sư vận hành (~2,4 tỷ/năm). Lưu ý hỏi TCT trong 10 mục license mục nào Open Source vs thương mại.",
+            "Slide 30: Giải thích rõ Phương án 3 (kết hợp TCT + Đơn vị): TCT bỏ vốn lõi Hub/Cloud/hệ thống dùng chung toàn TCT; PQN ở L3 không mua dHCI mà chi trả phần tích hợp 4 hệ riêng (Cảng, FAST, MESX, Bán hàng) và phí bản quyền/vận hành phân bổ. Nếu thiếu vốn ngay thì TCT đầu tư trước và ghi nợ; tỷ lệ % cụ thể chờ xây dựng ở GĐ2A."
         ];
 
         const slides = Array.from(document.querySelectorAll('.slide'));
@@ -4201,6 +4406,7 @@
 
         const pad2 = (n) => String(n).padStart(2, '0');
         document.getElementById('totalSlideNum').textContent = pad2(totalSlides);
+        document.getElementById('topTotalSlideNum').textContent = pad2(totalSlides);
 
         const jumpMenu = document.getElementById('jumpMenu');
         jumpMenu.innerHTML = slides.map((s, i) => `<button type="button" class="jump-item" data-jump="${i + 1}" onclick="goToSlide(${i + 1}); toggleJumpMenu(false);"><span class="idx">${pad2(i + 1)}</span><span>${s.dataset.title}</span></button>`).join('');
@@ -4247,7 +4453,8 @@
             ["03 · CHỦ QUYỀN DỮ LIỆU", 2, -1, "Dữ liệu của đơn vị <span class=\"c-cyan\">do ai sở hữu</span> &amp; kiểm soát thế nào?"],
             ["03 · MÔ HÌNH L3 TENANT", 2, -1, "Thuê phân vùng <span class=\"c-cyan\">L3 Tenant</span> trên Hub vận hành ra sao?"],
             ["03 · MÔ HÌNH L4 SPOKE", 2, -1, "Khi nào Quảng Ngãi mới cần <span class=\"c-orange\">L4 Spoke</span> riêng?"],
-            ["04 · HỆ THỐNG DỰ KIẾN PQN (L3)", 3, -1, "Hệ thống dự kiến của PTSC Quảng Ngãi: <span class=\"c-cyan\">L3 Tenant + Dùng chung TCT</span>"],
+            ["04 · PHÂN BIỆT L1–L4", 3, -1, "L1, L2, L3, L4 nghĩa là gì — <span class=\"c-cyan\">PTSC Quảng Ngãi</span> chọn đứng ở đâu?"],
+            ["04 · HỆ THỐNG DỰ KIẾN PQN (L3)", 3, -1, "Mô hình dự kiến của PTSC Quảng Ngãi (L3): <span class=\"c-cyan\">Giữ gì ở nhà, gửi gì lên TCT?</span>"],
             ["04 · 6 HỆ THỐNG NGUỒN PQN", 3, -1, "6 hệ thống của PQN: <span class=\"c-cyan\">2 dùng chung TCT</span> &amp; <span class=\"c-orange\">4 hệ đặc thù</span>"],
             ["04 · THÀNH PHẦN TẠI PQN", 3, -1, "Thành phần đặt tại PQN: <span class=\"c-cyan\">Adapter · Agent · Mạng biên</span>"],
             ["04 · THÀNH PHẦN TRÊN HUB & CLOUD", 3, -1, "12 phân hệ trên Hub &amp; Cloud: <span class=\"c-cyan\">Phần riêng PQN</span> vs <span class=\"c-orange\">Dùng chung</span>"],
@@ -4257,6 +4464,7 @@
             ["05 · PHÂN BỔ CHI PHÍ L1–L4", 4, -1, "Chọn <span class=\"c-cyan\">L3</span> hay <span class=\"c-orange\">L4</span> thì đơn vị phải trả những khoản nào?"],
             ["05 · BÀI TOÁN TÀI CHÍNH", 4, -1, "Ước tính chi phí <span class=\"c-cyan\">5 năm</span> giữa L3 và L4 chênh bao nhiêu?"],
             ["05 · BÀI TOÁN TÀI CHÍNH", 4, -1, "Chi phí <span class=\"c-cyan\">Năm 1</span> và <span class=\"c-orange\">duy trì hằng năm</span> giữa L3 và L4 chênh bao nhiêu?"],
+            ["05 · CHI TIẾT HẠNG MỤC ĐẦU TƯ", 4, -1, "Cụ thể từng <span class=\"c-cyan\">hạng mục đầu tư &amp; giá ước tính</span> giữa <span class=\"c-cyan\">L3</span> và <span class=\"c-orange\">L4</span> là gì?"],
             ["05 · CƠ CHẾ ĐẦU TƯ", 4, -1, "<span class=\"c-cyan\">Phương án 3</span> phân chia vốn giữa TCT và đơn vị ra sao?"]
         ];
 
@@ -4265,7 +4473,7 @@
             { label: '2. Bên trong DP', slide: 4 },
             { label: '3. Đặt ở đâu & L3/L4', slide: 13 },
             { label: '4. Mô hình PQN (L3)', slide: 19 },
-            { label: '5. Chi phí & Đầu tư', slide: 26 }
+            { label: '5. Chi phí & Đầu tư', slide: 27 }
         ];
         const STATIONS = [
             { label: '1. Nguồn', slide: 6 },
@@ -4318,6 +4526,7 @@
             slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide - 1));
             const sEl = slides[currentSlide - 1];
             document.getElementById('currentSlideNum').textContent = pad2(currentSlide);
+            document.getElementById('topCurrentSlideNum').textContent = pad2(currentSlide);
             document.getElementById('notesTitle').textContent = `DIỄN GIẢI CHO LÃNH ĐẠO · SLIDE ${pad2(currentSlide)}`;
             document.getElementById('notesBody').textContent = SPEAKER_NOTES[currentSlide - 1];
             document.querySelectorAll('.jump-item').forEach((it) => it.classList.toggle('is-active', Number(it.dataset.jump) === currentSlide));
@@ -4328,7 +4537,10 @@
             setRevealStep(startStep);
             const ctx = SLIDE_CONTEXT[currentSlide - 1] || [null, -1, -1];
             renderTrails(ctx[1], ctx[2]);
-            if (currentSlide === 26) animateCostBars(3);
+            if (currentSlide === 5) playS9Journey();
+            if (currentSlide === 9) runS13Funnel();
+            if (currentSlide === 12) runS16Typewriter();
+            if (currentSlide === 27) animateCostBars(3);
         }
 
         function nextSlide() { goToSlide(currentSlide + 1); }
@@ -4552,7 +4764,7 @@
             document.getElementById('costTable').querySelectorAll('tr').forEach((tr) => {
                 Array.from(tr.children).forEach((c, i) => c.classList.toggle('col-hl', i === colIdx));
             });
-            const btns = document.querySelectorAll('.slide[data-slide="26"] .mode-btn');
+            const btns = document.querySelectorAll('.slide[data-slide="27"] .mode-btn');
             btns[0].classList.toggle('is-active', colIdx === 3);
             btns[1].classList.toggle('is-active-orange', colIdx === 4);
             animateCostBars(colIdx);
@@ -4738,7 +4950,7 @@
             else if (e.key === 'Escape') { toggleJumpMenu(false); if (!document.getElementById('notesDrawer').hidden) toggleNotes(); }
         });
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-cluster') && !jumpMenu.hidden) toggleJumpMenu(false);
+            if (!e.target.closest('.nav-cluster') && !e.target.closest('#topSlideCounter') && !jumpMenu.hidden) toggleJumpMenu(false);
             const stepEl = e.target.closest('[data-reveal-step]');
             if (stepEl && !stepEl.classList.contains('step-visible')) {
                 const sNum = Number(stepEl.getAttribute('data-reveal-step'));
